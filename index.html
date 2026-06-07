@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento Estratégico · Pitch Day Royal Accelerator × Deploy US</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1116; --ink2:#3A4150; --muted:#6B7280; --muted2:#9AA1AD;
+    --line:#E6E8EC; --line2:#EEF0F3; --paper:#FFFFFF; --bg:#F6F7F9;
+    --blue:#2563EB; --blue-d:#1D4ED8; --blue-bg:#EFF4FF;
+    --green:#0EA871; --green-bg:#E9F9F1;
+    --amber:#E08600; --amber-bg:#FFF6E6;
+    --violet:#6D3BEB; --violet-bg:#F1ECFE;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;font-size:15px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--muted)}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.1}
+  a{color:var(--blue);text-decoration:none}
+
+  /* topbar */
+  .top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:18px;height:60px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+  .brand .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--blue),var(--violet))}
+  .top nav{margin-left:auto;display:flex;gap:22px}
+  .top nav a{font-size:13px;color:var(--ink2);font-weight:500}
+  .top nav a:hover{color:var(--blue)}
+  @media(max-width:820px){.top nav{display:none}}
+
+  /* hero */
+  .hero{background:linear-gradient(180deg,#fff,var(--bg));border-bottom:1px solid var(--line);padding:64px 0 54px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:var(--blue-bg);color:var(--blue-d);border:1px solid #D6E3FF;border-radius:100px;padding:6px 14px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+  .hero h1{font-size:clamp(34px,5.4vw,56px);font-weight:800;margin:20px 0 14px}
+  .hero p.lead{font-size:18px;color:var(--ink2);max-width:680px}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+  @media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .fact .k{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2)}
+  .fact .v{font-size:21px;font-weight:700;margin-top:6px;letter-spacing:-.02em}
+  .fact .s{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  .sec-tag{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:500}
+  .sec-h{font-size:clamp(24px,3.4vw,34px);font-weight:800;margin:10px 0 8px}
+  .sec-sub{color:var(--muted);max-width:680px;font-size:15.5px}
+  .sec-head{margin-bottom:36px}
+
+  /* objetivos */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'JetBrains Mono';font-size:14px;margin-bottom:16px}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:7px}
+  .card p{font-size:14px;color:var(--ink2)}
+  .ic.b{background:var(--blue-bg);color:var(--blue-d)} .ic.g{background:var(--green-bg);color:var(--green)} .ic.v{background:var(--violet-bg);color:var(--violet)} .ic.a{background:var(--amber-bg);color:var(--amber)}
+
+  /* trilha */
+  .trilha{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper)}
+  @media(max-width:820px){.trilha{grid-template-columns:1fr}}
+  .phase{padding:26px 22px;border-right:1px solid var(--line)}
+  .phase:last-child{border-right:none}
+  @media(max-width:820px){.phase{border-right:none;border-bottom:1px solid var(--line)}}
+  .phase .ph-k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+  .phase.pre .ph-k{color:var(--violet)} .phase.dur .ph-k{color:var(--blue)} .phase.pos .ph-k{color:var(--green)}
+  .phase .ph-when{font-size:12px;color:var(--muted2);font-family:'JetBrains Mono';margin-top:3px}
+  .phase h3{font-size:18px;font-weight:700;margin:8px 0 16px}
+  .step{display:flex;gap:10px;padding:10px 0;border-top:1px dashed var(--line)}
+  .step .n{font-family:'JetBrains Mono';font-size:11px;color:var(--muted2);min-width:20px;padding-top:2px}
+  .step .t{font-size:13.5px;color:var(--ink2)}
+  .step .t b{color:var(--ink);font-weight:600}
+
+  /* agenda */
+  .agenda{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper)}
+  .slot{display:grid;grid-template-columns:120px 1fr 130px;gap:16px;padding:18px 22px;border-top:1px solid var(--line2);align-items:start}
+  .slot:first-child{border-top:none}
+  .slot:hover{background:#FBFCFD}
+  @media(max-width:820px){.slot{grid-template-columns:90px 1fr}.slot .owner{grid-column:2;margin-top:4px}}
+  .slot .time{font-family:'JetBrains Mono';font-weight:600;font-size:14px}
+  .slot .time .dur{display:block;font-size:11px;color:var(--muted2);font-weight:400;margin-top:3px}
+  .slot .ttl{font-weight:600;font-size:15.5px}
+  .slot .desc{font-size:13.5px;color:var(--muted);margin-top:3px}
+  .slot .owner{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:5px 9px;height:fit-content;justify-self:end;text-align:center}
+  @media(max-width:820px){.slot .owner{justify-self:start}}
+  .slot.hl{background:var(--blue-bg)}
+  .slot.hl:hover{background:#E7EFFF}
+
+  /* tables */
+  .tbl{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px}
+  .tbl th,.tbl td{text-align:left;padding:14px 16px;border-top:1px solid var(--line2);vertical-align:top}
+  .tbl thead th{background:#FAFBFC;border-top:none;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .tbl td b{font-weight:600}
+  .tbl .dim{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-d);white-space:nowrap;font-weight:600}
+  .tbl tr:hover td{background:#FBFCFD}
+  .wrap-scroll{overflow-x:auto}
+
+  /* emails */
+  .mailgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:980px){.mailgrid{grid-template-columns:1fr}}
+  .mail{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+  .mail .mh{padding:16px 18px;border-bottom:1px solid var(--line);background:#FAFBFC}
+  .mail .when{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:600}
+  .mail .subj{font-weight:700;font-size:15px;margin-top:6px}
+  .mail .body{padding:18px;font-size:13px;color:var(--ink2);white-space:pre-line;flex:1;line-height:1.6}
+  .mail .meta{padding:12px 18px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+
+  /* funnel */
+  .funnel{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.funnel{grid-template-columns:1fr}}
+  .fcol{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .fcol.win{border-color:#BBE6CE;background:linear-gradient(180deg,var(--green-bg),#fff)}
+  .fcol.nurt{border-color:#CFE0FF;background:linear-gradient(180deg,var(--blue-bg),#fff)}
+  .fcol .ft{font-weight:700;font-size:17px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .fcol .badge{font-family:'JetBrains Mono';font-size:10px;padding:3px 8px;border-radius:6px;font-weight:600}
+  .win .badge{background:var(--green);color:#fff} .nurt .badge{background:var(--blue);color:#fff}
+  .fcol .fsub{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .fstep{display:flex;gap:10px;padding:9px 0;border-top:1px dashed var(--line);font-size:13.5px}
+  .fstep .ar{color:var(--muted2);font-family:'JetBrains Mono'}
+  .fstep b{font-weight:600}
+
+  /* checklist */
+  .chk{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:8px 0}
+  .chk .day{padding:12px 22px 6px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-d);font-weight:600}
+  .chk .it{display:flex;gap:12px;padding:8px 22px;font-size:14px;color:var(--ink2);align-items:flex-start}
+  .chk .it .box{width:17px;height:17px;border:1.5px solid var(--muted2);border-radius:5px;flex:none;margin-top:2px}
+  .chk .it .who{margin-left:auto;font-family:'JetBrains Mono';font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+
+  .callout{background:var(--amber-bg);border:1px solid #F4D79A;border-radius:14px;padding:22px 24px}
+  .callout h3{font-size:16px;font-weight:700;margin-bottom:10px;color:#8A5200}
+  .callout ul{margin-left:18px;font-size:14px;color:#6B4500;line-height:1.8}
+
+  .kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:820px){.kpi{grid-template-columns:repeat(2,1fr)}}
+  .kpic{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .kpic .ph{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2)}
+  .kpic .m{font-weight:600;font-size:14.5px;margin:7px 0 4px}
+  .kpic .goal{font-size:13px;color:var(--green);font-weight:600}
+
+  /* phase strip */
+  .phasestrip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+  @media(max-width:820px){.phasestrip{grid-template-columns:1fr 1fr}}
+  .pcard{border:1px solid var(--line);border-left-width:4px;border-radius:12px;padding:14px 16px;background:var(--paper)}
+  .pcard .pn{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2)}
+  .pcard .pt{font-weight:700;font-size:15px;margin:3px 0 2px}
+  .pcard .pw{font-family:'JetBrains Mono';font-size:10px;color:var(--muted)}
+  .pcard.p1{border-left-color:var(--violet)} .pcard.p2{border-left-color:var(--blue)} .pcard.p3{border-left-color:var(--amber)} .pcard.p4{border-left-color:var(--green)}
+  /* journey */
+  .journey{margin-bottom:8px}
+  .jstep{display:grid;grid-template-columns:46px 1fr;gap:16px}
+  .jrail{display:flex;flex-direction:column;align-items:center}
+  .jnum{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-family:'JetBrains Mono';font-size:14px;flex:none}
+  .jline{flex:1;width:2px;background:var(--line);margin:4px 0;min-height:12px}
+  .jc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px;flex:1}
+  .jc:hover{border-color:#cdd3db}
+  .jtop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+  .jq{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+  .jphase{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:6px}
+  .jtema{font-weight:700;font-size:16.5px;margin-bottom:4px}
+  .jwork{font-size:13.5px;color:var(--muted)}
+  .jdeliv{margin-top:11px;display:inline-flex;gap:7px;align-items:center;background:var(--green-bg);color:var(--green);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600}
+  .jnum.p1{background:var(--violet)} .jphase.p1{background:var(--violet-bg);color:var(--violet)}
+  .jnum.p2{background:var(--blue)} .jphase.p2{background:var(--blue-bg);color:var(--blue-d)}
+  .jnum.p3{background:var(--amber)} .jphase.p3{background:var(--amber-bg);color:var(--amber)}
+  .jnum.p4{background:var(--green)} .jphase.p4{background:var(--green-bg);color:var(--green)}
+  /* AI layer */
+  .ai-layer{background:radial-gradient(circle at 14% 18%,rgba(109,59,235,.55),transparent 42%),radial-gradient(circle at 86% 82%,rgba(37,99,235,.5),transparent 44%),#0E1116;color:#fff;border-radius:18px;padding:30px 28px;margin:30px 0}
+  .ai-layer .ah{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+  .ai-layer .ah .tg{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#C9B6FF;border:1px solid rgba(201,182,255,.4);border-radius:100px;padding:4px 12px}
+  .ai-layer h3{font-size:23px;font-weight:800;letter-spacing:-.02em}
+  .ai-layer p.s{color:#C9C6D6;font-size:14.5px;max-width:640px;margin:6px 0 20px}
+  .ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:820px){.ai-grid{grid-template-columns:1fr 1fr}}
+  .aic{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:16px}
+  .aic .e{font-size:22px}
+  .aic .t{font-weight:700;font-size:14px;margin:9px 0 4px}
+  .aic .d{font-size:12px;color:#B8B4C6;line-height:1.5}
+  /* artifacts */
+  .artifacts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:680px){.artifacts{grid-template-columns:1fr}}
+  .art{display:flex;gap:13px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;transition:.2s}
+  .art:hover{border-color:#cdd3db;box-shadow:0 6px 18px -10px rgba(0,0,0,.16);transform:translateY(-2px)}
+  .art .ai2{font-size:19px;width:40px;height:40px;border-radius:10px;background:var(--bg);display:flex;align-items:center;justify-content:center;flex:none}
+  .art .an{font-weight:600;font-size:14.5px}
+  .art .ad{font-size:12.5px;color:var(--muted);margin-top:2px}
+  /* progress + interactive checklist */
+  .progress{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .pbar{flex:1;height:10px;background:var(--line);border-radius:100px;overflow:hidden}
+  .pfill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .35s}
+  .pmono{font-family:'JetBrains Mono';font-size:12px;color:var(--ink2);white-space:nowrap;font-weight:600}
+  .chk .it{cursor:pointer;user-select:none}
+  .chk .it .box{transition:.15s;position:relative}
+  .chk .it.done .box{background:var(--green);border-color:var(--green)}
+  .chk .it.done .box::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}
+  .chk .it.done span:not([class]){color:var(--muted2);text-decoration:line-through}
+
+  /* ===== balanced scorecard + generic tasks ===== */
+  .scorecard{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+  @media(max-width:820px){.scorecard{grid-template-columns:1fr 1fr}}
+  .meter{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .meter .mtop{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .meter .ml{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2)}
+  .meter .mpct{font-size:23px;font-weight:800;letter-spacing:-.02em}
+  .meter .mtrack{height:8px;background:var(--line);border-radius:100px;overflow:hidden;margin:10px 0 6px}
+  .meter .mfill{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .4s}
+  .meter .mcnt{font-family:'JetBrains Mono';font-size:10px;color:var(--muted)}
+  .meter.total{background:linear-gradient(135deg,#0E1116,#1a1330);color:#fff;border:none}
+  .meter.total .ml{color:#C9B6FF}.meter.total .mcnt{color:#B8B4C6}.meter.total .mtrack{background:rgba(255,255,255,.16)}
+  .taskrow{display:flex;gap:12px;align-items:flex-start;padding:9px 0;cursor:pointer;user-select:none}
+  .taskrow .ck{width:18px;height:18px;border:1.6px solid var(--muted2);border-radius:5px;flex:none;margin-top:1px;position:relative;transition:.15s}
+  .taskrow.done .ck{background:var(--green);border-color:var(--green)}
+  .taskrow.done .ck::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}
+  .taskrow .tl{font-size:14px;color:var(--ink2)}
+  .taskrow.done .tl{color:var(--muted2);text-decoration:line-through}
+  .taskrow .who{margin-left:auto;font-family:'JetBrains Mono';font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+  .taskrow.inline{padding:0;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+  .taskrow.inline .tl{font-size:12.5px;font-weight:600;color:var(--ink2)}
+  .taskrow.inline .ck{width:16px;height:16px}
+  /* companies */
+  .companies{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:820px){.companies{grid-template-columns:1fr}}
+  .co{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+  .co .conum{width:30px;height:30px;border-radius:8px;background:var(--blue-bg);color:var(--blue-d);font-weight:700;font-family:'JetBrains Mono';font-size:13px;display:flex;align-items:center;justify-content:center;flex:none}
+  .co .con{font-weight:700;font-size:15.5px}
+  .co .cot{font-size:12px;color:var(--blue-d);font-weight:600;margin:1px 0 5px}
+  .co .cod{font-size:12.5px;color:var(--muted);line-height:1.45}
+  /* rbg pillars / dims / maturity */
+  .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media(max-width:820px){.pillars{grid-template-columns:1fr 1fr}}
+  .pill5{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+  .pill5 .pe{font-size:22px}.pill5 .pnn{font-family:'JetBrains Mono';font-size:10px;color:var(--muted2);margin-top:4px}.pill5 .ptt{font-weight:700;font-size:14px;margin-top:2px}
+  .dims{display:flex;flex-wrap:wrap;gap:8px}
+  .dim-chip{background:var(--bg);border:1px solid var(--line);border-radius:100px;padding:7px 14px;font-size:13px;font-weight:600}
+  .matur{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  @media(max-width:820px){.matur{grid-template-columns:1fr}}
+  .mlevel{border-radius:10px;padding:14px;color:#fff}
+  .mlevel .lv{font-family:'JetBrains Mono';font-size:10px;opacity:.85}
+  .mlevel .ln{font-size:14px;margin-top:3px;font-weight:700}
+  .credit{display:inline-flex;align-items:center;gap:8px;background:var(--violet-bg);color:var(--violet);border-radius:100px;padding:5px 12px;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-top:12px}
+
+  footer{padding:50px 0 70px;text-align:center;color:var(--muted)}
+  .tagline{font-size:13px;color:var(--muted2);margin-top:8px}
+.ck.on{background:var(--green);border-color:var(--green)}.ck.on::after{content:'\2713';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}.art{cursor:pointer}.art.done{border-color:var(--green);background:var(--green-bg)}.co .taskrow.inline{cursor:pointer}
+
+/* base checkbox (aplica a todos, inclusive artefatos) */
+.ck{width:18px;height:18px;border:1.6px solid var(--muted2);border-radius:6px;flex:none;position:relative;cursor:pointer;background:#fff;transition:background .2s,border-color .2s,transform .12s,box-shadow .2s}
+.ck:hover,.taskrow:hover .ck,.art:hover .ck{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+.ck:active{transform:scale(.85)}
+.ck.on{background:var(--green);border-color:var(--green);box-shadow:none;animation:ckpop .3s ease}
+.ck.on::after{content:"\2713";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;animation:ckin .24s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes ckpop{0%{transform:scale(1)}45%{transform:scale(1.22)}100%{transform:scale(1)}}
+@keyframes ckin{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+/* taskrow overflow fixes */
+.taskrow{align-items:center}
+.taskrow .tl{flex:1;min-width:0;overflow-wrap:anywhere}
+.chk .taskrow{padding-left:22px;padding-right:22px;border-radius:8px}
+.chk .taskrow:hover{background:#FBFCFD}
+.art>div{min-width:0}
+.co>div{min-width:0}
+/* sticky top progress */
+.top .wrap{position:relative}
+.topprog{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--line);border-radius:0}
+.topprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .45s ease}
+.toppct{font-family:'JetBrains Mono';font-size:12px;font-weight:700;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:100px;padding:4px 11px;white-space:nowrap}
+/* inline mini progress */
+.minibar{display:flex;align-items:center;gap:14px;margin:0 0 18px}
+.minibar .mt{flex:1;height:8px;background:var(--line);border-radius:100px;overflow:hidden}
+.minibar .mf{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .45s ease}
+.minibar .ml2{font-family:'JetBrains Mono';font-size:11px;color:var(--ink2);font-weight:700;white-space:nowrap}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="top"><div class="wrap">
+  <div class="brand"><span class="dot"></span>Royal Accelerator <span style="color:var(--muted2);font-weight:400">×</span> Deploy US</div>
+  <span id="toppct" class="toppct" style="margin-left:auto">0%</span>
+  <nav>
+    <a href="#objetivos">Objetivos</a>
+    <a href="#trilha">Trilha</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#empresas">Empresas</a>
+    <a href="#pre">Pré</a>
+    <a href="#durante">Durante</a>
+    <a href="#conteudo">Conteúdo</a>
+    <a href="#pos">Pós</a>
+    <a href="#aceleracao">Aceleração</a>
+    <a href="#checklist">Checklist</a>
+  </nav>
+  <div class="topprog"><i id="topfill"></i></div>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <span class="pill">● Planejamento Estratégico · Realização: Royal Accelerator × Deploy US</span>
+  <h1>Pitch Day<br><span style="color:var(--blue)">Royal Accelerator</span></h1>
+  <p class="lead">Um evento-seleção formato Shark Tank onde 8–10 empresas disputam vagas na aceleração Deploy de 4 meses — com possibilidade de investimento. E é também uma <b>máquina de conteúdo</b>: pitches crus sem slide, 5 mentores e o anúncio ao vivo viram dezenas de cortes. Da confirmação por e-mail ao funil pós-evento, tudo executável em 2 dias.</p>
+  <div class="facts">
+    <div class="fact"><div class="k">Quando</div><div class="v">Ter · 09 Jun</div><div class="s">13h00 → 17h00 (4h)</div></div>
+    <div class="fact"><div class="k">Onde</div><div class="v">Royal Business</div><div class="s">Orlando · espaço de eventos</div></div>
+    <div class="fact"><div class="k">Quem disputa</div><div class="v">8–10 empresas</div><div class="s">tradicionais + startups</div></div>
+    <div class="fact"><div class="k">Prêmio</div><div class="v">1–3 vagas</div><div class="s">aceleração 4 meses + investimento</div></div>
+  </div>
+</div></header>
+
+<!-- SCORECARD -->
+<section id="scorecard" style="background:#fff"><div class="wrap">
+  <div class="sec-head" style="margin-bottom:24px">
+    <div class="sec-tag">★ Balanced Scorecard · ao vivo</div>
+    <h2 class="sec-h">O progresso de tudo, num lugar só</h2>
+    <p class="sec-sub">Cada tarefa deste plano é <b>clicável</b> e o progresso fica salvo neste link — Lucio, Alexandre e Deploy veem o mesmo painel. Marque conforme avança e acompanhe pré, durante, pós e o programa.</p>
+  </div>
+  <div class="scorecard">
+    <div class="meter" data-scope="pre"><div class="mtop"><span class="ml">Pré-evento</span><span class="mpct">0%</span></div><div class="mtrack"><i class="mfill"></i></div><div class="mcnt">0/0</div></div>
+    <div class="meter" data-scope="durante"><div class="mtop"><span class="ml">Durante</span><span class="mpct">0%</span></div><div class="mtrack"><i class="mfill"></i></div><div class="mcnt">0/0</div></div>
+    <div class="meter" data-scope="pos"><div class="mtop"><span class="ml">Pós-evento</span><span class="mpct">0%</span></div><div class="mtrack"><i class="mfill"></i></div><div class="mcnt">0/0</div></div>
+    <div class="meter" data-scope="programa"><div class="mtop"><span class="ml">Programa</span><span class="mpct">0%</span></div><div class="mtrack"><i class="mfill"></i></div><div class="mcnt">0/0</div></div>
+    <div class="meter total" data-scope="all"><div class="mtop"><span class="ml">Total</span><span class="mpct">0%</span></div><div class="mtrack"><i class="mfill"></i></div><div class="mcnt">0/0</div></div>
+  </div>
+</div></section>
+
+<!-- OBJETIVOS -->
+<section id="objetivos"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">01 · Por que esse evento existe</div>
+    <h2 class="sec-h">Objetivos estratégicos</h2>
+    <p class="sec-sub">O Pitch Day não é só um show de palco — é o topo do funil da Royal Accelerator e a primeira prova pública da parceria Royal × Deploy.</p>
+  </div>
+  <div class="grid3">
+    <div class="card"><div class="ic b">◆</div><h3>Posicionar a Royal como Hub de inovação</h3><p>Mostrar ao vivo que o espaço do Lucio virou um ecossistema: eventos, escritórios, salas e agora uma aceleradora dentro de casa.</p></div>
+    <div class="card"><div class="ic v">D</div><h3>Lançar o produto Deploy</h3><p>Apresentar a aceleração de 4 meses (internacionalização, startups e negócios tradicionais) e selecionar de 1 a 3 empresas para a primeira turma.</p></div>
+    <div class="card"><div class="ic g">$</div><h3>Abrir o pipeline de investimento</h3><p>Identificar empresas investíveis para a tese VGT (80% cash-flow / 20% startups) e qualificar quanto cada uma precisa captar.</p></div>
+  </div>
+  <div class="grid3" style="margin-top:18px">
+    <div class="card"><div class="ic a">★</div><h3>Gerar prova social e conteúdo</h3><p>Fotos, vídeos e cases para alimentar o site VGT, redes e as próximas turmas — transparência como produto.</p></div>
+    <div class="card"><div class="ic b">⇄</div><h3>Converter quem não ganhar</h3><p>Todo participante sai com diagnóstico e uma próxima ação: turma futura, espaço no Royal ou diagnóstico pago. Ninguém sai sem caminho.</p></div>
+    <div class="card"><div class="ic g">✓</div><h3>Validar o modelo de execução</h3><p>Testar o formato de seleção + onboarding para repetir como uma máquina a cada turma. Esse é o piloto.</p></div>
+  </div>
+</div></section>
+
+<!-- TRILHA -->
+<section id="trilha"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">02 · Visão de cima</div>
+    <h2 class="sec-h">A trilha completa: Pré → Durante → Pós</h2>
+    <p class="sec-sub">A jornada de cada empresa em três fases. O evento (terça) é o meio — o valor está em preparar bem antes e converter depois.</p>
+  </div>
+  <div class="trilha">
+    <div class="phase pre">
+      <div class="ph-k">FASE 1 · PRÉ</div>
+      <div class="ph-when">07–09 Jun · antes</div>
+      <h3>Preparar & confirmar</h3>
+      <div class="step"><span class="n">1</span><span class="t"><b>Lista & convite</b> — fechar as 8–10 empresas e mandar convite oficial.</span></div>
+      <div class="step"><span class="n">2</span><span class="t"><b>Confirmação (RSVP)</b> — e-mail pedindo confirmação até 08/jun 18h.</span></div>
+      <div class="step"><span class="n">3</span><span class="t"><b>Briefing do pitch</b> — formato, tempo, critérios e o que trazer.</span></div>
+      <div class="step"><span class="n">4</span><span class="t"><b>Logística</b> — endereço, horário, parking e agenda no dia anterior.</span></div>
+    </div>
+    <div class="phase dur">
+      <div class="ph-k">FASE 2 · DURANTE</div>
+      <div class="ph-when">09 Jun · 13h–17h</div>
+      <h3>Selecionar ao vivo</h3>
+      <div class="step"><span class="n">1</span><span class="t"><b>Abertura</b> — Lucio (Royal) + Deploy apresentam visão e prêmio.</span></div>
+      <div class="step"><span class="n">2</span><span class="t"><b>Pitches Shark Tank</b> — 8–10 empresas, banca pontua por scorecard.</span></div>
+      <div class="step"><span class="n">3</span><span class="t"><b>Mini-workshop</b> — "Quanto de investimento você precisa?" pra todos.</span></div>
+      <div class="step"><span class="n">4</span><span class="t"><b>Resultado</b> — anúncio de 1–3 selecionados + próximos passos.</span></div>
+    </div>
+    <div class="phase pos">
+      <div class="ph-k">FASE 3 · PÓS</div>
+      <div class="ph-when">10 Jun → 4 meses</div>
+      <h3>Converter & entregar</h3>
+      <div class="step"><span class="n">1</span><span class="t"><b>Selecionados</b> — onboarding Deploy + trilha de investimento.</span></div>
+      <div class="step"><span class="n">2</span><span class="t"><b>Não-selecionados</b> — feedback + oferta de próxima turma/diagnóstico.</span></div>
+      <div class="step"><span class="n">3</span><span class="t"><b>Recap</b> — e-mail + conteúdo pra todos e pro mercado.</span></div>
+      <div class="step"><span class="n">4</span><span class="t"><b>Pipeline VGT</b> — qualificar investíveis e abrir conversas.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- EMPRESAS -->
+<section id="empresas"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">★ Os participantes</div>
+    <h2 class="sec-h">As 8 empresas confirmadas</h2>
+    <p class="sec-sub">Quem sobe ao palco no dia 09 — todas já operando, com gargalos claros e fome de estrutura. Marque "confirmada" conforme cada RSVP fecha.</p>
+    <div class="credit">📎 Conteúdo do Alexandre integrado</div>
+  </div>
+<div class="minibar"><div class="mt"><i class="mf"></i></div><span class="ml2" data-prefix="Confirmadas:">0/0</span></div>
+  <div class="companies">
+    <div class="co"><div class="conum">1</div><div><div class="con">PRA Rentals</div><div class="cot">Locação de carros</div><div class="cod">Precisa de investimento para crescer; operação muito centralizada no dono. Precisa de estruturação.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co1" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">2</div><div><div class="con">HV - IA</div><div class="cot">Tecnologia para IA</div><div class="cod">Busca estrutura para escalar e ampliar a oferta de produtos.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co2" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">3</div><div><div class="con">PolarShake</div><div class="cot">Milkshake</div><div class="cod">Quer franquear o negócio.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co3" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">4</div><div><div class="con">Silvia Market</div><div class="cot">Supermercado</div><div class="cod">Estruturar todos os processos para crescer de forma organizada.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co4" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">5</div><div><div class="con">Cheff Dessert</div><div class="cot">Fabricação de doces (B2B local)</div><div class="cod">Quer criar um modelo de negócio capaz de escalar.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co5" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">6</div><div><div class="con">Rio Dental Art</div><div class="cot">Rede de atendimento dentário</div><div class="cod">Busca um formato para expansão em mais unidades.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co6" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">7</div><div><div class="con">Doctor I</div><div class="cot">Telemedicina</div><div class="cod">Quer crescer sua presença no mercado americano.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co7" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+    <div class="co"><div class="conum">8</div><div><div class="con">ARK Interior Design</div><div class="cot">Reformas e acabamento em obras</div><div class="cod">Profissionalizar o negócio para crescer e atender melhor a demanda já existente.</div><div style="margin-top:8px"><div class="taskrow inline"><span class="ck" data-id="co8" data-scope="pre"></span><span class="tl">Presença confirmada</span></div></div></div></div>
+  </div>
+</div></section>
+
+<!-- AGENDA -->
+<section id="agenda"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">03 · O dia, minuto a minuto</div>
+    <h2 class="sec-h">Agenda · 13h00 → 17h00</h2>
+    <p class="sec-sub">Quatro horas com ritmo de TV: abertura curta, 5 mentores entregando masterclasses (com slide), pitches crus de 5 min (sem slide) e um anúncio com tensão. Cada bloco é pensado como conteúdo. Tempos para 9 empresas (ajustáveis para 8 ou 10).</p>
+  </div>
+  <div class="agenda">
+    <div class="slot"><div class="time">13:00<span class="dur">20 min</span></div><div><div class="ttl">Credenciamento & Welcome Coffee</div><div class="desc">Chegada, crachá, café e <b>assinatura do release de imagem</b>. Banner branded ao fundo. 🎥 Conteúdo: b-roll de chegada + vox pop "o que você espera?".</div></div><div class="owner">Ops / Conteúdo</div></div>
+    <div class="slot hl"><div class="time">13:20<span class="dur">20 min</span></div><div><div class="ttl">Abertura — Royal & Deploy</div><div class="desc">Lucio: visão da Royal e o Hub. Gustavo/Deploy: o programa de 4 meses, as 3 trilhas e o prêmio (1–3 vagas + investimento). 🎥 Clip-manifesto de visão.</div></div><div class="owner">Lucio + Gustavo</div></div>
+    <div class="slot hl"><div class="time">13:40<span class="dur">75 min</span></div><div><div class="ttl">Painel do Conselho Estratégico <span style="font-weight:400;color:var(--muted)">(com slide)</span></div><div class="desc">Cada mentor ~15 min sobre sua área + o que espera dos pitches. Conselho: Lúcio (institucional/crédito), Alexandre (gestão), Carlos Osorio (finanças), Fernando Alves (comercial), Kamila (liderança) + Gustavo/Deploy (GTM/growth). 🎥 Cada talk = 1 masterclass + vários cortes de insight.</div></div><div class="owner">5 Mentores</div></div>
+    <div class="slot"><div class="time">14:55<span class="dur">15 min</span></div><div><div class="ttl">Networking break</div><div class="desc">Café e conexões; empresas se preparam pro pitch. 🎥 Conteúdo: depoimentos rápidos dos mentores e participantes.</div></div><div class="owner">Todos / Conteúdo</div></div>
+    <div class="slot hl"><div class="time">15:10<span class="dur">50 min</span></div><div><div class="ttl">Pitches Shark Tank — 9 empresas <span style="font-weight:400;color:var(--muted)">(sem slide)</span></div><div class="desc">5 min por empresa, pitch cru direto pros investidores — sem slide, só presença e números. Banca reage e pontua. 🎥 Ouro pra cortes: tensão, perguntas afiadas, reações.</div></div><div class="owner">Empresas + Banca</div></div>
+    <div class="slot"><div class="time">16:00<span class="dur">20 min</span></div><div><div class="ttl">Deliberação + Mini-workshop "Quanto captar?"</div><div class="desc">Enquanto a banca decide em sala reservada, Deploy roda um workshop relâmpago de valuation/fundraising pra TODOS, com worksheet. Valor mesmo pra quem não ganhar.</div></div><div class="owner">Deploy + Banca</div></div>
+    <div class="slot hl"><div class="time">16:20<span class="dur">20 min</span></div><div><div class="ttl">Resultado & seleção (1–3)</div><div class="desc">Anúncio dos selecionados, entrega simbólica, "Favorito do Público" e o que vem amanhã. Foto oficial. 🎥 Clip-herói: o momento de emoção do evento.</div></div><div class="owner">Lucio + Gustavo</div></div>
+    <div class="slot"><div class="time">16:40<span class="dur">20 min</span></div><div><div class="ttl">Networking final, fotos & 1:1</div><div class="desc">Agendamento de conversas (selecionados e investíveis), tour pelo espaço Royal. 🎥 Stills e closing b-roll.</div></div><div class="owner">Todos</div></div>
+    <div class="slot"><div class="time">17:00<span class="dur">—</span></div><div><div class="ttl">Encerramento + debrief</div><div class="desc">Fim oficial. Core team: debrief de 10 min sobre selecionados, pipeline e captura de conteúdo do dia.</div></div><div class="owner">Core team</div></div>
+  </div>
+</div></section>
+
+<!-- 5W2H -->
+<section><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">04 · O método</div>
+    <h2 class="sec-h">5W2H das três fases</h2>
+    <p class="sec-sub">O mesmo enxoval estratégico aplicado a cada fase — para não deixar nenhuma ponta solta.</p>
+  </div>
+  <div class="wrap-scroll">
+  <table class="tbl">
+    <thead><tr><th>Dimensão</th><th>Pré-evento</th><th>Durante (09/jun)</th><th>Pós-evento</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">What · O quê</td><td>Convidar, confirmar e preparar 8–10 empresas.</td><td>Selecionar 1–3 via pitches Shark Tank + entregar valor a todos.</td><td>Onboarding dos selecionados e funil de conversão dos demais.</td></tr>
+      <tr><td class="dim">Why · Por quê</td><td>Garantir presença qualificada e pitches no padrão.</td><td>Escolher as melhores e provar o modelo Royal × Deploy.</td><td>Transformar o evento em receita, aceleração e pipeline VGT.</td></tr>
+      <tr><td class="dim">Who · Quem</td><td>Deploy (lista + comms) · Royal (curadoria de convidados).</td><td>Lucio, banca, MC, empresas, Deploy (ops).</td><td>Deploy (programa) · VGT (investimento) · Royal (espaço).</td></tr>
+      <tr><td class="dim">Where · Onde</td><td>E-mail + WhatsApp.</td><td>Royal Business, Orlando — espaço de eventos.</td><td>Online (calls/onboarding) + Royal Business (1:1 e turma).</td></tr>
+      <tr><td class="dim">When · Quando</td><td>07–08/jun (envio) · 08/jun 18h (deadline RSVP).</td><td>09/jun, 13h–17h.</td><td>10/jun (recap) → 4 meses (programa).</td></tr>
+      <tr><td class="dim">How · Como</td><td>3 e-mails: convite/RSVP, briefing do pitch, logística.</td><td>5 min pitch + 3 min Q&A, scorecard 100 pts, workshop, anúncio.</td><td>2 trilhas: selecionados (onboarding) e nurture (feedback + oferta).</td></tr>
+      <tr><td class="dim">How much · Quanto</td><td>Custo baixo: tempo de equipe + design dos e-mails.</td><td>Espaço Royal (host) + catering + AV + brindes. <i>Orçar.</i></td><td>Esforço de equipe Deploy/VGT; receita potencial via turma e investimento.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<!-- PRE -->
+<section id="pre"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">05 · Antes do evento</div>
+    <h2 class="sec-h">Sequência de e-mails (prontos pra enviar)</h2>
+    <p class="sec-sub">Três disparos curtos. Tom: profissional, direto e com a energia VGT/Deploy. Copie, ajuste nomes e envie.</p>
+  </div>
+  <div class="mailgrid">
+    <div class="mail">
+      <div class="mh"><div class="when">E-mail 1 · enviar hoje (07/jun)</div><div class="subj">Você está convidado: Pitch Day Royal × Deploy</div></div>
+      <div class="body">Olá, [Nome] 👋
+
+Na próxima terça, 09/jun, das 13h às 17h, a Royal Business (Orlando) recebe o 1º Pitch Day da Royal Accelerator — uma parceria Royal Accelerator × Deploy US.
+
+É um formato Shark Tank: 8–10 empresas apresentam, e de 1 a 3 são selecionadas para a aceleração Deploy de 4 meses, com possibilidade de investimento.
+
+A [Empresa] foi selecionada para participar. Topa?
+
+👉 Confirme até amanhã (08/jun) às 18h respondendo este e-mail.
+
+Em seguida mandamos o briefing do seu pitch.
+
+— Royal Accelerator × Deploy US</div>
+      <div class="meta"><div class="taskrow inline"><span class="ck" data-id="mail1" data-scope="pre"></span><span class="tl">E-mail 1 enviado</span></div><span>CTA: confirmar RSVP</span></div>
+    </div>
+    <div class="mail">
+      <div class="mh"><div class="when">E-mail 2 · após confirmar</div><div class="subj">Seu pitch na terça — formato e o que preparar</div></div>
+      <div class="body">Que bom ter você, [Nome]! Aqui está tudo pra mandar bem:
+
+⏱️ Formato: 5 min de pitch + 3 min de perguntas da banca.
+
+🎯 Estrutura sugerida:
+1. Problema & mercado
+2. Solução & diferencial
+3. Tração (números!)
+4. Modelo de negócio
+5. Time
+6. O "ask": o que você busca
+
+📊 Critérios: problema/mercado, solução, tração/modelo, time e fit com a aceleração.
+
+📎 Traga: deck em PDF (máx. 10 slides) enviado até 08/jun 20h para [e-mail].
+
+💡 Bônus: durante o evento você vai sair sabendo quanto precisa captar.
+
+Qualquer dúvida, é só responder.</div>
+      <div class="meta"><div class="taskrow inline"><span class="ck" data-id="mail2" data-scope="pre"></span><span class="tl">E-mail 2 enviado</span></div><span>CTA: enviar deck</span></div>
+    </div>
+    <div class="mail">
+      <div class="mh"><div class="when">E-mail 3 · véspera (08/jun)</div><div class="subj">Amanhã! Tudo pronto pro Pitch Day</div></div>
+      <div class="body">Chegou a hora, [Nome] 🚀
+
+📍 Local: Royal Business — [endereço completo]
+🕐 Horário: chegue 12h45 (começamos 13h em ponto)
+🅿️ Estacionamento: [instrução]
+👔 Dress code: business casual
+📱 Leve: cartões, energia e seu melhor pitch
+
+Agenda relâmpago:
+13h Abertura · 14h Pitches · 15h35 Workshop "quanto captar" · 16h05 Resultado · 16h30 Networking
+
+Nos vemos amanhã. Vai ser grande.
+
+— Royal Accelerator × Deploy US</div>
+      <div class="meta"><div class="taskrow inline"><span class="ck" data-id="mail3" data-scope="pre"></span><span class="tl">E-mail 3 enviado</span></div><span>CTA: comparecer</span></div>
+    </div>
+  </div>
+  <p class="sec-sub" style="margin-top:18px">↳ Opcional: <b>E-mail 0</b> só para os convidados que a Royal/Deploy quer atrair (antes da lista fechar) e <b>SMS/WhatsApp lembrete</b> no dia 09 de manhã.</p>
+</div></section>
+
+<!-- DURANTE -->
+<section id="durante"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">06 · No palco</div>
+    <h2 class="sec-h">Mentores, formato & scorecard</h2>
+    <p class="sec-sub">O Conselho Estratégico conduz o palco e julga. Mentores apresentam com slide; as empresas pitcham sem slide — pitch cru, autêntico e melhor pra conteúdo.</p>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 6px">Conselho Estratégico · a banca do dia</h3>
+  <div class="credit" style="margin:0 0 14px">📎 Conselho do material do Alexandre integrado</div>
+  <div class="wrap-scroll">
+  <table class="tbl" style="margin-bottom:18px">
+    <thead><tr><th>Conselheiro / Mentor</th><th>Área</th><th>O que traz pro palco (~15 min)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Lúcio Santana</b></td><td class="dim">Direção Institucional · Crédito</td><td>Abertura institucional, visão do ecossistema e acesso a capital/crédito.</td></tr>
+      <tr><td><b>Alexandre Medeiros</b></td><td class="dim">Gestão & Arquitetura</td><td>Curadoria das empresas, estrutura operacional e direção da jornada.</td></tr>
+      <tr><td><b>Carlos Osorio</b></td><td class="dim">Finanças & Governança</td><td>Indicadores, controle financeiro, margem e prontidão pra investir.</td></tr>
+      <tr><td><b>Fernando Alves</b></td><td class="dim">Comercial & Crescimento</td><td>Posicionamento, estrutura de vendas e aquisição de clientes.</td></tr>
+      <tr><td><b>Kamila Adamatti</b></td><td class="dim">Liderança & Gestão</td><td>Liderança, gestão de pessoas e cultura de execução.</td></tr>
+      <tr style="background:var(--violet-bg)"><td><b>Gustavo Marion</b> <span style="color:var(--violet)">· Deploy</span></td><td class="dim">Go-to-Market & Growth</td><td>GTM, growth e a metodologia da aceleração de 4 meses (quem entrega o programa).</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid3" style="margin-bottom:26px">
+    <div class="card"><div class="ic v">🎤</div><h3>Mentores: com slide</h3><p>Cada um tem um slide enxuto e branded (vira carrossel/clip depois). 15 min: tese do setor + o que esperam ver nos pitches.</p></div>
+    <div class="card"><div class="ic b">⚡</div><h3>Empresas: sem slide</h3><p>5 min de pitch cru, olho no olho com os investidores. Sem deck no telão — só presença, narrativa e números. Mais Shark Tank, mais real.</p></div>
+    <div class="card"><div class="ic g">🏆</div><h3>O que está em jogo</h3><p>Aceleração Deploy de 4 meses + possibilidade de investimento. 1 a 3 vagas, decididas pela banca dos 5 mentores.</p></div>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 14px">Scorecard (100 pontos)</h3>
+  <div class="wrap-scroll">
+  <table class="tbl" style="margin-bottom:18px">
+    <thead><tr><th>Critério</th><th>O que a banca avalia</th><th style="text-align:right">Peso</th></tr></thead>
+    <tbody>
+      <tr><td><b>Problema & mercado</b></td><td>Dor real, tamanho e timing do mercado.</td><td style="text-align:right"><b>20</b></td></tr>
+      <tr><td><b>Solução & diferencial</b></td><td>Clareza da solução e vantagem competitiva.</td><td style="text-align:right"><b>20</b></td></tr>
+      <tr><td><b>Tração & modelo</b></td><td>Receita, clientes, crescimento e como ganha dinheiro.</td><td style="text-align:right"><b>20</b></td></tr>
+      <tr><td><b>Time</b></td><td>Capacidade de executar e de ser acelerado.</td><td style="text-align:right"><b>15</b></td></tr>
+      <tr><td><b>Fit com a aceleração</b></td><td>Quanto a Deploy consegue destravar em 4 meses.</td><td style="text-align:right"><b>15</b></td></tr>
+      <tr><td><b>Pitch & clareza</b></td><td>Comunicação, objetividade e presença.</td><td style="text-align:right"><b>10</b></td></tr>
+      <tr style="background:#FAFBFC"><td colspan="2"><b>Total</b></td><td style="text-align:right"><b>100</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid3">
+    <div class="card"><div class="ic b">①</div><h3>A banca</h3><p>O Conselho Estratégico (5 conselheiros + Gustavo/Deploy) são os jurados. Cada um avalia pela ótica da sua área.</p></div>
+    <div class="card"><div class="ic v">②</div><h3>A pontuação</h3><p>Cada mentor preenche o scorecard por empresa. Soma das médias define o ranking. Decisão final na deliberação das 16:00.</p></div>
+    <div class="card"><div class="ic g">③</div><h3>O desempate</h3><p>Fit com a aceleração + potencial de investimento mandam. "Favorito do Público" é critério de desempate e prêmio paralelo.</p></div>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:32px 0 6px">Run of show — marque no dia</h3>
+  <p class="sec-sub" style="margin-bottom:14px">Operação do palco em tempo real. Alimenta o medidor "Durante" do scorecard.</p>
+  <div class="minibar"><div class="mt"><i class="mf"></i></div><span class="ml2" data-prefix="Palco:">0/0</span></div>
+  <div class="chk">
+    <div class="taskrow"><span class="ck" data-id="dur1" data-scope="durante"></span><span class="tl">Som/lapelas testados e palco pronto</span><span class="who">Conteúdo/Royal</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur2" data-scope="durante"></span><span class="tl">Credenciamento aberto + releases de imagem assinados</span><span class="who">Alexandre/Royal</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur3" data-scope="durante"></span><span class="tl">Abertura (Lúcio + Gustavo) realizada</span><span class="who">Lúcio+Gustavo</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur4" data-scope="durante"></span><span class="tl">Painel dos mentores concluído</span><span class="who">Conselho</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur5" data-scope="durante"></span><span class="tl">Todos os pitches realizados</span><span class="who">MC</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur6" data-scope="durante"></span><span class="tl">Banca consolidou as notas</span><span class="who">Conselho</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur7" data-scope="durante"></span><span class="tl">Selecionadas (1–3) anunciadas</span><span class="who">Lúcio+Gustavo</span></div>
+    <div class="taskrow"><span class="ck" data-id="dur8" data-scope="durante"></span><span class="tl">Conteúdo do dia capturado (cortes/stories)</span><span class="who">Conteúdo</span></div>
+  </div>
+</div></section>
+
+<!-- CONTEUDO -->
+<section id="conteudo"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">07 · Máquina de conteúdo</div>
+    <h2 class="sec-h">O evento é também um estúdio</h2>
+    <p class="sec-sub">Tudo foi desenhado pra virar conteúdo. Pitches crus (sem slide) são ouro pra cortes estilo Shark Tank; cada mentor vira uma masterclass; o anúncio é o clip-herói. A meta: sair do dia com 30+ peças pra semanas de distribuição.</p>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 14px">Momentos clipáveis (o que capturar)</h3>
+  <div class="wrap-scroll">
+  <table class="tbl" style="margin-bottom:30px">
+    <thead><tr><th>Momento</th><th>Vira</th><th>Volume estimado</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Abertura Lucio + Gustavo</td><td>Clip-manifesto de visão (Royal vira Hub de inovação)</td><td>1–2 cortes</td></tr>
+      <tr><td class="dim">5 mentores (talks)</td><td>5 masterclasses + cortes de insight por setor (thought leadership)</td><td>10–15 cortes</td></tr>
+      <tr><td class="dim">Pitches sem slide</td><td>Cortes Shark Tank: tensão, perguntas afiadas, números</td><td>9–18 cortes</td></tr>
+      <tr><td class="dim">Reações da banca</td><td>Cortes de reação (engajamento alto em vídeo)</td><td>5+ cortes</td></tr>
+      <tr><td class="dim">Anúncio dos selecionados</td><td>Clip-herói com emoção — a peça principal</td><td>1 hero + 2 cortes</td></tr>
+      <tr><td class="dim">Vox pop & depoimentos</td><td>Prova social (mentores, empresas, plateia)</td><td>5–8 cortes</td></tr>
+      <tr><td class="dim">Bastidores & b-roll</td><td>Teasers, transições, recap, ambientação do espaço Royal</td><td>banco de imagens</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 14px">Canais & formatos</h3>
+  <div class="grid3" style="margin-bottom:30px">
+    <div class="card"><div class="ic b">▶</div><h3>Reels / Shorts / TikTok</h3><p>Cortes verticais 30–60s: melhores pitches, insights de mentor, o anúncio. O grosso do volume e do alcance.</p></div>
+    <div class="card"><div class="ic v">in</div><h3>LinkedIn</h3><p>Thought leadership dos mentores, o case do evento e o anúncio. Atrai empresas e investidores pra próxima turma.</p></div>
+    <div class="card"><div class="ic a">YT</div><h3>YouTube</h3><p>Episódio completo "Royal Pitch Day · Ep.01" + pitches na íntegra. Ativo de SEO e autoridade de longo prazo.</p></div>
+    <div class="card"><div class="ic g">◉</div><h3>Stories ao vivo</h3><p>Cobertura em tempo real no dia (Instagram). Cria FOMO e mostra o Hub funcionando.</p></div>
+    <div class="card"><div class="ic b">◆</div><h3>Site VGT / Deploy</h3><p>Cases e transparência — "transparency is part of the product". Alimenta a tese pros investidores.</p></div>
+    <div class="card"><div class="ic v">✉</div><h3>E-mail</h3><p>Recap pra base + nurture do funil. Reaproveita os melhores cortes.</p></div>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 14px">Setup de captação (qualidade = áudio + enquadramento)</h3>
+  <div class="grid3" style="margin-bottom:30px">
+    <div class="card"><div class="ic b">🎙️</div><h3>Áudio limpo (prioridade nº1)</h3><p>Lapela nos 5 mentores + mic de mão pros pitches. Áudio ruim mata corte — sem isso, nada vira conteúdo.</p></div>
+    <div class="card"><div class="ic v">🎥</div><h3>Multi-câmera</h3><p>Wide do palco + close + 1 câmera vertical dedicada a Reels. Backup gravando o tempo todo.</p></div>
+    <div class="card"><div class="ic a">🖼️</div><h3>Backdrop branded + lower-thirds</h3><p>Fundo Royal × Deploy aparece em todo clip. Nome/empresa em lower-third. Fotógrafo pra stills.</p></div>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 14px">Calendário de conteúdo</h3>
+  <div class="wrap-scroll">
+  <table class="tbl">
+    <thead><tr><th>Fase</th><th>O que publicar</th><th>Onde</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Pré (07–08/jun)</td><td>Teaser "vai rolar", countdown, "conheça os mentores", "conheça as empresas"</td><td>Stories, Reels, LinkedIn</td></tr>
+      <tr><td class="dim">Ao vivo (09/jun)</td><td>Stories em tempo real + 1–2 cortes rápidos no mesmo dia (anúncio)</td><td>Instagram, LinkedIn</td></tr>
+      <tr><td class="dim">Pós semana 1</td><td>Hero recap (2–3 min) + clip do anúncio + 3–4 cortes de pitch</td><td>YouTube, Reels, LinkedIn</td></tr>
+      <tr><td class="dim">Pós semanas 2–4</td><td>Drip de 1 corte/dia: insights de mentor, pitches, depoimentos</td><td>Reels, TikTok, Shorts</td></tr>
+      <tr><td class="dim">Contínuo</td><td>Case no site VGT/Deploy + episódio completo no YouTube</td><td>Site, YouTube</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="sec-sub" style="margin-top:16px">⚠️ <b>Pré-requisito legal:</b> release de autorização de imagem assinado por todos no credenciamento (já está no checklist e no E-mail 3). Definir <b>hashtag oficial</b> e @handle antes de terça.</p>
+</div></section>
+
+<!-- POS -->
+<section id="pos"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">08 · Depois do evento</div>
+    <h2 class="sec-h">Funil pós-evento — ninguém sai sem caminho</h2>
+    <p class="sec-sub">Duas trilhas paralelas: acelerar os selecionados e nutrir os demais. Cada empresa recebe entregáveis concretos.</p>
+  </div>
+  <div class="funnel">
+    <div class="fcol win">
+      <div class="ft"><span class="badge">1–3 SELECIONADAS</span>Trilha de aceleração</div>
+      <div class="fsub">Começa em até 48h após o evento.</div>
+      <div class="fstep"><span class="ar">→</span><span><b>Termo de aceitação</b> + boas-vindas oficial à turma 01.</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Kickoff agendado</b> — call de diagnóstico e definição de objetivos dos 4 meses.</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Trilha de investimento</b> — quanto captar, valuation e prep de fundraising (tese VGT).</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Plano dos 4 meses</b> — roadmap, mentorias e metas (escolher trilha: internacionalização / startup / tradicional).</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Possível espaço no Royal</b> — sala/escritório no Hub durante o programa.</span></div>
+    </div>
+    <div class="fcol nurt">
+      <div class="ft"><span class="badge">DEMAIS EMPRESAS</span>Trilha de nutrição</div>
+      <div class="fsub">Convertendo o "não" de hoje em "sim" depois.</div>
+      <div class="fstep"><span class="ar">→</span><span><b>Relatório de feedback</b> — scorecard + comentários da banca (entrega valor mesmo sem ganhar).</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Worksheet de captação</b> preenchido no workshop ("quanto você precisa").</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Oferta de diagnóstico Deploy</b> — sessão paga/desconto pra destravar pontos do pitch.</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Convite turma 02</b> — lista de espera com prioridade.</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Comunidade & Hub Royal</b> — acesso a eventos e espaço pra alugar.</span></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:34px 0 14px">Entregáveis por perfil</h3>
+  <div class="wrap-scroll">
+  <table class="tbl">
+    <thead><tr><th>Entregável</th><th>Todos os participantes</th><th>Selecionadas (1–3)</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Certificado de participação</td><td>✔</td><td>✔</td></tr>
+      <tr><td class="dim">Worksheet "quanto captar"</td><td>✔</td><td>✔ + revisão 1:1</td></tr>
+      <tr><td class="dim">Relatório de feedback (scorecard)</td><td>✔</td><td>✔ aprofundado</td></tr>
+      <tr><td class="dim">Fotos & recap do evento</td><td>✔</td><td>✔ + destaque no conteúdo</td></tr>
+      <tr><td class="dim">Diagnóstico completo Deploy</td><td>Oferta paga/desconto</td><td>✔ incluso</td></tr>
+      <tr><td class="dim">Aceleração 4 meses</td><td>—</td><td>✔</td></tr>
+      <tr><td class="dim">Trilha de investimento (VGT)</td><td>—</td><td>✔</td></tr>
+      <tr><td class="dim">Espaço no Royal Business</td><td>Locação disponível</td><td>✔ durante o programa</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<!-- ACELERACAO -->
+<section id="aceleracao"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">09 · O que as selecionadas recebem</div>
+    <h2 class="sec-h">A aceleração de 4 meses — 8 encontros</h2>
+    <p class="sec-sub">O prêmio em detalhe. Não é um curso que você assiste — é uma jornada quinzenal onde você <b>executa</b>. Cada encontro tem trabalho ao vivo com a banca + uma lição de casa que você traz no próximo pra avaliarmos juntos. <b>Entregue pela Deploy (Gustavo Marion + sócios)</b>. Modelo provado na aceleração Deploy (ref. MoodBe).</p>
+  </div>
+  <div class="facts" style="grid-template-columns:repeat(4,1fr);margin-bottom:28px">
+    <div class="fact"><div class="k">Duração</div><div class="v">4 meses</div><div class="s">16 semanas</div></div>
+    <div class="fact"><div class="k">Encontros</div><div class="v">8 sessões</div><div class="s">quinzenais · 15/15 dias</div></div>
+    <div class="fact"><div class="k">Camada</div><div class="v">AI-Native</div><div class="s">IA em todas as fases</div></div>
+    <div class="fact"><div class="k">Artefatos</div><div class="v">10+ entregáveis</div><div class="s">você leva pra casa</div></div>
+  </div>
+
+  <!-- phase legend -->
+  <div class="phasestrip">
+    <div class="pcard p1"><div class="pn">Fase 1 · Sem 1–2</div><div class="pt">🧭 Descobrir</div><div class="pw">Diagnóstico & metas</div></div>
+    <div class="pcard p2"><div class="pn">Fase 2 · Sem 3–8</div><div class="pt">🛠️ Construir & GTM</div><div class="pw">Produto, ICP, oferta</div></div>
+    <div class="pcard p3"><div class="pn">Fase 3 · Sem 9–12</div><div class="pt">🚀 Lançar</div><div class="pw">Aquisição & growth</div></div>
+    <div class="pcard p4"><div class="pn">Fase 4 · Sem 13–16</div><div class="pt">📈 Escalar & Captar</div><div class="pw">Fundraising & investimento</div></div>
+  </div>
+
+  <!-- journey -->
+  <div class="journey">
+    <div class="jstep"><div class="jrail"><div class="jnum p1">1</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 1</span><span class="jphase p1">Descobrir</span></div><div class="jtema">Kickoff & Diagnóstico</div><div class="jwork">Baseline do negócio, metas dos 4 meses, North Star metric e mapa de gargalos. + Mapa de oportunidades de IA.</div><div class="jdeliv">📦 Entrega: Diagnóstico + North Star + AI Opportunity Map</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p2">2</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 2</span><span class="jphase p2">Construir & GTM</span></div><div class="jtema">Auditoria de Produto/Negócio</div><div class="jwork">QA do produto e da operação, achados por severidade e quick wins.</div><div class="jdeliv">📦 Entrega: QA Report (PDF) + plano de correção</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p2">3</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 3</span><span class="jphase p2">Construir & GTM</span></div><div class="jtema">Estratégia de Go-to-Market</div><div class="jwork">ICP, posicionamento, narrativa de lançamento e seleção de canais.</div><div class="jdeliv">📦 Entrega: GTM One-Pager + ICP definido</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p2">4</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 4</span><span class="jphase p2">Construir & GTM</span></div><div class="jtema">Oferta & AI Content Engine</div><div class="jwork">Refino da oferta e precificação + montar a máquina de copy/criativos com IA (hooks, body, CTAs).</div><div class="jdeliv">📦 Entrega: Oferta final + ângulos de copy + AI Content Engine</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p3">5</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 5</span><span class="jphase p3">Lançar</span></div><div class="jtema">Operação de Aquisição & Automações</div><div class="jwork">Setup de mídia/canais, plano de tracking e primeiras campanhas + automações/agentes de IA na operação.</div><div class="jdeliv">📦 Entrega: Campanhas no ar + plano de tracking + automações</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p3">6</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 6</span><span class="jphase p3">Lançar</span></div><div class="jtema">Growth & Métricas</div><div class="jwork">Análise de performance, unit economics e otimização do funil.</div><div class="jdeliv">📦 Entrega: Dashboard de growth + 2 decisões de otimização</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p4">7</div><div class="jline"></div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 7</span><span class="jphase p4">Escalar & Captar</span></div><div class="jtema">Fundraising: Deck & Data Room</div><div class="jwork">Valuation, "quanto captar", pitch deck e data room de investimento.</div><div class="jdeliv">📦 Entrega: Pitch Deck v1 + Data Room</div></div>
+    </div>
+    <div class="jstep"><div class="jrail"><div class="jnum p4">8</div></div>
+      <div class="jc"><div class="jtop"><span class="jq">Quinzena 8</span><span class="jphase p4">Escalar & Captar</span></div><div class="jtema">Wrap-up & Investor Day</div><div class="jwork">Relatório final, resultados dos 4 meses, próximos passos e decisão de investimento.</div><div class="jdeliv">📦 Entrega: Relatório final + plano de execução + AI Roadmap</div></div>
+    </div>
+  </div>
+
+  <!-- AI module -->
+  <div class="ai-layer">
+    <div class="ah"><span class="tg">⚡ Novo</span><span class="tg">Módulo transversal</span></div>
+    <h3>Camada AI-Native</h3>
+    <p class="s">IA não é um bônus — corre por dentro das 4 fases. Cada empresa sai com a operação turbinada por inteligência artificial, do conteúdo ao atendimento.</p>
+    <div class="ai-grid">
+      <div class="aic"><div class="e">🗺️</div><div class="t">AI Opportunity Map</div><div class="d">Onde a IA destrava receita e corta custo no seu negócio.</div></div>
+      <div class="aic"><div class="e">✍️</div><div class="t">AI Content Engine</div><div class="d">Máquina de copy e criativos em escala — pronta pra rodar.</div></div>
+      <div class="aic"><div class="e">🤖</div><div class="t">Automações & Agentes</div><div class="d">Agentes de IA (ex.: localização PT↔EN, atendimento) e automações no/low-code.</div></div>
+      <div class="aic"><div class="e">🧩</div><div class="t">IA no Produto + Roadmap</div><div class="d">Features de IA e copilots no seu produto, com roadmap de evolução.</div></div>
+    </div>
+  </div>
+
+  <!-- artifacts gallery -->
+  <h3 style="font-size:18px;font-weight:700;margin:30px 0 14px">📦 Tudo que você leva pra casa</h3>
+<div class="minibar"><div class="mt"><i class="mf"></i></div><span class="ml2" data-prefix="Entregues:">0/0</span></div>
+  <div class="artifacts">
+    <div class="art"><span class="ck" data-id="art1" data-scope="programa"></span><div class="ai2">📋</div><div><div class="an">Diagnóstico & North Star</div><div class="ad">Raio-X do negócio + metas e métrica-norte dos 4 meses.</div></div></div>
+    <div class="art"><span class="ck" data-id="art2" data-scope="programa"></span><div class="ai2">🔍</div><div><div class="an">QA Report (PDF)</div><div class="ad">Auditoria de produto/operação com achados por severidade.</div></div></div>
+    <div class="art"><span class="ck" data-id="art3" data-scope="programa"></span><div class="ai2">📊</div><div><div class="an">Plano de Tracking</div><div class="ad">Eventos e analytics calibrados pro seu funil de conversão.</div></div></div>
+    <div class="art"><span class="ck" data-id="art4" data-scope="programa"></span><div class="ai2">🎯</div><div><div class="an">GTM One-Pager + ICP</div><div class="ad">Posicionamento, narrativa, canais e cliente ideal numa página.</div></div></div>
+    <div class="art"><span class="ck" data-id="art5" data-scope="programa"></span><div class="ai2">✍️</div><div><div class="an">Ângulos de Copy & Criativos</div><div class="ad">Hooks, corpo e CTAs testáveis — gerados com o AI Content Engine.</div></div></div>
+    <div class="art"><span class="ck" data-id="art6" data-scope="programa"></span><div class="ai2">🌎</div><div><div class="an">Revisão de Localização PT↔EN</div><div class="ad">Copy revisada pelo agente de localização da Deploy.</div></div></div>
+    <div class="art"><span class="ck" data-id="art7" data-scope="programa"></span><div class="ai2">📈</div><div><div class="an">Dashboard de Growth</div><div class="ad">Métricas, unit economics e funil num painel vivo.</div></div></div>
+    <div class="art"><span class="ck" data-id="art8" data-scope="programa"></span><div class="ai2">🤖</div><div><div class="an">Automações & Agentes de IA</div><div class="ad">Fluxos que rodam sozinhos na sua operação.</div></div></div>
+    <div class="art"><span class="ck" data-id="art9" data-scope="programa"></span><div class="ai2">💰</div><div><div class="an">Pitch Deck + Data Room</div><div class="ad">Material de captação pronto pra investidor (tese VGT).</div></div></div>
+    <div class="art"><span class="ck" data-id="art10" data-scope="programa"></span><div class="ai2">🧭</div><div><div class="an">Relatório Final + AI Roadmap</div><div class="ad">Resultados, próximos passos e plano de evolução com IA.</div></div></div>
+  </div>
+  <p class="sec-sub" style="margin-top:18px">↳ Bônus: <b>trilha de investimento</b> (quanto captar + prep de fundraising) e — se selecionada — possível <b>espaço no Royal Business</b> durante o programa.</p>
+
+  <!-- Método RBG -->
+  <div style="margin-top:42px">
+    <div style="background:#0E1116;color:#fff;border-radius:16px;padding:28px;margin-bottom:24px">
+      <div class="sec-tag" style="color:#C9B6FF">Tese · Royal Business Growth (RBG)</div>
+      <h3 style="font-size:clamp(20px,3vw,30px);font-weight:800;margin-top:8px;letter-spacing:-.02em">Empresas precisam de <span style="color:#7CC4FF">estrutura</span> antes de <span style="color:#5EEAA0">escala</span>.</h3>
+      <p style="color:#C9C6D6;font-size:14.5px;margin-top:8px;max-width:640px">A aceleração não é mais um curso ou networking — é uma infraestrutura privada de crescimento que tira a empresa da dependência do dono e a leva à maturidade operacional. O método RBG entra junto com a entrega da Deploy.</p>
+    </div>
+    <h4 style="font-weight:700;font-size:15px;margin:0 0 12px">Os 5 pilares</h4>
+    <div class="pillars" style="margin-bottom:26px">
+      <div class="pill5"><div class="pe">🔎</div><div class="pnn">01</div><div class="ptt">Diagnóstico</div></div>
+      <div class="pill5"><div class="pe">🧱</div><div class="pnn">02</div><div class="ptt">Estrutura</div></div>
+      <div class="pill5"><div class="pe">🧭</div><div class="pnn">03</div><div class="ptt">Direção</div></div>
+      <div class="pill5"><div class="pe">⚙️</div><div class="pnn">04</div><div class="ptt">Execução</div></div>
+      <div class="pill5"><div class="pe">📈</div><div class="pnn">05</div><div class="ptt">Evolução</div></div>
+    </div>
+    <h4 style="font-weight:700;font-size:15px;margin:0 0 12px">Método RBG — 8 dimensões de maturidade</h4>
+    <div class="dims" style="margin-bottom:26px">
+      <span class="dim-chip">Estratégia</span><span class="dim-chip">Gestão</span><span class="dim-chip">Finanças</span><span class="dim-chip">Comercial</span><span class="dim-chip">Operação</span><span class="dim-chip">Pessoas</span><span class="dim-chip">Processos</span><span class="dim-chip">Crescimento</span>
+    </div>
+    <h4 style="font-weight:700;font-size:15px;margin:0 0 12px">Matriz de maturidade — de onde a empresa sai e até onde vai</h4>
+    <div class="matur">
+      <div class="mlevel" style="background:#9AA1AD"><div class="lv">Nível 1</div><div class="ln">Reativo</div></div>
+      <div class="mlevel" style="background:#6D8299"><div class="lv">Nível 2</div><div class="ln">Organizado</div></div>
+      <div class="mlevel" style="background:var(--blue)"><div class="lv">Nível 3</div><div class="ln">Estruturado</div></div>
+      <div class="mlevel" style="background:var(--violet)"><div class="lv">Nível 4</div><div class="ln">Escalável</div></div>
+      <div class="mlevel" style="background:var(--green)"><div class="lv">Nível 5</div><div class="ln">Institucional</div></div>
+    </div>
+    <div class="credit">📎 Método RBG · material do Alexandre integrado</div>
+  </div>
+</div></section>
+
+<!-- KPIs -->
+<section><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">10 · Como medir sucesso</div>
+    <h2 class="sec-h">KPIs por fase</h2>
+  </div>
+  <div class="kpi">
+    <div class="kpic"><div class="ph">Pré</div><div class="m">RSVP confirmados</div><div class="goal">meta ≥ 90%</div></div>
+    <div class="kpic"><div class="ph">Pré</div><div class="m">Decks recebidos a tempo</div><div class="goal">meta 100%</div></div>
+    <div class="kpic"><div class="ph">Durante</div><div class="m">Empresas presentes</div><div class="goal">meta 8–10</div></div>
+    <div class="kpic"><div class="ph">Durante</div><div class="m">NPS do evento</div><div class="goal">meta ≥ 70</div></div>
+    <div class="kpic"><div class="ph">Durante</div><div class="m">Selecionadas</div><div class="goal">1–3</div></div>
+    <div class="kpic"><div class="ph">Pós</div><div class="m">1:1 agendados</div><div class="goal">meta ≥ 5</div></div>
+    <div class="kpic"><div class="ph">Pós</div><div class="m">Leads no funil de nutrição</div><div class="goal">meta = nº presentes</div></div>
+    <div class="kpic"><div class="ph">Pós</div><div class="m">Investível identificado (VGT)</div><div class="goal">meta ≥ 2</div></div>
+    <div class="kpic"><div class="ph">Conteúdo</div><div class="m">Peças capturadas no dia</div><div class="goal">meta ≥ 30</div></div>
+    <div class="kpic"><div class="ph">Conteúdo</div><div class="m">Cortes publicados em 30 dias</div><div class="goal">meta ≥ 20</div></div>
+    <div class="kpic"><div class="ph">Conteúdo</div><div class="m">Alcance total (views)</div><div class="goal">definir baseline</div></div>
+  </div>
+</div></section>
+
+<!-- RACI -->
+<section><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">11 · Quem faz o quê</div>
+    <h2 class="sec-h">Responsáveis (RACI enxuto)</h2>
+    <p class="sec-sub">Quem é quem e quem responde por cada coisa. R = Responsável (executa) · A = Aprova · C = Consultado · I = Informado.</p>
+  </div>
+
+  <h3 style="font-size:18px;font-weight:700;margin:0 0 14px">Quem é quem</h3>
+  <div class="grid3" style="margin-bottom:18px">
+    <div class="card"><div class="ic a">LS</div><h3>Lucio Santana</h3><p><b>Royal</b> — anfitrião e investidor. Mentor de crédito e jurado. Patrocina o evento e <b>encarrega a execução ao time</b>.</p></div>
+    <div class="card"><div class="ic b">AX</div><h3>Alexandre</h3><p><b>Royal · gestor</b> (braço direito do Lucio). <b>Dono da execução</b> do evento e mentor de gestão. É quem dá o check em cada entrega operacional.</p></div>
+    <div class="card"><div class="ic v">GM</div><h3>Gustavo Marion</h3><p><b>Deploy · sócio</b>. Mentor & jurado de GTM/Growth e quem <b>entrega a aceleração de 4 meses</b> aos vencedores.</p></div>
+  </div>
+  <div class="grid3" style="margin-bottom:24px">
+    <div class="card"><div class="ic b">▦</div><h3>Time Royal</h3><p>Operação sob o Alexandre: logística, espaço, AV, catering e credenciamento.</p></div>
+    <div class="card"><div class="ic v">◆</div><h3>Time Deploy</h3><p>Programa e conteúdo da seleção: e-mails, scorecard, workshop, onboarding e os 8 encontros.</p></div>
+    <div class="card"><div class="ic g">▶</div><h3>Conteúdo & Mídia</h3><p>Videomaker, fotógrafo e social: captação, stories, cortes e distribuição.</p></div>
+  </div>
+
+  <div class="wrap-scroll">
+  <table class="tbl">
+    <thead><tr><th>Atividade</th><th>Lucio (Royal)</th><th>Alexandre + Time Royal</th><th>Deploy · Gustavo</th><th>MC / Host</th><th>Conteúdo</th></tr></thead>
+    <tbody>
+      <tr><td><b>Curadoria das empresas</b></td><td>A</td><td>C</td><td>R</td><td>I</td><td>I</td></tr>
+      <tr><td><b>E-mails & RSVP</b></td><td>I</td><td>C</td><td>R</td><td>I</td><td>I</td></tr>
+      <tr><td><b>Execução & logística do evento</b> (espaço, AV, catering, credenciamento)</td><td>A</td><td>R</td><td>C</td><td>I</td><td>I</td></tr>
+      <tr><td><b>Abertura / keynote</b></td><td>R</td><td>C</td><td>R</td><td>C</td><td>I</td></tr>
+      <tr><td><b>Condução do palco</b></td><td>I</td><td>C</td><td>C</td><td>R</td><td>I</td></tr>
+      <tr><td><b>Banca & scorecard</b> (5 mentores)</td><td>R</td><td>R</td><td>R</td><td>I</td><td>I</td></tr>
+      <tr><td><b>Mini-workshop "quanto captar"</b></td><td>I</td><td>I</td><td>R</td><td>C</td><td>I</td></tr>
+      <tr><td><b>Captação no dia</b> (áudio/multicâmera)</td><td>I</td><td>C</td><td>C</td><td>I</td><td>R</td></tr>
+      <tr><td><b>Stories ao vivo & cortes</b></td><td>I</td><td>I</td><td>C</td><td>I</td><td>R</td></tr>
+      <tr><td><b>Edição & distribuição</b></td><td>I</td><td>I</td><td>A</td><td>I</td><td>R</td></tr>
+      <tr><td><b>Onboarding selecionadas</b></td><td>C</td><td>C</td><td>R</td><td>I</td><td>I</td></tr>
+      <tr><td><b>Funil de nutrição</b></td><td>I</td><td>C</td><td>R</td><td>I</td><td>C</td></tr>
+      <tr><td><b>Entrega da aceleração</b> (8 encontros)</td><td>I</td><td>C</td><td>R</td><td>I</td><td>I</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="callout" style="margin-top:18px;background:var(--blue-bg);border-color:#CFE0FF">
+    <h3 style="color:var(--blue-d)">✔ Acionável pro Alexandre</h3>
+    <ul style="color:#1E40AF">
+      <li><b>Execução geral do evento</b> = Alexandre + Time Royal (Lucio encarrega). Use o checklist abaixo pra dar check em cada item conforme conclui.</li>
+      <li><b>Programa, seleção e aceleração</b> = Deploy / Gustavo Marion.</li>
+      <li><b>Conteúdo & mídia</b> = time de conteúdo, com aprovação da Deploy.</li>
+    </ul>
+  </div>
+  </div>
+</div></section>
+
+<!-- CHECKLIST -->
+<section id="checklist"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">12 · Mão na massa</div>
+    <h2 class="sec-h">Checklist executável</h2>
+    <p class="sec-sub">Do agora até o pós, com responsável em cada item. <b>Alexandre + Time Royal</b> tocam a execução; <b>Deploy/Gustavo</b> o programa e conteúdo. Marque o quadradinho conforme conclui.</p>
+  </div>
+  <div class="minibar"><div class="mt"><i class="mf"></i></div><span class="ml2" data-prefix="Concluídas:">0/0</span></div>
+  <div class="chk">
+    <div class="day">Hoje · 07 jun (T-2)</div>
+    <div class="taskrow"><span class="ck" data-id="chk1" data-scope="pre"></span><span>Fechar lista final de 8–10 empresas com a Royal</span><span class="who">Royal+Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk2" data-scope="pre"></span><span>Disparar E-mail 1 (convite + RSVP)</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk3" data-scope="pre"></span><span>Confirmar os 5 mentores e seus temas (+ MC)</span><span class="who">Royal+Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk4" data-scope="pre"></span><span>Definir orçamento de catering, AV e brindes</span><span class="who">Alexandre/Royal</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk5" data-scope="pre"></span><span>Contratar/confirmar videomaker + fotógrafo; definir hashtag e @handle</span><span class="who">Conteúdo</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk6" data-scope="pre"></span><span>Fechar roteiro de captação (momentos clipáveis) e shot list</span><span class="who">Conteúdo</span></div>
+    <div class="day">Amanhã · 08 jun (T-1)</div>
+    <div class="taskrow"><span class="ck" data-id="chk7" data-scope="pre"></span><span>Enviar E-mail 2 (briefing) a quem confirmou</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk8" data-scope="pre"></span><span>Receber decks (deadline 20h) e montar ordem dos pitches</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk9" data-scope="pre"></span><span>Enviar E-mail 3 (logística da véspera)</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk10" data-scope="pre"></span><span>Imprimir scorecards, crachás e sinalização Royal × Deploy</span><span class="who">Alexandre/Royal</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk11" data-scope="pre"></span><span>Testar AV: projetor, som, clicker, palco</span><span class="who">Alexandre/Royal</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk12" data-scope="pre"></span><span>Testar áudio (lapelas dos mentores + mic dos pitches) e backdrop branded</span><span class="who">Conteúdo</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk13" data-scope="pre"></span><span>Imprimir release de imagem + preparar lower-thirds (nomes/empresas)</span><span class="who">Conteúdo</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk14" data-scope="pre"></span><span>Coletar slides dos 5 mentores (empresas não têm slide)</span><span class="who">Deploy</span></div>
+    <div class="day">Dia · 09 jun manhã</div>
+    <div class="taskrow"><span class="ck" data-id="chk15" data-scope="durante"></span><span>Montar sala: palco, mesa da banca, café, banner, fotos</span><span class="who">Alexandre/Royal</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk16" data-scope="durante"></span><span>Carregar todos os decks numa máquina única + backup</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk17" data-scope="durante"></span><span>Briefing rápido com banca e MC (10 min)</span><span class="who">Core team</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk18" data-scope="durante"></span><span>WhatsApp lembrete às empresas</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk19" data-scope="durante"></span><span>Posicionar câmeras + checar áudio; subir stories ao vivo durante o dia</span><span class="who">Conteúdo</span></div>
+    <div class="day">Pós · 10 jun (T+1) em diante</div>
+    <div class="taskrow"><span class="ck" data-id="chk20" data-scope="pos"></span><span>E-mail recap + fotos pra todos</span><span class="who">Conteúdo</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk21" data-scope="pos"></span><span>Editar hero recap + programar drip de cortes (4 semanas)</span><span class="who">Conteúdo</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk22" data-scope="pos"></span><span>Termo + kickoff agendado com selecionadas</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk23" data-scope="pos"></span><span>Relatórios de feedback + oferta de diagnóstico aos demais</span><span class="who">Deploy</span></div>
+    <div class="taskrow"><span class="ck" data-id="chk24" data-scope="pos"></span><span>Qualificar investíveis e abrir conversas (pipeline VGT)</span><span class="who">VGT</span></div>
+  </div>
+</div></section>
+
+<!-- DECISOES -->
+<section style="border-bottom:none"><div class="wrap">
+  <div class="callout">
+    <h3>⚑ Decisões a confirmar antes de terça</h3>
+    <ul>
+      <li><b>Prazo do prêmio:</b> usei <b>4 meses</b> como a aceleração. Você mencionou também "20 dias" — se for um sprint intensivo dentro do programa, vale comunicar como etapa 1 dos 4 meses.</li>
+      <li><b>Número de empresas:</b> agenda calculada para 9 (5 min de pitch cada, sem slide). Se forem 10, aperto o painel de mentores; se 8, sobra mais networking.</li>
+      <li><b>Banca:</b> integrei o Conselho do material do Alexandre (Lúcio, Alexandre Medeiros, Carlos Osorio, Fernando Alves, Kamila Adamatti) + Gustavo/Deploy. Confirmar quem efetivamente julga no dia (são 6 — manter ímpar se quiser evitar empate, ex.: 5 votam).</li>
+      <li><b>Alinhamento de marca:</b> seus decks usam <b>Royal Business Growth (RBG)</b> como nome do ecossistema; aqui mantive <b>Royal Accelerator × Deploy US</b> conforme você pediu. Decidir o nome oficial (RBG / Royal Accelerator) e unificar.</li>
+      <li><b>Conteúdo:</b> confirmar videomaker/fotógrafo, definir hashtag + @handle, e quem edita/publica o drip pós-evento.</li>
+      <li><b>Orçamento:</b> catering, AV, brindes e fotógrafo/videomaker.</li>
+      <li><b>Endereço completo + parking</b> do Royal Business pros e-mails.</li>
+    </ul>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="brand" style="justify-content:center"><span class="dot"></span>Royal Accelerator × Deploy US</div>
+  <div class="tagline">Planejamento Estratégico · Pitch Day · 09/jun · Orlando — Realização: Royal Accelerator × Deploy US</div>
+</div></footer>
+
+<script>
+(function(){
+  var KEY='rbg-pitchday-v2', state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){}
+  var cks=[].slice.call(document.querySelectorAll('.ck[data-id]'));
+  function isOn(c){ return !!state[c.getAttribute('data-id')]; }
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){} }
+  function update(){
+    [].forEach.call(document.querySelectorAll('.meter[data-scope]'),function(m){
+      var sc=m.getAttribute('data-scope');
+      var list=cks.filter(function(c){return sc==='all'||c.getAttribute('data-scope')===sc;});
+      var done=list.filter(isOn).length, p=list.length?Math.round(done/list.length*100):0;
+      var fl=m.querySelector('.mfill'); if(fl)fl.style.width=p+'%';
+      var pc=m.querySelector('.mpct'); if(pc)pc.textContent=p+'%';
+      var cn=m.querySelector('.mcnt'); if(cn)cn.textContent=done+'/'+list.length;
+    });
+    [].forEach.call(document.querySelectorAll('.minibar'),function(mb){
+      var sec=mb.closest('section');
+      var list=sec?[].slice.call(sec.querySelectorAll('.ck[data-id]')):[];
+      var done=list.filter(isOn).length, p=list.length?Math.round(done/list.length*100):0;
+      var fl=mb.querySelector('.mf'); if(fl)fl.style.width=p+'%';
+      var lb=mb.querySelector('.ml2'); if(lb){var pre=lb.getAttribute('data-prefix')||''; lb.textContent=(pre?pre+' ':'')+done+'/'+list.length;}
+    });
+    var ad=cks.filter(isOn).length, ap=cks.length?Math.round(ad/cks.length*100):0;
+    var tf=document.getElementById('topfill'); if(tf)tf.style.width=ap+'%';
+    var tp=document.getElementById('toppct'); if(tp)tp.textContent=ap+'%';
+  }
+  function render(){
+    cks.forEach(function(c){
+      var on=isOn(c); c.classList.toggle('on',on);
+      var row=c.closest('.taskrow,.art'); if(row)row.classList.toggle('done',on);
+    });
+    update();
+  }
+  cks.forEach(function(c){
+    var el=c.closest('.taskrow,.art')||c;
+    el.addEventListener('click',function(ev){ ev.preventDefault(); ev.stopPropagation();
+      var id=c.getAttribute('data-id'); state[id]=!state[id]; save(); render(); });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
