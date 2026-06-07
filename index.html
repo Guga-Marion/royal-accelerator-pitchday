@@ -28,7 +28,8 @@
   .top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
   .top .wrap{display:flex;align-items:center;gap:18px;height:60px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
-  .brand .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--blue),var(--violet))}
+  .brand .mark{width:25px;height:25px;flex:none;color:var(--blue-d);display:block}
+  footer .brand .mark{color:var(--blue)}
   .top nav{margin-left:auto;display:flex;gap:22px}
   .top nav a{font-size:13px;color:var(--ink2);font-weight:500}
   .top nav a:hover{color:var(--blue)}
@@ -318,7 +319,7 @@ img,video,canvas,table{max-width:100%}
 
 <!-- TOPBAR -->
 <div class="top"><div class="wrap">
-  <div class="brand"><span class="dot"></span>Royal Accelerator <span style="color:var(--muted2);font-weight:400">×</span> Deploy US</div>
+  <div class="brand"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 22.5V13.2l5.8 4.1L16 8.4l5.2 8.9 5.8-4.1v9.3z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><rect x="4.4" y="22" width="23.2" height="4.6" rx="1.7" fill="currentColor"/><circle cx="5" cy="11.6" r="2.1" fill="currentColor"/><circle cx="16" cy="6.6" r="2.3" fill="currentColor"/><circle cx="27" cy="11.6" r="2.1" fill="currentColor"/></svg>Royal Accelerator <span style="color:var(--muted2);font-weight:400">×</span> Deploy US</div>
   <span id="toppct" class="toppct" style="margin-left:auto">0%</span>
   <nav>
     <a href="#objetivos">Objetivos</a>
@@ -330,6 +331,7 @@ img,video,canvas,table{max-width:100%}
     <a href="#conteudo">Conteúdo</a>
     <a href="#pos">Pós</a>
     <a href="#aceleracao">Aceleração</a>
+    <a href="#oferta">Oferta</a>
     <a href="#checklist">Checklist</a>
   </nav>
   <div class="topprog"><i id="topfill"></i></div>
@@ -699,6 +701,7 @@ Nos vemos amanhã. Vai ser grande.
       <div class="fsub">Convertendo o "não" de hoje em "sim" depois.</div>
       <div class="fstep"><span class="ar">→</span><span><b>Relatório de feedback</b> — scorecard + comentários da banca (entrega valor mesmo sem ganhar).</span></div>
       <div class="fstep"><span class="ar">→</span><span><b>Worksheet de captação</b> preenchido no workshop ("quanto você precisa").</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Acompanhamento Deploy · 4 meses</b> — aplica ali mesmo; se aprovada, compra o programa completo por <b>50% (US$ 2.500)</b>. ↓ Detalhes na seção Oferta.</span></div>
       <div class="fstep"><span class="ar">→</span><span><b>Oferta de diagnóstico Deploy</b> — sessão paga/desconto pra destravar pontos do pitch.</span></div>
       <div class="fstep"><span class="ar">→</span><span><b>Convite turma 02</b> — lista de espera com prioridade.</span></div>
       <div class="fstep"><span class="ar">→</span><span><b>Comunidade & Hub Royal</b> — acesso a eventos e espaço pra alugar.</span></div>
@@ -715,7 +718,7 @@ Nos vemos amanhã. Vai ser grande.
       <tr><td class="dim">Relatório de feedback (scorecard)</td><td>✔</td><td>✔ aprofundado</td></tr>
       <tr><td class="dim">Fotos & recap do evento</td><td>✔</td><td>✔ + destaque no conteúdo</td></tr>
       <tr><td class="dim">Diagnóstico completo Deploy</td><td>Oferta paga/desconto</td><td>✔ incluso</td></tr>
-      <tr><td class="dim">Aceleração 4 meses</td><td>—</td><td>✔</td></tr>
+      <tr><td class="dim">Acompanhamento 4 meses</td><td>Via aplicação · 50% (US$ 2.500)</td><td>✔ incluso</td></tr>
       <tr><td class="dim">Trilha de investimento (VGT)</td><td>—</td><td>✔</td></tr>
       <tr><td class="dim">Espaço no Royal Business</td><td>Locação disponível</td><td>✔ durante o programa</td></tr>
     </tbody>
@@ -834,10 +837,91 @@ Nos vemos amanhã. Vai ser grande.
   </div>
 </div></section>
 
+<!-- OFERTA -->
+<section id="oferta"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">10 · Oportunidade de conversão</div>
+    <h2 class="sec-h">Não foi selecionada? Você ainda pode entrar.</h2>
+    <p class="sec-sub">As vagas premiadas são 1–3 — mas o acompanhamento de 4 meses da Deploy não para por aí. Toda empresa presente pode <b>aplicar</b> e, se aprovada, comprar o mesmo programa numa condição exclusiva de quem esteve no Pitch Day. É assim que o evento vira receita e ninguém sai sem caminho.</p>
+  </div>
+
+  <!-- como funciona -->
+  <div class="grid3" style="margin-bottom:22px">
+    <div class="card"><div class="ic v">1</div><h3>Aplica</h3><p>Preenche a aplicação do acompanhamento ainda no evento (ou em até 48h). Rápida — serve pra entender fit, momento e objetivo.</p></div>
+    <div class="card"><div class="ic b">2</div><h3>É aprovada</h3><p>A Deploy avalia a aplicação. Não é pra todo mundo: entra quem tem condição real de ser acelerada e gerar resultado em 4 meses.</p></div>
+    <div class="card"><div class="ic g">3</div><h3>Compra & começa</h3><p>Aprovada, garante a vaga na condição Pitch Day e entra no mesmo programa — 4 meses, 8 encontros, camada AI-Native.</p></div>
+  </div>
+
+  <!-- pricing -->
+  <div class="funnel" style="grid-template-columns:1.15fr .85fr;align-items:stretch">
+    <div style="background:linear-gradient(135deg,#0E1116,#1a1330);color:#fff;border-radius:16px;padding:30px">
+      <div class="mono" style="color:#C9B6FF;letter-spacing:.12em">Condição exclusiva · só p/ quem esteve no Pitch Day e foi aprovado</div>
+      <div style="display:flex;align-items:baseline;gap:14px;margin:16px 0 2px;flex-wrap:wrap">
+        <span style="font-size:18px;color:#8B8798;text-decoration:line-through">Valor cheio US$ 3.000–5.000</span>
+        <span style="font-family:'JetBrains Mono';font-size:11px;background:var(--green);color:#fff;padding:4px 10px;border-radius:7px;font-weight:700">50% OFF</span>
+      </div>
+      <div style="font-size:clamp(36px,6vw,54px);font-weight:800;letter-spacing:-.02em;line-height:1.05">US$ 2.500</div>
+      <div style="color:#C9C6D6;font-size:14px;margin-top:6px">pelo acompanhamento completo de 4 meses — metade do valor cheio.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px">
+          <div style="font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9AD4FF">À vista</div>
+          <div style="font-size:24px;font-weight:800;margin-top:7px;letter-spacing:-.02em">US$ 2.500</div>
+          <div style="font-size:12px;color:#B8B4C6;margin-top:3px">pagamento único</div>
+        </div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px">
+          <div style="font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9AD4FF">Parcelado</div>
+          <div style="font-size:24px;font-weight:800;margin-top:7px;letter-spacing:-.02em">4× US$ 750</div>
+          <div style="font-size:12px;color:#B8B4C6;margin-top:3px">total US$ 3.000</div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="align-items:flex-start;justify-content:flex-start;text-align:left;min-height:auto">
+      <div class="ic a">★</div>
+      <h3 style="font-size:17px;font-weight:700">O mesmo programa das selecionadas</h3>
+      <p style="font-size:14px;color:var(--ink2);margin:6px 0 12px">Quem entra por aqui recebe a estrutura completa do acompanhamento:</p>
+      <div style="display:grid;gap:9px;font-size:13.5px;color:var(--ink2)">
+        <div>✓ 4 meses · 8 encontros quinzenais</div>
+        <div>✓ Camada AI-Native em todas as fases</div>
+        <div>✓ 10+ artefatos entregues</div>
+        <div>✓ Trilha de investimento (quanto captar + fundraising)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- dois perfis -->
+  <h3 style="font-size:18px;font-weight:700;margin:34px 0 6px">Serve para os dois perfis</h3>
+  <p class="sec-sub" style="margin-bottom:16px">A espinha do programa é a mesma. O que muda é só o <b>roadmap, os encontros e os focos</b> de cada jornada.</p>
+  <div class="funnel">
+    <div class="fcol" style="border-color:#CFE0FF;background:linear-gradient(180deg,var(--blue-bg),#fff)">
+      <div class="ft"><span class="badge" style="background:var(--blue);color:#fff">EMPRESAS TRADICIONAIS</span></div>
+      <div class="fsub">Tirar a empresa da dependência do dono e levá-la à maturidade.</div>
+      <div class="fstep"><span class="ar">→</span><span><b>Foco:</b> estrutura, processos, gestão e profissionalização.</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Roadmap:</b> diagnóstico → estrutura → expansão organizada (método RBG).</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Encontros:</b> finanças, operação, comercial e gestão de pessoas.</span></div>
+    </div>
+    <div class="fcol" style="border-color:#D9CBFF;background:linear-gradient(180deg,var(--violet-bg),#fff)">
+      <div class="ft"><span class="badge" style="background:var(--violet);color:#fff">STARTUPS</span></div>
+      <div class="fsub">Acelerar produto, tração e captação com método.</div>
+      <div class="fstep"><span class="ar">→</span><span><b>Foco:</b> GTM, produto, growth e métricas.</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Roadmap:</b> ICP & oferta → aquisição → fundraising (deck + data room).</span></div>
+      <div class="fstep"><span class="ar">→</span><span><b>Encontros:</b> go-to-market, unit economics, valuation e investor day.</span></div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:22px;background:var(--green-bg);border-color:#BBE6CE">
+    <h3 style="color:#15803D">✔ Como vender no dia</h3>
+    <ul style="color:#14532D">
+      <li>No <b>mini-workshop "quanto captar"</b> (16:00) e no <b>resultado</b>, todos já saem sabendo: ganhou ou não, dá pra entrar via aplicação.</li>
+      <li>O link da <b>aplicação</b> entra no <b>E-mail recap</b> (pós-evento) e nos <b>relatórios de feedback</b> das não-selecionadas.</li>
+      <li>Condição <b>50% (US$ 2.500)</b> válida só pra quem esteve no Pitch Day — gatilho de urgência real.</li>
+    </ul>
+  </div>
+</div></section>
+
 <!-- KPIs -->
 <section><div class="wrap">
   <div class="sec-head">
-    <div class="sec-tag">10 · Como medir sucesso</div>
+    <div class="sec-tag">11 · Como medir sucesso</div>
     <h2 class="sec-h">KPIs por fase</h2>
   </div>
   <div class="kpi">
@@ -858,7 +942,7 @@ Nos vemos amanhã. Vai ser grande.
 <!-- RACI -->
 <section><div class="wrap">
   <div class="sec-head">
-    <div class="sec-tag">11 · Quem faz o quê</div>
+    <div class="sec-tag">12 · Quem faz o quê</div>
     <h2 class="sec-h">Responsáveis (RACI enxuto)</h2>
     <p class="sec-sub">Quem é quem e quem responde por cada coisa. R = Responsável (executa) · A = Aprova · C = Consultado · I = Informado.</p>
   </div>
@@ -909,7 +993,7 @@ Nos vemos amanhã. Vai ser grande.
 <!-- CHECKLIST -->
 <section id="checklist"><div class="wrap">
   <div class="sec-head">
-    <div class="sec-tag">12 · Mão na massa</div>
+    <div class="sec-tag">13 · Mão na massa</div>
     <h2 class="sec-h">Checklist executável</h2>
     <p class="sec-sub">Do agora até o pós, com responsável em cada item. <b>Alexandre + Time Royal</b> tocam a execução; <b>Deploy/Gustavo</b> o programa e conteúdo. Marque o quadradinho conforme conclui.</p>
   </div>
@@ -963,7 +1047,7 @@ Nos vemos amanhã. Vai ser grande.
 </div></section>
 
 <footer><div class="wrap">
-  <div class="brand" style="justify-content:center"><span class="dot"></span>Royal Accelerator × Deploy US</div>
+  <div class="brand" style="justify-content:center"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 22.5V13.2l5.8 4.1L16 8.4l5.2 8.9 5.8-4.1v9.3z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><rect x="4.4" y="22" width="23.2" height="4.6" rx="1.7" fill="currentColor"/><circle cx="5" cy="11.6" r="2.1" fill="currentColor"/><circle cx="16" cy="6.6" r="2.3" fill="currentColor"/><circle cx="27" cy="11.6" r="2.1" fill="currentColor"/></svg>Royal Accelerator × Deploy US</div>
   <div class="tagline">Planejamento Estratégico · Pitch Day · 09/jun · Orlando — Realização: Royal Accelerator × Deploy US</div>
 </div></footer>
 
