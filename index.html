@@ -272,6 +272,46 @@
 .minibar .mt{flex:1;height:8px;background:var(--line);border-radius:100px;overflow:hidden}
 .minibar .mf{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .45s ease}
 .minibar .ml2{font-family:'JetBrains Mono';font-size:11px;color:var(--ink2);font-weight:700;white-space:nowrap}
+
+/* ===== mobile hardening ===== */
+html,body{overflow-x:hidden;max-width:100%}
+*{min-width:0}
+img,video,canvas,table{max-width:100%}
+.brand{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:820px){
+  .top .wrap{gap:10px}
+  .brand{font-size:14px}
+  .scorecard .meter.total{grid-column:1/-1}
+}
+@media(max-width:600px){
+  body{font-size:14.5px}
+  .wrap{padding:0 18px}
+  section{padding:46px 0}
+  .hero{padding:40px 0 34px}
+  #scorecard{padding-top:34px}
+  .sec-head{margin-bottom:26px}
+  .sec-h{font-size:24px}
+  .hero h1{font-size:34px}
+  .facts{grid-template-columns:1fr 1fr;gap:10px}
+  .fact{padding:14px 15px}
+  .fact .v{font-size:18px}
+  .scorecard{gap:10px}
+  .meter{padding:13px 13px 15px}
+  .meter .mpct{font-size:19px}
+  .card{padding:20px}
+  .pcard,.pill5,.co,.art,.aic{padding:14px}
+  .slot{grid-template-columns:74px 1fr;padding:14px 16px;gap:12px}
+  .slot .time{font-size:13px}
+  .ai-layer{padding:22px 18px}
+  .ai-grid{grid-template-columns:1fr}
+  .callout{padding:18px}
+  .tbl th,.tbl td{padding:11px 12px;font-size:13px}
+  .chk .taskrow{padding-left:16px;padding-right:16px}
+  .chk .day{padding-left:16px;padding-right:16px}
+  .jtema{font-size:15.5px}
+  .toppct{font-size:11px;padding:3px 9px}
+  .credit{font-size:9px}
+}
 </style>
 </head>
 <body>
