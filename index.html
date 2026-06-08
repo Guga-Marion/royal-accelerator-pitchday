@@ -109,8 +109,21 @@
   .matcard .mi{width:42px;height:42px;border-radius:10px;flex:none;display:flex;align-items:center;justify-content:center;font-size:18px;background:var(--bg)}
   .matcard .mn{font-weight:600;font-size:14px;line-height:1.25}
   .matcard .mtype{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
-  .matcard .dli{margin-left:auto;font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:var(--blue-d);white-space:nowrap}
-  .matcard .dli::before{content:"↓ "}
+  .matcard .mtxt{min-width:0}
+  .macts{margin-left:auto;display:flex;gap:7px;flex:none}
+  .mbtn{font-family:'JetBrains Mono';font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:7px 11px;border-radius:9px;text-decoration:none;white-space:nowrap;transition:.18s;display:inline-flex;align-items:center;gap:5px;line-height:1}
+  .mbtn.prev{color:var(--blue-d);background:var(--paper);border:1px solid var(--line)}
+  .mbtn.prev::before{content:"⤢";font-size:11px}
+  .mbtn.prev:hover{border-color:var(--gold2);color:var(--gold);background:var(--blue-bg)}
+  .mbtn.dl{color:#fff;background:var(--blue-d);border:1px solid var(--blue-d)}
+  .mbtn.dl::before{content:"↓";font-weight:800}
+  .mbtn.dl:hover{background:var(--gold2);border-color:var(--gold2);color:var(--navy)}
+  @media(max-width:520px){.macts{width:100%;margin:8px 0 0}.matcard{flex-wrap:wrap}}
+  /* logo no topo / rodapé */
+  .brand .logochip{height:34px;width:auto;display:block;border-radius:8px}
+  footer .brand .logochip{height:38px}
+  .brand .cobrand{font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;color:var(--ink2);letter-spacing:0}
+  @media(max-width:560px){.brand .cobrand{display:none}}
 
   /* tables */
   .tbl{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px}
@@ -339,7 +352,7 @@ img,video,canvas,table{max-width:100%}
 
 <!-- TOPBAR -->
 <div class="top"><div class="wrap">
-  <div class="brand"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="22" width="24" height="2.6" rx="1" fill="currentColor"/><path d="M6 22V16L8.5 11.5 11 16V22Z" fill="currentColor"/><path d="M13 22V13L15.5 8 18 13V22Z" fill="currentColor"/><path d="M20 22V10.5L22.5 4.5 25 10.5V22Z" fill="currentColor"/></svg>Royal Accelerator <span style="color:var(--muted2);font-weight:400">×</span> Deploy US</div>
+  <div class="brand"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth"><span class="cobrand">Royal Accelerator <span style="color:var(--muted2);font-weight:400">×</span> Deploy US</span></div>
   <span id="toppct" class="toppct" style="margin-left:auto">0%</span>
   <nav>
     <a href="#objetivos">Objetivos</a>
@@ -487,15 +500,15 @@ img,video,canvas,table{max-width:100%}
   <h3 style="font-size:18px;font-weight:700;margin:38px 0 6px">📦 Materiais do dia — clique e baixe</h3>
   <p class="sec-sub" style="margin-bottom:18px">Tudo que vai ser usado no palco e nas mesas, num lugar só. Os materiais que a Deploy produz saem em <b>PDF</b>; os decks (RGB v5 e Lúcio) em <b>PPTX</b>.</p>
   <div class="matgrid">
-    <a class="matcard" href="materiais/cronograma.pdf" download><span class="mi">🗓️</span><div><div class="mn">Cronograma do dia</div><div class="mtype">PDF · run of show 10h–18h</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/release-imagem.pdf" download><span class="mi">✍️</span><div><div class="mn">Direito de imagem</div><div class="mtype">PDF · cadastro / credenciamento</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/scorecard.pdf" download><span class="mi">⭐</span><div><div class="mn">Scorecard (100 pts)</div><div class="mtype">PDF · 1 por empresa</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/perguntas-lucio.pdf" download><span class="mi">🎤</span><div><div class="mn">Perguntas do Lúcio</div><div class="mtype">PDF · roteiro do painel</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/takes.pdf" download><span class="mi">🎬</span><div><div class="mn">Lista de takes</div><div class="mtype">PDF · captação de conteúdo</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/worksheet.pdf" download><span class="mi">💰</span><div><div class="mn">Worksheet "quanto captar"</div><div class="mtype">PDF · workshop fundraising</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/rgb-v5.pptx" download><span class="mi">📊</span><div><div class="mn">Apresentação RGB v5</div><div class="mtype">Deck · PPTX · 10h–12h</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/apresentacao-lucio.pptx" download><span class="mi">📑</span><div><div class="mn">Deck de abertura — Lúcio</div><div class="mtype">Deck · PPTX · 13h20</div></div><span class="dli">baixar</span></a>
-    <a class="matcard" href="materiais/kit-completo.pdf" download><span class="mi">📦</span><div><div class="mn">Kit completo (tudo)</div><div class="mtype">PDF · todos os 6 materiais</div></div><span class="dli">baixar</span></a>
+    <div class="matcard"><span class="mi">🗓️</span><div class="mtxt"><div class="mn">Cronograma do dia</div><div class="mtype">PDF · run of show 10h–18h</div></div><div class="macts"><a class="mbtn prev" href="materiais/cronograma.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/cronograma.pdf" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">✍️</span><div class="mtxt"><div class="mn">Direito de imagem</div><div class="mtype">PDF · cadastro / credenciamento</div></div><div class="macts"><a class="mbtn prev" href="materiais/release-imagem.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/release-imagem.pdf" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">⭐</span><div class="mtxt"><div class="mn">Scorecard (100 pts)</div><div class="mtype">PDF · 1 por empresa</div></div><div class="macts"><a class="mbtn prev" href="materiais/scorecard.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/scorecard.pdf" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">🎤</span><div class="mtxt"><div class="mn">Perguntas do Lúcio</div><div class="mtype">PDF · roteiro do painel</div></div><div class="macts"><a class="mbtn prev" href="materiais/perguntas-lucio.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/perguntas-lucio.pdf" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">🎬</span><div class="mtxt"><div class="mn">Lista de takes</div><div class="mtype">PDF · captação de conteúdo</div></div><div class="macts"><a class="mbtn prev" href="materiais/takes.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/takes.pdf" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">💰</span><div class="mtxt"><div class="mn">Worksheet "quanto captar"</div><div class="mtype">PDF · workshop fundraising</div></div><div class="macts"><a class="mbtn prev" href="materiais/worksheet.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/worksheet.pdf" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">📊</span><div class="mtxt"><div class="mn">Apresentação RGB v5</div><div class="mtype">Deck · PPTX · 10h–12h</div></div><div class="macts"><a class="mbtn prev" href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fguga-marion.github.io%2Froyal-accelerator-pitchday%2Fmateriais%2Frgb-v5.pptx" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/rgb-v5.pptx" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">📑</span><div class="mtxt"><div class="mn">Deck de abertura — Lúcio</div><div class="mtype">Deck · PPTX · 13h20</div></div><div class="macts"><a class="mbtn prev" href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fguga-marion.github.io%2Froyal-accelerator-pitchday%2Fmateriais%2Fapresentacao-lucio.pptx" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/apresentacao-lucio.pptx" download>baixar</a></div></div>
+    <div class="matcard"><span class="mi">📦</span><div class="mtxt"><div class="mn">Kit completo (tudo)</div><div class="mtype">PDF · todos os 6 materiais</div></div><div class="macts"><a class="mbtn prev" href="materiais/kit-completo.pdf" target="_blank" rel="noopener">preview</a><a class="mbtn dl" href="materiais/kit-completo.pdf" download>baixar</a></div></div>
   </div>
 </div></section>
 
@@ -1082,7 +1095,7 @@ Nos vemos amanhã. Vai ser grande.
 </div></section>
 
 <footer><div class="wrap">
-  <div class="brand" style="justify-content:center"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="22" width="24" height="2.6" rx="1" fill="currentColor"/><path d="M6 22V16L8.5 11.5 11 16V22Z" fill="currentColor"/><path d="M13 22V13L15.5 8 18 13V22Z" fill="currentColor"/><path d="M20 22V10.5L22.5 4.5 25 10.5V22Z" fill="currentColor"/></svg>Royal Accelerator × Deploy US</div>
+  <div class="brand" style="justify-content:center"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth — Royal Accelerator × Deploy US"></div>
   <div class="tagline">Planejamento Estratégico · Pitch Day · 09/jun · Orlando — Realização: Royal Accelerator × Deploy US</div>
 </div></footer>
 
