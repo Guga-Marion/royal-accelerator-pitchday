@@ -127,6 +127,29 @@ section{padding:62px 0;border-bottom:1px solid var(--line)}
 .snode h3{font-size:19px;font-weight:700;color:var(--navy);margin:6px 0 5px}
 .snode p{font-size:14px;color:var(--ink2);max-width:700px;margin:0 auto}
 
+/* funnel viz */
+.funnelviz{margin:8px auto 0;max-width:780px}
+.fl-row{margin:0 auto 8px;border-radius:13px;padding:14px 22px;text-align:center;color:#fff;background:linear-gradient(180deg,#1b2d59,#0d1c43);border:1px solid rgba(212,164,55,.3);transition:width .3s}
+.fl-row .fl-lbl{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold3);font-weight:600;display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap}
+.fl-row .fl-num{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:30px;line-height:1.06;margin-top:2px}
+.fl-row .fl-num span{color:var(--gold3)}
+.fl-row .fl-sub{font-size:11.5px;color:#9AA6C4;margin-top:2px}
+.fl-row.mid{border-color:var(--gold2);box-shadow:0 0 0 1px rgba(212,164,55,.3)}
+.fl-row.inv{background:linear-gradient(180deg,#E2B53f,#B8861f);border:none}
+.fl-row.inv .fl-lbl{color:#0A1733}.fl-row.inv .fl-num{color:#0A1733}.fl-row.inv .fl-num span{color:#0A1733}.fl-row.inv .fl-sub{color:#42340c}
+.fl-logos{display:inline-flex;gap:7px;align-items:center}
+.fl-logos svg{width:19px;height:19px;display:block}
+.fl-conv{text-align:center;font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 6px}
+.fl-conv b{color:var(--navy)}
+.fl-conv::before{content:"▼  ";color:var(--gold2)}
+@media(max-width:600px){.fl-row{width:100%!important}.fl-row .fl-num{font-size:26px}}
+.fork{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+@media(max-width:760px){.fork{grid-template-columns:1fr}}
+.fork .fk{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:16px;border-top:3px solid var(--gold2)}
+.fork .fk .fkk{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.fork .fk h4{font-size:15px;font-weight:700;color:var(--navy);margin:5px 0 4px}
+.fork .fk p{font-size:12.5px;color:var(--ink2);line-height:1.5}
+
 /* TRACKER 120 dias */
 .trk-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 18px;margin-bottom:18px}
 .trk-top label{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
@@ -316,44 +339,67 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
 <section id="funil"><div class="wrap">
   <div class="sec-head">
     <div class="sec-tag">Funil de aquisição</div>
-    <h2 class="sec-h">Uma inscrição, um programa, um destino</h2>
-    <p class="sec-sub">Existe <b>uma única inscrição — para o Pitch Day</b>. A partir dela avaliamos todo mundo: cerca de <b>5 empresas sobem ao palco</b> e as demais entram na <b>wait list</b> — e podem entrar no Royal Business Growth mesmo sem subir ao palco.</p>
+    <h2 class="sec-h">O funil — da atenção ao investimento</h2>
+    <p class="sec-sub">Da audiência do conteúdo até a empresa investida. Cada etapa afunila: <b>500 mil de alcance → 12,5 mil interações → 500 leads → 100 calls → 10 aceleradas → 1 investida</b>. <i>(números = metas do ano; veja a régua mensal abaixo.)</i></p>
   </div>
 
-  <div class="single">
-    <div class="snode" style="border-top:3px solid var(--gold2)"><span class="sk">0 · Atenção · topo do funil</span><h3>O conteúdo que enche o funil</h3><p>O <b>vídeo do YouTube</b> — o programa do Pitch Day, até ~30 min, no formato Shark Tank — mais os <b>cortes</b> em YouTube, Instagram e TikTok sobre o evento. Tudo aponta para a página de inscrição.</p></div>
-    <div class="arrow">▼</div>
-    <div class="snode"><span class="sk">1 · Entrada</span><h3>Inscrição no site — para o Pitch Day RBG</h3><p>Aberta a todos. Você se inscreve para o Pitch Day, e essa mesma inscrição já é a porta de entrada para o Royal Business Growth.</p><a href="inscricao.html" style="display:inline-block;margin-top:13px;background:var(--gold2);color:var(--navy);font-weight:700;font-size:12px;padding:10px 20px;border-radius:100px;font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.05em">Abrir página de inscrição →</a></div>
-    <div class="arrow">▼</div>
-    <div class="snode"><span class="sk">2 · Avaliação</span><h3>Triagem da RBG</h3><p>Avaliamos tração, fit e potencial de cada empresa inscrita — e definimos quem sobe ao palco e quem entra pela wait list.</p></div>
-    <div class="arrow">▼</div>
-    <div class="funnel">
-      <div class="chan">
-        <div class="ch-k">No palco · evento</div>
-        <h3>~5 empresas no Pitch Day</h3>
-        <div class="fstep"><span class="fn">›</span><div>Cerca de <b>5 empresas selecionadas</b> sobem ao palco no formato Shark Tank.</div></div>
-        <div class="fstep"><span class="fn">›</span><div>Banca de conselheiros pontua pelo <b>scorecard (100 pts)</b> e delibera.</div></div>
-        <div class="fstep"><span class="fn">›</span><div>As destacadas entram direto no <b>programa de 120 dias</b>.</div></div>
+  <div class="funnelviz">
+    <div class="fl-row" style="width:100%">
+      <div class="fl-lbl">Atenção · alcance
+        <span class="fl-logos">
+          <svg viewBox="0 0 24 24" fill="none" aria-label="YouTube"><rect x="1.5" y="5" width="21" height="14" rx="4.2" fill="#fff"/><path d="M10 8.7l6 3.3-6 3.3z" fill="#0d1c43"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-label="Instagram"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4.2" stroke="#fff" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.25" fill="#fff"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" aria-label="TikTok"><path d="M13.5 3.5c.4 2.6 2.1 4.2 4.6 4.4v2.8c-1.7 0-3.2-.5-4.6-1.5v6a5.1 5.1 0 11-5.1-5.1c.35 0 .7.03 1 .1v2.9a2.35 2.35 0 102.35 2.35V3.5z" fill="#fff"/></svg>
+        </span>
       </div>
-      <div class="chan b">
-        <div class="ch-k">Wait list · todas as demais</div>
-        <h3>Entra todo mundo que quiser</h3>
-        <div class="fstep"><span class="fn">›</span><div>Quem não sobe ao palco entra na <b>wait list</b> — ninguém fica de fora.</div></div>
-        <div class="fstep"><span class="fn">›</span><div>Pode <b>entrar no Royal Business Growth</b> mesmo sem participar do evento.</div></div>
-        <div class="fstep"><span class="fn">›</span><div>Direcionamento para a <b>trilha de aceleração</b> conforme o momento da empresa.</div></div>
-      </div>
+      <div class="fl-num">500 <span>mil</span></div>
+      <div class="fl-sub">pessoas impactadas pelo conteúdo</div>
     </div>
-    <div class="arrow">▼</div>
-    <div class="merge">
-      <div class="mk">Convergência</div>
-      <h3>Programa de Aceleração RBG · 120 dias</h3>
-      <p>Os dois caminhos entram no mesmo programa. Ao longo de 120 dias, com 8 encontros quinzenais e os conselheiros por área, a RBG <b>entende a empresa por dentro</b> e constrói uma relação de longo prazo.</p>
-      <div class="outs">
-        <div class="outc"><div class="ot">→ Parceria &amp; investimento RBG</div><div class="od">As empresas que mais avançam evoluem para uma parceria de longo prazo com a RBG. Termos tratados caso a caso, em conversa direta.</div></div>
-        <div class="outc"><div class="ot">→ Trilha Deploy</div><div class="od">Quem ainda não está pronto segue nos produtos Deploy — Startup · Empresa Tradicional · Internacionalização — qualificando-se com o tempo.</div></div>
-      </div>
+    <div class="fl-conv">2,5% interagem</div>
+    <div class="fl-row" style="width:90%">
+      <div class="fl-lbl">Interações · cliques</div>
+      <div class="fl-num">12,5 <span>mil</span></div>
+      <div class="fl-sub">engajam com os vídeos e cortes</div>
+    </div>
+    <div class="fl-conv">4% viram lead</div>
+    <div class="fl-row mid" style="width:79%">
+      <div class="fl-lbl">Inscrição · o meio do funil</div>
+      <div class="fl-num">500 <span>leads</span></div>
+      <div class="fl-sub">se inscrevem para o Pitch Day RBG</div>
+    </div>
+    <div class="fl-conv">20% viram call</div>
+    <div class="fl-row" style="width:68%">
+      <div class="fl-lbl">Triagem · calls</div>
+      <div class="fl-num">100 <span>calls</span></div>
+      <div class="fl-sub">conversas reais de avaliação</div>
+    </div>
+    <div class="fl-conv">seleção da banca</div>
+    <div class="fl-row" style="width:57%">
+      <div class="fl-lbl">Pitch + wait list</div>
+      <div class="fl-num">~5 <span>no palco</span></div>
+      <div class="fl-sub">+ wait list também entra no RBG</div>
+    </div>
+    <div class="fl-conv">programa de 120 dias</div>
+    <div class="fl-row" style="width:47%">
+      <div class="fl-lbl">Aceleração · 120 dias</div>
+      <div class="fl-num">10 <span>aceleradas</span></div>
+      <div class="fl-sub">RBG grátis ou Deploy paga</div>
+    </div>
+    <div class="fl-conv">pós-120 dias · decisão da VGT</div>
+    <div class="fl-row inv" style="width:38%">
+      <div class="fl-lbl">Investida pela VGT</div>
+      <div class="fl-num">1 <span>empresa</span></div>
+      <div class="fl-sub">pode ou não ser investida</div>
     </div>
   </div>
+
+  <div class="fork">
+    <div class="fk"><div class="fkk">No palco</div><h4>~5 + wait list</h4><p>5 empresas pitcham no formato Shark Tank; as demais entram na wait list e também podem entrar no RBG.</p></div>
+    <div class="fk"><div class="fkk">Aceleração · 120 dias</div><h4>Grátis ou paga</h4><p>Quem é escolhido entra grátis na Aceleração RBG (Alexandre + conselho). Quem não, compra pela trilha Deploy.</p></div>
+    <div class="fk"><div class="fkk">Pós-120 dias</div><h4>Decisão da VGT</h4><p>Ao fim do programa, a empresa pode — ou não — ser investida pela VGT. É o fundo do funil.</p></div>
+  </div>
+
+  <div style="text-align:center;margin-top:24px"><a href="inscricao.html" style="display:inline-block;background:var(--gold2);color:var(--navy);font-weight:700;font-size:13px;padding:13px 28px;border-radius:100px;font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.05em">Abrir página de inscrição →</a></div>
 </div></section>
 
 <!-- JORNADA 120 DIAS -->
@@ -361,33 +407,27 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   <div class="sec-head">
     <div class="sec-tag">Metas até dez/2026 · o funil em números</div>
     <h2 class="sec-h">A régua do ano — o que é um mês bom</h2>
-    <p class="sec-sub">O alvo do ano puxa o funil inteiro. É a bússola do Alexandre (COO): direção, foco e o que cobrar de cada mês.</p>
+    <p class="sec-sub"><b>Tudo aqui são metas</b> (não números realizados) — o alvo do ano que puxa o funil inteiro. É a bússola do Alexandre (COO): direção, foco e o que cobrar de cada mês.</p>
   </div>
 
-  <div class="gflow">
-    <div class="gcard"><div class="gv">500</div><div class="gl">Leads · empresas</div><div class="gd">No topo, vindos do conteúdo + inscrição.</div></div>
-    <div class="gconv"><span class="ar">→</span>20%</div>
-    <div class="gcard"><div class="gv">100</div><div class="gl">Calls de triagem</div><div class="gd">Conversas reais com empresas.</div></div>
-    <div class="gconv"><span class="ar">→</span>10%</div>
-    <div class="gcard"><div class="gv">10</div><div class="gl">Empresas aceleradas</div><div class="gd">~2 turmas (Ago + Dez).</div></div>
-    <div class="gconv"><span class="ar">→</span>~10%</div>
-    <div class="gcard hl"><div class="gv">1</div><div class="gl">Empresa investida</div><div class="gd">A 1ª parceria de investimento RBG.</div></div>
-  </div>
+  <div class="note" style="margin-top:0;margin-bottom:18px"><b>A conta do conteúdo (trás pra frente):</b> para ter <b>500 leads</b> a uma conversão de <b>4%</b>, precisamos de <b>~12,5 mil interações/cliques</b> no conteúdo. Com ~<b>2,5%</b> de quem é impactado interagindo, isso pede <b>~500 mil de alcance</b>. Daí o funil segue: 500 leads → <b>100 calls</b> (20%) → <b>10 aceleradas</b> → <b>1 investida</b>.</div>
 
-  <table class="mtable">
-    <thead><tr><th>Mês (2026)</th><th>Leads</th><th>Calls</th><th>Marco do mês</th></tr></thead>
+  <div style="overflow-x:auto">
+  <table class="mtable" style="min-width:680px">
+    <thead><tr><th>Mês (2026)</th><th>Alcance</th><th>Interações</th><th>Leads</th><th>Calls</th><th>Acel.</th><th>Marco do mês</th></tr></thead>
     <tbody>
-      <tr><td>Julho</td><td class="num">85</td><td class="num">17</td><td>Base de tráfego + conteúdo no ar</td></tr>
-      <tr><td>Agosto</td><td class="num">90</td><td class="num">18</td><td class="marco">Pitch Day Ed. 2 (29–30) · Turma 1 (~5 aceleradas)</td></tr>
-      <tr><td>Setembro</td><td class="num">80</td><td class="num">16</td><td>Aceleração da Turma 1 em curso</td></tr>
-      <tr><td>Outubro</td><td class="num">80</td><td class="num">16</td><td>Qualificação para investimento</td></tr>
-      <tr><td>Novembro</td><td class="num">85</td><td class="num">17</td><td>Preparação da Ed. 3</td></tr>
-      <tr><td>Dezembro</td><td class="num">80</td><td class="num">16</td><td class="marco">Pitch Day Ed. 3 · Turma 2 (~5) · 1ª empresa investida</td></tr>
-      <tr class="tot"><td>Total até dez</td><td class="num">500</td><td class="num">100</td><td>10 aceleradas · 1 investida</td></tr>
+      <tr><td>Julho</td><td class="num">85.000</td><td class="num">2.125</td><td class="num">85</td><td class="num">17</td><td class="num">—</td><td>Base de tráfego + conteúdo no ar</td></tr>
+      <tr><td>Agosto</td><td class="num">90.000</td><td class="num">2.250</td><td class="num">90</td><td class="num">18</td><td class="num">5</td><td class="marco">Pitch Day Ed. 2 (29–30) · Turma 1</td></tr>
+      <tr><td>Setembro</td><td class="num">80.000</td><td class="num">2.000</td><td class="num">80</td><td class="num">16</td><td class="num">—</td><td>Aceleração da Turma 1 em curso</td></tr>
+      <tr><td>Outubro</td><td class="num">80.000</td><td class="num">2.000</td><td class="num">80</td><td class="num">16</td><td class="num">—</td><td>Qualificação para investimento</td></tr>
+      <tr><td>Novembro</td><td class="num">85.000</td><td class="num">2.125</td><td class="num">85</td><td class="num">17</td><td class="num">—</td><td>Preparação da Ed. 3</td></tr>
+      <tr><td>Dezembro</td><td class="num">80.000</td><td class="num">2.000</td><td class="num">80</td><td class="num">16</td><td class="num">5</td><td class="marco">Pitch Day Ed. 3 · Turma 2 · 1ª investida</td></tr>
+      <tr class="tot"><td>Total até dez</td><td class="num">500.000</td><td class="num">12.500</td><td class="num">500</td><td class="num">100</td><td class="num">10</td><td>+ 1 investida</td></tr>
     </tbody>
   </table>
+  </div>
 
-  <div class="note"><b>Como ler o mês:</b> <b>mês bom</b> ≈ 85 leads e 17 calls (no ritmo da meta). <b>Sinal amarelo</b> abaixo de ~70 leads / 14 calls. <b>Sinal vermelho</b> abaixo de ~50 leads — o topo do funil (conteúdo + tráfego) precisa de atenção imediata. A conta fecha assim: <b>500 leads → 100 calls → 10 aceleradas → 1 investida</b>.</div>
+  <div class="note"><b>Como ler o mês:</b> <b>mês bom</b> ≈ 85 mil de alcance · 2,1 mil interações · 85 leads · 17 calls (no ritmo da meta). <b>Sinal amarelo</b> abaixo de ~70 leads / 14 calls. <b>Sinal vermelho</b> abaixo de ~50 leads — ou se o <b>alcance</b> cair muito abaixo de ~80 mil/mês, o topo do funil (conteúdo + tráfego) precisa de atenção imediata.</div>
 </div></section>
 
 <section id="jornada"><div class="wrap">
