@@ -193,6 +193,26 @@ table.raci tbody tr:nth-child(even) td:first-child{background:#F4EFE1}
 .note{background:var(--cream);border:1px solid #EADFBE;border-left:3px solid var(--gold2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--ink2);margin-top:18px}
 .note b{color:var(--navy)}
 
+/* metas / funil analítico */
+.gflow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-bottom:8px}
+.gcard{flex:1;min-width:150px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
+.gcard.hl{background:var(--navy);border:none}
+.gcard .gv{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:42px;color:var(--navy);line-height:1}
+.gcard.hl .gv{color:var(--gold3)}
+.gcard .gl{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+.gcard.hl .gl{color:#9AA6C4}
+.gcard .gd{font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.4}
+.gcard.hl .gd{color:#CDD5E7}
+.gconv{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gold);font-family:'JetBrains Mono';font-size:10px;font-weight:700;padding:0 6px;min-width:58px}
+.gconv .ar{font-size:18px;line-height:1}
+@media(max-width:780px){.gflow{flex-direction:column}.gconv{padding:8px 0}.gconv .ar{transform:rotate(90deg)}}
+.mtable{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:18px}
+.mtable th,.mtable td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line2)}
+.mtable thead th{background:var(--navy);color:var(--gold3);font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.mtable td.num{font-family:'JetBrains Mono';font-weight:600;color:var(--navy)}
+.mtable .marco{color:var(--gold);font-weight:600}
+.mtable tbody tr:nth-child(even) td{background:#FCFAF4}
+.mtable tbody tr.tot td{background:var(--cream);font-weight:700;color:var(--navy);border-bottom:none;border-top:1.5px solid var(--gold2)}
 footer{padding:40px 0;text-align:center;color:var(--muted)}
 footer .brand{justify-content:center;margin-bottom:10px}
 footer .fnav{display:flex;gap:18px;justify-content:center;font-size:13px;margin-bottom:14px}
@@ -209,6 +229,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
     <a href="#tese">Tese</a>
     <a href="#org">Organograma</a>
     <a href="#funil">Funil</a>
+    <a href="#metas">Metas</a>
     <a href="#jornada">120 dias</a>
     <a href="#equity">Investimento</a>
     <a href="#raci">Responsabilidades</a>
@@ -223,7 +244,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   <h1>O sistema que transforma <span class="g">empresas tradicionais</span> em ativos acelerados.</h1>
   <p class="lead">A RBG capta, qualifica e acelera negócios de brasileiros em Orlando — e, ao entender cada empresa por dentro, investe e se torna <b>parceira de longo prazo</b> desses negócios. A entrega da aceleração roda no modelo da <b>Deploy</b>; o crescimento é construído junto, valorizando cada empresa.</p>
   <div class="facts">
-    <div class="fact"><div class="k">Dois canais</div><div class="v">Site + Pitch Day</div><div class="s">Inbound e evento Shark Tank</div></div>
+    <div class="fact"><div class="k">Meta 2026</div><div class="v">10 aceleradas</div><div class="s">e 1 empresa investida</div></div>
     <div class="fact"><div class="k">Programa</div><div class="v">120 dias</div><div class="s">8 encontros quinzenais</div></div>
     <div class="fact"><div class="k">Cadência</div><div class="v">Trimestral → mensal</div><div class="s">09 jun · 29–30 ago · dez</div></div>
     <div class="fact"><div class="k">End goal</div><div class="v">Investir &amp; acelerar</div><div class="s">Parceria de longo prazo</div></div>
@@ -257,8 +278,8 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   <div class="org">
     <div class="tier-lbl">Liderança</div>
     <div class="orgrow">
-      <div class="obox lead"><div class="role">Founder &amp; Chairman</div><div class="nm">Lúcio Santana</div><div class="sc">Visão e ecossistema Royal · provê o hub/local · garante a saúde financeira e os pagamentos · entra nos encontros-chave.</div></div>
-      <div class="obox lead"><div class="role">CEO</div><div class="nm">Alexandre Medeiros</div><div class="sc">Execução e arquitetura estratégica · organiza o programa e os encontros · responde pela operação ponta a ponta.</div></div>
+      <div class="obox lead"><div class="role">Founder &amp; CEO</div><div class="nm">Lúcio Santana</div><div class="sc">Visão e ecossistema Royal · provê o hub/local · garante a saúde financeira e os pagamentos · lidera investimento e conduz o Pitch Day. Mais aconselhamento e aprovação do que execução.</div></div>
+      <div class="obox lead"><div class="role">COO</div><div class="nm">Alexandre Medeiros</div><div class="sc">Execução e arquitetura estratégica · toca o dia a dia · organiza o programa e os encontros com os conselheiros · responde pela operação ponta a ponta.</div></div>
     </div>
     <div class="conn"></div>
 
@@ -268,14 +289,15 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
       <div class="obox sm"><div class="role">Comercial</div><div class="nm">Fernando Alves</div><div class="sc">Estratégia &amp; crescimento</div></div>
       <div class="obox sm"><div class="role">Liderança</div><div class="nm">Kamila Adamatti</div><div class="sc">Gestão organizacional</div></div>
       <div class="obox sm"><div class="role">Processos</div><div class="nm">Alex Zocche</div><div class="sc">Operação &amp; escala</div></div>
-      <div class="obox sm"><div class="role">Growth / GTM</div><div class="nm">Gustavo (Guga)</div><div class="sc">Aquisição &amp; conteúdo</div></div>
+      <div class="obox sm"><div class="role">Growth / GTM</div><div class="nm">Gustavo Marion (Guga)</div><div class="sc">Aquisição &amp; conteúdo</div></div>
     </div>
     <div class="conn"></div>
 
-    <div class="tier-lbl">Execução da aceleração · parceiro</div>
+    <div class="tier-lbl">Entrega da aceleração</div>
     <div class="orgrow">
-      <div class="obox partner"><div class="role">Braço de entrega</div><div class="nm">Deploy US</div><div class="sc">Roda o modelo de aceleração e prepara as empresas para investimento (trilha VGT). 3 produtos: Startup · Empresa Tradicional · Internacionalização.</div></div>
-      <div class="obox partner"><div class="role">Veículo de investimento</div><div class="nm">VGT</div><div class="sc">Investe nas empresas qualificadas pela trilha.</div></div>
+      <div class="obox" style="border:1.5px solid var(--gold2)"><div class="role" style="color:var(--gold)">Prêmio · grátis</div><div class="nm">Aceleração RBG</div><div class="sc">Para quem é <b>escolhido</b>. Encarregado: <b>Alexandre (COO)</b>, no dia a dia <b>com os conselheiros</b> — é o programa de 120 dias detalhado abaixo.</div></div>
+      <div class="obox partner"><div class="role">Aceleração paga</div><div class="nm">Deploy US</div><div class="sc">Quem <b>não</b> ganha de graça pode <b>comprar a aceleração</b>. 3 produtos: Empresa Tradicional · Internacionalização · Startup.</div></div>
+      <div class="obox partner"><div class="role">Investimento</div><div class="nm">VGT</div><div class="sc">Investe nas empresas que mais se qualificam ao longo da trilha.</div></div>
     </div>
     <div class="conn"></div>
 
@@ -286,6 +308,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
       <div class="obox sm"><div class="role">Edição &amp; Social</div><div class="nm">Editor</div><div class="sc">Edita os clipes + vídeo YouTube e publica nas redes</div></div>
     </div>
   </div>
+  <div class="note"><b>Duas trilhas, uma entrega:</b> quem é <b>escolhido</b> entra de graça na <b>Aceleração RBG</b> (programa de 120 dias, tocado pelo Alexandre com os conselheiros) — equivale, na prática, ao produto <b>Empresa Tradicional</b> na versão prêmio. Quem <b>não</b> é escolhido pode comprar a aceleração pela <b>Deploy</b> (Empresa Tradicional · Internacionalização · Startup). A Deploy só atua nas <b>versões pagas</b>.</div>
   <div class="note"><b>Por evento:</b> 2 câmeras na captação + 1 editor cuidando da edição e do social, sob a produção do <b>Leandro</b>. As funções escalam conforme a cadência de edições aumenta.</div>
 </div></section>
 
@@ -298,6 +321,8 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   </div>
 
   <div class="single">
+    <div class="snode" style="border-top:3px solid var(--gold2)"><span class="sk">0 · Atenção · topo do funil</span><h3>O conteúdo que enche o funil</h3><p>O <b>vídeo do YouTube</b> — o programa do Pitch Day, até ~30 min, no formato Shark Tank — mais os <b>cortes</b> em YouTube, Instagram e TikTok sobre o evento. Tudo aponta para a página de inscrição.</p></div>
+    <div class="arrow">▼</div>
     <div class="snode"><span class="sk">1 · Entrada</span><h3>Inscrição no site — para o Pitch Day RBG</h3><p>Aberta a todos. Você se inscreve para o Pitch Day, e essa mesma inscrição já é a porta de entrada para o Royal Business Growth.</p><a href="inscricao.html" style="display:inline-block;margin-top:13px;background:var(--gold2);color:var(--navy);font-weight:700;font-size:12px;padding:10px 20px;border-radius:100px;font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.05em">Abrir página de inscrição →</a></div>
     <div class="arrow">▼</div>
     <div class="snode"><span class="sk">2 · Avaliação</span><h3>Triagem da RBG</h3><p>Avaliamos tração, fit e potencial de cada empresa inscrita — e definimos quem sobe ao palco e quem entra pela wait list.</p></div>
@@ -332,6 +357,39 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
 </div></section>
 
 <!-- JORNADA 120 DIAS -->
+<section id="metas"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Metas até dez/2026 · o funil em números</div>
+    <h2 class="sec-h">A régua do ano — o que é um mês bom</h2>
+    <p class="sec-sub">O alvo do ano puxa o funil inteiro. É a bússola do Alexandre (COO): direção, foco e o que cobrar de cada mês.</p>
+  </div>
+
+  <div class="gflow">
+    <div class="gcard"><div class="gv">500</div><div class="gl">Leads · empresas</div><div class="gd">No topo, vindos do conteúdo + inscrição.</div></div>
+    <div class="gconv"><span class="ar">→</span>20%</div>
+    <div class="gcard"><div class="gv">100</div><div class="gl">Calls de triagem</div><div class="gd">Conversas reais com empresas.</div></div>
+    <div class="gconv"><span class="ar">→</span>10%</div>
+    <div class="gcard"><div class="gv">10</div><div class="gl">Empresas aceleradas</div><div class="gd">~2 turmas (Ago + Dez).</div></div>
+    <div class="gconv"><span class="ar">→</span>~10%</div>
+    <div class="gcard hl"><div class="gv">1</div><div class="gl">Empresa investida</div><div class="gd">A 1ª parceria de investimento RBG.</div></div>
+  </div>
+
+  <table class="mtable">
+    <thead><tr><th>Mês (2026)</th><th>Leads</th><th>Calls</th><th>Marco do mês</th></tr></thead>
+    <tbody>
+      <tr><td>Julho</td><td class="num">85</td><td class="num">17</td><td>Base de tráfego + conteúdo no ar</td></tr>
+      <tr><td>Agosto</td><td class="num">90</td><td class="num">18</td><td class="marco">Pitch Day Ed. 2 (29–30) · Turma 1 (~5 aceleradas)</td></tr>
+      <tr><td>Setembro</td><td class="num">80</td><td class="num">16</td><td>Aceleração da Turma 1 em curso</td></tr>
+      <tr><td>Outubro</td><td class="num">80</td><td class="num">16</td><td>Qualificação para investimento</td></tr>
+      <tr><td>Novembro</td><td class="num">85</td><td class="num">17</td><td>Preparação da Ed. 3</td></tr>
+      <tr><td>Dezembro</td><td class="num">80</td><td class="num">16</td><td class="marco">Pitch Day Ed. 3 · Turma 2 (~5) · 1ª empresa investida</td></tr>
+      <tr class="tot"><td>Total até dez</td><td class="num">500</td><td class="num">100</td><td>10 aceleradas · 1 investida</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note"><b>Como ler o mês:</b> <b>mês bom</b> ≈ 85 leads e 17 calls (no ritmo da meta). <b>Sinal amarelo</b> abaixo de ~70 leads / 14 calls. <b>Sinal vermelho</b> abaixo de ~50 leads — o topo do funil (conteúdo + tráfego) precisa de atenção imediata. A conta fecha assim: <b>500 leads → 100 calls → 10 aceleradas → 1 investida</b>.</div>
+</div></section>
+
 <section id="jornada"><div class="wrap">
   <div class="sec-head">
     <div class="sec-tag">Programa de 120 dias · controle de entregáveis</div>
@@ -430,7 +488,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   </div>
 
   <div class="enc">
-    <div class="enc-h"><div class="enc-n">6</div><div><div class="enc-ti">Growth &amp; Go-to-Market</div><div class="enc-meta">Dias 75–90 · Fase Aceleração</div></div><span class="enc-mentor">Gustavo (Guga)</span></div>
+    <div class="enc-h"><div class="enc-n">6</div><div><div class="enc-ti">Growth &amp; Go-to-Market</div><div class="enc-meta">Dias 75–90 · Fase Aceleração</div></div><span class="enc-mentor">Gustavo Marion (Guga)</span></div>
     <div class="enc-b">
       <div class="enc-obj"><b>Objetivo:</b> tornar a aquisição de clientes previsível e fortalecer a marca.</div>
       <div class="enc-cols">
@@ -525,10 +583,10 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
       <li>Meta: <b>triagem mensal</b> de empresas, edições a cada ~3 meses caminhando para mensal.</li>
     </ul></div>
     <div class="card"><h3 class="serif">Motor de conteúdo</h3><ul>
-      <li><b>Captação:</b> câmeras + áudio limpo em todos os blocos.</li>
-      <li><b>Decupagem:</b> transcrição e seleção dos melhores momentos.</li>
-      <li><b>Edição:</b> 30+ clipes por edição + 1 vídeo YouTube ("Pitch Day RBG").</li>
-      <li><b>Social:</b> publicação e distribuição (Reels, LinkedIn, YouTube, Stories).</li>
+      <li><b>Vídeo principal:</b> o programa do Pitch Day no YouTube — até ~30 min, formato Shark Tank.</li>
+      <li><b>Cortes:</b> dezenas de cortes do evento para YouTube, Instagram e TikTok.</li>
+      <li><b>Captação:</b> 2 câmeras, áudio limpo, decupagem e seleção dos melhores momentos.</li>
+      <li><b>Destino:</b> todo o conteúdo aponta para a <b>página de inscrição</b> → triagem.</li>
     </ul></div>
   </div>
   <div class="note"><b>Quem não é investido vira audiência e cliente:</b> a distribuição divulga a <b>Deploy</b> (Startup · Empresa Tradicional · Internacionalização) e abre inscrições da próxima edição — o conteúdo realimenta o topo do funil.</div>
@@ -544,17 +602,18 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   <div class="tbl-scroll">
     <table class="raci">
       <thead><tr>
-        <th>Processo</th><th>Lúcio · Chairman</th><th>Alexandre · CEO</th><th>Conselho</th><th>Deploy</th><th>Produção</th><th>Edição / Conteúdo</th><th>Social</th><th>Financeiro</th>
+        <th>Processo</th><th>Lúcio · Founder/CEO</th><th>Alexandre · COO</th><th>Conselho</th><th>Deploy · pago</th><th>Produção</th><th>Edição / Conteúdo</th><th>Social</th><th>Financeiro</th>
       </tr></thead>
       <tbody>
-        <tr><td>Captação &amp; inscrições</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
-        <tr><td>Triagem &amp; seleção das empresas</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
-        <tr><td>Pitch Day (evento)</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td></tr>
-        <tr><td>Programa de aceleração 120 dias</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="r">R</span></td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="i">I</span></td></tr>
-        <tr><td>Diagnóstico &amp; tese de investimento</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
-        <tr><td>Investimento &amp; parceria</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="i">I</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
-        <tr><td>Motor de conteúdo (clipes + YouTube)</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td></tr>
-        <tr><td>Distribuição &amp; social</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
+        <tr><td>Captação &amp; inscrições (leads)</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
+        <tr><td>Triagem &amp; seleção das empresas</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Pitch Day (evento)</td><td><span class="r">R</span></td><td><span class="a">A</span></td><td><span class="i">I</span></td><td>—</td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td></tr>
+        <tr><td>Aceleração RBG · 120 dias (grátis)</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="r">R</span></td><td>—</td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="i">I</span></td></tr>
+        <tr><td>Aceleração paga (Deploy)</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td><span class="r">R</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
+        <tr><td>Diagnóstico &amp; tese</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
+        <tr><td>Investimento &amp; parceria</td><td><span class="a">A</span> <span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
+        <tr><td>Conteúdo (vídeo YouTube + cortes)</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td></tr>
+        <tr><td>Distribuição &amp; social</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
         <tr><td>Financeiro &amp; pagamentos</td><td><span class="a">A</span></td><td><span class="c">C</span></td><td>—</td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="r">R</span></td></tr>
         <tr><td>Conselheiros &amp; acionistas</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="i">I</span></td></tr>
       </tbody>
@@ -566,7 +625,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
     <span><span class="c">C</span> &nbsp;Consultado</span>
     <span><span class="i">I</span> &nbsp;Informado</span>
   </div>
-  <div class="note"><b>Leitura rápida:</b> o <b>Lúcio</b> responde por capital, investimento e pagamentos (saúde do negócio); o <b>Alexandre</b> executa e responde pela operação ponta a ponta; o <b>Conselho</b> entra na aceleração e no equity; <b>Deploy</b> entrega a aceleração; o time de <b>produção/edição/social</b> roda evento e conteúdo.</div>
+  <div class="note"><b>Leitura rápida:</b> o <b>Lúcio</b> aprova e responde pela saúde do negócio (capital e pagamentos) — e executa, na prática, só <b>investimento</b> e a condução do <b>Pitch Day</b>; o <b>Alexandre (COO)</b> executa e responde pela operação ponta a ponta; o <b>Conselho</b> entrega a aceleração RBG junto com o Alexandre; a <b>Deploy</b> aparece apenas na <b>aceleração paga</b>; o time de <b>produção/edição/social</b> roda evento e conteúdo.</div>
 </div></section>
 
 <!-- FOOTER -->
