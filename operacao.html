@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Operacional · Royal Business Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0A1733; --navy2:#16234A; --gold:#B68A24; --gold2:#D4A437; --gold3:#F0C44D;
+  --ink:#101A33; --ink2:#3A4763; --muted:#6E7790; --muted2:#9AA6C4;
+  --line:#E7E1D2; --line2:#F1ECDF; --paper:#fff; --bg:#F7F3EA; --cream:#FBF8F0;
+  --bluegrey:#5A6A8A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;font-size:15px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--muted)}
+h1,h2,h3{letter-spacing:-.01em;line-height:1.08}
+h1,h2,.sec-h,.nstar h2,.card h3.serif,.tier-lbl{font-family:'Cormorant Garamond',Georgia,serif}
+a{color:var(--gold);text-decoration:none}
+
+/* topbar */
+.top{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .logochip{height:34px;width:auto;display:block;border-radius:8px}
+.brand .cobrand{font-family:'Inter';font-size:12.5px;font-weight:600;color:var(--ink2)}
+.top nav{margin-left:auto;display:flex;gap:20px}
+.top nav a{font-size:13px;color:var(--ink2);font-weight:500}
+.top nav a:hover{color:var(--gold)}
+.top nav a.back{font-weight:600;color:var(--gold)}
+@media(max-width:900px){.top nav{display:none}.brand .cobrand{display:none}}
+
+/* hero */
+.hero{background:linear-gradient(180deg,#fff,var(--bg));border-bottom:1px solid var(--line);padding:60px 0 50px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--cream);color:var(--gold);border:1px solid #E7DBB6;border-radius:100px;padding:6px 15px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.hero h1{font-size:clamp(36px,5.6vw,62px);font-weight:700;margin:20px 0 16px;color:var(--navy)}
+.hero h1 .g{color:var(--gold)}
+.hero p.lead{font-size:18px;color:var(--ink2);max-width:760px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+@media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.fact .k{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2)}
+.fact .v{font-size:20px;font-weight:700;margin-top:6px;color:var(--navy);font-family:'Cormorant Garamond',serif}
+.fact .s{font-size:12.5px;color:var(--muted);margin-top:2px}
+
+section{padding:62px 0;border-bottom:1px solid var(--line)}
+.sec-tag{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.sec-h{font-size:clamp(26px,3.6vw,38px);font-weight:700;margin:10px 0 8px;color:var(--navy)}
+.sec-sub{color:var(--muted);max-width:720px;font-size:15.5px}
+.sec-head{margin-bottom:36px}
+
+/* north star */
+.nstar{background:radial-gradient(circle at 12% 0%,rgba(212,164,55,.18),transparent 45%),var(--navy);color:#fff;border-radius:20px;padding:42px 40px;border:1px solid #1d2c52}
+.nstar .tg{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold3)}
+.nstar h2{font-size:clamp(24px,3.2vw,34px);font-weight:700;margin:10px 0 14px}
+.nstar p{color:#CDD5E7;font-size:16.5px;max-width:840px}
+.nstar p b{color:#fff}
+.nstar .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:28px}
+@media(max-width:820px){.nstar .steps{grid-template-columns:1fr 1fr}}
+.nstar .st{background:rgba(255,255,255,.05);border:1px solid rgba(212,164,55,.25);border-radius:12px;padding:14px 15px}
+.nstar .st .n{font-family:'JetBrains Mono';font-size:10px;color:var(--gold3);letter-spacing:.1em}
+.nstar .st .t{font-weight:600;font-size:14px;margin-top:7px}
+.nstar .st .d{font-size:12px;color:#9AA6C4;margin-top:4px;line-height:1.5}
+
+/* generic cards */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--navy)}
+.card h3.serif{font-size:21px}
+.card p{font-size:14px;color:var(--ink2)}
+.card ul{margin:8px 0 0 2px;list-style:none}
+.card li{font-size:13.5px;color:var(--ink2);padding:6px 0 6px 20px;position:relative;border-top:1px dashed var(--line)}
+.card li:first-child{border-top:none}
+.card li::before{content:"◆";position:absolute;left:0;color:var(--gold2);font-size:10px;top:8px}
+
+/* ORG CHART */
+.org{display:flex;flex-direction:column;align-items:center;gap:0}
+.tier-lbl{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin:0 0 12px;font-weight:600}
+.conn{width:2px;height:26px;background:linear-gradient(var(--gold2),var(--line))}
+.obox{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 20px;text-align:center;min-width:210px}
+.obox.lead{background:var(--navy);color:#fff;border:none;min-width:240px}
+.obox .role{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.obox.lead .role{color:var(--gold3)}
+.obox .nm{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;margin-top:4px}
+.obox .sc{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.45}
+.obox.lead .sc{color:#9AA6C4}
+.orgrow{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.obox.sm{min-width:160px;padding:13px 14px}
+.obox.sm .nm{font-size:18px}
+.obox.partner{border-style:dashed;border-color:#D9CFB0;background:var(--cream)}
+.tierwrap{display:flex;flex-direction:column;align-items:center;width:100%}
+
+/* FUNNEL */
+.funnel{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:820px){.funnel{grid-template-columns:1fr}}
+.chan{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;border-top:4px solid var(--gold2)}
+.chan.b{border-top-color:var(--navy)}
+.chan .ch-k{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.chan.b .ch-k{color:var(--navy)}
+.chan h3{font-size:18px;font-weight:700;margin:4px 0 12px;color:var(--navy)}
+.fstep{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line);font-size:13.5px;color:var(--ink2)}
+.fstep:first-of-type{border-top:none}
+.fstep .fn{font-family:'JetBrains Mono';font-size:11px;color:var(--gold);font-weight:600;min-width:16px}
+.fstep b{color:var(--navy);font-weight:600}
+.arrow{display:flex;justify-content:center;align-items:center;color:var(--gold2);font-size:22px;margin:6px 0}
+.merge{background:radial-gradient(circle at 90% 0%,rgba(212,164,55,.16),transparent 50%),var(--navy);color:#fff;border-radius:16px;padding:26px 28px;margin-top:18px}
+.merge .mk{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold3)}
+.merge h3{font-size:22px;font-weight:700;margin:8px 0 6px;font-family:'Cormorant Garamond',serif}
+.merge p{color:#CDD5E7;font-size:14.5px;max-width:820px}
+.outs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+@media(max-width:680px){.outs{grid-template-columns:1fr}}
+.outc{background:rgba(255,255,255,.05);border:1px solid rgba(212,164,55,.25);border-radius:12px;padding:15px 16px}
+.outc .ot{font-weight:700;font-size:14.5px;color:var(--gold3)}
+.outc .od{font-size:12.5px;color:#9AA6C4;margin-top:4px;line-height:1.5}
+
+/* JOURNEY 120 dias */
+.jgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:920px){.jgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.jgrid{grid-template-columns:1fr}}
+.jcell{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;border-left:3px solid var(--gold2)}
+.jcell .jw{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2)}
+.jcell .jt{font-weight:700;font-size:15px;margin:5px 0 4px;color:var(--navy)}
+.jcell .jo{font-size:12.5px;color:var(--muted);line-height:1.5}
+.jcell .jo b{color:var(--gold)}
+
+/* RACI */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table.raci{width:100%;border-collapse:collapse;font-size:13px;min-width:760px;background:var(--paper)}
+table.raci th,table.raci td{padding:11px 12px;text-align:center;border-bottom:1px solid var(--line2);border-right:1px solid var(--line2)}
+table.raci thead th{background:var(--navy);color:var(--gold3);font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+table.raci tbody td:first-child,table.raci thead th:first-child{text-align:left;font-weight:600;color:var(--navy);background:var(--cream);min-width:210px}
+table.raci tbody tr:nth-child(even) td{background:var(--cream)}
+table.raci tbody tr:nth-child(even) td:first-child{background:#F4EFE1}
+.r{font-weight:700;color:#fff;background:var(--gold2);border-radius:6px;padding:2px 7px;font-size:11px;display:inline-block;min-width:22px}
+.a{font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:2px 7px;font-size:11px;display:inline-block;min-width:22px}
+.c{font-weight:700;color:var(--navy);background:#EFE6C8;border-radius:6px;padding:2px 7px;font-size:11px;display:inline-block;min-width:22px}
+.i{font-weight:600;color:var(--muted);font-size:11px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:var(--ink2)}
+.legend span b{font-weight:700}
+
+/* note */
+.note{background:var(--cream);border:1px solid #EADFBE;border-left:3px solid var(--gold2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--ink2);margin-top:18px}
+.note b{color:var(--navy)}
+
+footer{padding:40px 0;text-align:center;color:var(--muted)}
+footer .brand{justify-content:center;margin-bottom:10px}
+footer .fnav{display:flex;gap:18px;justify-content:center;font-size:13px;margin-bottom:14px}
+footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.placeholder{color:var(--gold);font-weight:600;border-bottom:1px dashed var(--gold2)}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="top"><div class="wrap">
+  <div class="brand"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth"><span class="cobrand">Sistema Operacional</span></div>
+  <nav>
+    <a href="#tese">Tese</a>
+    <a href="#org">Organograma</a>
+    <a href="#funil">Funil</a>
+    <a href="#jornada">120 dias</a>
+    <a href="#equity">Investimento</a>
+    <a href="#raci">Responsabilidades</a>
+    <a class="back" href="index.html">← Pitch Day</a>
+  </nav>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <span class="pill">● Plano operacional · Royal Business Growth</span>
+  <h1>O sistema que transforma <span class="g">empresas tradicionais</span> em ativos acelerados.</h1>
+  <p class="lead">A RBG capta, qualifica e acelera negócios de brasileiros em Orlando — e, ao entender cada empresa por dentro, investe, adquire equity e valoriza esses ativos. A entrega da aceleração roda no modelo da <b>Deploy</b>; o retorno volta em <b>dividendos</b> para os acionistas da Royal Business Growth.</p>
+  <div class="facts">
+    <div class="fact"><div class="k">Dois canais</div><div class="v">Site + Pitch Day</div><div class="s">Inbound e evento Shark Tank</div></div>
+    <div class="fact"><div class="k">Programa</div><div class="v">120 dias</div><div class="s">8 encontros quinzenais</div></div>
+    <div class="fact"><div class="k">Cadência</div><div class="v">Trimestral → mensal</div><div class="s">09 jun · 29–30 ago · dez</div></div>
+    <div class="fact"><div class="k">End goal</div><div class="v">Equity + dividendos</div><div class="s">Holding buy-and-build</div></div>
+  </div>
+</div></header>
+
+<!-- TESE / NORTH STAR -->
+<section id="tese"><div class="wrap">
+  <div class="nstar">
+    <div class="tg">A tese · North star</div>
+    <h2>Ser a aceleradora-holding dos negócios tradicionais brasileiros em Orlando.</h2>
+    <p>Pegamos empreendedores que <b>já vendem e já faturam</b>, trazemos <b>tecnologia, mentoria e um programa de aceleração</b>, e usamos o próprio programa como uma <b>due diligence viva</b> — entendemos a empresa por dentro. A partir daí, <b>investimos e adquirimos equity</b>, valorizamos o ativo e <b>distribuímos dividendos</b> aos acionistas da RBG. Começa em Orlando; expande depois.</p>
+    <div class="steps">
+      <div class="st"><div class="n">01</div><div class="t">Captar</div><div class="d">Site + Pitch Day trazem empresas que já têm tração.</div></div>
+      <div class="st"><div class="n">02</div><div class="t">Qualificar</div><div class="d">Triagem e programa de 120 dias revelam a empresa por dentro.</div></div>
+      <div class="st"><div class="n">03</div><div class="t">Investir</div><div class="d">Tese de investimento → equity / aquisição.</div></div>
+      <div class="st"><div class="n">04</div><div class="t">Valorizar</div><div class="d">Tech + mentoria + aceleração elevam o valor do ativo.</div></div>
+      <div class="st"><div class="n">05</div><div class="t">Distribuir</div><div class="d">Dividendos e liquidez para os acionistas RBG.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ORGANOGRAMA -->
+<section id="org"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Organograma</div>
+    <h2 class="sec-h">Quem decide, quem aconselha, quem executa</h2>
+    <p class="sec-sub">A liderança define a visão e a tese; o conselho aconselha por área e participa do equity; o time operacional entrega evento e conteúdo. A Deploy é o braço de execução da aceleração.</p>
+  </div>
+
+  <div class="org">
+    <div class="tier-lbl">Liderança</div>
+    <div class="orgrow">
+      <div class="obox lead"><div class="role">Founder &amp; Chairman</div><div class="nm">Lúcio Santana</div><div class="sc">Visão e ecossistema Royal · provê o hub/local · garante a saúde financeira e os pagamentos · entra nos encontros-chave.</div></div>
+      <div class="obox lead"><div class="role">CEO</div><div class="nm">Alexandre Medeiros</div><div class="sc">Execução e arquitetura estratégica · organiza o programa e os encontros · responde pela operação ponta a ponta.</div></div>
+    </div>
+    <div class="conn"></div>
+
+    <div class="tier-lbl">Conselho · por área (equity + voz)</div>
+    <div class="orgrow">
+      <div class="obox sm"><div class="role">Finanças</div><div class="nm">Carlos Osorio</div><div class="sc">Governança &amp; performance</div></div>
+      <div class="obox sm"><div class="role">Comercial</div><div class="nm">Fernando Alves</div><div class="sc">Estratégia &amp; crescimento</div></div>
+      <div class="obox sm"><div class="role">Liderança</div><div class="nm">Kamila Adamatti</div><div class="sc">Gestão organizacional</div></div>
+      <div class="obox sm"><div class="role">Processos</div><div class="nm">Alex Zocche</div><div class="sc">Operação &amp; escala</div></div>
+      <div class="obox sm"><div class="role">Growth / GTM</div><div class="nm">Gustavo (Guga)</div><div class="sc">Aquisição &amp; conteúdo</div></div>
+      <div class="obox sm"><div class="role">Conselheiro</div><div class="nm">Marilão</div><div class="sc"><span class="placeholder">área a definir</span></div></div>
+    </div>
+    <div class="conn"></div>
+
+    <div class="tier-lbl">Execução da aceleração · parceiro</div>
+    <div class="orgrow">
+      <div class="obox partner"><div class="role">Braço de entrega</div><div class="nm">Deploy US</div><div class="sc">Roda o modelo de aceleração e prepara as empresas para investimento (trilha VGT). 3 produtos: Startup · Empresa Tradicional · Internacionalização.</div></div>
+      <div class="obox partner"><div class="role">Veículo de investimento</div><div class="nm">VGT</div><div class="sc">Investe nas empresas qualificadas pela trilha.</div></div>
+    </div>
+    <div class="conn"></div>
+
+    <div class="tier-lbl">Time operacional RBG</div>
+    <div class="orgrow">
+      <div class="obox sm"><div class="role">Produção</div><div class="nm">Eventos</div><div class="sc">Operação do dia · logística</div></div>
+      <div class="obox sm"><div class="role">Captação</div><div class="nm">Câmeras / DOP</div><div class="sc">Áudio limpo · backdrop branded</div></div>
+      <div class="obox sm"><div class="role">Pós</div><div class="nm">Edição</div><div class="sc">Clipes + vídeo YouTube</div></div>
+      <div class="obox sm"><div class="role">Conteúdo</div><div class="nm">Decupagem</div><div class="sc">Transcrição · legendas · seleção</div></div>
+      <div class="obox sm"><div class="role">Distribuição</div><div class="nm">Social Media</div><div class="sc">Publicação · comunidade · tráfego</div></div>
+    </div>
+  </div>
+  <div class="note"><b>Nomes do time operacional</b> entram conforme você definir as pessoas — a estrutura (papéis) já está pronta para alocar. Marilão entra com a área dele assim que confirmada.</div>
+</div></section>
+
+<!-- FUNIL -->
+<section id="funil"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Funil de aquisição</div>
+    <h2 class="sec-h">Dois canais, um programa, um destino</h2>
+    <p class="sec-sub">As empresas chegam por dois caminhos. Os dois convergem para o mesmo programa de aceleração — e o mesmo destino de investimento.</p>
+  </div>
+
+  <div class="funnel">
+    <div class="chan">
+      <div class="ch-k">Canal A · Inbound</div>
+      <h3>Site da Royal Business Growth</h3>
+      <div class="fstep"><span class="fn">1</span><div>Empreendedor <b>se inscreve no site</b> para o programa de aceleração.</div></div>
+      <div class="fstep"><span class="fn">2</span><div><b>Triagem</b> da RBG: tração, fit e potencial de investimento.</div></div>
+      <div class="fstep"><span class="fn">3</span><div><b>Aprovado:</b> entra no programa de aceleração RBG (bolsa/prêmio ou contratado).</div></div>
+      <div class="fstep"><span class="fn">4</span><div><b>Indicado:</b> direcionado à <b>Deploy</b> para se preparar e qualificar à trilha de investimento (VGT).</div></div>
+    </div>
+    <div class="chan b">
+      <div class="ch-k">Canal B · Evento</div>
+      <h3>Pitch Day RBG · formato Shark Tank</h3>
+      <div class="fstep"><span class="fn">1</span><div><b>X empresas</b> selecionadas pitcham ao vivo para a banca de conselheiros.</div></div>
+      <div class="fstep"><span class="fn">2</span><div>Banca pontua pelo <b>scorecard (100 pts)</b> e delibera.</div></div>
+      <div class="fstep"><span class="fn">3</span><div><b>1–2 vencedoras</b> ganham a aceleração RBG de 120 dias.</div></div>
+      <div class="fstep"><span class="fn">4</span><div>Demais recebem oferta <b>Deploy</b> (acompanhamento de 4 meses, condição de evento).</div></div>
+    </div>
+  </div>
+
+  <div class="arrow">▼</div>
+
+  <div class="merge">
+    <div class="mk">Convergência</div>
+    <h3>Programa de Aceleração RBG · 120 dias</h3>
+    <p>Os dois canais entram no mesmo programa. Ao longo de 120 dias com 8 encontros quinzenais e os conselheiros por área, a RBG <b>entende a empresa por dentro</b> e constrói a <b>tese de investimento</b>.</p>
+    <div class="outs">
+      <div class="outc"><div class="ot">→ Investimento &amp; equity (RBG holding)</div><div class="od">Empresas qualificadas recebem oferta de equity / aquisição. RBG valoriza o ativo e distribui dividendos aos acionistas.</div></div>
+      <div class="outc"><div class="ot">→ Trilha Deploy (revenue)</div><div class="od">Quem não é investido segue nos produtos Deploy (Startup · Empresa Tradicional · Internacionalização) — receita e qualificação contínua.</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- JORNADA 120 DIAS -->
+<section id="jornada"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Jornada de 120 dias</div>
+    <h2 class="sec-h">8 encontros quinzenais · um conselheiro por área</h2>
+    <p class="sec-sub">Alexandre organiza e conduz; o Lúcio entra nos encontros-chave com a visão. Cada quinzena ativa um conselheiro especialista — diagnóstico → plano → execução → tese de investimento.</p>
+  </div>
+  <div class="jgrid">
+    <div class="jcell"><div class="jw">Quinzena 1 · Dias 0–15</div><div class="jt">Diagnóstico &amp; metas</div><div class="jo">Raio-X do negócio e do gargalo principal. <b>Alexandre + Lúcio</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 2 · Dias 15–30</div><div class="jt">Finanças &amp; governança</div><div class="jo">Indicadores, caixa e saúde financeira. <b>Carlos Osorio</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 3 · Dias 30–45</div><div class="jt">Comercial &amp; crescimento</div><div class="jo">Motor de vendas previsível. <b>Fernando Alves</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 4 · Dias 45–60</div><div class="jt">Processos &amp; operação</div><div class="jo">Padronização e redução de dependência. <b>Alex Zocche</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 5 · Dias 60–75</div><div class="jt">Liderança &amp; time</div><div class="jo">Profissionalização da gestão e cultura. <b>Kamila Adamatti</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 6 · Dias 75–90</div><div class="jt">Growth &amp; Go-to-Market</div><div class="jo">Aquisição, marca e conteúdo. <b>Gustavo (Guga)</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 7 · Dias 90–105</div><div class="jt">Tech &amp; IA aplicada</div><div class="jo">Tecnologia como alavanca de margem. <b>Deploy</b>.</div></div>
+    <div class="jcell"><div class="jw">Quinzena 8 · Dias 105–120</div><div class="jt">Tese de investimento</div><div class="jo">Valuation, oferta de equity e decisão. <b>Lúcio + Alexandre + Conselho</b>.</div></div>
+  </div>
+  <div class="note"><b>Encontro de visão:</b> em paralelo aos quinzenais técnicos, o Lúcio conduz um encontro de visão/estratégia com cada empresa — alinhando o caso ao end goal da holding.</div>
+</div></section>
+
+<!-- INVESTIMENTO / EQUITY -->
+<section id="equity"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Modelo de investimento</div>
+    <h2 class="sec-h">Como a RBG investe, valoriza e distribui</h2>
+    <p class="sec-sub">O programa é a porta de entrada do investimento. A holding adquire equity, acelera o ativo e remunera os acionistas.</p>
+  </div>
+  <div class="grid3">
+    <div class="card"><h3 class="serif">1 · Tese &amp; oferta</h3><ul>
+      <li>120 dias funcionam como <b>due diligence viva</b>.</li>
+      <li>Valuation construído com tração + potencial.</li>
+      <li>Oferta de <b>equity</b> ou aquisição da empresa.</li>
+      <li>Tecnologia e mentoria entram para valorizar o ativo.</li>
+    </ul></div>
+    <div class="card"><h3 class="serif">2 · Direitos dos acionistas RBG</h3><ul>
+      <li><b>Dividendos</b> dos ativos acelerados e investidos.</li>
+      <li><b>Preferência</b> na aquisição de novas ações.</li>
+      <li>Acesso ao <b>deal flow</b> qualificado da RBG.</li>
+      <li>Liquidez em eventos de exit / buyout.</li>
+    </ul></div>
+    <div class="card"><h3 class="serif">3 · Conselheiros no board</h3><ul>
+      <li>Podem pedir <b>cadeira no board</b> de uma empresa específica.</li>
+      <li>Entram com <b>equity x</b> negociado e <b>voz</b> nas decisões.</li>
+      <li>Remunerados pela contribuição por área.</li>
+      <li>Co-investem ao lado da RBG / VGT.</li>
+    </ul></div>
+  </div>
+  <div class="note"><b>Resumo do retorno:</b> RBG compra barato e bem qualificado → acelera → valoriza → distribui dividendos. O conselheiro deixa de ser só mentor e vira <b>sócio do upside</b> das empresas que ajuda a construir.</div>
+</div></section>
+
+<!-- CADÊNCIA & CONTEÚDO -->
+<section id="conteudo"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Cadência &amp; motor de conteúdo</div>
+    <h2 class="sec-h">Cada edição vira triagem — e vira mídia</h2>
+    <p class="sec-sub">O Pitch Day é recorrente. Toda edição alimenta o funil de empresas e a máquina de conteúdo (clipes + YouTube).</p>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3 class="serif">Calendário de edições</h3><ul>
+      <li><b>Edição 1 — 09 jun 2026</b> · piloto realizado ✓</li>
+      <li><b>Edição 2 — 29–30 ago 2026</b> · Orlando · inscrições abertas</li>
+      <li><b>Edição 3 — dez 2026</b> · fechando o trimestre</li>
+      <li>Meta: <b>triagem mensal</b> de empresas, edições a cada ~3 meses caminhando para mensal.</li>
+    </ul></div>
+    <div class="card"><h3 class="serif">Motor de conteúdo</h3><ul>
+      <li><b>Captação:</b> câmeras + áudio limpo em todos os blocos.</li>
+      <li><b>Decupagem:</b> transcrição e seleção dos melhores momentos.</li>
+      <li><b>Edição:</b> 30+ clipes por edição + 1 vídeo YouTube ("Pitch Day RBG").</li>
+      <li><b>Social:</b> publicação e distribuição (Reels, LinkedIn, YouTube, Stories).</li>
+    </ul></div>
+  </div>
+  <div class="note"><b>Quem não é investido vira audiência e cliente:</b> a distribuição divulga a <b>Deploy</b> (Startup · Empresa Tradicional · Internacionalização) e abre inscrições da próxima edição — o conteúdo realimenta o topo do funil.</div>
+</div></section>
+
+<!-- RACI -->
+<section id="raci"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Matriz de responsabilidade · RACI</div>
+    <h2 class="sec-h">O que existe e quem responde por cada processo</h2>
+    <p class="sec-sub">Para cada processo-chave: quem <b>executa (R)</b>, quem <b>aprova/responde (A)</b>, quem é <b>consultado (C)</b> e quem é <b>informado (I)</b>.</p>
+  </div>
+  <div class="tbl-scroll">
+    <table class="raci">
+      <thead><tr>
+        <th>Processo</th><th>Lúcio · Chairman</th><th>Alexandre · CEO</th><th>Conselho</th><th>Deploy</th><th>Produção</th><th>Edição / Conteúdo</th><th>Social</th><th>Financeiro</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Captação &amp; inscrições</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
+        <tr><td>Triagem &amp; seleção das empresas</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        <tr><td>Pitch Day (evento)</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td></tr>
+        <tr><td>Programa de aceleração 120 dias</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="r">R</span></td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="i">I</span></td></tr>
+        <tr><td>Diagnóstico &amp; tese de investimento</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
+        <tr><td>Investimento / aquisição de equity</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="i">I</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
+        <tr><td>Motor de conteúdo (clipes + YouTube)</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td></tr>
+        <tr><td>Distribuição &amp; social</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
+        <tr><td>Financeiro &amp; pagamentos</td><td><span class="a">A</span></td><td><span class="c">C</span></td><td>—</td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="r">R</span></td></tr>
+        <tr><td>Conselheiros &amp; acionistas</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="i">I</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="legend">
+    <span><span class="r">R</span> &nbsp;Responsável — executa</span>
+    <span><span class="a">A</span> &nbsp;Aprova — responde pelo resultado</span>
+    <span><span class="c">C</span> &nbsp;Consultado</span>
+    <span><span class="i">I</span> &nbsp;Informado</span>
+  </div>
+  <div class="note"><b>Leitura rápida:</b> o <b>Lúcio</b> responde por capital, investimento e pagamentos (saúde do negócio); o <b>Alexandre</b> executa e responde pela operação ponta a ponta; o <b>Conselho</b> entra na aceleração e no equity; <b>Deploy</b> entrega a aceleração; o time de <b>produção/edição/social</b> roda evento e conteúdo.</div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="brand"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth"></div>
+  <div class="fnav"><a href="index.html">Pitch Day</a> · <a href="#tese">Tese</a> · <a href="#org">Organograma</a> · <a href="#funil">Funil</a> · <a href="#raci">RACI</a></div>
+  <div class="fl">Royal Business Growth · Royal Accelerator × Deploy US · Orlando 2026</div>
+</div></footer>
+
+</body>
+</html>
