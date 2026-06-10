@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição · RBG Pitch Day · 29–30 ago · Orlando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1733;--gold:#B68A24;--gold2:#D4A437;--gold3:#F0C44D;--ink:#101A33;--ink2:#3A4763;--muted:#6E7790;--muted2:#9AA6C4;--line:#E7E1D2;--line2:#F1ECDF;--paper:#fff;--bg:#F7F3EA;--cream:#FBF8F0;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55;font-size:15px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif}
+a{color:var(--gold);text-decoration:none}
+.top{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:58px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .logochip{height:32px;width:auto;border-radius:8px;display:block}
+.brand .cobrand{font-family:'Inter';font-size:12.5px;font-weight:600;color:var(--ink2)}
+.top nav{margin-left:auto;display:flex;gap:18px;font-size:13px}
+.top nav a{color:var(--ink2);font-weight:500}.top nav a:hover{color:var(--gold)}
+@media(max-width:720px){.top nav{display:none}.brand .cobrand{display:none}}
+
+/* hero navy */
+.hero{background:radial-gradient(circle at 10% 0%,rgba(212,164,55,.16),transparent 45%),var(--navy);color:#fff;padding:54px 0 48px}
+.hero .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,164,55,.5);color:var(--gold3);border-radius:100px;padding:6px 15px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,5.4vw,54px);font-weight:700;margin:18px 0 12px;line-height:1.02}
+.hero h1 .g{color:var(--gold3)}
+.hero p{color:#CDD5E7;font-size:17px;max-width:640px}
+.hero .when{display:flex;gap:22px;margin-top:24px;flex-wrap:wrap}
+.hero .when div{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9AA6C4}
+.hero .when b{display:block;font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;letter-spacing:0;margin-top:3px}
+
+section{padding:48px 0;border-bottom:1px solid var(--line)}
+.sec-tag{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.sec-h{font-size:clamp(24px,3.4vw,32px);font-weight:700;color:var(--navy);margin:8px 0 6px}
+.sec-sub{color:var(--muted);max-width:680px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+@media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;border-top:3px solid var(--gold2)}
+.step .n{font-family:'JetBrains Mono';font-size:11px;color:var(--gold);font-weight:700}
+.step .t{font-weight:700;font-size:15.5px;color:var(--navy);margin:7px 0 4px}
+.step .d{font-size:13px;color:var(--ink2);line-height:1.5}
+.note{background:var(--cream);border:1px solid #EADFBE;border-left:3px solid var(--gold2);border-radius:10px;padding:15px 17px;font-size:14px;color:var(--ink2);margin-top:20px}
+.note b{color:var(--navy)}
+
+/* form */
+.formcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;margin-top:8px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:640px){.frow{grid-template-columns:1fr}}
+.field label{display:block;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font-family:'Inter';font-size:14.5px;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--cream);color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold2);background:#fff}
+.field textarea{resize:vertical;min-height:84px}
+.field.full{grid-column:1 / -1}
+.opts{display:flex;flex-direction:column;gap:10px;margin:4px 0 18px}
+.opt{display:flex;gap:11px;align-items:flex-start;cursor:pointer;font-size:14px;color:var(--ink2)}
+.opt input{margin-top:3px;width:17px;height:17px;accent-color:var(--gold2)}
+.opt b{color:var(--navy)}
+.submit{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,#F4D06A,#D0A02F);color:var(--navy);font-weight:800;font-size:16px;letter-spacing:.02em;text-transform:uppercase;padding:16px 34px;border:none;border-radius:100px;cursor:pointer;box-shadow:0 14px 34px -14px rgba(212,164,55,.6)}
+.submit:hover{filter:brightness(1.04)}
+.formnote{font-size:12.5px;color:var(--muted);margin-top:14px}
+.ok{display:none;background:#EEF6F0;border:1px solid #CDE6D5;border-radius:14px;padding:22px;color:#1d5b38;font-size:15px}
+.ok.show{display:block}
+.ok b{color:#14502e}
+
+footer{padding:36px 0;text-align:center;color:var(--muted)}
+footer .brand{justify-content:center;margin-bottom:10px}
+footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <div class="brand"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth"><span class="cobrand">Inscrição</span></div>
+  <nav><a href="index.html">Pitch Day</a><a href="operacao.html">Operação</a><a href="#form">Inscrever →</a></nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="pill">● Inscrições abertas</span>
+  <h1>Inscreva-se para o <span class="g">RBG Pitch Day</span></h1>
+  <p>Apresente o seu negócio em Orlando. Você se inscreve aqui para o Pitch Day — e essa mesma inscrição já é a sua porta de entrada para o <b style="color:#fff">Royal Business Growth</b>.</p>
+  <div class="when">
+    <div>Quando<b>29 &amp; 30 Ago</b></div>
+    <div>Onde<b>Orlando · FL</b></div>
+    <div>Formato<b>Shark Tank</b></div>
+    <div>No palco<b>~5 empresas</b></div>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="sec-tag">Como funciona</div>
+  <h2 class="sec-h">Uma inscrição. Todo mundo é avaliado.</h2>
+  <p class="sec-sub">Existe uma única inscrição — para o Pitch Day. A partir dela, a gente avalia todas as empresas.</p>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><div class="t">Você se inscreve</div><div class="d">Preenche o formulário abaixo. É a porta de entrada para o Pitch Day e para o RBG.</div></div>
+    <div class="step"><div class="n">02</div><div class="t">A gente avalia</div><div class="d">Olhamos tração, fit e potencial de cada empresa inscrita.</div></div>
+    <div class="step"><div class="n">03</div><div class="t">~5 sobem ao palco</div><div class="d">Cerca de 5 empresas são selecionadas para pitchar no formato Shark Tank.</div></div>
+    <div class="step"><div class="n">04</div><div class="t">Wait list para todos</div><div class="d">As demais entram na wait list — e podem entrar no RBG mesmo sem subir ao palco.</div></div>
+  </div>
+  <div class="note"><b>Importante:</b> você não precisa ir ao palco para fazer parte. Quem se inscreve já pode entrar no <b>Royal Business Growth</b> — o programa de aceleração de 120 dias com mentores por área. O palco é a vitrine; o programa é o destino.</div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-tag">Para quem é</div>
+  <h2 class="sec-h">Negócios que já vendem e querem escalar</h2>
+  <p class="sec-sub">Empreendedores com negócios tradicionais que já faturam e querem trazer tecnologia, mentoria e método para crescer — começando pela comunidade brasileira em Orlando.</p>
+</div></section>
+
+<section id="form"><div class="wrap">
+  <div class="sec-tag">Inscrição</div>
+  <h2 class="sec-h">Garanta a sua vaga na avaliação</h2>
+  <p class="sec-sub">Leva 2 minutos. Vagas no palco são limitadas (~5) — mas a inscrição está aberta a todos.</p>
+
+  <form class="formcard" id="insForm">
+    <div class="frow">
+      <div class="field"><label>Seu nome*</label><input name="nome" required placeholder="Nome completo"></div>
+      <div class="field"><label>Empresa*</label><input name="empresa" required placeholder="Nome da empresa"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label>E-mail*</label><input name="email" type="email" required placeholder="voce@empresa.com"></div>
+      <div class="field"><label>WhatsApp*</label><input name="whatsapp" required placeholder="+1 / +55 …"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label>Site / Instagram</label><input name="link" placeholder="@ ou site"></div>
+      <div class="field"><label>Setor</label><input name="setor" placeholder="Ex.: alimentação, serviços, varejo…"></div>
+    </div>
+    <div class="frow">
+      <div class="field"><label>Faturamento mensal aproximado</label>
+        <select name="faturamento">
+          <option value="">Selecione…</option>
+          <option>Ainda começando</option>
+          <option>Até US$ 10k/mês</option>
+          <option>US$ 10k – 50k/mês</option>
+          <option>US$ 50k – 200k/mês</option>
+          <option>Acima de US$ 200k/mês</option>
+        </select>
+      </div>
+      <div class="field"><label>Há quanto tempo opera</label><input name="tempo" placeholder="Ex.: 2 anos"></div>
+    </div>
+    <div class="field full" style="margin-bottom:16px"><label>Sua empresa em 1 frase*</label><input name="pitch" required placeholder="O que você faz e para quem"></div>
+    <div class="field full" style="margin-bottom:18px"><label>Por que você quer participar?</label><textarea name="motivo" placeholder="O que você espera destravar no programa"></textarea></div>
+
+    <div class="opts">
+      <label class="opt"><input type="checkbox" name="palco" checked> <span><b>Quero subir ao palco</b> do Pitch Day (formato Shark Tank).</span></label>
+      <label class="opt"><input type="checkbox" name="programa" checked> <span><b>Quero entrar no Royal Business Growth</b> (programa de 120 dias), mesmo que não suba ao palco.</span></label>
+    </div>
+
+    <button class="submit" type="submit">Enviar inscrição →</button>
+    <div class="formnote">Ao enviar, abrimos um e-mail já preenchido para a equipe RBG confirmar a sua inscrição. Em breve este formulário será conectado a um cadastro automático.</div>
+  </form>
+
+  <div class="ok" id="okMsg"><b>Inscrição montada! ✓</b><br>Abrimos o seu e-mail com os dados preenchidos — é só enviar para a equipe RBG concluir. Se não abrir, escreva para <a href="mailto:gmarion@deployux.com">gmarion@deployux.com</a>.</div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="brand"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth"></div>
+  <div class="fl">Royal Business Growth · Royal Accelerator × Deploy US · Orlando 2026</div>
+</div></footer>
+
+<script>
+document.getElementById('insForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target, g=function(n){var el=f.elements[n];return el?(el.type==='checkbox'?(el.checked?'Sim':'Não'):el.value):''};
+  var linhas=[
+    'Nome: '+g('nome'),'Empresa: '+g('empresa'),'E-mail: '+g('email'),'WhatsApp: '+g('whatsapp'),
+    'Site/Instagram: '+g('link'),'Setor: '+g('setor'),'Faturamento: '+g('faturamento'),'Tempo: '+g('tempo'),
+    'Pitch (1 frase): '+g('pitch'),'Motivo: '+g('motivo'),
+    'Quer palco: '+g('palco'),'Quer programa RBG: '+g('programa')
+  ];
+  var assunto='Inscrição RBG Pitch Day — '+g('empresa');
+  var corpo=linhas.join('\n');
+  window.location.href='mailto:gmarion@deployux.com?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(corpo);
+  document.getElementById('okMsg').classList.add('show');
+  document.getElementById('okMsg').scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>

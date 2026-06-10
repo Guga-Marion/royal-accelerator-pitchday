@@ -120,6 +120,50 @@ section{padding:62px 0;border-bottom:1px solid var(--line)}
 .outc .ot{font-weight:700;font-size:14.5px;color:var(--gold3)}
 .outc .od{font-size:12.5px;color:#9AA6C4;margin-top:4px;line-height:1.5}
 
+/* funil único */
+.single{display:flex;flex-direction:column;align-items:stretch}
+.snode{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 24px;text-align:center}
+.snode .sk{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.snode h3{font-size:19px;font-weight:700;color:var(--navy);margin:6px 0 5px}
+.snode p{font-size:14px;color:var(--ink2);max-width:700px;margin:0 auto}
+
+/* TRACKER 120 dias */
+.trk-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 18px;margin-bottom:18px}
+.trk-top label{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.trk-top input{font-family:'Inter';font-size:14px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;min-width:230px;color:var(--ink);background:var(--cream)}
+.trk-top input:focus{outline:none;border-color:var(--gold2)}
+.trk-prog{margin-left:auto;display:flex;align-items:center;gap:12px}
+.trk-bar{width:190px;height:9px;background:var(--line);border-radius:100px;overflow:hidden}
+.trk-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold2),var(--gold3));transition:width .35s}
+.trk-pct{font-family:'JetBrains Mono';font-size:13px;font-weight:700;color:var(--navy);white-space:nowrap}
+.trk-reset{font-family:'JetBrains Mono';font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:8px 11px;cursor:pointer}
+.trk-reset:hover{border-color:var(--gold2);color:var(--gold)}
+.enc{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden}
+.enc-h{display:flex;align-items:center;gap:13px;padding:15px 20px;background:var(--cream);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.enc-n{width:34px;height:34px;border-radius:9px;background:var(--navy);color:var(--gold3);font-family:'JetBrains Mono';font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none}
+.enc-ti{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;color:var(--navy);line-height:1.1}
+.enc-meta{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+.enc-mentor{margin-left:auto;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold);font-weight:600;background:var(--paper);border:1px solid #E7DBB6;border-radius:7px;padding:5px 10px}
+.enc-b{padding:18px 20px}
+.enc-obj{font-size:14px;color:var(--ink2);margin-bottom:14px}
+.enc-obj b{color:var(--navy)}
+.enc-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px}
+@media(max-width:680px){.enc-cols{grid-template-columns:1fr}}
+.enc-col h4{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:7px}
+.enc-col ul{list-style:none}
+.enc-col li{font-size:13px;color:var(--ink2);padding:4px 0 4px 15px;position:relative}
+.enc-col li::before{content:"·";position:absolute;left:4px;color:var(--gold2);font-weight:700}
+.tasks{border-top:1px dashed var(--line);padding-top:12px;margin-top:14px}
+.tasks .th{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.tasks .th h4{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);font-weight:700}
+.tasks .th .cnt{font-family:'JetBrains Mono';font-size:11px;color:var(--gold);font-weight:700;margin-left:auto}
+.task{display:flex;align-items:flex-start;gap:11px;padding:7px 0;cursor:pointer;user-select:none}
+.task .cbx{width:20px;height:20px;border:1.6px solid var(--gold);border-radius:6px;flex:none;margin-top:1px;background:var(--cream);position:relative;transition:.15s}
+.task.done .cbx{background:var(--gold2);border-color:var(--gold2)}
+.task.done .cbx::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:13px;font-weight:800}
+.task .tl{font-size:13.5px;color:var(--ink2)}
+.task.done .tl{color:var(--muted);text-decoration:line-through}
+
 /* JOURNEY 120 dias */
 .jgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media(max-width:920px){.jgrid{grid-template-columns:1fr 1fr}}
@@ -168,6 +212,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
     <a href="#jornada">120 dias</a>
     <a href="#equity">Investimento</a>
     <a href="#raci">Responsabilidades</a>
+    <a href="inscricao.html" style="color:var(--gold2);font-weight:700">Inscrição</a>
     <a class="back" href="index.html">← Pitch Day</a>
   </nav>
 </div></div>
@@ -176,12 +221,12 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
 <header class="hero"><div class="wrap">
   <span class="pill">● Plano operacional · Royal Business Growth</span>
   <h1>O sistema que transforma <span class="g">empresas tradicionais</span> em ativos acelerados.</h1>
-  <p class="lead">A RBG capta, qualifica e acelera negócios de brasileiros em Orlando — e, ao entender cada empresa por dentro, investe, adquire equity e valoriza esses ativos. A entrega da aceleração roda no modelo da <b>Deploy</b>; o retorno volta em <b>dividendos</b> para os acionistas da Royal Business Growth.</p>
+  <p class="lead">A RBG capta, qualifica e acelera negócios de brasileiros em Orlando — e, ao entender cada empresa por dentro, investe e se torna <b>parceira de longo prazo</b> desses negócios. A entrega da aceleração roda no modelo da <b>Deploy</b>; o crescimento é construído junto, valorizando cada empresa.</p>
   <div class="facts">
     <div class="fact"><div class="k">Dois canais</div><div class="v">Site + Pitch Day</div><div class="s">Inbound e evento Shark Tank</div></div>
     <div class="fact"><div class="k">Programa</div><div class="v">120 dias</div><div class="s">8 encontros quinzenais</div></div>
     <div class="fact"><div class="k">Cadência</div><div class="v">Trimestral → mensal</div><div class="s">09 jun · 29–30 ago · dez</div></div>
-    <div class="fact"><div class="k">End goal</div><div class="v">Equity + dividendos</div><div class="s">Holding buy-and-build</div></div>
+    <div class="fact"><div class="k">End goal</div><div class="v">Investir &amp; acelerar</div><div class="s">Parceria de longo prazo</div></div>
   </div>
 </div></header>
 
@@ -190,13 +235,13 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   <div class="nstar">
     <div class="tg">A tese · North star</div>
     <h2>Ser a aceleradora-holding dos negócios tradicionais brasileiros em Orlando.</h2>
-    <p>Pegamos empreendedores que <b>já vendem e já faturam</b>, trazemos <b>tecnologia, mentoria e um programa de aceleração</b>, e usamos o próprio programa como uma <b>due diligence viva</b> — entendemos a empresa por dentro. A partir daí, <b>investimos e adquirimos equity</b>, valorizamos o ativo e <b>distribuímos dividendos</b> aos acionistas da RBG. Começa em Orlando; expande depois.</p>
+    <p>Pegamos empreendedores que <b>já vendem e já faturam</b>, trazemos <b>tecnologia, mentoria e um programa de aceleração</b>, e usamos o próprio programa como um <b>diagnóstico profundo</b> — entendemos a empresa por dentro. A partir daí, <b>investimos e nos tornamos parceiros de longo prazo</b>, valorizamos o negócio e o crescimento se reverte para todos os envolvidos. Começa em Orlando; expande depois.</p>
     <div class="steps">
       <div class="st"><div class="n">01</div><div class="t">Captar</div><div class="d">Site + Pitch Day trazem empresas que já têm tração.</div></div>
       <div class="st"><div class="n">02</div><div class="t">Qualificar</div><div class="d">Triagem e programa de 120 dias revelam a empresa por dentro.</div></div>
-      <div class="st"><div class="n">03</div><div class="t">Investir</div><div class="d">Tese de investimento → equity / aquisição.</div></div>
-      <div class="st"><div class="n">04</div><div class="t">Valorizar</div><div class="d">Tech + mentoria + aceleração elevam o valor do ativo.</div></div>
-      <div class="st"><div class="n">05</div><div class="t">Distribuir</div><div class="d">Dividendos e liquidez para os acionistas RBG.</div></div>
+      <div class="st"><div class="n">03</div><div class="t">Investir</div><div class="d">Investimento e parceria de longo prazo.</div></div>
+      <div class="st"><div class="n">04</div><div class="t">Valorizar</div><div class="d">Tech + mentoria + aceleração elevam o valor do negócio.</div></div>
+      <div class="st"><div class="n">05</div><div class="t">Colher</div><div class="d">O crescimento se reverte para sócios e parceiros.</div></div>
     </div>
   </div>
 </div></section>
@@ -224,7 +269,6 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
       <div class="obox sm"><div class="role">Liderança</div><div class="nm">Kamila Adamatti</div><div class="sc">Gestão organizacional</div></div>
       <div class="obox sm"><div class="role">Processos</div><div class="nm">Alex Zocche</div><div class="sc">Operação &amp; escala</div></div>
       <div class="obox sm"><div class="role">Growth / GTM</div><div class="nm">Gustavo (Guga)</div><div class="sc">Aquisição &amp; conteúdo</div></div>
-      <div class="obox sm"><div class="role">Conselheiro</div><div class="nm">Marilão</div><div class="sc"><span class="placeholder">área a definir</span></div></div>
     </div>
     <div class="conn"></div>
 
@@ -235,54 +279,54 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
     </div>
     <div class="conn"></div>
 
-    <div class="tier-lbl">Time operacional RBG</div>
+    <div class="tier-lbl">Time operacional RBG · por função</div>
     <div class="orgrow">
-      <div class="obox sm"><div class="role">Produção</div><div class="nm">Eventos</div><div class="sc">Operação do dia · logística</div></div>
-      <div class="obox sm"><div class="role">Captação</div><div class="nm">Câmeras / DOP</div><div class="sc">Áudio limpo · backdrop branded</div></div>
-      <div class="obox sm"><div class="role">Pós</div><div class="nm">Edição</div><div class="sc">Clipes + vídeo YouTube</div></div>
-      <div class="obox sm"><div class="role">Conteúdo</div><div class="nm">Decupagem</div><div class="sc">Transcrição · legendas · seleção</div></div>
-      <div class="obox sm"><div class="role">Distribuição</div><div class="nm">Social Media</div><div class="sc">Publicação · comunidade · tráfego</div></div>
+      <div class="obox sm"><div class="role">Produção</div><div class="nm">Leandro</div><div class="sc">Operação e logística do evento no dia</div></div>
+      <div class="obox sm"><div class="role">Captação</div><div class="nm">2 câmeras</div><div class="sc">Por evento · áudio limpo · backdrop branded</div></div>
+      <div class="obox sm"><div class="role">Edição &amp; Social</div><div class="nm">Editor</div><div class="sc">Edita os clipes + vídeo YouTube e publica nas redes</div></div>
     </div>
   </div>
-  <div class="note"><b>Nomes do time operacional</b> entram conforme você definir as pessoas — a estrutura (papéis) já está pronta para alocar. Marilão entra com a área dele assim que confirmada.</div>
+  <div class="note"><b>Por evento:</b> 2 câmeras na captação + 1 editor cuidando da edição e do social, sob a produção do <b>Leandro</b>. As funções escalam conforme a cadência de edições aumenta.</div>
 </div></section>
 
 <!-- FUNIL -->
 <section id="funil"><div class="wrap">
   <div class="sec-head">
     <div class="sec-tag">Funil de aquisição</div>
-    <h2 class="sec-h">Dois canais, um programa, um destino</h2>
-    <p class="sec-sub">As empresas chegam por dois caminhos. Os dois convergem para o mesmo programa de aceleração — e o mesmo destino de investimento.</p>
+    <h2 class="sec-h">Uma inscrição, um programa, um destino</h2>
+    <p class="sec-sub">Existe <b>uma única inscrição — para o Pitch Day</b>. A partir dela avaliamos todo mundo: cerca de <b>5 empresas sobem ao palco</b> e as demais entram na <b>wait list</b> — e podem entrar no Royal Business Growth mesmo sem subir ao palco.</p>
   </div>
 
-  <div class="funnel">
-    <div class="chan">
-      <div class="ch-k">Canal A · Inbound</div>
-      <h3>Site da Royal Business Growth</h3>
-      <div class="fstep"><span class="fn">1</span><div>Empreendedor <b>se inscreve no site</b> para o programa de aceleração.</div></div>
-      <div class="fstep"><span class="fn">2</span><div><b>Triagem</b> da RBG: tração, fit e potencial de investimento.</div></div>
-      <div class="fstep"><span class="fn">3</span><div><b>Aprovado:</b> entra no programa de aceleração RBG (bolsa/prêmio ou contratado).</div></div>
-      <div class="fstep"><span class="fn">4</span><div><b>Indicado:</b> direcionado à <b>Deploy</b> para se preparar e qualificar à trilha de investimento (VGT).</div></div>
+  <div class="single">
+    <div class="snode"><span class="sk">1 · Entrada</span><h3>Inscrição no site — para o Pitch Day RBG</h3><p>Aberta a todos. Você se inscreve para o Pitch Day, e essa mesma inscrição já é a porta de entrada para o Royal Business Growth.</p><a href="inscricao.html" style="display:inline-block;margin-top:13px;background:var(--gold2);color:var(--navy);font-weight:700;font-size:12px;padding:10px 20px;border-radius:100px;font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.05em">Abrir página de inscrição →</a></div>
+    <div class="arrow">▼</div>
+    <div class="snode"><span class="sk">2 · Avaliação</span><h3>Triagem da RBG</h3><p>Avaliamos tração, fit e potencial de cada empresa inscrita — e definimos quem sobe ao palco e quem entra pela wait list.</p></div>
+    <div class="arrow">▼</div>
+    <div class="funnel">
+      <div class="chan">
+        <div class="ch-k">No palco · evento</div>
+        <h3>~5 empresas no Pitch Day</h3>
+        <div class="fstep"><span class="fn">›</span><div>Cerca de <b>5 empresas selecionadas</b> sobem ao palco no formato Shark Tank.</div></div>
+        <div class="fstep"><span class="fn">›</span><div>Banca de conselheiros pontua pelo <b>scorecard (100 pts)</b> e delibera.</div></div>
+        <div class="fstep"><span class="fn">›</span><div>As destacadas entram direto no <b>programa de 120 dias</b>.</div></div>
+      </div>
+      <div class="chan b">
+        <div class="ch-k">Wait list · todas as demais</div>
+        <h3>Entra todo mundo que quiser</h3>
+        <div class="fstep"><span class="fn">›</span><div>Quem não sobe ao palco entra na <b>wait list</b> — ninguém fica de fora.</div></div>
+        <div class="fstep"><span class="fn">›</span><div>Pode <b>entrar no Royal Business Growth</b> mesmo sem participar do evento.</div></div>
+        <div class="fstep"><span class="fn">›</span><div>Direcionamento para a <b>trilha de aceleração</b> conforme o momento da empresa.</div></div>
+      </div>
     </div>
-    <div class="chan b">
-      <div class="ch-k">Canal B · Evento</div>
-      <h3>Pitch Day RBG · formato Shark Tank</h3>
-      <div class="fstep"><span class="fn">1</span><div><b>X empresas</b> selecionadas pitcham ao vivo para a banca de conselheiros.</div></div>
-      <div class="fstep"><span class="fn">2</span><div>Banca pontua pelo <b>scorecard (100 pts)</b> e delibera.</div></div>
-      <div class="fstep"><span class="fn">3</span><div><b>1–2 vencedoras</b> ganham a aceleração RBG de 120 dias.</div></div>
-      <div class="fstep"><span class="fn">4</span><div>Demais recebem oferta <b>Deploy</b> (acompanhamento de 4 meses, condição de evento).</div></div>
-    </div>
-  </div>
-
-  <div class="arrow">▼</div>
-
-  <div class="merge">
-    <div class="mk">Convergência</div>
-    <h3>Programa de Aceleração RBG · 120 dias</h3>
-    <p>Os dois canais entram no mesmo programa. Ao longo de 120 dias com 8 encontros quinzenais e os conselheiros por área, a RBG <b>entende a empresa por dentro</b> e constrói a <b>tese de investimento</b>.</p>
-    <div class="outs">
-      <div class="outc"><div class="ot">→ Investimento &amp; equity (RBG holding)</div><div class="od">Empresas qualificadas recebem oferta de equity / aquisição. RBG valoriza o ativo e distribui dividendos aos acionistas.</div></div>
-      <div class="outc"><div class="ot">→ Trilha Deploy (revenue)</div><div class="od">Quem não é investido segue nos produtos Deploy (Startup · Empresa Tradicional · Internacionalização) — receita e qualificação contínua.</div></div>
+    <div class="arrow">▼</div>
+    <div class="merge">
+      <div class="mk">Convergência</div>
+      <h3>Programa de Aceleração RBG · 120 dias</h3>
+      <p>Os dois caminhos entram no mesmo programa. Ao longo de 120 dias, com 8 encontros quinzenais e os conselheiros por área, a RBG <b>entende a empresa por dentro</b> e constrói uma relação de longo prazo.</p>
+      <div class="outs">
+        <div class="outc"><div class="ot">→ Parceria &amp; investimento RBG</div><div class="od">As empresas que mais avançam evoluem para uma parceria de longo prazo com a RBG. Termos tratados caso a caso, em conversa direta.</div></div>
+        <div class="outc"><div class="ot">→ Trilha Deploy</div><div class="od">Quem ainda não está pronto segue nos produtos Deploy — Startup · Empresa Tradicional · Internacionalização — qualificando-se com o tempo.</div></div>
+      </div>
     </div>
   </div>
 </div></section>
@@ -290,51 +334,180 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
 <!-- JORNADA 120 DIAS -->
 <section id="jornada"><div class="wrap">
   <div class="sec-head">
-    <div class="sec-tag">Jornada de 120 dias</div>
-    <h2 class="sec-h">8 encontros quinzenais · um conselheiro por área</h2>
-    <p class="sec-sub">Alexandre organiza e conduz; o Lúcio entra nos encontros-chave com a visão. Cada quinzena ativa um conselheiro especialista — diagnóstico → plano → execução → tese de investimento.</p>
+    <div class="sec-tag">Programa de 120 dias · controle de entregáveis</div>
+    <h2 class="sec-h">8 encontros quinzenais — entrega garantida em cada um</h2>
+    <p class="sec-sub">Modelo de acompanhamento no padrão da estratégia Deploy. Cada encontro tem objetivo, o que a empresa traz, o que o mentor entrega e as tarefas até o próximo encontro. <b>Marque conforme entrega — o progresso fica salvo por empresa, neste link.</b></p>
   </div>
-  <div class="jgrid">
-    <div class="jcell"><div class="jw">Quinzena 1 · Dias 0–15</div><div class="jt">Diagnóstico &amp; metas</div><div class="jo">Raio-X do negócio e do gargalo principal. <b>Alexandre + Lúcio</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 2 · Dias 15–30</div><div class="jt">Finanças &amp; governança</div><div class="jo">Indicadores, caixa e saúde financeira. <b>Carlos Osorio</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 3 · Dias 30–45</div><div class="jt">Comercial &amp; crescimento</div><div class="jo">Motor de vendas previsível. <b>Fernando Alves</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 4 · Dias 45–60</div><div class="jt">Processos &amp; operação</div><div class="jo">Padronização e redução de dependência. <b>Alex Zocche</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 5 · Dias 60–75</div><div class="jt">Liderança &amp; time</div><div class="jo">Profissionalização da gestão e cultura. <b>Kamila Adamatti</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 6 · Dias 75–90</div><div class="jt">Growth &amp; Go-to-Market</div><div class="jo">Aquisição, marca e conteúdo. <b>Gustavo (Guga)</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 7 · Dias 90–105</div><div class="jt">Tech &amp; IA aplicada</div><div class="jo">Tecnologia como alavanca de margem. <b>Deploy</b>.</div></div>
-    <div class="jcell"><div class="jw">Quinzena 8 · Dias 105–120</div><div class="jt">Tese de investimento</div><div class="jo">Valuation, oferta de equity e decisão. <b>Lúcio + Alexandre + Conselho</b>.</div></div>
+
+  <div class="trk-top">
+    <label for="empresa">Empresa em acompanhamento</label>
+    <input id="empresa" type="text" placeholder="Digite o nome da empresa…" autocomplete="off">
+    <div class="trk-prog">
+      <div class="trk-bar"><span class="trk-fill" id="trkFill"></span></div>
+      <span class="trk-pct" id="trkPct">0/24 · 0%</span>
+      <button class="trk-reset" id="trkReset">limpar</button>
+    </div>
   </div>
-  <div class="note"><b>Encontro de visão:</b> em paralelo aos quinzenais técnicos, o Lúcio conduz um encontro de visão/estratégia com cada empresa — alinhando o caso ao end goal da holding.</div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">1</div><div><div class="enc-ti">Diagnóstico &amp; metas</div><div class="enc-meta">Dias 0–15 · Fase Diagnóstico</div></div><span class="enc-mentor">Alexandre + Lúcio</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> raio-X do negócio e definição das 3 metas dos 120 dias.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Números atuais (faturamento, custos)</li><li>Maior gargalo percebido</li><li>Time e papéis</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Diagnóstico inicial</li><li>Plano dos 120 dias</li><li>Definição de KPIs</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e1t1"><span class="cbx"></span><span class="tl">Enviar números e financeiro consolidados</span></div>
+        <div class="task" data-id="e1t2"><span class="cbx"></span><span class="tl">Mapear o gargalo principal</span></div>
+        <div class="task" data-id="e1t3"><span class="cbx"></span><span class="tl">Validar as 3 metas dos 120 dias</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">2</div><div><div class="enc-ti">Finanças &amp; governança</div><div class="enc-meta">Dias 15–30 · Fase Diagnóstico</div></div><span class="enc-mentor">Carlos Osorio</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> painel financeiro e indicadores que a empresa vai acompanhar toda semana.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>DRE / extrato dos últimos meses</li><li>Custos fixos e variáveis</li><li>Metas de margem</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Painel de KPIs financeiros</li><li>Rotina de governança</li><li>Modelo de plano de caixa</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e2t1"><span class="cbx"></span><span class="tl">Montar painel de indicadores semanais</span></div>
+        <div class="task" data-id="e2t2"><span class="cbx"></span><span class="tl">Definir a rotina semanal de números</span></div>
+        <div class="task" data-id="e2t3"><span class="cbx"></span><span class="tl">Construir o plano de caixa dos próximos 90 dias</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">3</div><div><div class="enc-ti">Comercial &amp; crescimento</div><div class="enc-meta">Dias 30–45 · Fase Construção</div></div><span class="enc-mentor">Fernando Alves</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> desenhar um motor de vendas previsível.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Funil de vendas atual</li><li>Taxa de conversão e ticket médio</li><li>Canais que já vendem</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Desenho do processo comercial</li><li>Metas de pipeline</li><li>Playbook de vendas</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e3t1"><span class="cbx"></span><span class="tl">Mapear o funil comercial completo</span></div>
+        <div class="task" data-id="e3t2"><span class="cbx"></span><span class="tl">Definir metas de pipeline</span></div>
+        <div class="task" data-id="e3t3"><span class="cbx"></span><span class="tl">Documentar o processo/script de vendas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">4</div><div><div class="enc-ti">Processos &amp; operação</div><div class="enc-meta">Dias 45–60 · Fase Construção</div></div><span class="enc-mentor">Alex Zocche</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> padronizar a operação e reduzir a dependência de pessoas específicas.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Principais processos do dia a dia</li><li>Gargalos operacionais</li><li>Pontos de dependência</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Mapa de processos</li><li>SOPs prioritários</li><li>Plano de delegação</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e4t1"><span class="cbx"></span><span class="tl">Documentar 3 processos-chave</span></div>
+        <div class="task" data-id="e4t2"><span class="cbx"></span><span class="tl">Identificar as dependências críticas</span></div>
+        <div class="task" data-id="e4t3"><span class="cbx"></span><span class="tl">Montar plano de delegação</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">5</div><div><div class="enc-ti">Liderança &amp; time</div><div class="enc-meta">Dias 60–75 · Fase Aceleração</div></div><span class="enc-mentor">Kamila Adamatti</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> profissionalizar a gestão e fortalecer a cultura.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Organograma e papéis</li><li>Principais dores de gestão</li><li>Rituais que já existem</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Plano de liderança</li><li>Ritmo de gestão</li><li>Modelo de metas do time</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e5t1"><span class="cbx"></span><span class="tl">Definir papéis e metas do time</span></div>
+        <div class="task" data-id="e5t2"><span class="cbx"></span><span class="tl">Implementar rito semanal de gestão (1:1)</span></div>
+        <div class="task" data-id="e5t3"><span class="cbx"></span><span class="tl">Montar plano de contratação prioritário</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">6</div><div><div class="enc-ti">Growth &amp; Go-to-Market</div><div class="enc-meta">Dias 75–90 · Fase Aceleração</div></div><span class="enc-mentor">Gustavo (Guga)</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> tornar a aquisição de clientes previsível e fortalecer a marca.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Canais de aquisição atuais</li><li>CAC, se houver</li><li>Posicionamento de marca</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Estratégia de Go-to-Market</li><li>Plano de conteúdo</li><li>Metas de geração de demanda</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e6t1"><span class="cbx"></span><span class="tl">Definir o canal principal de aquisição</span></div>
+        <div class="task" data-id="e6t2"><span class="cbx"></span><span class="tl">Montar plano de conteúdo / marca</span></div>
+        <div class="task" data-id="e6t3"><span class="cbx"></span><span class="tl">Definir meta de leads por mês</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">7</div><div><div class="enc-ti">Tech &amp; IA aplicada</div><div class="enc-meta">Dias 90–105 · Fase Aceleração</div></div><span class="enc-mentor">Deploy</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> usar tecnologia e IA como alavanca de margem e escala.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Stack / ferramentas atuais</li><li>Processos ainda manuais</li><li>Maiores perdas de tempo</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Roadmap de tecnologia / IA</li><li>Quick wins priorizados</li><li>Visão de produto</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e7t1"><span class="cbx"></span><span class="tl">Mapear 2 automações de impacto</span></div>
+        <div class="task" data-id="e7t2"><span class="cbx"></span><span class="tl">Implementar 1 quick win de tecnologia</span></div>
+        <div class="task" data-id="e7t3"><span class="cbx"></span><span class="tl">Montar roadmap tech de 90 dias</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="enc">
+    <div class="enc-h"><div class="enc-n">8</div><div><div class="enc-ti">Resultados &amp; tese</div><div class="enc-meta">Dias 105–120 · Fase Decisão</div></div><span class="enc-mentor">Lúcio + Alexandre + Conselho</span></div>
+    <div class="enc-b">
+      <div class="enc-obj"><b>Objetivo:</b> consolidar resultados e definir a relação de longo prazo com a RBG.</div>
+      <div class="enc-cols">
+        <div class="enc-col"><h4>A empresa traz</h4><ul><li>Resultados do programa</li><li>Metas batidas (antes/depois)</li><li>Plano para os próximos 90 dias</li></ul></div>
+        <div class="enc-col"><h4>RBG / mentor entrega</h4><ul><li>Avaliação final</li><li>Proposta de continuidade</li><li>Próximos passos da parceria</li></ul></div>
+      </div>
+      <div class="tasks"><div class="th"><h4>Tarefas até o próximo encontro</h4><span class="cnt">0 de 3</span></div>
+        <div class="task" data-id="e8t1"><span class="cbx"></span><span class="tl">Consolidar resultados (antes/depois)</span></div>
+        <div class="task" data-id="e8t2"><span class="cbx"></span><span class="tl">Apresentar o caso ao conselho</span></div>
+        <div class="task" data-id="e8t3"><span class="cbx"></span><span class="tl">Definir os próximos passos da parceria</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note"><b>Como usar:</b> digite o nome da empresa no topo e vá marcando as tarefas — o progresso fica salvo neste navegador, por empresa. É a folha de controle viva do programa. Em paralelo aos encontros técnicos, o <b>Lúcio</b> conduz um encontro de visão com cada empresa, alinhando o caso ao objetivo de longo prazo da RBG.</div>
 </div></section>
 
 <!-- INVESTIMENTO / EQUITY -->
 <section id="equity"><div class="wrap">
   <div class="sec-head">
-    <div class="sec-tag">Modelo de investimento</div>
-    <h2 class="sec-h">Como a RBG investe, valoriza e distribui</h2>
-    <p class="sec-sub">O programa é a porta de entrada do investimento. A holding adquire equity, acelera o ativo e remunera os acionistas.</p>
+    <div class="sec-tag">Investimento &amp; parceria</div>
+    <h2 class="sec-h">Como a RBG se torna parceira de longo prazo</h2>
+    <p class="sec-sub">O programa é a porta de entrada. As empresas que mais avançam evoluem para uma parceria de investimento com a RBG — construída em cima de confiança e resultados reais.</p>
   </div>
   <div class="grid3">
-    <div class="card"><h3 class="serif">1 · Tese &amp; oferta</h3><ul>
-      <li>120 dias funcionam como <b>due diligence viva</b>.</li>
-      <li>Valuation construído com tração + potencial.</li>
-      <li>Oferta de <b>equity</b> ou aquisição da empresa.</li>
-      <li>Tecnologia e mentoria entram para valorizar o ativo.</li>
+    <div class="card"><h3 class="serif">1 · Como avaliamos</h3><ul>
+      <li>Os 120 dias funcionam como um <b>diagnóstico profundo</b>.</li>
+      <li>Entendemos a empresa por dentro, com dados reais.</li>
+      <li>Tecnologia e mentoria entram para destravar valor.</li>
+      <li>A relação cresce com base em resultado, não em promessa.</li>
     </ul></div>
-    <div class="card"><h3 class="serif">2 · Direitos dos acionistas RBG</h3><ul>
-      <li><b>Dividendos</b> dos ativos acelerados e investidos.</li>
-      <li><b>Preferência</b> na aquisição de novas ações.</li>
-      <li>Acesso ao <b>deal flow</b> qualificado da RBG.</li>
-      <li>Liquidez em eventos de exit / buyout.</li>
+    <div class="card"><h3 class="serif">2 · Parceria de longo prazo</h3><ul>
+      <li>A RBG entra como <b>parceira de crescimento</b>.</li>
+      <li>Investimento e suporte contínuos ao negócio.</li>
+      <li>Objetivo comum: valorizar a empresa ao longo do tempo.</li>
+      <li>Termos tratados <b>caso a caso</b>, em conversa direta.</li>
     </ul></div>
-    <div class="card"><h3 class="serif">3 · Conselheiros no board</h3><ul>
-      <li>Podem pedir <b>cadeira no board</b> de uma empresa específica.</li>
-      <li>Entram com <b>equity x</b> negociado e <b>voz</b> nas decisões.</li>
-      <li>Remunerados pela contribuição por área.</li>
-      <li>Co-investem ao lado da RBG / VGT.</li>
+    <div class="card"><h3 class="serif">3 · Conselho ativo</h3><ul>
+      <li>Conselheiros acompanham de perto cada caso.</li>
+      <li>Abrem portas e participam do crescimento.</li>
+      <li>Podem se aproximar de empresas específicas.</li>
+      <li>Reconhecidos pela contribuição por área.</li>
     </ul></div>
   </div>
-  <div class="note"><b>Resumo do retorno:</b> RBG compra barato e bem qualificado → acelera → valoriza → distribui dividendos. O conselheiro deixa de ser só mentor e vira <b>sócio do upside</b> das empresas que ajuda a construir.</div>
+  <div class="note"><b>Discrição:</b> os termos comerciais da parceria são tratados de forma reservada, caso a caso, em conversa direta — não são públicos. O que está aqui é o <b>caminho</b>: programa → resultados → parceria de longo prazo.</div>
 </div></section>
 
 <!-- CADÊNCIA & CONTEÚDO -->
@@ -379,7 +552,7 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
         <tr><td>Pitch Day (evento)</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td><td><span class="c">C</span></td></tr>
         <tr><td>Programa de aceleração 120 dias</td><td><span class="c">C</span></td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="r">R</span></td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="i">I</span></td></tr>
         <tr><td>Diagnóstico &amp; tese de investimento</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
-        <tr><td>Investimento / aquisição de equity</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="i">I</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
+        <tr><td>Investimento &amp; parceria</td><td><span class="a">A</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td><span class="i">I</span></td><td>—</td><td>—</td><td>—</td><td><span class="c">C</span></td></tr>
         <tr><td>Motor de conteúdo (clipes + YouTube)</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td><span class="c">C</span></td><td>—</td></tr>
         <tr><td>Distribuição &amp; social</td><td><span class="i">I</span></td><td><span class="a">A</span></td><td>—</td><td><span class="i">I</span></td><td>—</td><td><span class="c">C</span></td><td><span class="r">R</span></td><td>—</td></tr>
         <tr><td>Financeiro &amp; pagamentos</td><td><span class="a">A</span></td><td><span class="c">C</span></td><td>—</td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="i">I</span></td><td><span class="r">R</span></td></tr>
@@ -403,5 +576,30 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
   <div class="fl">Royal Business Growth · Royal Accelerator × Deploy US · Orlando 2026</div>
 </div></footer>
 
+<script>
+(function(){
+  var tasks=[].slice.call(document.querySelectorAll('.task'));
+  var nameInput=document.getElementById('empresa');
+  var fill=document.getElementById('trkFill'), pct=document.getElementById('trkPct'), reset=document.getElementById('trkReset');
+  if(!tasks.length||!nameInput) return;
+  function key(){return 'rbg120:'+((nameInput.value||'default').trim().toLowerCase());}
+  function save(){var ids=tasks.filter(function(t){return t.classList.contains('done')}).map(function(t){return t.dataset.id});try{localStorage.setItem(key(),JSON.stringify(ids))}catch(e){}}
+  function load(){var ids=[];try{ids=JSON.parse(localStorage.getItem(key())||'[]')}catch(e){}tasks.forEach(function(t){t.classList.toggle('done',ids.indexOf(t.dataset.id)>-1)});update();}
+  function update(){
+    var done=tasks.filter(function(t){return t.classList.contains('done')}).length, total=tasks.length;
+    var p=total?Math.round(done/total*100):0;
+    fill.style.width=p+'%'; pct.textContent=done+'/'+total+' · '+p+'%';
+    [].slice.call(document.querySelectorAll('.enc')).forEach(function(enc){
+      var ts=[].slice.call(enc.querySelectorAll('.task'));
+      var d=ts.filter(function(t){return t.classList.contains('done')}).length;
+      var c=enc.querySelector('.cnt'); if(c) c.textContent=d+' de '+ts.length;
+    });
+  }
+  tasks.forEach(function(t){t.addEventListener('click',function(){t.classList.toggle('done');save();update();})});
+  var saveName; nameInput.addEventListener('input',function(){clearTimeout(saveName);saveName=setTimeout(load,250)});
+  reset.addEventListener('click',function(){try{localStorage.removeItem(key())}catch(e){}tasks.forEach(function(t){t.classList.remove('done')});update();});
+  load();
+})();
+</script>
 </body>
 </html>
