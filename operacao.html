@@ -216,6 +216,35 @@ table.raci tbody tr:nth-child(even) td:first-child{background:#F4EFE1}
 .note{background:var(--cream);border:1px solid #EADFBE;border-left:3px solid var(--gold2);border-radius:10px;padding:16px 18px;font-size:14px;color:var(--ink2);margin-top:18px}
 .note b{color:var(--navy)}
 
+/* reuniões / rituais */
+.mtg{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:16px}
+.mtg-h{display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--cream);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.mtg-h .tag2{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#fff;background:var(--navy);border-radius:6px;padding:5px 9px;flex:none}
+.mtg-h .tag2.wk{background:var(--gold2);color:var(--navy)}
+.mtg-h h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;color:var(--navy);font-weight:700;line-height:1.05}
+.mtg-h .when{margin-left:auto;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:right;line-height:1.5}
+.mtg-b{padding:18px 20px}
+.mtg-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 22px;margin-bottom:14px}
+@media(max-width:700px){.mtg-grid{grid-template-columns:1fr}}
+.mtg-f h4{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:5px}
+.mtg-f p{font-size:13px;color:var(--ink2);line-height:1.5}
+.mtg-f p b{color:var(--navy);font-weight:600}
+.agm{border-top:1px dashed var(--line);padding-top:13px}
+.agm h4{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:8px}
+.agm .ag{display:flex;gap:13px;align-items:baseline;padding:5px 0;font-size:13px;color:var(--ink2);border-top:1px solid var(--line2)}
+.agm .ag:first-of-type{border-top:none}
+.agm .ag .tm{font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:var(--gold);min-width:56px;flex:none}
+.agm .ag b{color:var(--navy);font-weight:600}
+
+/* setup checklist (marketing) */
+.setup{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:700px){.setup{grid-template-columns:1fr}}
+.setup .si{display:flex;gap:11px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+.setup .si .ck2{width:17px;height:17px;border:1.6px solid var(--gold);border-radius:5px;flex:none;margin-top:1px;background:var(--cream)}
+.setup .si .st{font-size:13.5px;color:var(--ink);font-weight:600}
+.setup .si .sm{font-size:11.5px;color:var(--muted);margin-top:2px}
+.setup .si .sw{margin-left:auto;font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);font-weight:700;white-space:nowrap;flex:none}
+
 /* metas / funil analítico */
 .gflow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-bottom:8px}
 .gcard{flex:1;min-width:150px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center}
@@ -256,6 +285,8 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
     <a href="#jornada">120 dias</a>
     <a href="#equity">Investimento</a>
     <a href="#raci">Responsabilidades</a>
+    <a href="#reunioes">Reuniões</a>
+    <a href="#marketing">Marketing</a>
     <a href="inscricao.html" style="color:var(--gold2);font-weight:700">Inscrição</a>
     <a class="back" href="index.html">← Pitch Day</a>
   </nav>
@@ -669,6 +700,100 @@ footer .fl{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-
 </div></section>
 
 <!-- FOOTER -->
+<!-- REUNIÕES -->
+<section id="reunioes"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Reuniões & rituais internos</div>
+    <h2 class="sec-h">As reuniões do time — pauta, dono e relatório</h2>
+    <p class="sec-sub">Poucas reuniões, todas com pauta minutada, relatório e um e-mail de recap. Ninguém sai sem decisões e próximos passos.</p>
+  </div>
+
+  <div class="mtg">
+    <div class="mtg-h"><span class="tag2 wk">Semanal · 30 min</span><h3>Semanal de números</h3><div class="when">Toda segunda · 9h00<br>(sugestão)</div></div>
+    <div class="mtg-b">
+      <div class="mtg-grid">
+        <div class="mtg-f"><h4>Envolvidos</h4><p><b>Lúcio</b> (Founder &amp; CEO), <b>Alexandre</b> (COO) e <b>Gustavo Marion</b> (Guga).</p></div>
+        <div class="mtg-f"><h4>Objetivo</h4><p>Bater os números do <b>funil vs. metas mensais</b> e decidir os ajustes da semana.</p></div>
+        <div class="mtg-f"><h4>Relatório entregue</h4><p><b>Placar semanal</b> (1 página): alcance, interações, leads e calls vs. meta — verde / amarelo / vermelho.</p></div>
+        <div class="mtg-f"><h4>E-mail de recap</h4><p>No mesmo dia: <b>decisões + próximos passos</b> (donos e prazos).</p></div>
+        <div class="mtg-f"><h4>Responsável</h4><p><b>Alexandre (COO)</b> conduz e envia o recap.</p></div>
+        <div class="mtg-f"><h4>Saída esperada</h4><p>Lições da semana + 1–3 ações com dono e prazo.</p></div>
+      </div>
+      <div class="agm"><h4>Pauta minutada · 30 min</h4>
+        <div class="ag"><span class="tm">0–5'</span><div><b>Placar.</b> Números da semana vs. meta do mês (alcance, interações, leads, calls).</div></div>
+        <div class="ag"><span class="tm">5–15'</span><div><b>Funil.</b> Onde estamos e o gargalo da semana.</div></div>
+        <div class="ag"><span class="tm">15–22'</span><div><b>Empresas.</b> Status rápido das que estão em aceleração.</div></div>
+        <div class="ag"><span class="tm">22–28'</span><div><b>Decisões.</b> Ações da semana — dono + prazo.</div></div>
+        <div class="ag"><span class="tm">28–30'</span><div><b>Riscos & pedidos de ajuda.</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mtg">
+    <div class="mtg-h"><span class="tag2">Mensal · 90 min</span><h3>Conselho mensal</h3><div class="when">Até 5 dias úteis<br>após o fim do mês</div></div>
+    <div class="mtg-b">
+      <div class="mtg-grid">
+        <div class="mtg-f"><h4>Envolvidos</h4><p>Lúcio, Alexandre e Gustavo + <b>todos os conselheiros</b> (Carlos Osorio, Fernando Alves, Kamila Adamatti, Alex Zocche, Guga).</p></div>
+        <div class="mtg-f"><h4>Objetivo</h4><p>Apresentar o <b>mês</b> (resultados vs. metas) e alinhar a <b>agenda dos conselheiros</b> com base nas empresas em aceleração.</p></div>
+        <div class="mtg-f"><h4>Relatório entregue</h4><p><b>Relatório mensal RBG</b> (deck/PDF): funil, metas, financeiro, empresas e próximos passos.</p></div>
+        <div class="mtg-f"><h4>E-mail de recap</h4><p>Ata + decisões + agenda dos conselheiros, até <b>1 dia útil</b> depois, para todos.</p></div>
+        <div class="mtg-f"><h4>Responsável</h4><p><b>Alexandre (COO)</b> conduz · <b>Lúcio</b> aprova.</p></div>
+        <div class="mtg-f"><h4>Saída esperada</h4><p>Função e agenda de cada conselheiro definidas para o mês seguinte.</p></div>
+      </div>
+      <div class="agm"><h4>Pauta minutada · 90 min</h4>
+        <div class="ag"><span class="tm">0–10'</span><div><b>Abertura &amp; visão.</b> Lúcio.</div></div>
+        <div class="ag"><span class="tm">10–30'</span><div><b>Resultados do mês.</b> Funil, metas e financeiro. Alexandre.</div></div>
+        <div class="ag"><span class="tm">30–45'</span><div><b>Conteúdo &amp; aquisição.</b> O que rodou no marketing. Gustavo.</div></div>
+        <div class="ag"><span class="tm">45–70'</span><div><b>Empresas em aceleração.</b> Status por área + onde cada conselheiro entra.</div></div>
+        <div class="ag"><span class="tm">70–82'</span><div><b>Agenda dos conselheiros.</b> Compromissos do próximo mês.</div></div>
+        <div class="ag"><span class="tm">82–90'</span><div><b>Lições aprendidas + próximos passos + decisões.</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note"><b>Os encontros das empresas</b> (quinzenais, a cada 15 dias, com os conselheiros por área) estão no <a href="#jornada">programa de 120 dias</a> acima — com pauta, entregáveis e checklist por empresa.</div>
+</div></section>
+
+<!-- MARKETING Q3 -->
+<section id="marketing"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-tag">Calendário de marketing &amp; produção · Q3</div>
+    <h2 class="sec-h">Conteúdo que enche o funil — quem faz, quando sobe</h2>
+    <p class="sec-sub">Setup dos canais, a linha de produção do vídeo de 30 min e o calendário de postagens do trimestre. Responsáveis: <b>social media</b> (posta) + <b>editor de vídeo</b> (produz).</p>
+  </div>
+
+  <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:var(--navy);font-weight:700;margin:2px 0 12px">1 · Setup dos canais — 1ª semana de julho</h3>
+  <div class="setup">
+    <div class="si"><span class="ck2"></span><div><div class="st">Criar canal no YouTube</div><div class="sm">Arte, descrição e link da inscrição na bio</div></div><span class="sw">Sem. 1 · jul</span></div>
+    <div class="si"><span class="ck2"></span><div><div class="st">Criar perfil no Instagram</div><div class="sm">Bio + link da inscrição + destaques</div></div><span class="sw">Sem. 1 · jul</span></div>
+    <div class="si"><span class="ck2"></span><div><div class="st">Criar perfil no TikTok</div><div class="sm">Bio + link da inscrição</div></div><span class="sw">Sem. 1 · jul</span></div>
+    <div class="si"><span class="ck2"></span><div><div class="st">Kit de marca dos canais</div><div class="sm">Capas, templates de corte e de arte (RBG)</div></div><span class="sw">Sem. 1 · jul</span></div>
+  </div>
+
+  <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:var(--navy);font-weight:700;margin:28px 0 12px">2 · Linha de produção do vídeo · por edição</h3>
+  <div class="jgrid">
+    <div class="jcell"><div class="jw">Dia do evento · D0</div><div class="jt">Captação</div><div class="jo">2 câmeras, áudio limpo, backdrop branded. <b>Editor + produção</b>.</div></div>
+    <div class="jcell"><div class="jw">D+1 a D+3</div><div class="jt">Decupagem</div><div class="jo">Transcrição e seleção dos melhores momentos. <b>Editor</b>.</div></div>
+    <div class="jcell"><div class="jw">D+3</div><div class="jt">Começa a edição</div><div class="jo">Montagem do vídeo final (~30 min, Shark Tank). <b>Editor</b>.</div></div>
+    <div class="jcell"><div class="jw">D+10</div><div class="jt">Sobe no YouTube</div><div class="jo">Publica o programa + cortes começam a subir nos canais.</div></div>
+  </div>
+  <div class="note"><b>Edição 2 (29–30 ago):</b> a edição começa por volta de <b>1º set</b>, o vídeo de 30 min vai ao ar por volta de <b>9 set</b>, e os cortes sobem na sequência ao longo de setembro.</div>
+
+  <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:21px;color:var(--navy);font-weight:700;margin:28px 0 12px">3 · Calendário de postagens · Q3</h3>
+  <div style="overflow-x:auto">
+  <table class="mtable" style="min-width:700px">
+    <thead><tr><th>Mês</th><th>Posts/sem</th><th>Foco</th><th>Produção-chave</th><th>Responsável</th></tr></thead>
+    <tbody>
+      <tr><td>Julho</td><td class="num">≥ 3</td><td>Aquece a audiência: cortes da Edição 1 (jun) + divulgação da Ed. 2</td><td>Setup dos canais + cortes de junho</td><td>Social + Editor</td></tr>
+      <tr><td>Agosto</td><td class="num">≥ 3</td><td>Rampa pré-evento + cobertura do Pitch Day (29–30)</td><td class="marco">Captação no evento (2 câmeras)</td><td>Social + Editor</td></tr>
+      <tr><td>Setembro</td><td class="num">≥ 3</td><td>Vídeo de 30 min no ar + cortes da Ed. 2</td><td class="marco">Edição + publicação do vídeo</td><td>Social + Editor</td></tr>
+      <tr class="tot"><td>Q3</td><td class="num">~39</td><td colspan="3">≥ 3 postagens/semana a partir de julho (cortes + artes) — tudo apontando para a inscrição</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note"><b>Regra do trimestre:</b> mínimo de <b>3 postagens por semana</b> a partir de julho (cortes + artes), publicadas pelo <b>social media</b> com material do <b>editor de vídeo</b>. O vídeo principal de cada edição é o pilar; os cortes alimentam o dia a dia.</div>
+</div></section>
+
 <footer><div class="wrap">
   <div class="brand"><img class="logochip" src="assets/logo-rbg-banner.png" alt="Royal Business Growth"></div>
   <div class="fnav"><a href="index.html">Pitch Day</a> · <a href="#tese">Tese</a> · <a href="#org">Organograma</a> · <a href="#funil">Funil</a> · <a href="#raci">RACI</a></div>
