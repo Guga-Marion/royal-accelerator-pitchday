@@ -4,12 +4,12 @@ Material da rodada anjo de 2026: **US$ 250.000 por 5%**, em SAFE, com cap de val
 
 ## Páginas
 
-| Arquivo | O que é | Link publicado |
+| Arquivo | O que é | No ar |
 |---|---|---|
-| `index.html` | Apresentação para investidores — 15 capítulos, da oferta ao aviso legal | https://claude.ai/code/artifact/ce4fe4d9-c027-4a37-b67e-4d65621da80f |
-| `painel.html` | Painel administrativo do investidor — KPIs, pipeline, trilha de 120 dias, distribuições e relatórios | https://claude.ai/code/artifact/4236157c-95e0-4581-841d-ca4344cdb8bb |
+| `index.html` | Apresentação para investidores — 15 capítulos, da oferta ao aviso legal | https://guga-marion.github.io/royal-accelerator-pitchday/investidores/ |
+| `painel.html` | Painel administrativo do investidor — KPIs, pipeline, trilha de 120 dias, distribuições e relatórios | https://guga-marion.github.io/royal-accelerator-pitchday/investidores/painel.html |
 
-As duas páginas se linkam entre si e são **autocontidas**: fontes embutidas em base64, sem CDN, sem build. Abra o arquivo direto no navegador que funciona.
+As duas páginas se linkam entre si por caminho relativo e são **autocontidas**: fontes embutidas em base64, sem CDN, sem build. Abra o arquivo direto no navegador que funciona.
 
 ## Estrutura da apresentação
 
