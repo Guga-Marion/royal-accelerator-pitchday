@@ -7,9 +7,19 @@ Material da rodada anjo de 2026: **US$ 250.000 por 5%**, em SAFE, com cap de val
 | Arquivo | O que é | No ar |
 |---|---|---|
 | `index.html` | Apresentação para investidores — 15 capítulos, da oferta ao aviso legal | https://guga-marion.github.io/royal-accelerator-pitchday/investidores/ |
+| `slides.html` | **Apresentação em slides** — 19 slides navegáveis e animados, para apresentar ao vivo | https://guga-marion.github.io/royal-accelerator-pitchday/investidores/slides.html |
 | `painel.html` | Painel administrativo do investidor — KPIs, pipeline, trilha de 120 dias, distribuições e relatórios | https://guga-marion.github.io/royal-accelerator-pitchday/investidores/painel.html |
 
 As duas páginas se linkam entre si por caminho relativo e são **autocontidas**: fontes embutidas em base64, sem CDN, sem build. Abra o arquivo direto no navegador que funciona.
+
+## Slides — como apresentar
+
+Teclas: `←` `→` ou espaço navegam · `O` abre o índice · `F` tela cheia · `P` exporta em PDF · swipe no celular.
+A URL guarda o slide (`slides.html#9`), então dá para abrir direto num ponto específico.
+
+Ordem narrativa: problema → a RBG → tese 80/20 → mecanismo → Pitch Day → edições → conselho →
+**programa de 120 dias → painel do investidor** → oferta → uso dos recursos → retorno → SAFE → Carta → calendário → fechamento.
+O painel entra logo depois do programa, que é onde o Lúcio abre o dashboard ao vivo.
 
 ## Estrutura da apresentação
 
