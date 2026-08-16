@@ -176,6 +176,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .cons .pp .ds{font-size:calc(var(--u)*.8)}
 .cons .pp.cf{border-color:rgba(212,164,55,.5);background:rgba(212,164,55,.09)}
 
+.cart{gap:calc(var(--u)*.5)}
+.cart-b li::before{background:#3A55A8}
+.cpct{font-family:var(--display);font-size:calc(var(--u)*4.6);line-height:.9;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
 /* ═════════ chips / cta ═════════ */
 .chips{display:flex;flex-wrap:wrap;gap:calc(var(--u)*.5)}
 .chip{font-family:var(--mono);font-size:calc(var(--u)*.76);letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--on-rule);border-radius:999px;padding:calc(var(--u)*.46) calc(var(--u)*1);color:var(--on-2)}
@@ -448,19 +452,40 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   </div>
 </section>
 
-<!-- 07 · POR QUE 70/30 -->
+<!-- 07 · AS DUAS CARTEIRAS -->
 <section class="slide s-light">
   <div class="pane">
-    <div class="hd"><span class="eb">05 · Por que essa proporção</span><span class="mk">O problema que ela resolve</span></div>
+    <div class="hd"><span class="eb">05 · As duas carteiras</span><span class="mk">Composição do portfólio</span></div>
     <div class="bd">
       <h2 class="h" style="color:var(--ink)">Você não escolhe entre <em>renda e upside</em></h2>
-      <div class="g3">
-        <div class="bx"><span class="k" style="color:var(--ink-4)">Carteira A</span><h3>100% startups</h3><p>Cinco a dez anos no escuro, sem nenhum retorno intermediário, torcendo por um exit que pode não vir.</p><p style="color:var(--bad)"><strong style="color:var(--bad)">Problema:</strong> liquidez zero no caminho.</p></div>
-        <div class="bx"><span class="k" style="color:var(--ink-4)">Carteira B</span><h3>100% tradicionais</h3><p>Dividendo previsível e risco menor, mas nunca produz o múltiplo que justifica estar em venture.</p><p style="color:var(--bad)"><strong style="color:var(--bad)">Problema:</strong> teto baixo de retorno.</p></div>
-        <div class="bx" style="border-color:var(--gold);background:#FDFAF1"><span class="k">Carteira RBG</span><h3>70 / 30</h3><p>A base de caixa entrega liquidez recorrente e sustenta a operação. A fatia de tecnologia mantém a exposição ao ganho desproporcional.</p><p style="color:var(--good)"><strong style="color:var(--good)">Resultado:</strong> os dois na mesma posição.</p></div>
+      <div class="g2">
+        <div class="bx cart" style="border-color:var(--gold);background:#FDFAF1">
+          <span class="k">Carteira A · empresas tradicionais</span>
+          <span class="cpct" style="color:var(--gold-dp)">70%</span>
+          <h3>Negócios que já faturam</h3>
+          <p>Locação, varejo, saúde, alimentação e serviços — operações com caixa comprovado antes do aporte.</p>
+          <ul>
+            <li>Dividendos a cada <strong>6 ou 12 meses</strong></li>
+            <li>Receita existente e verificável</li>
+            <li>Risco menor e retorno recorrente</li>
+            <li>Valorização adicional pela estrutura implantada</li>
+          </ul>
+        </div>
+        <div class="bx cart cart-b" style="border-color:#B9C7EE;background:#F4F6FC">
+          <span class="k" style="color:#3A55A8">Carteira B · startups de tecnologia</span>
+          <span class="cpct" style="color:#3A55A8">30%</span>
+          <h3>Tese de exit</h3>
+          <p>Empresas de tecnologia com potencial de crescimento acelerado, selecionadas pelo mesmo filtro do programa.</p>
+          <ul>
+            <li>Retorno concentrado no <strong>evento de liquidez</strong></li>
+            <li>Múltiplos altos quando o exit acontece</li>
+            <li>Exposição controlada — nunca mais de 30%</li>
+            <li>Trilha de fundraising incluída no programa</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="ft">É o desenho que resolve o problema clássico do investidor anjo: <b>o retorno demora demais para aparecer</b>.</div>
+    <div class="ft">A carteira A <b>paga a espera</b>; a carteira B <b>paga a viagem</b>. As duas convivem na mesma posição de 5%.</div>
   </div>
 </section>
 
