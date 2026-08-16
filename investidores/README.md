@@ -51,8 +51,9 @@ Números operacionais vêm dos documentos deste repositório:
 
 - **Reais:** pipeline da Edição 1, estágio da Turma 1 no programa, régua de metas do funil, cronograma dos encontros, composição do conselho.
 - **Ilustrativos e marcados como tal:** portfólio investido, distribuições semestrais, cenários de retorno. Servem para mostrar o formato do reporte — não são posições existentes.
-- **Proposto, sujeito a ajuste:** a alocação dos US$ 250.000 (60% investimento · 22% originação · 12% estrutura · 6% reserva).
+- **Proposto, sujeito a ajuste:** a alocação dos US$ 250.000 (80% portfólio · 11% originação · 6% estrutura · 3% reserva).
 - **Tese de portfólio:** 70% em empresas de caixa · 30% em tese de exit.
+- **Uso dos recursos:** 80% vira portfólio · 20% mantém a operação.
 
 Todas as contas foram conferidas: 250k ÷ 5M = 5% · alocação soma 250k · funil fecha 500 mil → 12,5 mil → 500 → 100 → 10 → 1 · régua mensal soma o total do ano · scorecard soma 100 pontos.
 
