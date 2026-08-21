@@ -451,6 +451,92 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 .btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;border:1px solid var(--rule);background:var(--paper);color:var(--ink-2);border-radius:5px;padding:8px 13px;transition:all .15s;cursor:pointer}
 .btn:hover{border-color:var(--gold);color:var(--gold-dp)}
 
+/* ═══ v1.1 · organograma, inputs, biblioteca, crud ═══ */
+
+/* organograma vertical */
+.orgv{display:grid;justify-items:center;gap:0;padding:22px 14px 6px}
+.oline{width:0;height:16px;border-left:1.5px solid var(--gold)}
+.ocard{background:var(--paper);border:1px solid var(--rule);border-radius:5px;padding:10px 18px;display:flex;gap:10px;align-items:center;min-width:230px;justify-content:center}
+.ocard .avx{width:30px;height:30px;font-size:10px}
+.ocard .tx{display:grid}
+.ocard .tx b{font-size:13.5px;font-weight:600}
+.ocard .tx small{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dp);margin-top:2px}
+.ocard.chair{background:var(--navy);border-color:var(--gold)}
+.ocard.chair .tx b{color:var(--on-navy)}
+.ocard.chair .tx small{color:var(--gold-hi)}
+.ocard.mp{border-color:var(--gold);background:#FDFAF1}
+.opair{display:flex;gap:60px;position:relative;padding-top:16px}
+.opair::before{content:"";position:absolute;top:0;left:25%;right:25%;border-top:1.5px solid var(--gold)}
+.opair::after{content:"";position:absolute;top:-16px;left:50%;height:16px;border-left:1.5px solid var(--gold)}
+.opair .oc2{position:relative}
+.opair .oc2::before{content:"";position:absolute;top:-16px;left:50%;height:16px;border-left:1.5px solid var(--gold)}
+@media(max-width:700px){.opair{gap:14px}}
+.oteams-rule{width:100%;display:flex;align-items:center;gap:12px;margin:20px 0 14px}
+.oteams-rule::before,.oteams-rule::after{content:"";flex:1;border-top:1px dashed var(--rule)}
+.oteams-rule span{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dp)}
+
+/* team card */
+.team{background:var(--paper);border:1px solid var(--rule);border-radius:5px;display:flex;flex-direction:column;min-width:0}
+.team .th2{padding:12px 15px;border-bottom:1px solid var(--rule-2);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.team .th2 h4{font-size:13.5px;font-weight:600}
+.team .th2 small{display:block;font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dp);margin-top:3px}
+.team .tb2{padding:13px 15px;display:grid;gap:10px;flex:1}
+.team .mis{font-size:11.8px;color:var(--ink-3);line-height:1.5}
+.team .mis b{color:var(--ink-2);font-weight:600}
+.team .mem{display:grid;gap:7px}
+.team .mem .mr2{display:flex;gap:9px;align-items:center;font-size:12px}
+.team .mem .mr2 .avx{width:22px;height:22px;font-size:8px}
+.team .mem .mr2 b{font-weight:600}
+.team .mem .mr2 span{color:var(--ink-3);font-size:11px}
+.team .mem .mr2.lead2 b::after{content:"· líder";font-family:var(--mono);font-size:8px;letter-spacing:.08em;color:var(--gold-dp);margin-left:6px;text-transform:uppercase}
+.team .tf2{padding:10px 15px;border-top:1px solid var(--rule-2);background:var(--sand-2);font-size:11px;color:var(--ink-3);border-radius:0 0 5px 5px}
+
+/* minutagem */
+.mtgc ol li .mn{float:right;font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;color:var(--gold-dp);background:var(--sand-2);border:1px solid var(--rule);border-radius:999px;padding:2px 7px;margin-left:8px}
+
+/* metric input rows */
+.mrow{display:grid;grid-template-columns:minmax(150px,1.5fr) auto 92px minmax(70px,1fr) auto;gap:12px;align-items:center;padding:11px 16px;border-bottom:1px solid var(--rule-2)}
+.mrow:last-child{border-bottom:none}
+@media(max-width:820px){.mrow{grid-template-columns:1fr auto 84px;row-gap:6px}.mrow .mt,.mrow .mts{display:none}}
+.mrow .ml b{font-size:12.8px;font-weight:600;display:block}
+.mrow .ml small{font-size:10.8px;color:var(--ink-3);line-height:1.4;display:block;margin-top:2px}
+.mrow .mmeta{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;color:var(--ink-4);white-space:nowrap;text-align:right}
+.mrow .mmeta b{color:var(--ink-2);font-weight:600}
+.min{font:inherit;font-variant-numeric:tabular-nums;font-size:12.8px;padding:7px 9px;border:1px solid var(--rule);border-radius:5px;background:var(--sand-2);color:var(--ink);width:92px;text-align:right}
+.min:focus{outline:2px solid var(--gold-dp);outline-offset:0;background:#fff}
+.mrow .mt{height:6px;background:var(--sand-2);border-radius:3px;overflow:hidden}
+.mrow .mt i{display:block;height:100%;background:var(--gold);border-radius:3px;width:0;transition:width .25s}
+.mrow .mt i.over{background:var(--ok)}
+.mrow .mts{font-family:var(--mono);font-size:8px;letter-spacing:.05em;color:var(--ink-4);text-align:right;white-space:nowrap}
+.upd-stamp{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4)}
+.upd-stamp b{color:var(--gold-dp)}
+
+/* task crud */
+.tsk .del{width:20px;height:20px;border-radius:4px;border:1px solid transparent;color:var(--ink-4);display:grid;place-items:center;font-size:13px;line-height:1;opacity:0;transition:all .15s}
+.tsk:hover .del{opacity:1}
+.tsk .del:hover{border-color:var(--warn-line);color:var(--warn);background:var(--warn-bg)}
+.addt{padding:10px 16px;border-top:1px dashed var(--rule)}
+.addt .open-add{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-dp)}
+.addt .open-add:hover{color:var(--ink-2)}
+.addt form{display:grid;grid-template-columns:1fr 110px;gap:7px;margin-top:9px}
+.addt form[hidden]{display:none}
+.addt input[type=text],.addt select{font:inherit;font-size:12.3px;padding:7px 9px;border:1px solid var(--rule);border-radius:5px;background:#fff;color:var(--ink);width:100%}
+.addt input:focus,.addt select:focus{outline:2px solid var(--gold-dp);outline-offset:0}
+.addt .full{grid-column:1/-1}
+.addt .frow{display:flex;gap:7px;grid-column:1/-1}
+.addt .frow>*{flex:1}
+.addt .sv{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:5px;padding:8px 12px}
+.addt .cx2{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);padding:8px 10px}
+
+/* biblioteca */
+.lib .di .del2{width:22px;height:22px;border-radius:4px;border:1px solid transparent;color:var(--ink-4);display:grid;place-items:center;font-size:13px}
+.lib .di .del2:hover{border-color:var(--warn-line);color:var(--warn);background:var(--warn-bg)}
+.lib .di .go{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dp);white-space:nowrap}
+.lib .di .go:hover{color:var(--ink-2)}
+
+/* big numbers */
+.bign .kpi .sub2{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-top:2px}
+
 </style>
 
 <div class="app">
@@ -475,7 +561,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
     <nav id="nav">
       <span class="grp">Operação</span>
       <a href="#visao" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Visão geral</a>
-      <a href="#time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15.5 14.4c.6-.3 1.3-.4 2-.4 2.5 0 4.5 2 4.5 4.5"/></svg>Time e áreas</a>
+      <a href="#time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15.5 14.4c.6-.3 1.3-.4 2-.4 2.5 0 4.5 2 4.5 4.5"/></svg>Times e organograma</a>
 
       <span class="grp">Rituais</span>
       <a href="#reunioes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Reuniões e pautas</a>
@@ -483,10 +569,11 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 
       <span class="grp">Execução</span>
       <a href="#cronograma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h9M4 12h13M4 18h7"/><rect x="15" y="4" width="6" height="4" rx="1"/><rect x="19" y="10" width="2" height="4" rx="1"/><rect x="13" y="16" width="8" height="4" rx="1"/></svg>Cronograma</a>
-      <a href="#tarefas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6l2 2 3.5-4M4 13l2 2 3.5-4M4 20l2 2 3.5-4" transform="translate(0,-1.5)"/><path d="M12 6h9M12 12h9M12 18h9"/></svg>Tarefas</a>
+      <a href="#tarefas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6l2 2 3.5-4M4 13l2 2 3.5-4M4 20l2 2 3.5-4" transform="translate(0,-1.5)"/><path d="M12 6h9M12 12h9M12 18h9"/></svg>Tarefas por time</a>
 
       <span class="grp">Acompanhamento</span>
       <a href="#relatorios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 20h18M6 20V10M11 20V4M16 20v-7M21 20v-4"/></svg>Relatórios e metas</a>
+      <a href="#biblioteca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>Biblioteca</a>
     </nav>
 
     <div class="side-foot">
@@ -508,7 +595,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 
     <div class="notice">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <p><b>Como usar.</b> Este é o sistema de gestão do time interno da RBG — primeira versão. Aqui está <b>quem faz o quê</b>, <b>quando cada reunião acontece e com qual pauta</b>, o <b>cronograma do curto prazo</b> e as <b>tarefas da semana com checkbox</b>. O que você marcar fica salvo neste navegador. Próximas evoluções: login por pessoa, integração com Google Agenda e avisos automáticos.</p>
+      <p><b>Como usar.</b> Aqui está <b>quem faz o quê por time</b>, <b>cada reunião com pauta e minutagem</b>, o <b>cronograma do curto prazo</b>, as <b>tarefas por time</b> — que você pode criar, marcar e deletar — e os <b>números</b>, que você preenche em Relatórios e aparecem nos big numbers lá de cima. Tudo que você editar fica salvo neste navegador. Quando o médio e o longo prazo chegarem, é só atualizar aqui.</p>
     </div>
 
     <div class="content">
@@ -518,181 +605,154 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         <div class="sec-h">
           <div class="l">
             <span class="kx">01 · Visão geral</span>
-            <h2>O que importa agora</h2>
-            <p>Uma régua só para o time inteiro: as metas do curto prazo, a próxima edição do Pitch Day e o quanto da semana já saiu.</p>
+            <h2>Os números de agora</h2>
+            <p>Toda reunião começa por aqui. Meta do curto prazo vs realizado — o realizado vem do que o time preenche em <a href="#relatorios" style="color:var(--gold-dp);font-weight:600">Relatórios e metas</a>.</p>
           </div>
-          <div class="r">Horizonte curto<br>provar o modelo</div>
+          <div class="r"><span class="upd-stamp" id="lastUpd">números ainda não preenchidos</span></div>
         </div>
 
-        <div class="kpis">
+        <div class="kpis bign">
           <div class="kpi dark">
             <span class="k">Próximo Pitch Day</span>
             <span class="v num" id="kDays">—</span>
             <span class="d"><b>29–30 ago</b> · Orlando</span>
           </div>
           <div class="kpi">
+            <span class="k">Leads · inscrições</span>
+            <span class="v num gold" data-big="leads">—</span>
+            <span class="sub2">meta do curto · 500</span>
+            <span class="track"><i data-bigbar="leads" style="width:0%"></i></span>
+          </div>
+          <div class="kpi">
+            <span class="k">Alcance</span>
+            <span class="v num" data-big="alcance">—</span>
+            <span class="sub2">meta do curto · 500 mil</span>
+            <span class="track"><i data-bigbar="alcance" style="width:0%"></i></span>
+          </div>
+          <div class="kpi">
+            <span class="k">Aceleradas</span>
+            <span class="v num" data-big="aceleradas">—</span>
+            <span class="sub2">meta do curto · 10</span>
+            <span class="track"><i data-bigbar="aceleradas" style="width:0%"></i></span>
+          </div>
+          <div class="kpi">
+            <span class="k">Projetos Deploy</span>
+            <span class="v num" data-big="projetos">—</span>
+            <span class="sub2">meta do curto · 5 · 25% de comissão</span>
+            <span class="track"><i data-bigbar="projetos" style="width:0%"></i></span>
+          </div>
+          <div class="kpi">
             <span class="k">Tarefas da semana</span>
             <span class="v num gold" id="kTasks">0/0</span>
-            <span class="d">marcadas neste navegador</span>
+            <span class="sub2">por time · marcadas aqui</span>
             <span class="track"><i id="kTrack" style="width:0%"></i></span>
-          </div>
-          <div class="kpi">
-            <span class="k">Reuniões por semana</span>
-            <span class="v num">8</span>
-            <span class="d">5 dailies · 1 planning · 2 weeklies</span>
-          </div>
-          <div class="kpi">
-            <span class="k">Edições em 2026</span>
-            <span class="v num">3</span>
-            <span class="d">jun feita · <b>ago</b> · dez</span>
-          </div>
-          <div class="kpi">
-            <span class="k">Meta de leads · curto</span>
-            <span class="v num">500</span>
-            <span class="d">→ 100 calls → 10 aceleradas</span>
-          </div>
-          <div class="kpi">
-            <span class="k">Cortes por semana</span>
-            <span class="v num">10</span>
-            <span class="d">+ 1 vídeo longo no YouTube</span>
           </div>
         </div>
 
         <div class="card">
           <div class="card-h"><h3>Como este sistema gira</h3><span class="sub">ciclo semanal → mensal → trimestral</span></div>
           <div class="stepper">
-            <div class="stp now"><span class="sk"><i>1</i>Planejar</span><span class="st">Planning · segunda</span><span class="sd">A semana nasce com dono, prioridade e prazo — vira a lista de tarefas daqui.</span></div>
-            <div class="stp next"><span class="sk"><i>2</i>Executar</span><span class="st">Dailies · 15 min</span><span class="sd">Bater o dia, destravar rápido. Trava que não se resolve em 15 min vira tarefa.</span></div>
-            <div class="stp next"><span class="sk"><i>3</i>Medir</span><span class="st">Weeklies · sexta</span><span class="sd">Tarefas, cronograma e métricas — operação e liderança, nesta ordem.</span></div>
-            <div class="stp next"><span class="sk"><i>4</i>Corrigir</span><span class="st">Mensal e tática</span><span class="sd">Resultado vs meta e o plano da próxima edição do Pitch Day.</span></div>
+            <div class="stp now"><span class="sk"><i>1</i>Planejar</span><span class="st">Weekly de Operação · segunda</span><span class="sd">A semana nasce com dono, prioridade e prazo — vira a lista de tarefas por time.</span></div>
+            <div class="stp next"><span class="sk"><i>2</i>Executar</span><span class="st">Dailies · 15 min</span><span class="sd">Bater o dia, destravar rápido. Trava que não se resolve vira tarefa com dono.</span></div>
+            <div class="stp next"><span class="sk"><i>3</i>Medir</span><span class="st">Weekly de Liderança · sexta</span><span class="sd">Números da semana com Lúcio, Alexandre e Giva — decisões, não status.</span></div>
+            <div class="stp next"><span class="sk"><i>4</i>Corrigir</span><span class="st">Mensal de relatórios</span><span class="sd">Resultado vs meta, DRE e correção de rota — reunião de management.</span></div>
             <div class="stp next"><span class="sk"><i>5</i>Decidir</span><span class="st">Estratégica · trimestral</span><span class="sd">Com os conselheiros: horizonte, captação e as apostas do próximo tri.</span></div>
           </div>
-          <div class="card-f"><b>A regra de ouro:</b> toda atividade aqui dentro tem <b>dono, objetivo e resultado esperado</b>. Se não dá para dizer o que ela gera, ela não entra na semana.</div>
+          <div class="card-f"><b>A regra de ouro:</b> toda atividade tem <b>dono, objetivo e resultado esperado</b> — e toda reunião abre olhando estes números.</div>
         </div>
       </section>
 
-      <!-- ════ TIME E ÁREAS ════ -->
+      <!-- ════ TIMES E ORGANOGRAMA ════ -->
       <section class="sec" id="time">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">02 · Time e áreas</span>
-            <h2>Quem faz o quê</h2>
-            <p>O time interno que toca o dia a dia, os stakeholders que entram nos rituais certos — e as sete áreas da operação, cada uma com dono e resultado.</p>
+            <span class="kx">02 · Times e organograma</span>
+            <h2>A estrutura e os cinco times</h2>
+            <p>A linha de comando em cima; embaixo, os cinco times que tocam a operação. Cada pessoa aparece nos times em que joga — a mesma pessoa pode jogar em mais de um.</p>
           </div>
-          <div class="r">4 internos · 2 parceiros<br>7 stakeholders</div>
-        </div>
-
-        <div class="cols c-3" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
-          <div class="pcard lead">
-            <div class="top"><span class="avx">GM</span><h4>Gustavo Marion<small>Managing Partner</small></h4></div>
-            <p>Responde pela RBG no dia a dia: funil, captação, marketing, produção das edições e a venda dos programas Deploy. Conduz todos os rituais.</p>
-            <div class="rr"><span>Daily</span><span>Planning</span><span>Weeklies</span><span>Mensal</span><span>Tática</span><span>Estratégica</span></div>
-          </div>
-          <div class="pcard lead">
-            <div class="top"><span class="avx">LU</span><h4>Lucilene<small>Gerência de Operações</small></h4></div>
-            <p>Rotina do programa, agenda dos encontros, experiência das aceleradas, financeiro e apoio comercial nos programas Deploy. Braço direito da operação diária.</p>
-            <div class="rr"><span>Daily</span><span>Planning</span><span>Weekly Ops</span><span>Mensal</span><span>Tática</span></div>
-          </div>
-          <div class="pcard">
-            <div class="top"><span class="avx">AM</span><h4>Alexandre Medeiros<small>Líder da Operação</small></h4></div>
-            <p>Contato com as empresas aceleradas, seleção das turmas e o dia a dia do Pitch Day — banca, palco e empresas.</p>
-            <div class="rr"><span>Weekly Liderança</span><span>Mensal</span><span>Tática</span><span>Estratégica</span></div>
-          </div>
-          <div class="pcard">
-            <div class="top"><span class="avx">GI</span><h4>Giva<small>Gestão de Marketing · conselheiro</small></h4></div>
-            <p>Supervisiona as ações de marketing, dirige o time de social media e responde pelo cenário e pelo que será gravado em cada edição.</p>
-            <div class="rr"><span>Weekly Liderança</span><span>Mensal</span><span>Tática</span><span>Estratégica</span></div>
-          </div>
-          <div class="pcard">
-            <div class="top"><span class="avx alt">SM</span><h4>Social media<small>PJ · time de conteúdo</small></h4></div>
-            <p>Executa a pauta da semana: 10 cortes + 1 vídeo longo. Recebe a pauta na planning de segunda e reporta na sexta.</p>
-            <div class="rr"><span>Planning · 15 min finais</span></div>
-          </div>
-          <div class="pcard">
-            <div class="top"><span class="avx alt">FV</span><h4>Fornecedor de vídeo<small>Captação e edição</small></h4></div>
-            <p>Grava e edita cada edição do Pitch Day: captação no evento, 30+ cortes por edição e o material bruto do canal.</p>
-            <div class="rr"><span>Tática</span><span>Evento</span></div>
-          </div>
+          <div class="r">5 times<br>6 pessoas hoje</div>
         </div>
 
         <div class="card">
-          <div class="card-h"><h3>Stakeholders · entram no ritual certo</h3><span class="sub">não participam do dia a dia</span></div>
-          <div class="card-b" style="display:grid;gap:10px">
-            <div class="tsk" style="border-bottom:1px solid var(--rule-2);grid-template-columns:auto 1fr">
-              <span class="avx">LS</span>
-              <div><span class="tt">Lúcio Santana · Founder &amp; Chairman</span>
-                <p class="why">Tese, hub em Orlando, relação com investidores e voto final no comitê. Entra na <b>weekly de liderança</b>, na <b>mensal</b> e na <b>estratégica</b>.</p></div>
+          <div class="orgv">
+            <div class="ocard chair"><span class="avx">LS</span><span class="tx"><b>Lúcio Santana</b><small>Founder &amp; Chairman</small></span></div>
+            <div class="oline"></div>
+            <div class="ocard mp"><span class="avx">GM</span><span class="tx"><b>Gustavo Marion</b><small>Managing Partner</small></span></div>
+            <div class="opair">
+              <div class="oc2"><div class="ocard"><span class="avx">AM</span><span class="tx"><b>Alexandre Medeiros</b><small>Líder da Operação</small></span></div></div>
+              <div class="oc2"><div class="ocard"><span class="avx">LU</span><span class="tx"><b>Lucilene</b><small>Gerência de Operações</small></span></div></div>
             </div>
-            <div class="tsk" style="border-bottom:1px solid var(--rule-2);grid-template-columns:auto 1fr">
-              <span class="avs"><span class="avx alt">CO</span><span class="avx alt">FA</span><span class="avx alt">KA</span><span class="avx alt">AZ</span></span>
-              <div><span class="tt">Conselheiros de área · Osorio, Alves, Adamatti e Zocche</span>
-                <p class="why">Cada um conduz um encontro do programa de 120 dias e assina parecer. Entram na <b>estratégica trimestral</b> — nunca na entrega dos projetos Deploy.</p></div>
-            </div>
-            <div class="tsk" style="border-bottom:none;grid-template-columns:auto 1fr">
-              <span class="avx alt">DP</span>
-              <div><span class="tt">Deploy US · parceira de tecnologia e educação</span>
-                <p class="why">Constrói o software, conduz o encontro de tecnologia e IA e <b>entrega os programas pagos</b> — a RBG vende, a Deploy entrega, e 25% do faturamento volta como comissão.</p></div>
-            </div>
+            <div class="oline"></div>
+            <div class="ocard"><span class="avx">GI</span><span class="tx"><b>Giva</b><small>Gestão de Marketing · conselheiro</small></span></div>
+            <div class="oteams-rule"><span>os cinco times da operação</span></div>
           </div>
-        </div>
 
-        <div class="cols" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))">
-          <div class="area">
-            <div class="ah"><h4>Funil &amp; Captação</h4><span class="avx">GM</span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Encher o funil: alcance vira lead, lead vira call de triagem.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv"><b>500 leads</b> e <b>100 calls</b> no curto → 10 aceleradas → 1–2 investidas.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">Tráfego pago, inscrições do Pitch Day, triagem semanal.</span></div>
+          <div class="card-b" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;padding-top:0">
+            <div class="team">
+              <div class="th2"><div><h4>Customer Experience<small>CX · aceleradas</small></h4></div><span class="avx">LU</span></div>
+              <div class="tb2">
+                <p class="mis"><b>Missão:</b> a experiência das empresas aceleradas, do onboarding pós-palco até a decisão do encontro 8.</p>
+                <div class="mem">
+                  <div class="mr2 lead2"><span class="avx">LU</span><div><b>Lucilene</b><br><span>rotina do programa, agenda dos 8 encontros</span></div></div>
+                  <div class="mr2"><span class="avx">AM</span><div><b>Alexandre</b><br><span>relação com as aceleradas, seleção das turmas</span></div></div>
+                </div>
+              </div>
+              <div class="tf2">Em 2027 entra 1 contratado de CX dedicado, sob a gerência de operações.</div>
+            </div>
+
+            <div class="team">
+              <div class="th2"><div><h4>Marketing &amp; Growth<small>topo do funil</small></h4></div><span class="avx">GI</span></div>
+              <div class="tb2">
+                <p class="mis"><b>Missão:</b> alcance virar lead — social media, conteúdo e tráfego, com constância acima de pico.</p>
+                <div class="mem">
+                  <div class="mr2 lead2"><span class="avx">GI</span><div><b>Giva</b><br><span>direção de marketing e da pauta de conteúdo</span></div></div>
+                  <div class="mr2"><span class="avx alt">SM</span><div><b>Social media · PJ</b><br><span>10 cortes + 1 longo por semana</span></div></div>
+                  <div class="mr2"><span class="avx">GM</span><div><b>Gustavo</b><br><span>growth · tráfego pago e custo por lead</span></div></div>
+                </div>
+              </div>
+              <div class="tf2">Meta do curto: 500 mil de alcance · 25 mil IG · 10 mil YouTube.</div>
+            </div>
+
+            <div class="team">
+              <div class="th2"><div><h4>Produção &amp; Eventos<small>as edições do Pitch Day</small></h4></div><span class="avx">AM</span></div>
+              <div class="tb2">
+                <p class="mis"><b>Missão:</b> cada edição impecável — palco, banca, cenário e gravação. O evento é também um estúdio.</p>
+                <div class="mem">
+                  <div class="mr2 lead2"><span class="avx">AM</span><div><b>Alexandre</b><br><span>dia a dia do evento, banca e empresas</span></div></div>
+                  <div class="mr2"><span class="avx">GI</span><div><b>Giva</b><br><span>cenário e o que será gravado</span></div></div>
+                  <div class="mr2"><span class="avx alt">FV</span><div><b>Fornecedor de vídeo</b><br><span>captação no dia + 30 cortes por edição</span></div></div>
+                  <div class="mr2"><span class="avx">LU</span><div><b>Lucilene</b><br><span>logística, espaço e credenciamento</span></div></div>
+                </div>
+              </div>
+              <div class="tf2">3 edições em 2026 · as três reuniões de organização estão em <b>Reuniões</b>.</div>
+            </div>
+
+            <div class="team" style="border-color:var(--gold)">
+              <div class="th2"><div><h4>Comercial<small>programas Deploy · educação</small></h4></div><span class="avx">GM</span></div>
+              <div class="tb2">
+                <p class="mis"><b>Missão:</b> vender os programas pagos para quem não foi selecionado — o braço de educação da RBG. A Deploy entrega; <b>25% volta como comissão</b>.</p>
+                <div class="mem">
+                  <div class="mr2 lead2"><span class="avx">GM</span><div><b>Gustavo</b><br><span>oferta, propostas e fechamento</span></div></div>
+                  <div class="mr2"><span class="avx">LU</span><div><b>Lucilene</b><br><span>follow-up da base e agenda comercial</span></div></div>
+                  <div class="mr2"><span class="avx alt">DP</span><div><b>Deploy US</b><br><span>entrega dos programas · parceira</span></div></div>
+                </div>
+              </div>
+              <div class="tf2">Meta do curto: 5 projetos · US$ 13,75 mil de comissão. Oferta sempre <b>depois</b> da decisão do palco.</div>
+            </div>
+
+            <div class="team">
+              <div class="th2"><div><h4>Financeiro &amp; Administrativo<small>caixa, DRE e documentos</small></h4></div><span class="avx">LU</span></div>
+              <div class="tb2">
+                <p class="mis"><b>Missão:</b> gastar no período o que foi captado para o período — caixa fechado toda semana, DRE todo mês.</p>
+                <div class="mem">
+                  <div class="mr2 lead2"><span class="avx">LU</span><div><b>Lucilene</b><br><span>caixa semanal, DRE mensal, Carta</span></div></div>
+                  <div class="mr2"><span class="avx">GM</span><div><b>Gustavo</b><br><span>aprovações e relatório mensal RBG</span></div></div>
+                </div>
+              </div>
+              <div class="tf2">Contábil e fiscal terceirizados · US$ 1.000/mês. Registro societário na Carta.</div>
             </div>
           </div>
-          <div class="area">
-            <div class="ah"><h4>Pitch Day &amp; Eventos</h4><span class="avx">AM</span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Planejar e executar cada edição — banca, palco, empresas e experiência.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv"><b>3 edições em 2026</b>, 18 empresas no palco no curto.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">Cronograma reverso por edição, ensaios, scorecard, evento no ar.</span></div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="ah"><h4>Produção &amp; Gravação</h4><span class="avs"><span class="avx">GI</span><span class="avx alt">FV</span></span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Definir o que será gravado em cada edição, alinhar cenário e captar tudo.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv"><b>30+ cortes por edição</b> — a matéria-prima do funil inteiro.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">Mapa de gravação, cenário aprovado, edição entregue em 2 semanas.</span></div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="ah"><h4>Social Media</h4><span class="avs"><span class="avx">GI</span><span class="avx alt">SM</span></span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Topo do funil sempre aquecido: constância vale mais que pico.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv"><b>500 mil de alcance</b>, 25 mil no IG e 10 mil no YouTube no curto.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">10 cortes + 1 longo por semana, pauta definida na planning.</span></div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="ah"><h4>Programa 120 dias</h4><span class="avs"><span class="avx">AM</span><span class="avx">LU</span></span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Conduzir a turma pelos 8 encontros quinzenais com os conselheiros.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv">Decisão de investimento colegiada no <b>encontro 8</b> — nenhum cheque antes.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">Agenda dos encontros, material, pareceres arquivados.</span></div>
-            </div>
-          </div>
-          <div class="area" style="border-color:var(--gold);background:#FDFAF1">
-            <div class="ah"><h4>Comercial · Programas Deploy</h4><span class="avs"><span class="avx">GM</span><span class="avx">LU</span></span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Vender os programas pagos para quem não foi selecionado — o braço de <b>educação</b> da RBG. Ninguém sai de mãos vazias do funil.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv"><b>5 projetos</b> no curto · US$ 55 mil faturados na Deploy · <b>US$ 13,75 mil de comissão (25%)</b> no caixa da RBG.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">Oferta apresentada <b>depois</b> da decisão do Pitch Day, follow-up da base, pipeline vivo na weekly.</span></div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="ah"><h4>Financeiro &amp; Admin</h4><span class="avx">LU</span></div>
-            <div class="fx">
-              <div class="f"><span class="fk">Objetivo</span><span class="fv">Caixa em dia, Carta em dia, contábil sem pendência.</span></div>
-              <div class="f"><span class="fk">Resultado</span><span class="fv">DRE mensal fechada — gastar no período <b>o que foi captado para o período</b>.</span></div>
-              <div class="f"><span class="fk">Entregas</span><span class="fv">Fechamento semanal do caixa, DRE mensal, documentos na Carta.</span></div>
-            </div>
-          </div>
+          <div class="card-f"><b>Stakeholders fora do dia a dia:</b> Lúcio entra na weekly de liderança, na mensal e na estratégica; os 4 conselheiros de área (Osorio, Alves, Adamatti e Zocche) e a Deploy US entram na <b>estratégica trimestral</b> — e cada conselheiro conduz um encontro do programa de 120 dias.</div>
         </div>
       </section>
 
@@ -701,149 +761,173 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         <div class="sec-h">
           <div class="l">
             <span class="kx">03 · Reuniões e pautas</span>
-            <h2>Poucas reuniões, todas com pauta</h2>
-            <p>Quatro camadas: operacional (dailies, planning e weeklies), mensal, tática por edição e estratégica trimestral com os conselheiros. Ninguém sai sem decisão e próximo passo.</p>
+            <h2>Poucas reuniões, todas com pauta e minutagem</h2>
+            <p>Daily, Weekly de Operação (segunda), Weekly de Liderança (sexta), Mensal de relatórios, as três reuniões de organização do Pitch Day e a Estratégica trimestral. <b>Toda reunião abre pelos números da Visão geral e pelo relatório da semana.</b></p>
           </div>
-          <div class="r">operacional → mensal<br>→ tática → estratégica</div>
+          <div class="r">operacional → mensal<br>→ pitch day → estratégica</div>
         </div>
 
         <div class="cols c-2">
           <div class="mtgc">
             <div class="mh">
-              <div class="row1"><h4>Daily · bater o dia</h4><span class="pill p-ok">Seg a sex · 15–20 min</span></div>
+              <div class="row1"><h4>Daily · bater o dia</h4><span class="pill p-ok">Seg a sex · 15 min</span></div>
               <span class="when">9h00 · no hub ou por chamada</span>
               <span class="avs"><span class="avx">GM</span><span class="avx">LU</span><span class="who">Gustavo + Lucilene</span></span>
             </div>
             <div class="mb">
-              <span class="pk">Pauta fixa · 3 blocos</span>
-              <ol>
-                <li>O que saiu ontem — só o que fechou, sem história.</li>
-                <li>O que sai hoje — cada um fala as suas 1–3 entregas do dia.</li>
-                <li>Travas — o que está segurando alguém e quem destrava.</li>
-              </ol>
-            </div>
-            <div class="mf"><b>Sem relatório.</b> Trava que não se resolve na hora vira tarefa com dono, aqui no sistema.</div>
-          </div>
-
-          <div class="mtgc">
-            <div class="mh">
-              <div class="row1"><h4>Planning semanal</h4><span class="pill p-ok">Segunda · 45 min</span></div>
-              <span class="when">9h20 · logo depois da daily</span>
-              <span class="avs"><span class="avx">GM</span><span class="avx">LU</span><span class="avx alt">SM</span><span class="who">Gustavo + Lucilene · social entra nos 15 min finais</span></span>
-            </div>
-            <div class="mb">
               <span class="pk">Pauta fixa</span>
               <ol>
-                <li>Prioridades da semana — o que precisa estar de pé na sexta.</li>
-                <li>Cronograma — o que muda no plano do curto prazo.</li>
-                <li>Pauta de conteúdo — os 10 cortes e o vídeo longo da semana.</li>
-                <li>Distribuição — cada tarefa com dono e dia.</li>
+                <li>O que saiu ontem — só o que fechou.<span class="mn">5 min</span></li>
+                <li>O que sai hoje — as 1–3 entregas de cada um.<span class="mn">5 min</span></li>
+                <li>Travas — o que segura alguém e quem destrava.<span class="mn">5 min</span></li>
               </ol>
             </div>
-            <div class="mf"><b>Entregável:</b> a lista de tarefas da semana, marcada aqui no sistema.</div>
+            <div class="mf"><b>Sem relatório.</b> Trava que não se resolve na hora vira tarefa com dono, no time certo.</div>
           </div>
 
           <div class="mtgc">
             <div class="mh">
-              <div class="row1"><h4>Weekly · Operação</h4><span class="pill p-ok">Sexta · 45 min</span></div>
-              <span class="when">16h00 · fechamento da semana</span>
-              <span class="avs"><span class="avx">GM</span><span class="avx">LU</span><span class="who">Gustavo + Lucilene</span></span>
+              <div class="row1"><h4>Weekly de Operação</h4><span class="pill p-ok">Segunda · 45 min</span></div>
+              <span class="when">9h20 · logo depois da daily · abre a semana</span>
+              <span class="avs"><span class="avx">GM</span><span class="avx">LU</span><span class="avx alt">SM</span><span class="who">Gustavo + Lucilene · social entra no bloco de conteúdo</span></span>
             </div>
             <div class="mb">
-              <span class="pk">Pauta fixa</span>
+              <span class="pk">Pauta fixa · minutada</span>
               <ol>
-                <li>Tarefas da semana — feito e não feito, sem julgamento, com motivo.</li>
-                <li>Métricas — funil, social media e caixa da semana.</li>
-                <li>Pipeline comercial Deploy — propostas em aberto e follow-ups.</li>
-                <li>Cronograma da próxima semana — insumo da planning de segunda.</li>
+                <li>Números — big numbers e o que fechou na semana passada.<span class="mn">10 min</span></li>
+                <li>Tarefas — feito e não feito, com motivo.<span class="mn">10 min</span></li>
+                <li>Prioridades e cronograma da semana que entra.<span class="mn">10 min</span></li>
+                <li>Pauta de conteúdo — os 10 cortes e o longo da semana.<span class="mn">10 min</span></li>
+                <li>Distribuição — cada tarefa com dono, time e dia.<span class="mn">5 min</span></li>
               </ol>
             </div>
-            <div class="mf"><b>Entregável:</b> recap curto por escrito — vira a primeira pauta da planning.</div>
+            <div class="mf"><b>Entregável:</b> as tarefas da semana, por time, marcadas aqui no sistema.</div>
           </div>
 
           <div class="mtgc">
             <div class="mh">
-              <div class="row1"><h4>Weekly · Liderança</h4><span class="pill p-ok">Sexta · 60 min</span></div>
-              <span class="when">17h00 · depois da weekly de operação</span>
+              <div class="row1"><h4>Weekly de Liderança</h4><span class="pill p-ok">Sexta · 60 min</span></div>
+              <span class="when">17h00 · fecha a semana</span>
               <span class="avs"><span class="avx">GM</span><span class="avx">LS</span><span class="avx">AM</span><span class="avx">GI</span><span class="who">Gustavo conduz · Lúcio + Alexandre + Giva</span></span>
             </div>
             <div class="mb">
-              <span class="pk">Pauta fixa</span>
+              <span class="pk">Pauta fixa · minutada</span>
               <ol>
-                <li>Números da semana — funil do topo ao fundo, em 10 minutos.</li>
-                <li>Pitch Day — status da próxima edição contra o cronograma reverso.</li>
-                <li>Marketing e conteúdo — o que saiu, o que rodou melhor.</li>
-                <li>Decisões — só o que trava sem os quatro juntos.</li>
+                <li>Números da semana — funil do topo ao fundo.<span class="mn">10 min</span></li>
+                <li>Pitch Day — status vs cronograma reverso.<span class="mn">15 min</span></li>
+                <li>Marketing e conteúdo — o que rodou melhor.<span class="mn">10 min</span></li>
+                <li>Comercial Deploy — pipeline e fechamentos.<span class="mn">10 min</span></li>
+                <li>Decisões — só o que trava sem os quatro juntos.<span class="mn">15 min</span></li>
               </ol>
             </div>
-            <div class="mf"><b>Entregável:</b> recap com as decisões e quem faz o quê — em até 1 dia útil.</div>
+            <div class="mf"><b>Entregável:</b> recap com decisões e donos — em até 1 dia útil.</div>
           </div>
 
           <div class="mtgc">
             <div class="mh">
-              <div class="row1"><h4>Mensal · resultado vs meta</h4><span class="pill p-info">Mensal · 90 min</span></div>
-              <span class="when">Até 5 dias úteis após fechar o mês</span>
+              <div class="row1"><h4>Mensal de relatórios</h4><span class="pill p-info">Mensal · 90 min</span></div>
+              <span class="when">Até 5 dias úteis após fechar o mês · management</span>
               <span class="avs"><span class="avx">LS</span><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx">LU</span><span class="who">Lúcio + management completo</span></span>
             </div>
             <div class="mb">
-              <span class="pk">Pauta fixa</span>
+              <span class="pk">Pauta fixa · minutada</span>
               <ol>
-                <li>Placar do mês — funil, social e comercial Deploy contra as metas do curto.</li>
-                <li>DRE do mês — entradas, saídas e colchão de giro.</li>
-                <li>Empresas do programa — status da turma, encontro a encontro.</li>
-                <li>Correção de rota — o que muda no mês que entra.</li>
+                <li>Placar do mês — funil, social e comercial vs meta.<span class="mn">20 min</span></li>
+                <li>DRE do mês — entradas, saídas, colchão.<span class="mn">20 min</span></li>
+                <li>CX e turma — status encontro a encontro.<span class="mn">20 min</span></li>
+                <li>Comercial Deploy — faturado e comissão.<span class="mn">10 min</span></li>
+                <li>Correção de rota — o que muda no mês que entra.<span class="mn">20 min</span></li>
               </ol>
             </div>
             <div class="mf"><b>Entregável:</b> Relatório mensal RBG (deck/PDF) — o mesmo que alimenta o painel do investidor.</div>
           </div>
+        </div>
 
-          <div class="mtgc hero">
-            <div class="mh">
-              <div class="row1"><h4>Tática · por edição do Pitch Day</h4><span class="pill p-warn">6 semanas antes de cada edição</span></div>
-              <span class="when">60 min · checkpoint 2 semanas antes do evento</span>
-              <span class="avs"><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx">LU</span><span class="avx alt">FV</span><span class="who">Management + fornecedor de vídeo</span></span>
+        <div class="card" style="border-color:var(--gold)">
+          <div class="card-h"><h3>Pitch Day · as três reuniões de organização</h3><span class="sub">por edição · R1 → R2 → R3</span></div>
+          <div class="card-b cols c-3" style="padding:12px">
+            <div class="mtgc hero">
+              <div class="mh">
+                <div class="row1"><h4>R1 · Kickoff da edição</h4><span class="pill p-warn">6 semanas antes · 60 min</span></div>
+                <span class="avs"><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx">LU</span><span class="who">management</span></span>
+              </div>
+              <div class="mb">
+                <span class="pk">O que se resolve aqui</span>
+                <ol>
+                  <li>Data, local e formato da edição.<span class="mn">10 min</span></li>
+                  <li>Banca — quais conselheiros, convite e agenda.<span class="mn">10 min</span></li>
+                  <li>Meta de inscrições e plano de divulgação.<span class="mn">15 min</span></li>
+                  <li>Orçamento da edição (≈ US$ 1.800).<span class="mn">10 min</span></li>
+                  <li>Cronograma reverso — entregas com dono e data.<span class="mn">15 min</span></li>
+                </ol>
+              </div>
+              <div class="mf"><b>Sai daqui:</b> o evento com dono, data e plano — o cronograma reverso vira tarefas.</div>
             </div>
-            <div class="mb">
-              <span class="pk">Pauta fixa · o evento inteiro em uma mesa</span>
+            <div class="mtgc hero">
+              <div class="mh">
+                <div class="row1"><h4>R2 · Produção e divulgação</h4><span class="pill p-warn">3 semanas antes · 60 min</span></div>
+                <span class="avs"><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx">LU</span><span class="avx alt">FV</span><span class="who">+ fornecedor de vídeo</span></span>
+              </div>
+              <div class="mb">
+                <span class="pk">O que se resolve aqui</span>
+                <ol>
+                  <li>Empresas do palco — selecionadas e ordem.<span class="mn">15 min</span></li>
+                  <li>Cenário e mapa de gravação — o que será gravado.<span class="mn">15 min</span></li>
+                  <li>Roteiro do dia — palco, entrevistas, bastidores.<span class="mn">10 min</span></li>
+                  <li>Divulgação final — as 3 semanas até o evento.<span class="mn">10 min</span></li>
+                  <li>Convites — banca confirmada e plateia.<span class="mn">10 min</span></li>
+                </ol>
+              </div>
+              <div class="mf"><b>Sai daqui:</b> tudo que precisa ser produzido, encomendado com prazo.</div>
+            </div>
+            <div class="mtgc hero">
+              <div class="mh">
+                <div class="row1"><h4>R3 · Ensaio geral</h4><span class="pill p-warn">1 semana antes · 45 min</span></div>
+                <span class="avs"><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx">LU</span><span class="avx alt">FV</span><span class="who">time completo do evento</span></span>
+              </div>
+              <div class="mb">
+                <span class="pk">O que se resolve aqui</span>
+                <ol>
+                  <li>Checklist final — espaço, som, credenciamento.<span class="mn">10 min</span></li>
+                  <li>Ordem dos pitches e ensaio das empresas.<span class="mn">10 min</span></li>
+                  <li>Roteiro minuto a minuto do dia.<span class="mn">10 min</span></li>
+                  <li>Papéis no dia — quem faz o quê, hora a hora.<span class="mn">10 min</span></li>
+                  <li>Plano B — chuva, no-show, atraso.<span class="mn">5 min</span></li>
+                </ol>
+              </div>
+              <div class="mf"><b>Sai daqui:</b> o dia roda sem improviso — qualquer um do time sabe seu papel.</div>
+            </div>
+          </div>
+          <div class="card-f">Para a <b>edição de dezembro</b>: R1 em outubro, R2 em novembro, R3 na semana do evento — marcadas na cadência abaixo.</div>
+        </div>
+
+        <div class="mtgc exit">
+          <div class="mh">
+            <div class="row1"><h4>Estratégica · com os conselheiros</h4><span class="pill p-info">Trimestral · 2h</span></div>
+            <span class="when">Set · Dez · Mar — geral, com todo mundo · no hub, presencial quando possível</span>
+            <span class="avs"><span class="avx">LS</span><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx">LU</span><span class="avx alt">CO</span><span class="avx alt">FA</span><span class="avx alt">KA</span><span class="avx alt">AZ</span><span class="avx alt">DP</span><span class="who">Chairman + management + os 4 conselheiros de área + Deploy US</span></span>
+          </div>
+          <div class="mb" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div>
+              <span class="pk">Pauta fixa · minutada</span>
               <ol>
-                <li>Data, local e banca — conselheiros confirmados e agenda do dia.</li>
-                <li>Empresas no palco — quem pitcha, ordem e ensaios.</li>
-                <li>Cenário e gravação — o que será gravado, mapa de câmeras, roteiro.</li>
-                <li>Divulgação — plano das semanas até o evento.</li>
-                <li>Cronograma reverso — cada entrega com dono e data, daqui até o dia.</li>
+                <li>A régua dos três horizontes — onde estamos na tese.<span class="mn">15 min</span></li>
+                <li>Trimestre fechado — funil, captação, educação vs meta.<span class="mn">30 min</span></li>
+                <li>Turmas e investidas — parecer por área.<span class="mn">30 min</span></li>
+                <li>Decisões estratégicas — rodada, expansão, apostas.<span class="mn">30 min</span></li>
+                <li>Compromissos — o que cada cadeira entrega.<span class="mn">15 min</span></li>
               </ol>
             </div>
-            <div class="mf"><b>Entregável:</b> o cronograma reverso da edição — que vira tarefas neste sistema.</div>
-          </div>
-
-          <div class="mtgc exit" style="grid-column:1/-1">
-            <div class="mh">
-              <div class="row1"><h4>Estratégica · com os conselheiros</h4><span class="pill p-info">Trimestral · 2h</span></div>
-              <span class="when">Set · Dez · Mar — no hub, presencial quando possível</span>
-              <span class="avs"><span class="avx">LS</span><span class="avx">GM</span><span class="avx">AM</span><span class="avx">GI</span><span class="avx alt">CO</span><span class="avx alt">FA</span><span class="avx alt">KA</span><span class="avx alt">AZ</span><span class="avx alt">DP</span><span class="who">Chairman + management + os 4 conselheiros de área + Deploy US</span></span>
+            <div>
+              <span class="pk">Regras da sala</span>
+              <ol>
+                <li>Material enviado 3 dias antes — a reunião discute, não apresenta.</li>
+                <li>Cada conselheiro fala da sua área com dado, não com opinião solta.</li>
+                <li>Toda decisão sai com dono, prazo e registro em ata.</li>
+              </ol>
             </div>
-            <div class="mb" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-              <div>
-                <span class="pk">Pauta fixa</span>
-                <ol>
-                  <li>A régua dos três horizontes — onde estamos na tese.</li>
-                  <li>Trimestre fechado — funil, captação, portfólio e educação vs meta.</li>
-                  <li>Turmas e investidas — parecer dos conselheiros por área.</li>
-                  <li>Decisões estratégicas — rodada, expansão, apostas do próximo tri.</li>
-                  <li>Compromissos — o que cada cadeira entrega até a próxima.</li>
-                </ol>
-              </div>
-              <div>
-                <span class="pk">Regras da sala</span>
-                <ol>
-                  <li>Material enviado 3 dias antes — a reunião discute, não apresenta.</li>
-                  <li>Cada conselheiro fala da sua área com dado, não com opinião solta.</li>
-                  <li>Toda decisão sai com dono, prazo e registro em ata.</li>
-                </ol>
-              </div>
-            </div>
-            <div class="mf"><b>Entregável:</b> ata + metas do trimestre — registradas no software e apresentadas na mensal seguinte.</div>
           </div>
+          <div class="mf"><b>Entregável:</b> ata + metas do trimestre — registradas e cobradas na mensal seguinte.</div>
         </div>
       </section>
 
@@ -861,7 +945,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         <div class="wkg">
           <div class="wkd"><div class="dh">Segunda</div><div class="db">
             <div class="evt op"><span class="et">Daily</span><span class="ew">9h00 · 15 min · GM + LU</span></div>
-            <div class="evt hi"><span class="et">Planning semanal</span><span class="ew">9h20 · 45 min · GM + LU (+SM)</span></div>
+            <div class="evt hi"><span class="et">Weekly de Operação</span><span class="ew">9h20 · 45 min · GM + LU (+SM)</span></div>
           </div></div>
           <div class="wkd"><div class="dh">Terça</div><div class="db">
             <div class="evt op"><span class="et">Daily</span><span class="ew">9h00 · 15 min · GM + LU</span></div>
@@ -877,13 +961,13 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
           </div></div>
           <div class="wkd"><div class="dh">Sexta</div><div class="db">
             <div class="evt op"><span class="et">Daily</span><span class="ew">9h00 · 15 min · GM + LU</span></div>
-            <div class="evt hi"><span class="et">Weekly Operação</span><span class="ew">16h00 · 45 min · GM + LU</span></div>
-            <div class="evt hi"><span class="et">Weekly Liderança</span><span class="ew">17h00 · 60 min · GM + LS + AM + GI</span></div>
+            <div class="evt ghost"><span class="et">Números da semana</span><span class="ew">preencher relatórios · LU</span></div>
+            <div class="evt hi"><span class="et">Weekly de Liderança</span><span class="ew">17h00 · 60 min · GM + LS + AM + GI</span></div>
           </div></div>
         </div>
 
         <div class="card">
-          <div class="card-h"><h3>Cadência dos rituais maiores · ago 2026 → fev 2027</h3><span class="sub">mensal · tática · estratégica · edições</span></div>
+          <div class="card-h"><h3>Cadência dos rituais maiores · ago 2026 → fev 2027</h3><span class="sub">mensal · pitch day R1–R3 · estratégica</span></div>
           <div class="card-b cadl">
             <div class="mons"><span>Ritual</span><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div>
             <div class="cw">
@@ -892,14 +976,14 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
               <div class="cc"><span class="pdev">Edição 3</span></div><div class="cc"></div><div class="cc"></div>
             </div>
             <div class="cw">
-              <div class="clab">Mensal<small>resultado vs meta</small></div>
-              <div class="cc"><span class="dot hollow"></span></div><div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div>
-              <div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div>
+              <div class="clab">Reuniões do evento<small>R1 · R2 · R3</small></div>
+              <div class="cc"><span class="dot hollow"></span></div><div class="cc"></div><div class="cc"><span class="pdev" style="background:var(--sand-3);color:var(--ink-2)">R1</span></div>
+              <div class="cc"><span class="pdev" style="background:var(--sand-3);color:var(--ink-2)">R2</span></div><div class="cc"><span class="pdev" style="background:var(--sand-3);color:var(--ink-2)">R3</span></div><div class="cc"></div><div class="cc"></div>
             </div>
             <div class="cw">
-              <div class="clab">Tática<small>por edição</small></div>
-              <div class="cc"><span class="dot hollow"></span></div><div class="cc"></div><div class="cc"><span class="dot"></span></div>
-              <div class="cc"><span class="dot"></span></div><div class="cc"></div><div class="cc"></div><div class="cc"></div>
+              <div class="clab">Mensal<small>relatórios · management</small></div>
+              <div class="cc"><span class="dot hollow"></span></div><div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div>
+              <div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div><div class="cc"><span class="dot"></span></div>
             </div>
             <div class="cw">
               <div class="clab">Estratégica<small>com conselheiros</small></div>
@@ -907,7 +991,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
               <div class="cc"></div><div class="cc"><span class="dot info"></span></div><div class="cc"></div><div class="cc"></div>
             </div>
           </div>
-          <div class="card-f">Bolinha vazada = já aconteceu ou está em curso. A tática de <b>out</b> abre o planejamento da edição de dezembro; o checkpoint de <b>nov</b> confere o cronograma reverso a 2 semanas do evento.</div>
+          <div class="card-f">Bolinha vazada = já aconteceu ou está em curso. As reuniões <b>R1, R2 e R3</b> da edição de dezembro estão em out, nov e na semana do evento.</div>
         </div>
       </section>
 
@@ -917,43 +1001,41 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
           <div class="l">
             <span class="kx">05 · Cronograma</span>
             <h2>O curto prazo inteiro, numa régua só</h2>
-            <p>Ago 2026 → fev 2027, por área. Marque o checkbox quando a entrega fechar — fica salvo neste navegador e conta no placar da semana.</p>
+            <p>Ago 2026 → fev 2027, por time. As rotinas contínuas vivem aqui — sem duplicar nas tarefas. Marque o checkbox quando a entrega fechar.</p>
           </div>
-          <div class="r">provar o modelo<br>até fevereiro</div>
+          <div class="r">médio e longo prazo<br>entram depois, aqui</div>
         </div>
 
         <div class="card">
           <div class="gnt-wrap"><div class="gnt" id="gnt">
             <div class="gnt-now" style="left:calc(250px + (100% - 250px)*0.095)"><i>hoje</i></div>
-            <div class="gnt-hd"><div class="lft">Entrega · dono</div><div class="mos"><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div></div>
+            <div class="gnt-hd"><div class="lft">Entrega · time</div><div class="mos"><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div></div>
 
-            <div class="gnt-sec">Pitch Day &amp; eventos</div>
+            <div class="gnt-sec">Produção &amp; Eventos</div>
             <div class="gnt-gr" data-g="g-ed2"><div class="lbl"><input type="checkbox" class="ck" id="g-ed2"><div class="tx"><span class="tt">Edição 2 · 29–30 ago · Orlando</span><span class="ss">AM · evento no ar</span></div></div><div class="trk"><i class="bar gold" style="grid-column:2/3"><span class="bl">evento</span></i></div></div>
             <div class="gnt-gr" data-g="g-pos2"><div class="lbl"><input type="checkbox" class="ck" id="g-pos2"><div class="tx"><span class="tt">Pós-produção da edição 2</span><span class="ss">FV · 30+ cortes em 2 semanas</span></div></div><div class="trk"><i class="bar" style="grid-column:3/5"><span class="bl">edição + cortes</span></i></div></div>
-            <div class="gnt-gr" data-g="g-tat3"><div class="lbl"><input type="checkbox" class="ck" id="g-tat3"><div class="tx"><span class="tt">Tática da edição 3 + cronograma reverso</span><span class="ss">GM · reunião de out</span></div></div><div class="trk"><i class="bar soft" style="grid-column:5/7"><span class="bl">planejar</span></i></div></div>
+            <div class="gnt-gr" data-g="g-r123"><div class="lbl"><input type="checkbox" class="ck" id="g-r123"><div class="tx"><span class="tt">R1 → R2 → R3 da edição 3</span><span class="ss">GM · out, nov e semana do evento</span></div></div><div class="trk"><i class="bar soft" style="grid-column:5/10"><span class="bl">organizar</span></i></div></div>
             <div class="gnt-gr" data-g="g-ed3"><div class="lbl"><input type="checkbox" class="ck" id="g-ed3"><div class="tx"><span class="tt">Edição 3 · dezembro</span><span class="ss">AM · fecha o ano</span></div></div><div class="trk"><i class="bar gold" style="grid-column:9/11"><span class="bl">evento</span></i></div></div>
 
-            <div class="gnt-sec">Funil &amp; captação</div>
+            <div class="gnt-sec">Marketing &amp; Growth</div>
             <div class="gnt-gr" data-g="g-traf"><div class="lbl"><input type="checkbox" class="ck" id="g-traf"><div class="tx"><span class="tt">Tráfego + inscrições · 500 leads</span><span class="ss">GM · contínuo</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:1/15"><span class="bl">contínuo</span></i></div></div>
-            <div class="gnt-gr" data-g="g-call"><div class="lbl"><input type="checkbox" class="ck" id="g-call"><div class="tx"><span class="tt">Calls de triagem · 100 no curto</span><span class="ss">AM · bloco semanal</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:3/15"><span class="bl">semanal</span></i></div></div>
-
-            <div class="gnt-sec">Programa 120 dias</div>
-            <div class="gnt-gr" data-g="g-t1"><div class="lbl"><input type="checkbox" class="ck" id="g-t1"><div class="tx"><span class="tt">Turma 1 · 8 encontros quinzenais</span><span class="ss">AM + LU · pós-edição de ago</span></div></div><div class="trk"><i class="bar" style="grid-column:3/11"><span class="bl">120 dias</span></i></div></div>
-            <div class="gnt-gr" data-g="g-inv1"><div class="lbl"><input type="checkbox" class="ck" id="g-inv1"><div class="tx"><span class="tt">Encontro 8 · decisão de investimento</span><span class="ss">comitê · 1º cheque</span></div></div><div class="trk"><i class="bar blue" style="grid-column:11/13"><span class="bl">comitê</span></i></div></div>
-
-            <div class="gnt-sec">Conteúdo &amp; social</div>
             <div class="gnt-gr" data-g="g-yt"><div class="lbl"><input type="checkbox" class="ck" id="g-yt"><div class="tx"><span class="tt">1 vídeo longo / semana · 24 no curto</span><span class="ss">GI + SM · YouTube</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:1/15"><span class="bl">semanal</span></i></div></div>
             <div class="gnt-gr" data-g="g-cuts"><div class="lbl"><input type="checkbox" class="ck" id="g-cuts"><div class="tx"><span class="tt">10 cortes / semana · 240 no curto</span><span class="ss">SM · Reels, Shorts, TikTok</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:1/15"><span class="bl">semanal</span></i></div></div>
+
+            <div class="gnt-sec">Customer Experience</div>
+            <div class="gnt-gr" data-g="g-call"><div class="lbl"><input type="checkbox" class="ck" id="g-call"><div class="tx"><span class="tt">Calls de triagem · 100 no curto</span><span class="ss">AM · bloco de quarta</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:3/15"><span class="bl">semanal</span></i></div></div>
+            <div class="gnt-gr" data-g="g-t1"><div class="lbl"><input type="checkbox" class="ck" id="g-t1"><div class="tx"><span class="tt">Turma 1 · 8 encontros quinzenais</span><span class="ss">AM + LU · pós-edição de ago</span></div></div><div class="trk"><i class="bar" style="grid-column:3/11"><span class="bl">120 dias</span></i></div></div>
+            <div class="gnt-gr" data-g="g-inv1"><div class="lbl"><input type="checkbox" class="ck" id="g-inv1"><div class="tx"><span class="tt">Encontro 8 · decisão de investimento</span><span class="ss">comitê · 1º cheque</span></div></div><div class="trk"><i class="bar blue" style="grid-column:11/13"><span class="bl">comitê</span></i></div></div>
 
             <div class="gnt-sec">Comercial · programas Deploy</div>
             <div class="gnt-gr" data-g="g-dep2"><div class="lbl"><input type="checkbox" class="ck" id="g-dep2"><div class="tx"><span class="tt">Oferta aos não selecionados · pós-edição 2</span><span class="ss">GM + LU · só depois da decisão</span></div></div><div class="trk"><i class="bar gold" style="grid-column:3/6"><span class="bl">vender</span></i></div></div>
             <div class="gnt-gr" data-g="g-dep3"><div class="lbl"><input type="checkbox" class="ck" id="g-dep3"><div class="tx"><span class="tt">Oferta aos não selecionados · pós-edição 3</span><span class="ss">GM + LU · 5 projetos no curto</span></div></div><div class="trk"><i class="bar gold" style="grid-column:11/14"><span class="bl">vender</span></i></div></div>
 
-            <div class="gnt-sec">Captação &amp; gestão</div>
+            <div class="gnt-sec">Financeiro &amp; captação</div>
             <div class="gnt-gr" data-g="g-anjo"><div class="lbl"><input type="checkbox" class="ck" id="g-anjo"><div class="tx"><span class="tt">Rodada anjo · US$ 250 mil</span><span class="ss">GM · SAFE na Carta</span></div></div><div class="trk"><i class="bar blue" style="grid-column:1/6"><span class="bl">rodada</span></i></div></div>
             <div class="gnt-gr" data-g="g-rmens"><div class="lbl"><input type="checkbox" class="ck" id="g-rmens"><div class="tx"><span class="tt">Relatório mensal RBG · todo mês</span><span class="ss">GM + LU · alimenta o painel do investidor</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:3/15"><span class="bl">mensal</span></i></div></div>
           </div></div>
-          <div class="card-f"><b>Barra tracejada = rotina contínua</b> (o checkbox marca a rotina como de pé, não como encerrada). Barra dourada = janela de evento ou venda; azul = capital.</div>
+          <div class="card-f"><b>Barra tracejada = rotina contínua</b> (o checkbox marca a rotina como de pé, não como encerrada). Barra dourada = janela de evento ou venda; azul = capital. Quando o médio prazo chegar, a régua estende aqui mesmo.</div>
         </div>
       </section>
 
@@ -961,9 +1043,9 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       <section class="sec" id="tarefas">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">06 · Tarefas da semana</span>
-            <h2>O que sai esta semana — com dono, porquê e resultado</h2>
-            <p>Cada tarefa diz quem faz, por que existe e o que gera. Marcou, salvou. A weekly de sexta lê esta lista de cima a baixo.</p>
+            <span class="kx">06 · Tarefas por time</span>
+            <h2>O que sai esta semana — enxuto, sem duplicar o cronograma</h2>
+            <p>As rotinas contínuas moram no cronograma; aqui entram as tarefas da semana, por time. Crie com <b>+ nova tarefa</b>, delete com o <b>×</b>, marque quando fechar. A Weekly de Operação lê esta lista de cima a baixo.</p>
           </div>
           <div class="r"><button class="btn" id="resetWeek" type="button">↻ reiniciar semana</button></div>
         </div>
@@ -978,64 +1060,66 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
           <button class="fchip" data-f="SM" aria-pressed="false">Social</button>
         </div>
 
-        <div class="cols c-2">
-
-          <div class="card">
-            <div class="card-h"><h3>Pitch Day · edição 29–30 ago</h3><span class="cnt-pill" data-cnt="pd">—</span></div>
-            <div class="feed">
-              <div class="tsk" data-who="AM" data-grp="pd"><input type="checkbox" class="ck" id="t-pd1"><div><span class="tt">Confirmar banca e agenda dos conselheiros</span><p class="why"><b>Por quê:</b> sem banca confirmada não há scorecard nem parecer. <b>Gera:</b> o evento decide com critério.</p><div class="mm"><span class="mmi res">AM</span><span class="mmi">até ter 26</span></div></div></div>
-              <div class="tsk" data-who="GI" data-grp="pd"><input type="checkbox" class="ck" id="t-pd2"><div><span class="tt">Fechar cenário e mapa de gravação com o fornecedor</span><p class="why"><b>Por quê:</b> o evento é também um estúdio. <b>Gera:</b> 30+ cortes que alimentam o funil por 2 meses.</p><div class="mm"><span class="mmi res">GI + FV</span><span class="mmi">até qua 26</span></div></div></div>
-              <div class="tsk" data-who="GI" data-grp="pd"><input type="checkbox" class="ck" id="t-pd3"><div><span class="tt">Roteiro do que será gravado no dia</span><p class="why"><b>Por quê:</b> câmera sem pauta grava nada aproveitável. <b>Gera:</b> matéria-prima certa para os cortes e o canal.</p><div class="mm"><span class="mmi res">GI</span><span class="mmi">até qui 27</span></div></div></div>
-              <div class="tsk" data-who="AM" data-grp="pd"><input type="checkbox" class="ck" id="t-pd4"><div><span class="tt">Briefing e ensaio das empresas do palco</span><p class="why"><b>Por quê:</b> pitch ruim queima a empresa e o evento. <b>Gera:</b> palco no nível do deck que a gente apresenta.</p><div class="mm"><span class="mmi res">AM</span><span class="mmi">até sex 28</span></div></div></div>
-              <div class="tsk" data-who="LU" data-grp="pd"><input type="checkbox" class="ck" id="t-pd5"><div><span class="tt">Checklist do espaço, credenciamento e materiais</span><p class="why"><b>Por quê:</b> logística falha aparece mais que palestra boa. <b>Gera:</b> experiência impecável para banca e plateia.</p><div class="mm"><span class="mmi res">LU</span><span class="mmi">até sex 28</span></div></div></div>
-              <div class="tsk" data-who="SM" data-grp="pd"><input type="checkbox" class="ck" id="t-pd6"><div><span class="tt">Divulgação da semana do evento</span><p class="why"><b>Por quê:</b> última chamada é a que mais converte. <b>Gera:</b> plateia cheia e leads de última hora.</p><div class="mm"><span class="mmi res">SM</span><span class="mmi">todos os dias</span></div></div></div>
+        <div class="cols c-2" id="taskBoard">
+          <div class="card" data-team="pe">
+            <div class="card-h"><h3>Produção &amp; Eventos</h3><span class="cnt-pill" data-cnt="pe">—</span></div>
+            <div class="feed" data-list="pe"></div>
+            <div class="addt"><button type="button" class="open-add">+ nova tarefa</button>
+              <form hidden><input type="text" class="full" name="tt" placeholder="O que precisa sair?" required>
+              <input type="text" name="why" class="full" placeholder="Por quê / o que gera (opcional)">
+              <div class="frow"><select name="who"><option value="GM">Gustavo</option><option value="LU">Lucilene</option><option value="AM" selected>Alexandre</option><option value="GI">Giva</option><option value="SM">Social</option></select>
+              <input type="text" name="due" placeholder="Prazo (ex.: qui 27)"></div>
+              <div class="frow"><button type="submit" class="sv">Salvar</button><button type="button" class="cx2">cancelar</button></div></form>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-h"><h3>Funil &amp; captação</h3><span class="cnt-pill" data-cnt="fu">—</span></div>
-            <div class="feed">
-              <div class="tsk" data-who="GM" data-grp="fu"><input type="checkbox" class="ck" id="t-fu1"><div><span class="tt">Revisar tráfego pago e custo por lead</span><p class="why"><b>Por quê:</b> cada dólar de mídia tem que virar inscrição. <b>Gera:</b> os 500 leads do curto no orçamento previsto.</p><div class="mm"><span class="mmi res">GM</span><span class="mmi">semanal</span></div></div></div>
-              <div class="tsk" data-who="AM" data-grp="fu"><input type="checkbox" class="ck" id="t-fu2"><div><span class="tt">Fazer as calls de triagem da semana</span><p class="why"><b>Por quê:</b> 20% dos leads viram call — é onde a turma nasce. <b>Gera:</b> pipeline para o palco e para a aceleração.</p><div class="mm"><span class="mmi res">AM</span><span class="mmi">bloco de qua</span></div></div></div>
-              <div class="tsk" data-who="LU" data-grp="fu"><input type="checkbox" class="ck" id="t-fu3"><div><span class="tt">Atualizar a base de leads e inscrições</span><p class="why"><b>Por quê:</b> base desatualizada = follow-up perdido. <b>Gera:</b> o número certo na weekly e na mensal.</p><div class="mm"><span class="mmi res">LU</span><span class="mmi">sexta de manhã</span></div></div></div>
+          <div class="card" data-team="mg">
+            <div class="card-h"><h3>Marketing &amp; Growth</h3><span class="cnt-pill" data-cnt="mg">—</span></div>
+            <div class="feed" data-list="mg"></div>
+            <div class="addt"><button type="button" class="open-add">+ nova tarefa</button>
+              <form hidden><input type="text" class="full" name="tt" placeholder="O que precisa sair?" required>
+              <input type="text" name="why" class="full" placeholder="Por quê / o que gera (opcional)">
+              <div class="frow"><select name="who"><option value="GM">Gustavo</option><option value="LU">Lucilene</option><option value="AM">Alexandre</option><option value="GI" selected>Giva</option><option value="SM">Social</option></select>
+              <input type="text" name="due" placeholder="Prazo (ex.: sex)"></div>
+              <div class="frow"><button type="submit" class="sv">Salvar</button><button type="button" class="cx2">cancelar</button></div></form>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-h"><h3>Conteúdo &amp; social</h3><span class="cnt-pill" data-cnt="cs">—</span></div>
-            <div class="feed">
-              <div class="tsk" data-who="SM" data-grp="cs"><input type="checkbox" class="ck" id="t-cs1"><div><span class="tt">Publicar os 10 cortes da semana</span><p class="why"><b>Por quê:</b> constância segura o alcance de 500 mil. <b>Gera:</b> topo do funil aquecido — de onde sai todo o resto.</p><div class="mm"><span class="mmi res">SM</span><span class="mmi">2/dia · seg a sex</span></div></div></div>
-              <div class="tsk" data-who="SM" data-grp="cs"><input type="checkbox" class="ck" id="t-cs2"><div><span class="tt">Publicar o vídeo longo da semana no YouTube</span><p class="why"><b>Por quê:</b> o longo constrói autoridade; o corte constrói alcance. <b>Gera:</b> 10 mil inscritos no curto.</p><div class="mm"><span class="mmi res">SM</span><span class="mmi">1/semana</span></div></div></div>
-              <div class="tsk" data-who="GI" data-grp="cs"><input type="checkbox" class="ck" id="t-cs3"><div><span class="tt">Aprovar a pauta de conteúdo da próxima semana</span><p class="why"><b>Por quê:</b> pauta aprovada na sexta = segunda começando a produzir. <b>Gera:</b> zero semana perdida.</p><div class="mm"><span class="mmi res">GI</span><span class="mmi">sexta · antes da weekly</span></div></div></div>
+          <div class="card" data-team="co" style="border-color:var(--gold)">
+            <div class="card-h"><h3>Comercial · programas Deploy</h3><span class="cnt-pill" data-cnt="co">—</span></div>
+            <div class="feed" data-list="co"></div>
+            <div class="addt"><button type="button" class="open-add">+ nova tarefa</button>
+              <form hidden><input type="text" class="full" name="tt" placeholder="O que precisa sair?" required>
+              <input type="text" name="why" class="full" placeholder="Por quê / o que gera (opcional)">
+              <div class="frow"><select name="who"><option value="GM" selected>Gustavo</option><option value="LU">Lucilene</option><option value="AM">Alexandre</option><option value="GI">Giva</option><option value="SM">Social</option></select>
+              <input type="text" name="due" placeholder="Prazo"></div>
+              <div class="frow"><button type="submit" class="sv">Salvar</button><button type="button" class="cx2">cancelar</button></div></form>
             </div>
           </div>
 
-          <div class="card" style="border-color:var(--gold)">
-            <div class="card-h"><h3>Comercial · programas Deploy</h3><span class="cnt-pill" data-cnt="cd">—</span></div>
-            <div class="feed">
-              <div class="tsk" data-who="GM" data-grp="cd"><input type="checkbox" class="ck" id="t-cd1"><div><span class="tt">Preparar a oferta para os não selecionados da edição 2</span><p class="why"><b>Por quê:</b> ninguém sai de mãos vazias do funil — mas a oferta só aparece <b>depois</b> da decisão do palco. <b>Gera:</b> o braço de educação da RBG · 25% de comissão.</p><div class="mm"><span class="mmi res">GM</span><span class="mmi">apresentar pós-evento</span></div></div></div>
-              <div class="tsk" data-who="LU" data-grp="cd"><input type="checkbox" class="ck" id="t-cd2"><div><span class="tt">Follow-up da base de leads não selecionados</span><p class="why"><b>Por quê:</b> o mesmo lead paga duas vezes — como deal flow e como cliente de educação. <b>Gera:</b> pipeline dos 5 projetos do curto.</p><div class="mm"><span class="mmi res">LU</span><span class="mmi">bloco de qui</span></div></div></div>
-              <div class="tsk" data-who="GM" data-grp="cd"><input type="checkbox" class="ck" id="t-cd3"><div><span class="tt">Atualizar o pipeline comercial para a weekly</span><p class="why"><b>Por quê:</b> proposta parada esfria em dias. <b>Gera:</b> US$ 13,75 mil de comissão no caixa do curto.</p><div class="mm"><span class="mmi res">GM + LU</span><span class="mmi">sexta · weekly ops</span></div></div></div>
+          <div class="card" data-team="cx">
+            <div class="card-h"><h3>Customer Experience</h3><span class="cnt-pill" data-cnt="cx">—</span></div>
+            <div class="feed" data-list="cx"></div>
+            <div class="addt"><button type="button" class="open-add">+ nova tarefa</button>
+              <form hidden><input type="text" class="full" name="tt" placeholder="O que precisa sair?" required>
+              <input type="text" name="why" class="full" placeholder="Por quê / o que gera (opcional)">
+              <div class="frow"><select name="who"><option value="GM">Gustavo</option><option value="LU" selected>Lucilene</option><option value="AM">Alexandre</option><option value="GI">Giva</option><option value="SM">Social</option></select>
+              <input type="text" name="due" placeholder="Prazo"></div>
+              <div class="frow"><button type="submit" class="sv">Salvar</button><button type="button" class="cx2">cancelar</button></div></form>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card-h"><h3>Programa &amp; aceleradas</h3><span class="cnt-pill" data-cnt="pr">—</span></div>
-            <div class="feed">
-              <div class="tsk" data-who="LU" data-grp="pr"><input type="checkbox" class="ck" id="t-pr1"><div><span class="tt">Agendar os encontros quinzenais da turma</span><p class="why"><b>Por quê:</b> agenda fechada com conselheiro é o programa acontecendo. <b>Gera:</b> os 8 encontros no trilho até dezembro.</p><div class="mm"><span class="mmi res">LU</span><span class="mmi">pós-edição</span></div></div></div>
-              <div class="tsk" data-who="AM" data-grp="pr"><input type="checkbox" class="ck" id="t-pr2"><div><span class="tt">Preparar o material do próximo encontro</span><p class="why"><b>Por quê:</b> o conselheiro conduz, mas a empresa traz número. <b>Gera:</b> encontro com entrega, não com conversa.</p><div class="mm"><span class="mmi res">AM</span><span class="mmi">quinzenal</span></div></div></div>
+          <div class="card" data-team="fi">
+            <div class="card-h"><h3>Financeiro &amp; Administrativo</h3><span class="cnt-pill" data-cnt="fi">—</span></div>
+            <div class="feed" data-list="fi"></div>
+            <div class="addt"><button type="button" class="open-add">+ nova tarefa</button>
+              <form hidden><input type="text" class="full" name="tt" placeholder="O que precisa sair?" required>
+              <input type="text" name="why" class="full" placeholder="Por quê / o que gera (opcional)">
+              <div class="frow"><select name="who"><option value="GM">Gustavo</option><option value="LU" selected>Lucilene</option><option value="AM">Alexandre</option><option value="GI">Giva</option><option value="SM">Social</option></select>
+              <input type="text" name="due" placeholder="Prazo"></div>
+              <div class="frow"><button type="submit" class="sv">Salvar</button><button type="button" class="cx2">cancelar</button></div></form>
             </div>
           </div>
-
-          <div class="card">
-            <div class="card-h"><h3>Financeiro &amp; relatórios</h3><span class="cnt-pill" data-cnt="fi">—</span></div>
-            <div class="feed">
-              <div class="tsk" data-who="LU" data-grp="fi"><input type="checkbox" class="ck" id="t-fi1"><div><span class="tt">Fechar o caixa da semana</span><p class="why"><b>Por quê:</b> a regra é gastar no período o que foi captado para o período. <b>Gera:</b> zero surpresa na DRE mensal.</p><div class="mm"><span class="mmi res">LU</span><span class="mmi">sexta de manhã</span></div></div></div>
-              <div class="tsk" data-who="LU" data-grp="fi"><input type="checkbox" class="ck" id="t-fi2"><div><span class="tt">Montar as métricas para as weeklies de sexta</span><p class="why"><b>Por quê:</b> reunião sem número vira opinião. <b>Gera:</b> weekly de 45 min que decide em vez de discutir.</p><div class="mm"><span class="mmi res">LU + GM</span><span class="mmi">sexta · até 15h</span></div></div></div>
-              <div class="tsk" data-who="GM" data-grp="fi"><input type="checkbox" class="ck" id="t-fi3"><div><span class="tt">Relatório mensal RBG</span><p class="why"><b>Por quê:</b> é o mesmo documento que alimenta o painel do investidor. <b>Gera:</b> confiança de quem assinou o cheque.</p><div class="mm"><span class="mmi res">GM</span><span class="mmi">até 5 dias úteis pós-mês</span></div></div></div>
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -1044,54 +1128,52 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         <div class="sec-h">
           <div class="l">
             <span class="kx">07 · Relatórios e metas</span>
-            <h2>O placar que a gente combina agora</h2>
-            <p>As metas do curto prazo por área — e quem preenche cada relatório, em qual ritual. O realizado entra na weekly e fecha na mensal.</p>
+            <h2>Preencha o realizado — o sistema mostra o resto</h2>
+            <p>Cada métrica tem meta do curto, objetivo e um campo para o número de agora. Digitou, salvou — a barra anda, a data marca e os big numbers da Visão geral acompanham. Quem preenche: <b>Lucilene às sextas</b>, antes da Weekly de Liderança.</p>
           </div>
-          <div class="r">meta do curto<br>ago 2026 → fev 2027</div>
+          <div class="r"><span class="upd-stamp" id="lastUpd2">—</span></div>
         </div>
 
-        <div class="cols c-21">
+        <div class="cols c-2">
           <div class="card">
-            <div class="card-h"><h3>Funil de aquisição · meta do curto</h3><span class="rmeta"><b>GM + LU</b> · atualizado na weekly</span></div>
-            <div class="fnl">
-              <div class="fr"><div class="fl">Alcance<small>conteúdo + tráfego</small></div><div class="ft"><i class="ff" style="width:100%"></i></div><div class="fv num">500 mil</div><div class="fconv">—</div></div>
-              <div class="fr"><div class="fl">Interações<small>cliques</small></div><div class="ft"><i class="ff" style="width:72%"></i></div><div class="fv num">12,5 mil</div><div class="fconv">2,5%</div></div>
-              <div class="fr"><div class="fl">Leads<small>inscrições</small></div><div class="ft"><i class="ff" style="width:50%"></i></div><div class="fv num">500</div><div class="fconv">4,0%</div></div>
-              <div class="fr"><div class="fl">Calls de triagem<small>bloco semanal</small></div><div class="ft"><i class="ff" style="width:34%"></i></div><div class="fv num">100</div><div class="fconv">20%</div></div>
-              <div class="fr"><div class="fl">Empresas no palco<small>2 edições restantes</small></div><div class="ft"><i class="ff" style="width:20%"></i></div><div class="fv num">18</div><div class="fconv">—</div></div>
-              <div class="fr"><div class="fl">Aceleradas<small>120 dias</small></div><div class="ft"><i class="ff" style="width:12%"></i></div><div class="fv num">10</div><div class="fconv">10%</div></div>
-              <div class="fr last"><div class="fl">Investidas<small>encontro 8</small></div><div class="ft"><i class="ff" style="width:6%"></i></div><div class="fv num">1–2</div><div class="fconv">15%</div></div>
+            <div class="card-h"><h3>Funil de aquisição</h3><span class="rmeta"><b>LU + GM</b> · toda sexta</span></div>
+            <div>
+              <div class="mrow" data-m="alcance" data-meta="500000"><div class="ml"><b>Alcance</b><small>conteúdo + tráfego · objetivo: topo do funil aquecido</small></div><div class="mmeta">meta <b>500 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+              <div class="mrow" data-m="interacoes" data-meta="12500"><div class="ml"><b>Interações</b><small>cliques · objetivo: 2,5% do alcance</small></div><div class="mmeta">meta <b>12,5 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+              <div class="mrow" data-m="leads" data-meta="500"><div class="ml"><b>Leads</b><small>inscrições no Pitch Day · objetivo: encher a triagem</small></div><div class="mmeta">meta <b>500</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+              <div class="mrow" data-m="calls" data-meta="100"><div class="ml"><b>Calls de triagem</b><small>bloco de quarta · objetivo: 20% dos leads</small></div><div class="mmeta">meta <b>100</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+              <div class="mrow" data-m="palco" data-meta="18"><div class="ml"><b>Empresas no palco</b><small>2 edições restantes · objetivo: turma forte</small></div><div class="mmeta">meta <b>18</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+              <div class="mrow" data-m="aceleradas" data-meta="10"><div class="ml"><b>Empresas aceleradas</b><small>120 dias · objetivo: provar o modelo</small></div><div class="mmeta">meta <b>10</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+              <div class="mrow" data-m="investidas" data-meta="2"><div class="ml"><b>Empresas investidas</b><small>encontro 8 · objetivo: 1º cheque bem dado</small></div><div class="mmeta">meta <b>1–2</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
             </div>
-            <div class="card-f"><b>Leitura em cascata:</b> se o alcance cai, tudo abaixo cai junto seis semanas depois. Por isso conteúdo é a primeira linha da weekly, não a última.</div>
+            <div class="card-f"><b>Leitura em cascata:</b> se o alcance cai, tudo abaixo cai junto seis semanas depois.</div>
           </div>
 
           <div class="cols" style="align-content:start">
             <div class="card">
-              <div class="card-h"><h3>Social media</h3><span class="rmeta"><b>GI + SM</b> · semanal</span></div>
-              <div class="card-b" style="display:grid;gap:12px">
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Vídeos longos · 24</span><span class="mt"><i class="mf gold" style="width:8%"></i></span><span class="cnt-pill num">2/24</span></div>
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Cortes · 240</span><span class="mt"><i class="mf gold" style="width:8%"></i></span><span class="cnt-pill num">±20/240</span></div>
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Instagram · 25 mil</span><span class="mt"><i class="mf" style="width:20%"></i></span><span class="cnt-pill num">meta</span></div>
-                <div class="mbar"><span style="font-size:12px;min-width:120px">YouTube · 10 mil</span><span class="mt"><i class="mf" style="width:12%"></i></span><span class="cnt-pill num">meta</span></div>
+              <div class="card-h"><h3>Social media</h3><span class="rmeta"><b>GI + SM</b> · toda sexta</span></div>
+              <div>
+                <div class="mrow" data-m="longos" data-meta="24"><div class="ml"><b>Vídeos longos</b><small>YouTube · objetivo: autoridade</small></div><div class="mmeta">meta <b>24</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+                <div class="mrow" data-m="cortes" data-meta="240"><div class="ml"><b>Cortes publicados</b><small>Reels, Shorts, TikTok · objetivo: alcance</small></div><div class="mmeta">meta <b>240</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+                <div class="mrow" data-m="ig" data-meta="25000"><div class="ml"><b>Instagram</b><small>seguidores · objetivo: base própria</small></div><div class="mmeta">meta <b>25 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+                <div class="mrow" data-m="yt" data-meta="10000"><div class="ml"><b>YouTube</b><small>inscritos · objetivo: canal como ativo</small></div><div class="mmeta">meta <b>10 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
               </div>
-              <div class="card-f">Realizado preenchido na weekly de sexta — barras são a régua da meta do curto.</div>
             </div>
             <div class="card" style="border-color:var(--gold)">
-              <div class="card-h"><h3>Educação · Deploy</h3><span class="rmeta"><b>GM + LU</b> · weekly + mensal</span></div>
-              <div class="card-b" style="display:grid;gap:9px">
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Projetos · 5</span><span class="mt"><i class="mf gold" style="width:0%"></i></span><span class="cnt-pill num">0/5</span></div>
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Comissão · US$ 13,75 mil</span><span class="mt"><i class="mf gold" style="width:0%"></i></span><span class="cnt-pill num">25%</span></div>
-                <p style="font-size:11.5px;color:var(--ink-3);line-height:1.5">Programas: tradicionais <b>US$ 5 mil</b> · startups <b>US$ 12 mil</b> · US Journey <b>US$ 20 mil</b>. Oferta sempre <b>depois</b> da decisão do palco.</p>
+              <div class="card-h"><h3>Comercial · Deploy</h3><span class="rmeta"><b>GM + LU</b> · semanal</span></div>
+              <div>
+                <div class="mrow" data-m="projetos" data-meta="5"><div class="ml"><b>Projetos fechados</b><small>educação · objetivo: ninguém sai de mãos vazias</small></div><div class="mmeta">meta <b>5</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+                <div class="mrow" data-m="comissao" data-meta="13750" data-fmt="usd"><div class="ml"><b>Comissão recebida</b><small>25% do faturado na Deploy · objetivo: caixa recorrente</small></div><div class="mmeta">meta <b>US$ 13,75 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
               </div>
+              <div class="card-f">Programas: tradicionais <b>US$ 5 mil</b> · startups <b>US$ 12 mil</b> · US Journey <b>US$ 20 mil</b>.</div>
             </div>
             <div class="card">
               <div class="card-h"><h3>Caixa de operação</h3><span class="rmeta"><b>LU</b> · mensal</span></div>
-              <div class="card-b" style="display:grid;gap:9px">
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Recursos · US$ 63,75 mil</span><span class="mt"><i class="mf" style="width:100%"></i></span><span class="cnt-pill num">curto</span></div>
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Folha · US$ 12 mil</span><span class="mt"><i class="mf" style="width:19%"></i></span><span class="cnt-pill num">19%</span></div>
-                <div class="mbar"><span style="font-size:12px;min-width:120px">Colchão · US$ 12,75 mil</span><span class="mt"><i class="mf gold" style="width:20%"></i></span><span class="cnt-pill num">20%</span></div>
+              <div>
+                <div class="mrow" data-m="captado" data-meta="250000" data-fmt="usd"><div class="ml"><b>Captado na rodada anjo</b><small>SAFE · objetivo: US$ 250 mil por 5%</small></div><div class="mmeta">meta <b>US$ 250 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
+                <div class="mrow" data-m="caixa" data-meta="63750" data-fmt="usd"><div class="ml"><b>Caixa de operação disponível</b><small>taxa + comissão · objetivo: giro sem parar a máquina</small></div><div class="mmeta">ref <b>US$ 63,75 mil</b></div><input type="number" class="min" min="0" placeholder="—"><div class="mt"><i></i></div><span class="mts">—</span></div>
               </div>
-              <div class="card-f">Taxa de administração + comissão Deploy. O capital de portfólio <b>não passa por aqui</b>.</div>
+              <div class="card-f">O capital de portfólio <b>não passa por aqui</b> — é investimento, não despesa.</div>
             </div>
           </div>
         </div>
@@ -1101,21 +1183,46 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
           <div class="tw"><table>
             <thead><tr><th>Relatório</th><th>Dono</th><th>Cadência</th><th>Onde é lido</th><th>O que responde</th></tr></thead>
             <tbody>
-              <tr><td><b>Métricas da semana</b><div class="sub-l">funil + social + caixa</div></td><td>Lucilene + Gustavo</td><td>Sexta · até 15h</td><td>Weeklies</td><td>A semana andou?</td></tr>
-              <tr><td><b>Pipeline comercial Deploy</b><div class="sub-l">propostas e follow-ups</div></td><td>Gustavo + Lucilene</td><td>Sexta</td><td>Weekly Operação</td><td>A educação está vendendo?</td></tr>
-              <tr><td><b>Relatório de conteúdo</b><div class="sub-l">publicados + desempenho</div></td><td>Social media · Giva revisa</td><td>Sexta</td><td>Weekly Liderança</td><td>O topo do funil está aquecido?</td></tr>
+              <tr><td><b>Números da semana</b><div class="sub-l">preencher os campos acima</div></td><td>Lucilene + Gustavo</td><td>Sexta · antes da liderança</td><td>Weeklies</td><td>A semana andou?</td></tr>
+              <tr><td><b>Pipeline comercial Deploy</b><div class="sub-l">propostas e follow-ups</div></td><td>Gustavo + Lucilene</td><td>Semanal</td><td>Weekly de Liderança</td><td>A educação está vendendo?</td></tr>
+              <tr><td><b>Relatório de conteúdo</b><div class="sub-l">publicados + desempenho</div></td><td>Social media · Giva revisa</td><td>Sexta</td><td>Weekly de Liderança</td><td>O topo do funil está aquecido?</td></tr>
               <tr><td><b>Relatório mensal RBG</b><div class="sub-l">deck/PDF · funil, DRE, turma</div></td><td>Gustavo</td><td>Até 5 dias úteis pós-mês</td><td>Mensal → painel do investidor</td><td>Estamos na meta do curto?</td></tr>
-              <tr><td><b>Cronograma reverso da edição</b><div class="sub-l">entregas até o evento</div></td><td>Alexandre</td><td>Por edição</td><td>Tática + checkpoint</td><td>O evento está no trilho?</td></tr>
+              <tr><td><b>Cronograma reverso da edição</b><div class="sub-l">sai da R1, confere na R2 e R3</div></td><td>Alexandre</td><td>Por edição</td><td>R1 · R2 · R3</td><td>O evento está no trilho?</td></tr>
               <tr><td><b>Ata estratégica</b><div class="sub-l">decisões + metas do tri</div></td><td>Gustavo</td><td>Trimestral</td><td>Estratégica</td><td>A tese está de pé?</td></tr>
             </tbody>
           </table></div>
         </div>
       </section>
 
+      <!-- ════ BIBLIOTECA ════ -->
+      <section class="sec" id="biblioteca">
+        <div class="sec-h">
+          <div class="l">
+            <span class="kx">08 · Biblioteca</span>
+            <h2>Arquivos e materiais, num lugar só</h2>
+            <p>Decks, PDFs, painéis, vídeos e o que mais o time precisar achar rápido. Adicione qualquer link com <b>+ adicionar</b>; o <b>×</b> remove.</p>
+          </div>
+          <div class="r">apresentações · PDFs<br>painéis · vídeos</div>
+        </div>
+
+        <div class="card lib">
+          <div class="dlist" id="libList"></div>
+          <div class="addt"><button type="button" class="open-add" id="libAdd">+ adicionar arquivo ou link</button>
+            <form hidden id="libForm">
+              <input type="text" class="full" name="nm" placeholder="Nome do material" required>
+              <div class="frow"><select name="tp"><option>Apresentação</option><option>Relatório</option><option>PDF</option><option>Vídeo</option><option>Planilha</option><option>Outro</option></select>
+              <input type="text" name="url" placeholder="Link (https://…)" required></div>
+              <div class="frow"><button type="submit" class="sv">Salvar</button><button type="button" class="cx2" id="libCancel">cancelar</button></div>
+            </form>
+          </div>
+          <div class="card-f">Os itens que você adicionar ficam salvos neste navegador. Vídeos brutos e projetos de edição: linkar a pasta do Drive aqui quando ela existir.</div>
+        </div>
+      </section>
+
     </div>
 
     <footer class="foot">
-      <p><b>Sistema interno de gestão · v1.</b> Primeira versão da ferramenta de gestão do time interno da Royal Business Growth. O que você marca fica salvo apenas neste navegador. Evoluções previstas: <b>login e senha por funcionário</b>, integração com <b>Google Agenda</b> e <b>avisos automáticos</b> de reunião e tarefa.</p>
+      <p><b>Sistema interno de gestão · v1.</b> Ferramenta de gestão do time interno da Royal Business Growth — curto prazo (ago 2026 → fev 2027); médio e longo entram aqui quando chegarem. O que você marca, cria e preenche fica salvo neste navegador. Evoluções previstas: <b>login e senha por funcionário</b>, integração com <b>Google Agenda</b> e <b>avisos automáticos</b> de reunião e tarefa.</p>
       <div class="fr2"><span>Royal Business Growth · Orlando, FL</span><span>Confidencial · uso interno</span></div>
     </footer>
 
@@ -1124,76 +1231,260 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 
 <script>
 (function(){
-  var KEY = 'rbg-interno-v1';
-  var state = {};
-  try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){ state = {}; }
-  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+  var KEY = 'rbg-interno-v2';
+  var S = {};
+  try { S = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){ S = {}; }
+  S.checks  = S.checks  || {};   // id -> 1
+  S.hidden  = S.hidden  || {};   // id de tarefa/lib padrão deletada -> 1
+  S.tasks   = S.tasks   || {};   // team -> [{id,tt,why,who,due}]
+  S.metrics = S.metrics || {};   // m -> {v, ts}
+  S.lib     = S.lib     || [];   // [{id,nm,tp,url}]
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
+  function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+  function uid(){ return 'u' + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36); }
 
-  /* ── countdown Pitch Day ── */
+  /* ── countdown ── */
   var kd = document.getElementById('kDays');
   if (kd){
-    var ev = new Date(2026, 7, 29);
-    var now = new Date(); now.setHours(0,0,0,0);
+    var ev = new Date(2026, 7, 29), now = new Date(); now.setHours(0,0,0,0);
     var d = Math.round((ev - now) / 86400000);
-    if (d > 1) kd.textContent = d + ' dias';
-    else if (d === 1) kd.textContent = 'amanhã';
-    else if (d >= -1) kd.textContent = 'é agora';
-    else kd.textContent = 'feito ✓';
+    kd.textContent = d > 1 ? d + ' dias' : d === 1 ? 'amanhã' : d >= -1 ? 'é agora' : 'feito ✓';
   }
 
-  /* ── checkboxes: estado + contadores ── */
-  var boxes = Array.prototype.slice.call(document.querySelectorAll('input.ck[id]'));
+  /* ══ TAREFAS ══ */
+  var DEFAULTS = {
+    pe: [
+      {id:'t-pe1', who:'AM', tt:'Confirmar banca e agenda dos conselheiros', why:'<b>Por quê:</b> sem banca não há scorecard nem parecer. <b>Gera:</b> o evento decide com critério.', due:'até ter 26'},
+      {id:'t-pe2', who:'GI', tt:'Fechar cenário e mapa de gravação com o fornecedor', why:'<b>Por quê:</b> o evento é também um estúdio. <b>Gera:</b> 30+ cortes que alimentam o funil por 2 meses.', due:'até qua 26'},
+      {id:'t-pe3', who:'GI', tt:'Roteiro do que será gravado no dia', why:'<b>Por quê:</b> câmera sem pauta grava nada aproveitável. <b>Gera:</b> matéria-prima certa para cortes e canal.', due:'até qui 27'},
+      {id:'t-pe4', who:'AM', tt:'Briefing e ensaio das empresas do palco', why:'<b>Por quê:</b> pitch ruim queima a empresa e o evento. <b>Gera:</b> palco no nível do deck.', due:'até sex 28'},
+      {id:'t-pe5', who:'LU', tt:'Checklist do espaço, credenciamento e materiais', why:'<b>Por quê:</b> logística falha aparece mais que palestra boa. <b>Gera:</b> experiência impecável.', due:'até sex 28'}
+    ],
+    mg: [
+      {id:'t-mg1', who:'GI', tt:'Aprovar a pauta de conteúdo da próxima semana', why:'<b>Por quê:</b> pauta aprovada = segunda produzindo. <b>Gera:</b> zero semana perdida.', due:'sex'},
+      {id:'t-mg2', who:'SM', tt:'Divulgação da semana do evento', why:'<b>Por quê:</b> última chamada é a que mais converte. <b>Gera:</b> plateia cheia e leads de última hora.', due:'todos os dias'}
+    ],
+    co: [
+      {id:'t-co1', who:'GM', tt:'Preparar a oferta para os não selecionados da edição 2', why:'<b>Por quê:</b> ninguém sai de mãos vazias — mas a oferta só aparece <b>depois</b> da decisão do palco. <b>Gera:</b> o braço de educação · 25% de comissão.', due:'apresentar pós-evento'},
+      {id:'t-co2', who:'LU', tt:'Follow-up da base de leads não selecionados', why:'<b>Por quê:</b> o mesmo lead paga duas vezes — deal flow e cliente de educação. <b>Gera:</b> pipeline dos 5 projetos.', due:'bloco de qui'},
+      {id:'t-co3', who:'GM', tt:'Atualizar o pipeline comercial para a weekly', why:'<b>Por quê:</b> proposta parada esfria em dias. <b>Gera:</b> US$ 13,75 mil no caixa do curto.', due:'sex'}
+    ],
+    cx: [
+      {id:'t-cx1', who:'LU', tt:'Agendar os encontros quinzenais da turma 1', why:'<b>Por quê:</b> agenda fechada com conselheiro é o programa acontecendo. <b>Gera:</b> os 8 encontros no trilho.', due:'pós-evento'},
+      {id:'t-cx2', who:'AM', tt:'Preparar o material do próximo encontro', why:'<b>Por quê:</b> o conselheiro conduz, mas a empresa traz número. <b>Gera:</b> encontro com entrega.', due:'quinzenal'},
+      {id:'t-cx3', who:'LU', tt:'Onboarding das empresas selecionadas', why:'<b>Por quê:</b> a experiência começa no dia seguinte ao palco. <b>Gera:</b> aceleradas engajadas do dia 1.', due:'pós-evento'}
+    ],
+    fi: [
+      {id:'t-fi1', who:'LU', tt:'Fechar o caixa da semana', why:'<b>Por quê:</b> gastar no período o que foi captado para o período. <b>Gera:</b> zero surpresa na DRE.', due:'sex de manhã'},
+      {id:'t-fi2', who:'LU', tt:'Preencher os números da semana em Relatórios', why:'<b>Por quê:</b> reunião sem número vira opinião. <b>Gera:</b> weeklies que decidem em vez de discutir.', due:'sex · antes da liderança'}
+    ]
+  };
+  var NAMES = {GM:'GM', LU:'LU', AM:'AM', GI:'GI', SM:'SM'};
+
+  function taskHTML(t){
+    return '<div class="tsk" data-who="'+t.who+'" data-tid="'+t.id+'">'
+      + '<input type="checkbox" class="ck" id="'+t.id+'">'
+      + '<div><span class="tt">'+ (t.safe ? t.tt : esc(t.tt)) +'</span>'
+      + (t.why ? '<p class="why">'+ (t.safe ? t.why : esc(t.why)) +'</p>' : '')
+      + '<div class="mm"><span class="mmi res">'+NAMES[t.who]+'</span>'
+      + (t.due ? '<span class="mmi">'+esc(t.due)+'</span>' : '') + '</div></div>'
+      + '<span class="rgt"><button type="button" class="del" title="Deletar tarefa" aria-label="Deletar">×</button></span></div>';
+  }
+  function renderTasks(){
+    document.querySelectorAll('[data-list]').forEach(function(list){
+      var team = list.dataset.list, html = '';
+      (DEFAULTS[team] || []).forEach(function(t){
+        if (S.hidden[t.id]) return;
+        html += taskHTML({id:t.id, who:t.who, tt:t.tt, why:t.why, due:t.due, safe:true});
+      });
+      (S.tasks[team] || []).forEach(function(t){ html += taskHTML(t); });
+      list.innerHTML = html || '<div class="tsk" style="grid-template-columns:1fr"><p class="why">Nenhuma tarefa — crie uma abaixo.</p></div>';
+    });
+    bindChecks(); refresh(); applyFilter();
+  }
+
+  /* ── checks (tarefas + gantt) ── */
+  function bindChecks(){
+    document.querySelectorAll('input.ck[id]').forEach(function(b){
+      b.checked = !!S.checks[b.id];
+      b.onchange = function(){
+        if (b.checked) S.checks[b.id] = 1; else delete S.checks[b.id];
+        save(); refresh();
+      };
+    });
+  }
   function refresh(){
-    /* linhas de gantt e tarefas ganham .done */
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('input.ck[id]'));
     boxes.forEach(function(b){
       var row = b.closest('.tsk, .gnt-gr');
       if (row) row.classList.toggle('done', b.checked);
     });
-    /* contadores por grupo */
     document.querySelectorAll('[data-cnt]').forEach(function(el){
       var g = el.dataset.cnt;
-      var all = boxes.filter(function(b){ var r = b.closest('[data-grp]'); return r && r.dataset.grp === g; });
+      var all = boxes.filter(function(b){ var c = b.closest('[data-list]'); return c && c.dataset.list === g; });
       var done = all.filter(function(b){ return b.checked; }).length;
       el.innerHTML = '<b>' + done + '</b> de ' + all.length;
     });
-    /* placar global (só tarefas, não gantt) */
     var tks = boxes.filter(function(b){ return b.closest('.tsk'); });
     var dn = tks.filter(function(b){ return b.checked; }).length;
-    var kt = document.getElementById('kTasks');
-    var tr = document.getElementById('kTrack');
+    var kt = document.getElementById('kTasks'), tr = document.getElementById('kTrack');
     if (kt) kt.textContent = dn + '/' + tks.length;
-    if (tr) tr.style.width = (tks.length ? Math.round(dn * 100 / tks.length) : 0) + '%';
+    if (tr) tr.style.width = (tks.length ? Math.round(dn*100/tks.length) : 0) + '%';
   }
-  boxes.forEach(function(b){
-    if (state[b.id]) b.checked = true;
-    b.addEventListener('change', function(){
-      if (b.checked) state[b.id] = 1; else delete state[b.id];
-      save(); refresh();
+
+  /* ── deletar tarefa ── */
+  document.addEventListener('click', function(e){
+    var del = e.target.closest('.tsk .del');
+    if (!del) return;
+    var row = del.closest('.tsk'), id = row.dataset.tid;
+    if (!confirm('Deletar esta tarefa?')) return;
+    var isDefault = false;
+    Object.keys(DEFAULTS).forEach(function(k){ DEFAULTS[k].forEach(function(t){ if (t.id === id) isDefault = true; }); });
+    if (isDefault) S.hidden[id] = 1;
+    else Object.keys(S.tasks).forEach(function(k){ S.tasks[k] = (S.tasks[k]||[]).filter(function(t){ return t.id !== id; }); });
+    delete S.checks[id];
+    save(); renderTasks();
+  });
+
+  /* ── criar tarefa ── */
+  document.querySelectorAll('#taskBoard .addt').forEach(function(box){
+    var open = box.querySelector('.open-add'), form = box.querySelector('form');
+    var team = box.closest('[data-team]').dataset.team;
+    open.addEventListener('click', function(){ form.hidden = false; open.hidden = true; form.querySelector('[name=tt]').focus(); });
+    form.querySelector('.cx2').addEventListener('click', function(){ form.hidden = true; open.hidden = false; form.reset(); });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var t = { id: uid(), tt: form.tt.value.trim(), why: form.why.value.trim(), who: form.who.value, due: form.due.value.trim() };
+      if (!t.tt) return;
+      (S.tasks[team] = S.tasks[team] || []).push(t);
+      save(); form.reset(); form.hidden = true; open.hidden = false; renderTasks();
     });
   });
-  refresh();
 
-  /* ── reiniciar semana (só as tarefas; o cronograma fica) ── */
+  /* ── reiniciar semana ── */
   var rw = document.getElementById('resetWeek');
   if (rw) rw.addEventListener('click', function(){
     if (!confirm('Desmarcar todas as tarefas da semana? O cronograma não é alterado.')) return;
-    boxes.forEach(function(b){
-      if (b.closest('.tsk')){ b.checked = false; delete state[b.id]; }
-    });
-    save(); refresh();
+    Object.keys(S.checks).forEach(function(id){ if (id.charAt(0) !== 'g') delete S.checks[id]; });
+    save(); renderTasks();
   });
 
   /* ── filtro por dono ── */
-  var chips = document.querySelectorAll('.fchip');
+  var chips = document.querySelectorAll('.fchip'), curF = 'all';
+  function applyFilter(){
+    document.querySelectorAll('.tsk[data-who]').forEach(function(t){
+      t.style.display = (curF === 'all' || t.dataset.who === curF) ? '' : 'none';
+    });
+  }
   chips.forEach(function(c){
     c.addEventListener('click', function(){
       chips.forEach(function(o){ o.setAttribute('aria-pressed', String(o === c)); });
-      var f = c.dataset.f;
-      document.querySelectorAll('.tsk[data-who]').forEach(function(t){
-        t.style.display = (f === 'all' || t.dataset.who === f) ? '' : 'none';
-      });
+      curF = c.dataset.f; applyFilter();
     });
   });
+
+  /* ══ MÉTRICAS ══ */
+  function fmt(v, kind){
+    if (v == null || isNaN(v)) return '—';
+    var s;
+    if (v >= 1000000) s = (v/1000000).toLocaleString('pt-BR',{maximumFractionDigits:1}) + ' mi';
+    else if (v >= 10000) s = (v/1000).toLocaleString('pt-BR',{maximumFractionDigits:1}) + ' mil';
+    else s = v.toLocaleString('pt-BR');
+    return kind === 'usd' ? 'US$ ' + s : s;
+  }
+  function stampTxt(ts){
+    var d = new Date(ts);
+    return d.getDate().toString().padStart(2,'0') + '/' + (d.getMonth()+1).toString().padStart(2,'0') + ' ' + d.getHours().toString().padStart(2,'0') + 'h' + d.getMinutes().toString().padStart(2,'0');
+  }
+  function renderMetrics(){
+    var latest = 0;
+    document.querySelectorAll('.mrow[data-m]').forEach(function(r){
+      var m = r.dataset.m, meta = parseFloat(r.dataset.meta), rec = S.metrics[m];
+      var input = r.querySelector('.min'), bar = r.querySelector('.mt i'), ts = r.querySelector('.mts');
+      if (rec && rec.v != null){
+        if (document.activeElement !== input) input.value = rec.v;
+        var pct = Math.min(100, rec.v/meta*100);
+        bar.style.width = pct + '%';
+        bar.classList.toggle('over', rec.v >= meta);
+        ts.textContent = 'atualizado ' + stampTxt(rec.ts);
+        if (rec.ts > latest) latest = rec.ts;
+      } else { bar.style.width = '0%'; ts.textContent = 'nunca preenchido'; }
+    });
+    /* big numbers */
+    document.querySelectorAll('[data-big]').forEach(function(el){
+      var m = el.dataset.big, rec = S.metrics[m];
+      var row = document.querySelector('.mrow[data-m="'+m+'"]');
+      var kind = row && row.dataset.fmt;
+      el.textContent = rec && rec.v != null ? fmt(rec.v, kind) : '—';
+    });
+    document.querySelectorAll('[data-bigbar]').forEach(function(el){
+      var m = el.dataset.bigbar, rec = S.metrics[m];
+      var row = document.querySelector('.mrow[data-m="'+m+'"]');
+      var meta = row ? parseFloat(row.dataset.meta) : 0;
+      el.style.width = (rec && rec.v != null && meta ? Math.min(100, rec.v/meta*100) : 0) + '%';
+    });
+    var l1 = document.getElementById('lastUpd'), l2 = document.getElementById('lastUpd2');
+    var txt = latest ? 'última atualização: ' + stampTxt(latest) : 'números ainda não preenchidos';
+    if (l1) l1.innerHTML = latest ? 'última atualização · <b>' + stampTxt(latest) + '</b>' : 'números ainda não preenchidos';
+    if (l2) l2.textContent = txt;
+  }
+  document.querySelectorAll('.mrow[data-m] .min').forEach(function(input){
+    input.addEventListener('change', function(){
+      var m = input.closest('.mrow').dataset.m;
+      var v = input.value === '' ? null : parseFloat(input.value);
+      if (v == null) delete S.metrics[m];
+      else S.metrics[m] = { v: v, ts: Date.now() };
+      save(); renderMetrics();
+    });
+  });
+
+  /* ══ BIBLIOTECA ══ */
+  var LIBDEF = [
+    {id:'l-estr',  nm:'Deck de estrutura · 26 slides',      tp:'Apresentação', url:'../investidores/estrutura.html'},
+    {id:'l-estr2', nm:'Deck de estrutura · V2 sem equity',  tp:'Apresentação', url:'../investidores/estrutura-v2.html'},
+    {id:'l-slides',nm:'Deck da rodada anjo',                tp:'Apresentação', url:'../investidores/slides.html'},
+    {id:'l-oper',  nm:'Operação do Pitch Day',              tp:'Relatório',    url:'../operacao.html'},
+    {id:'l-kit',   nm:'Kit completo do Pitch Day',          tp:'PDF',          url:'../materiais/kit-completo.pdf'},
+    {id:'l-crono', nm:'Cronograma do evento',               tp:'PDF',          url:'../materiais/cronograma.pdf'},
+    {id:'l-score', nm:'Scorecard de 100 pontos',            tp:'PDF',          url:'../materiais/scorecard.pdf'},
+    {id:'l-pinv',  nm:'Painel do investidor',               tp:'Painel',       url:'../investidores/painel.html'},
+    {id:'l-pace',  nm:'Painel da empresa acelerada',        tp:'Painel',       url:'../acelerada/painel.html'},
+    {id:'l-pcon',  nm:'Painel do conselheiro',              tp:'Painel',       url:'../conselho/painel.html'}
+  ];
+  function renderLib(){
+    var box = document.getElementById('libList');
+    if (!box) return;
+    var html = '';
+    LIBDEF.concat(S.lib).forEach(function(it){
+      if (S.hidden[it.id]) return;
+      html += '<div class="di" data-lid="'+it.id+'">'
+        + '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span>'
+        + '<span class="nm">'+esc(it.nm)+'<small>'+esc(it.tp)+'</small></span>'
+        + '<a class="go" href="'+esc(it.url)+'" target="_blank" rel="noopener">abrir ↗</a>'
+        + '<button type="button" class="del2" title="Remover" aria-label="Remover">×</button></div>';
+    });
+    box.innerHTML = html || '<div class="di" style="grid-template-columns:1fr"><span class="nm">Biblioteca vazia — adicione o primeiro material.</span></div>';
+  }
+  document.addEventListener('click', function(e){
+    var d = e.target.closest('.lib .del2');
+    if (!d) return;
+    var id = d.closest('.di').dataset.lid;
+    if (!confirm('Remover este item da biblioteca?')) return;
+    if (LIBDEF.some(function(x){ return x.id === id; })) S.hidden[id] = 1;
+    else S.lib = S.lib.filter(function(x){ return x.id !== id; });
+    save(); renderLib();
+  });
+  var libAdd = document.getElementById('libAdd'), libForm = document.getElementById('libForm');
+  if (libAdd && libForm){
+    libAdd.addEventListener('click', function(){ libForm.hidden = false; libAdd.hidden = true; libForm.nm.focus(); });
+    document.getElementById('libCancel').addEventListener('click', function(){ libForm.hidden = true; libAdd.hidden = false; libForm.reset(); });
+    libForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var it = { id: uid(), nm: libForm.nm.value.trim(), tp: libForm.tp.value, url: libForm.url.value.trim() };
+      if (!it.nm || !it.url) return;
+      S.lib.push(it); save(); libForm.reset(); libForm.hidden = true; libAdd.hidden = false; renderLib();
+    });
+  }
 
   /* ── scrollspy ── */
   var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
@@ -1207,5 +1498,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
     }, { rootMargin: '-72px 0px -62% 0px', threshold: 0 });
     secs.forEach(function(s){ spy.observe(s); });
   }
+
+  renderTasks(); renderMetrics(); renderLib();
 })();
 </script>
