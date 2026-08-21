@@ -534,6 +534,27 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 .lib .di .go{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dp);white-space:nowrap}
 .lib .di .go:hover{color:var(--ink-2)}
 
+/* pitch day · cronograma do dia */
+.dr2{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:12px;padding:10px 16px;border-bottom:1px solid var(--rule-2);align-items:start}
+.dr2:last-child{border-bottom:none}
+.dr2 .hh2{font-family:var(--mono);font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums;padding-top:1px;white-space:nowrap}
+.dr2 .b1{font-size:13px;font-weight:600;line-height:1.35}
+.dr2 .b2{font-size:11.6px;color:var(--ink-3);line-height:1.5;margin-top:2px}
+.dr2 .b2 b{color:var(--ink-2);font-weight:600}
+.dr2 .tgs{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tg{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 8px;white-space:nowrap;border:1px solid var(--rule);background:var(--sand-2);color:var(--ink-3)}
+.tg.rec{background:#F6E7E2;border-color:#EDD3C0;color:#B5541F}
+.tg.brk{background:var(--info-bg);border-color:var(--info-line);color:var(--info)}
+.dr2.brk-row{background:var(--sand-2)}
+.dr2.hl-row{background:#FDFAF1;border-left:2px solid var(--gold)}
+.tkr{display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:start;padding:9px 16px;border-bottom:1px solid var(--rule-2)}
+.tkr:last-child{border-bottom:none}
+.tkr .no2{font-family:var(--mono);font-size:10px;color:var(--ink-4);padding-top:2px;font-variant-numeric:tabular-nums;min-width:20px}
+.tkr .tt2{font-size:12.6px;font-weight:600;line-height:1.35}
+.tkr .dd2{font-size:11px;color:var(--ink-3);line-height:1.45;margin-top:1px}
+.tkr.done .tt2{text-decoration:line-through;color:var(--ink-4)}
+.pbtn{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--gold);background:#FDFAF1;color:var(--gold-dp);border-radius:5px;padding:6px 11px;transition:all .15s;cursor:pointer}
+.pbtn:hover{background:var(--gold);color:#fff}
 /* big numbers */
 .bign .kpi .sub2{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-top:2px}
 
@@ -569,6 +590,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 
       <span class="grp">Execução</span>
       <a href="#cronograma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h9M4 12h13M4 18h7"/><rect x="15" y="4" width="6" height="4" rx="1"/><rect x="19" y="10" width="2" height="4" rx="1"/><rect x="13" y="16" width="8" height="4" rx="1"/></svg>Cronograma</a>
+      <a href="#pitchday"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2.2"/><path d="M12 3v1M21 12h-1M12 21v-1M3 12h1"/></svg>Pitch Day · dia D</a>
       <a href="#tarefas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6l2 2 3.5-4M4 13l2 2 3.5-4M4 20l2 2 3.5-4" transform="translate(0,-1.5)"/><path d="M12 6h9M12 12h9M12 18h9"/></svg>Tarefas por time</a>
 
       <span class="grp">Acompanhamento</span>
@@ -1012,7 +1034,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
             <div class="gnt-hd"><div class="lft">Entrega · time</div><div class="mos"><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div></div>
 
             <div class="gnt-sec">Produção &amp; Eventos</div>
-            <div class="gnt-gr" data-g="g-ed2"><div class="lbl"><input type="checkbox" class="ck" id="g-ed2"><div class="tx"><span class="tt">Edição 2 · 29–30 ago · Orlando</span><span class="ss">AM · evento no ar</span></div></div><div class="trk"><i class="bar gold" style="grid-column:2/3"><span class="bl">evento</span></i></div></div>
+            <div class="gnt-gr" data-g="g-ed2"><div class="lbl"><input type="checkbox" class="ck" id="g-ed2"><div class="tx"><span class="tt">Edição 2 · 29–30 ago · Orlando</span><span class="ss">AM · <a href="#pitchday" style="color:var(--gold-dp);font-weight:600">cronograma do dia ↓</a></span></div></div><div class="trk"><i class="bar gold" style="grid-column:2/3"><span class="bl">evento</span></i></div></div>
             <div class="gnt-gr" data-g="g-pos2"><div class="lbl"><input type="checkbox" class="ck" id="g-pos2"><div class="tx"><span class="tt">Pós-produção da edição 2</span><span class="ss">FV · 30+ cortes em 2 semanas</span></div></div><div class="trk"><i class="bar" style="grid-column:3/5"><span class="bl">edição + cortes</span></i></div></div>
             <div class="gnt-gr" data-g="g-r123"><div class="lbl"><input type="checkbox" class="ck" id="g-r123"><div class="tx"><span class="tt">R1 → R2 → R3 da edição 3</span><span class="ss">GM · out, nov e semana do evento</span></div></div><div class="trk"><i class="bar soft" style="grid-column:5/10"><span class="bl">organizar</span></i></div></div>
             <div class="gnt-gr" data-g="g-ed3"><div class="lbl"><input type="checkbox" class="ck" id="g-ed3"><div class="tx"><span class="tt">Edição 3 · dezembro</span><span class="ss">AM · fecha o ano</span></div></div><div class="trk"><i class="bar gold" style="grid-column:9/11"><span class="bl">evento</span></i></div></div>
@@ -1039,11 +1061,144 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         </div>
       </section>
 
+
+      <!-- ════ PITCH DAY · DIA D ════ -->
+      <section class="sec" id="pitchday">
+        <div class="sec-h">
+          <div class="l">
+            <span class="kx">06 · Pitch Day · edição 2</span>
+            <h2>29–30 de agosto — o dia, minuto a minuto</h2>
+            <p>Formato Shark Tank: 10 empresas, banca de conselheiros, pitches de 5 minutos cravados e anúncio no fim do sábado. Tudo é gravado — a lista de takes está ao lado do cronograma, e os materiais do dia saem daqui para a impressora.</p>
+          </div>
+          <div class="r">sáb 9h–19h · Orlando<br>dom 9h–12h30 · Royal</div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi dark"><span class="k">Contagem</span><span class="v num" id="kDays2">—</span><span class="d">para o <b>sábado 29</b></span></div>
+          <div class="kpi"><span class="k">Empresas no palco</span><span class="v num">10</span><span class="d">pitches de <b>5 min</b> cravados</span></div>
+          <div class="kpi"><span class="k">Comentários da banca</span><span class="v num">até 10&#8217;</span><span class="d">por pitch, quem quiser fala</span></div>
+          <div class="kpi"><span class="k">Aceleradas ao final</span><span class="v num">2</span><span class="d">anunciadas no <b>sábado</b></span></div>
+          <div class="kpi"><span class="k">Takes na lista</span><span class="v num" id="kTakes">0/19</span><span class="d">marcados durante a gravação</span><span class="track"><i id="kTakesBar" style="width:0%"></i></span></div>
+          <div class="kpi"><span class="k">Materiais p/ imprimir</span><span class="v num">3+</span><span class="d">cronograma · takes · dossiês</span></div>
+        </div>
+
+        <div class="cols c-21">
+          <div class="card">
+            <div class="card-h"><h3>Sábado 29 · cronograma do dia · 9h às 19h</h3><button type="button" class="pbtn" data-print="crono">⎙ imprimir folha</button></div>
+            <div class="day">
+              <div class="dr2"><span class="hh2">08h00–09h00</span><div><span class="b1">Call da equipe · montagem</span><span class="b2">Som, câmeras, cenário, mesa de credenciamento, teste de microfone. <b>AM + LU + GI + FV</b></span></div><span class="tgs"><span class="tg">equipe</span></span></div>
+              <div class="dr2"><span class="hh2">09h00–09h30</span><div><span class="b1">Credenciamento e welcome coffee</span><span class="b2">Participantes chegam; <b>LU</b> no credenciamento. Câmera pega a chegada (take 1).</span></div><span class="tgs"><span class="tg rec">gravado</span><span class="tg brk">café</span></span></div>
+              <div class="dr2"><span class="hh2">09h30–09h45</span><div><span class="b1">Os 10 fundadores sentam · briefing das regras</span><span class="b2"><b>Alexandre</b> explica o formato: 5 min cravados, ordem dos pitches, scorecard e como funciona a decisão.</span></div><span class="tgs"><span class="tg">palco</span></span></div>
+              <div class="dr2 hl-row"><span class="hh2">09h45–10h05</span><div><span class="b1">Abertura oficial</span><span class="b2"><b>Lúcio</b> abre o dia (10&#8217;) · <b>Gustavo</b> (5&#8217;) · <b>Alexandre</b> (5&#8217;) — boas-vindas e o que está em jogo.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2 hl-row"><span class="hh2">10h05–10h35</span><div><span class="b1">Painel · &#8220;O que esperamos ver nas startups de hoje&#8221;</span><span class="b2"><b>Lúcio + conselheiros</b> conversam no palco. Vira conteúdo do canal na íntegra.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2"><span class="hh2">10h35–10h50</span><div><span class="b1">Take Shark Tank · conselheiros tomam as cadeiras</span><span class="b2">+ entrevista de 1 min com cada conselheiro: &#8220;o que eu espero ver hoje&#8221;.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2 brk-row"><span class="hh2">10h50–11h05</span><div><span class="b1">Pausa café · reposicionamento de câmeras</span><span class="b2">Banca e fundadores respiram; <b>FV</b> prepara o set dos pitches.</span></div><span class="tgs"><span class="tg brk">café</span></span></div>
+              <div class="dr2"><span class="hh2">11h05–12h15</span><div><span class="b1">Bloco 1 de pitches · empresas 1–4</span><span class="b2">Por empresa: <b>5 min de pitch + até 10 de comentários</b> da banca + troca de palco. Duas câmeras: palco e reações.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2 brk-row"><span class="hh2">12h15–13h30</span><div><span class="b1">Almoço · rodízio de takes dos conselheiros</span><span class="b2">Enquanto todos almoçam, <b>FV</b> grava o take individual de cada conselheiro (5 min por cadeira), em fila organizada pela <b>LU</b>.</span></div><span class="tgs"><span class="tg brk">almoço</span><span class="tg rec">gravado</span></span></div>
+              <div class="dr2"><span class="hh2">13h30–14h25</span><div><span class="b1">Bloco 2 de pitches · empresas 5–7</span><span class="b2">Mesmo formato: 5 cravados + até 10 de banca.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2 brk-row"><span class="hh2">14h25–14h45</span><div><span class="b1">Pausa café · takes com fundadores</span><span class="b2">Depoimentos rápidos de quem já pitchou: &#8220;como foi estar no palco&#8221;.</span></div><span class="tgs"><span class="tg brk">café</span><span class="tg rec">gravado</span></span></div>
+              <div class="dr2"><span class="hh2">14h45–15h40</span><div><span class="b1">Bloco 3 de pitches · empresas 8–10</span><span class="b2">Últimos três pitches, mesmo formato.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2"><span class="hh2">15h40–16h00</span><div><span class="b1">Entrevistas de saída + b-roll</span><span class="b2">Fundadores na saída do palco; imagens de apoio do hub, plateia e bastidores.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2"><span class="hh2">16h00–17h00</span><div><span class="b1">Deliberação fechada da banca</span><span class="b2">Conselheiros somam os <b>scorecards de 100 pontos</b> e deliberam. Plateia e fundadores em networking com café; <b>FV</b> grava imagens de apoio (sem áudio da sala).</span></div><span class="tgs"><span class="tg">fechado</span><span class="tg brk">café</span></span></div>
+              <div class="dr2"><span class="hh2">17h00–17h20</span><div><span class="b1">Comentários gerais da banca</span><span class="b2">De volta ao palco: o que o conselho viu no dia, sem ainda anunciar.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2 hl-row"><span class="hh2">17h20–17h45</span><div><span class="b1">Anúncio · as 2 empresas aceleradas</span><span class="b2"><b>Lúcio</b> anuncia quem ganha o programa de 120 dias. Câmera na reação dos vencedores + fotos oficiais com a banca.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2"><span class="hh2">17h45–18h00</span><div><span class="b1">Encerramento · próximos passos</span><span class="b2"><b>Lúcio + Gustavo</b>: o que acontece agora — programa de 120 dias, oferta dos programas Deploy (fora do palco) e o café de domingo.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+              <div class="dr2 brk-row"><span class="hh2">18h00–19h00</span><div><span class="b1">Confraternização · brinde</span><span class="b2">Todo mundo junto; takes finais livres e fotos. Fim do sábado.</span></div><span class="tgs"><span class="tg brk">social</span><span class="tg rec">gravado</span></span></div>
+            </div>
+            <div class="card-f"><b>Conta do palco:</b> 10 empresas × (5&#8217; de pitch + até 10&#8217; de banca + ~2&#8217; de troca) ≈ 3 blocos de pitches com pausas de café entre eles. O anúncio é <b>no sábado mesmo</b> — ninguém vai embora sem saber.</div>
+          </div>
+
+          <div class="cols" style="align-content:start">
+            <div class="card" style="border-color:var(--gold)">
+              <div class="card-h"><h3>O pitch de 5 minutos</h3><span class="sub">o que cada empresa cobre</span></div>
+              <div class="card-b">
+                <ol style="list-style:none;display:grid;gap:7px;counter-reset:pp">
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">01</span>Em qual <b>mercado</b> você está</li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">02</span>O <b>problema</b> que resolve</li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">03</span>A <b>solução</b></li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">04</span>Quanto <b>fatura hoje</b> — ou que ainda não fatura</li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">05</span>A <b>projeção</b></li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">06</span>O <b>maior gargalo</b> — onde quer a ajuda dos conselheiros</li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">07</span>Por que <b>quer</b> os 120 dias de aceleração</li>
+                  <li style="font-size:12.4px;color:var(--ink-2);line-height:1.5;padding-left:24px;position:relative;counter-increment:pp"><span style="position:absolute;left:0;font-family:var(--mono);font-size:9px;color:var(--gold-dp)">08</span>Por que <b>merece</b> ganhar</li>
+                </ol>
+              </div>
+              <div class="card-f"><b>5 minutos cravados</b> — cronômetro visível no palco. Depois, até 10 de comentários: fala quem da banca quiser. Scorecard: problema e mercado 20 · solução 20 · tração e modelo 20 · time 15 · fit 15 · pitch 10.</div>
+            </div>
+
+            <div class="card">
+              <div class="card-h"><h3>Domingo 30 · café na Royal</h3><span class="sub">vencedores + conselheiros</span></div>
+              <div class="day">
+                <div class="dr2"><span class="hh2">09h00–10h30</span><div><span class="b1">Café da manhã · confraternização</span><span class="b2">Os <b>2 vencedores</b> + conselheiros que ficaram + management. Sem pauta: se conhecer. B-roll leve.</span></div><span class="tgs"><span class="tg brk">café</span><span class="tg rec">gravado</span></span></div>
+                <div class="dr2"><span class="hh2">10h30–11h30</span><div><span class="b1">Gravação com os 2 vencedores</span><span class="b2">Entrevista: quem são, por que ganharam, o que esperam dos 120 dias. Material do anúncio público.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+                <div class="dr2"><span class="hh2">11h30–12h15</span><div><span class="b1">Takes livres · vencedores + Lúcio</span><span class="b2">Aperto de mão, tour pelo hub, fotos posadas com a banca presente.</span></div><span class="tgs"><span class="tg rec">gravado</span></span></div>
+                <div class="dr2"><span class="hh2">12h15–12h30</span><div><span class="b1">Encerramento do fim de semana</span><span class="b2">Alinhar o onboarding de segunda (CX) e a agenda do 1º encontro do programa.</span></div><span class="tgs"><span class="tg">interno</span></span></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-h"><h3>Papéis no dia · quem faz o quê</h3><span class="sub">sábado</span></div>
+              <div class="feed">
+                <div class="tkr"><span class="avx">LS</span><span></span><div><span class="tt2">Lúcio · abre o dia, conduz o painel e anuncia os vencedores</span></div></div>
+                <div class="tkr"><span class="avx">GM</span><span></span><div><span class="tt2">Gustavo · anfitrião da banca e dos investidores presentes</span><span class="dd2">fala na abertura; conduz o encerramento com o Lúcio</span></div></div>
+                <div class="tkr"><span class="avx">AM</span><span></span><div><span class="tt2">Alexandre · dono do palco</span><span class="dd2">briefing das regras, ordem dos pitches, cronômetro e condução entre blocos</span></div></div>
+                <div class="tkr"><span class="avx">GI</span><span></span><div><span class="tt2">Giva · direção de gravação</span><span class="dd2">garante a lista de takes inteira; decide o que refaz na hora</span></div></div>
+                <div class="tkr"><span class="avx">LU</span><span></span><div><span class="tt2">Lucilene · credenciamento, logística e fila dos takes</span><span class="dd2">espaço, café, almoço, impressos na mão de quem precisa</span></div></div>
+                <div class="tkr"><span class="avx alt">FV</span><span></span><div><span class="tt2">Fornecedor · câmeras e som</span><span class="dd2">2 câmeras nos pitches (palco + reações da banca) e set dos takes</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cols c-2">
+          <div class="card">
+            <div class="card-h"><h3>Lista de takes · marcar durante a gravação</h3><button type="button" class="pbtn" data-print="takes">⎙ imprimir lista</button></div>
+            <div class="feed" id="takesList">
+              <div class="gnt-sec">Sábado 29</div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-01"><span class="no2">01</span><div><span class="tt2">Chegada e credenciamento</span><span class="dd2">b-roll · participantes chegando, welcome coffee</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-02"><span class="no2">02</span><div><span class="tt2">Abertura do Lúcio na íntegra</span><span class="dd2">frontal + plateia</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-03"><span class="no2">03</span><div><span class="tt2">Falas de Gustavo e Alexandre na abertura</span><span class="dd2">na íntegra</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-04"><span class="no2">04</span><div><span class="tt2">Painel completo · &#8220;o que esperamos ver&#8221;</span><span class="dd2">Lúcio + conselheiros · vira vídeo longo do canal</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-05"><span class="no2">05</span><div><span class="tt2">Entrevista 1 min por conselheiro · &#8220;o que espero ver hoje&#8221;</span><span class="dd2">6 cabeças · corte individual por conselheiro</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-06"><span class="no2">06</span><div><span class="tt2">Take Shark Tank · conselheiros tomando as cadeiras</span><span class="dd2">coreografado · abre o vídeo principal da edição</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-07"><span class="no2">07</span><div><span class="tt2">Os 10 pitches na íntegra</span><span class="dd2">câmera A no palco · 5 min cada</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-08"><span class="no2">08</span><div><span class="tt2">Reações da banca durante os pitches</span><span class="dd2">câmera B dedicada · matéria-prima dos cortes</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-09"><span class="no2">09</span><div><span class="tt2">Comentários da banca após cada pitch</span><span class="dd2">até 10 min por empresa · duas câmeras</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-10"><span class="no2">10</span><div><span class="tt2">Take individual de cada conselheiro · 5 min</span><span class="dd2">no almoço, em rodízio · pauta livre da área de cada um</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-11"><span class="no2">11</span><div><span class="tt2">Depoimentos dos fundadores pós-palco</span><span class="dd2">&#8220;como foi pitchar&#8221; · pausa das 14h25 e saída dos blocos</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-12"><span class="no2">12</span><div><span class="tt2">B-roll geral do dia</span><span class="dd2">hub, plateia, bastidores, café, detalhes do cenário</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-13"><span class="no2">13</span><div><span class="tt2">Imagens da deliberação · sem áudio</span><span class="dd2">pela porta/vidro · tensão do momento</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-14"><span class="no2">14</span><div><span class="tt2">Anúncio dos vencedores + reação</span><span class="dd2">câmera na cara dos escolhidos · momento principal do dia</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-15"><span class="no2">15</span><div><span class="tt2">Fotos oficiais + encerramento e brinde</span><span class="dd2">vencedores com a banca · confraternização</span></div></div>
+              <div class="gnt-sec">Domingo 30</div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-16"><span class="no2">16</span><div><span class="tt2">Café da manhã · b-roll da confraternização</span><span class="dd2">leve, sem microfone na mesa</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-17"><span class="no2">17</span><div><span class="tt2">Entrevista com os 2 vencedores</span><span class="dd2">quem são, por que ganharam, o que esperam dos 120 dias</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-18"><span class="no2">18</span><div><span class="tt2">Vencedores + Lúcio · aperto de mão e tour pelo hub</span><span class="dd2">material do anúncio público</span></div></div>
+              <div class="tkr" data-tk><input type="checkbox" class="ck" id="tk-19"><span class="no2">19</span><div><span class="tt2">Fotos posadas finais</span><span class="dd2">vencedores, banca presente e management</span></div></div>
+            </div>
+            <div class="card-f"><b>Dono da lista: Giva.</b> O fornecedor grava; Giva confere item a item antes de desmontar. Take que faltou no sábado não volta mais.</div>
+          </div>
+
+          <div class="card">
+            <div class="card-h"><h3>Materiais do dia · para imprimir</h3><span class="sub">na mão de quem precisa, na sexta</span></div>
+            <div class="dlist">
+              <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="nm">Cronograma do dia<small>1 por pessoa da equipe + 1 por conselheiro · o sábado hora a hora</small></span><button type="button" class="pbtn" data-print="crono">⎙ imprimir</button></div>
+              <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span><span class="nm">Lista de takes<small>2 cópias · Giva e fornecedor · os 19 vídeos do fim de semana</small></span><button type="button" class="pbtn" data-print="takes">⎙ imprimir</button></div>
+              <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg></span><span class="nm">Dossiê das empresas · folha do conselheiro<small>10 folhas por conselheiro · uma por empresa, com scorecard e espaço de notas</small></span><button type="button" class="pbtn" data-print="dossie">⎙ imprimir 10</button></div>
+              <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><span class="nm">Scorecard de 100 pontos<small>1 por conselheiro por empresa · PDF já pronto no kit</small></span><a class="go" href="../materiais/scorecard.pdf" target="_blank" rel="noopener">abrir ↗</a></div>
+              <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6"/></svg></span><span class="nm">Crachás e plaquinhas de mesa<small>10 fundadores + 6 cadeiras da banca + equipe · LU imprime</small></span><span class="go">manual</span></div>
+              <div class="di"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 21h16"/></svg></span><span class="nm">Termo de uso de imagem<small>1 por participante e por pessoa da plateia — o dia inteiro é gravado</small></span><span class="go">manual</span></div>
+            </div>
+            <div class="card-f"><b>Quem imprime: Lucilene, na sexta 28.</b> Cronograma e takes saem deste sistema pelo botão; dossiês saem em 10 folhas numeradas (empresa 01 a 10) para preencher com os dados de cada inscrita.</div>
+          </div>
+        </div>
+      </section>
+
       <!-- ════ TAREFAS ════ -->
       <section class="sec" id="tarefas">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">06 · Tarefas por time</span>
+            <span class="kx">07 · Tarefas por time</span>
             <h2>O que sai esta semana — enxuto, sem duplicar o cronograma</h2>
             <p>As rotinas contínuas moram no cronograma; aqui entram as tarefas da semana, por time. Crie com <b>+ nova tarefa</b>, delete com o <b>×</b>, marque quando fechar. A Weekly de Operação lê esta lista de cima a baixo.</p>
           </div>
@@ -1127,7 +1282,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       <section class="sec" id="relatorios">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">07 · Relatórios e metas</span>
+            <span class="kx">08 · Relatórios e metas</span>
             <h2>Preencha o realizado — o sistema mostra o resto</h2>
             <p>Cada métrica tem meta do curto, objetivo e um campo para o número de agora. Digitou, salvou — a barra anda, a data marca e os big numbers da Visão geral acompanham. Quem preenche: <b>Lucilene às sextas</b>, antes da Weekly de Liderança.</p>
           </div>
@@ -1198,7 +1353,7 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       <section class="sec" id="biblioteca">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">08 · Biblioteca</span>
+            <span class="kx">09 · Biblioteca</span>
             <h2>Arquivos e materiais, num lugar só</h2>
             <p>Decks, PDFs, painéis, vídeos e o que mais o time precisar achar rápido. Adicione qualquer link com <b>+ adicionar</b>; o <b>×</b> remove.</p>
           </div>
@@ -1244,12 +1399,13 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
   function uid(){ return 'u' + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36); }
 
   /* ── countdown ── */
-  var kd = document.getElementById('kDays');
-  if (kd){
+  (function(){
     var ev = new Date(2026, 7, 29), now = new Date(); now.setHours(0,0,0,0);
     var d = Math.round((ev - now) / 86400000);
-    kd.textContent = d > 1 ? d + ' dias' : d === 1 ? 'amanhã' : d >= -1 ? 'é agora' : 'feito ✓';
-  }
+    var txt = d > 1 ? d + ' dias' : d === 1 ? 'amanhã' : d >= -1 ? 'é agora' : 'feito ✓';
+    var kd = document.getElementById('kDays');  if (kd)  kd.textContent = txt;
+    var k2 = document.getElementById('kDays2'); if (k2) k2.textContent = txt;
+  })();
 
   /* ══ TAREFAS ══ */
   var DEFAULTS = {
@@ -1258,7 +1414,8 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       {id:'t-pe2', who:'GI', tt:'Fechar cenário e mapa de gravação com o fornecedor', why:'<b>Por quê:</b> o evento é também um estúdio. <b>Gera:</b> 30+ cortes que alimentam o funil por 2 meses.', due:'até qua 26'},
       {id:'t-pe3', who:'GI', tt:'Roteiro do que será gravado no dia', why:'<b>Por quê:</b> câmera sem pauta grava nada aproveitável. <b>Gera:</b> matéria-prima certa para cortes e canal.', due:'até qui 27'},
       {id:'t-pe4', who:'AM', tt:'Briefing e ensaio das empresas do palco', why:'<b>Por quê:</b> pitch ruim queima a empresa e o evento. <b>Gera:</b> palco no nível do deck.', due:'até sex 28'},
-      {id:'t-pe5', who:'LU', tt:'Checklist do espaço, credenciamento e materiais', why:'<b>Por quê:</b> logística falha aparece mais que palestra boa. <b>Gera:</b> experiência impecável.', due:'até sex 28'}
+      {id:'t-pe5', who:'LU', tt:'Checklist do espaço, credenciamento e materiais', why:'<b>Por quê:</b> logística falha aparece mais que palestra boa. <b>Gera:</b> experiência impecável.', due:'até sex 28'},
+      {id:'t-pe6', who:'LU', tt:'Imprimir os materiais do dia', why:'<b>Por quê:</b> cronograma, lista de takes, dossiês, scorecards, crachás e termos — na mão de quem precisa. <b>Gera:</b> sábado sem correria de impressora.', due:'sex 28'}
     ],
     mg: [
       {id:'t-mg1', who:'GI', tt:'Aprovar a pauta de conteúdo da próxima semana', why:'<b>Por quê:</b> pauta aprovada = segunda produzindo. <b>Gera:</b> zero semana perdida.', due:'sex'},
@@ -1325,6 +1482,12 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       var done = all.filter(function(b){ return b.checked; }).length;
       el.innerHTML = '<b>' + done + '</b> de ' + all.length;
     });
+    var tk2 = boxes.filter(function(b){ return b.closest('[data-tk]'); });
+    var td2 = tk2.filter(function(b){ return b.checked; }).length;
+    var kk = document.getElementById('kTakes'), kb = document.getElementById('kTakesBar');
+    if (kk) kk.textContent = td2 + '/' + tk2.length;
+    if (kb) kb.style.width = (tk2.length ? Math.round(td2*100/tk2.length) : 0) + '%';
+    tk2.forEach(function(b){ var r = b.closest('.tkr'); if (r) r.classList.toggle('done', b.checked); });
     var tks = boxes.filter(function(b){ return b.closest('.tsk'); });
     var dn = tks.filter(function(b){ return b.checked; }).length;
     var kt = document.getElementById('kTasks'), tr = document.getElementById('kTrack');
@@ -1485,6 +1648,69 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       S.lib.push(it); save(); libForm.reset(); libForm.hidden = true; libAdd.hidden = false; renderLib();
     });
   }
+
+  /* ══ IMPRESSÃO · materiais do dia ══ */
+  var PSTYLE = '<style>@page{margin:16mm}body{font-family:Georgia,serif;color:#111;font-size:12px;line-height:1.5;margin:0}h1{font-size:19px;margin:0 0 2px}h2{font-size:14px;margin:18px 0 6px;border-bottom:1.5px solid #111;padding-bottom:4px}.sub{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8a6d1d;margin:0 0 14px}table{width:100%;border-collapse:collapse;font-size:11.5px}th{text-align:left;font-size:9px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1.5px solid #111;padding:5px 6px}td{padding:6px;border-bottom:.6px solid #bbb;vertical-align:top}.hr{white-space:nowrap;font-family:Menlo,monospace;font-size:10.5px}.tag{font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:#8a6d1d;white-space:nowrap}.bx{border:1px solid #999;border-radius:3px;padding:8px 10px;margin:6px 0}.lbl{font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:#666;display:block;margin-bottom:2px}.wr{min-height:34px}.pg{page-break-after:always}.ck2{display:inline-block;width:11px;height:11px;border:1.2px solid #111;margin-right:8px;vertical-align:-1px}.ft2{margin-top:14px;font-size:10px;color:#555;border-top:.6px solid #999;padding-top:8px}</style>';
+  function pWin(title, html){
+    var w = window.open('', '_blank');
+    if (!w){ alert('Libere pop-ups para imprimir.'); return; }
+    w.document.write('<html><head><meta charset="utf-8"><title>' + title + '</title>' + PSTYLE + '</head><body>' + html + '</body></html>');
+    w.document.close(); w.focus();
+    setTimeout(function(){ w.print(); }, 400);
+  }
+  function sheetCrono(){
+    var rows = '';
+    document.querySelectorAll('#pitchday .cols.c-21 .day')[0].querySelectorAll('.dr2').forEach(function(r){
+      rows += '<tr><td class="hr">' + r.querySelector('.hh2').textContent + '</td><td><b>' + r.querySelector('.b1').textContent + '</b><br>' + (r.querySelector('.b2') ? r.querySelector('.b2').textContent : '') + '</td><td class="tag">' + Array.prototype.map.call(r.querySelectorAll('.tg'), function(t){ return t.textContent; }).join(' · ') + '</td></tr>';
+    });
+    var dom = '';
+    document.querySelectorAll('#pitchday .day')[1].querySelectorAll('.dr2').forEach(function(r){
+      dom += '<tr><td class="hr">' + r.querySelector('.hh2').textContent + '</td><td><b>' + r.querySelector('.b1').textContent + '</b><br>' + (r.querySelector('.b2') ? r.querySelector('.b2').textContent : '') + '</td></tr>';
+    });
+    pWin('Cronograma do dia · Pitch Day 29–30 ago',
+      '<h1>Pitch Day · Royal Business Growth</h1><p class="sub">Edição 2 · Orlando · cronograma do dia · confidencial</p>'
+      + '<h2>Sábado 29 de agosto · 9h às 19h</h2><table><tr><th>Horário</th><th>Bloco</th><th></th></tr>' + rows + '</table>'
+      + '<h2>Domingo 30 de agosto · café na Royal</h2><table><tr><th>Horário</th><th>Bloco</th></tr>' + dom + '</table>'
+      + '<div class="ft2">Pitch: 5 minutos cravados · até 10 de comentários da banca. Scorecard: problema e mercado 20 · solução 20 · tração e modelo 20 · time 15 · fit 15 · pitch 10. Anúncio das 2 aceleradas no sábado, 17h20.</div>');
+  }
+  function sheetTakes(){
+    var rows = '';
+    document.querySelectorAll('#takesList .tkr').forEach(function(r){
+      rows += '<tr><td style="width:24px"><span class="ck2"></span></td><td class="hr">' + r.querySelector('.no2').textContent + '</td><td><b>' + r.querySelector('.tt2').textContent + '</b><br>' + (r.querySelector('.dd2') ? r.querySelector('.dd2').textContent : '') + '</td></tr>';
+    });
+    pWin('Lista de takes · Pitch Day 29–30 ago',
+      '<h1>Lista de takes · Pitch Day</h1><p class="sub">Edição 2 · 29–30 ago · dono: Giva · executa: fornecedor de vídeo</p>'
+      + '<table>' + rows + '</table>'
+      + '<div class="ft2">Conferir item a item antes de desmontar — take que faltou no sábado não volta mais. Câmera A: palco. Câmera B: reações da banca.</div>');
+  }
+  function sheetDossie(){
+    var pages = '';
+    for (var i = 1; i <= 10; i++){
+      pages += '<div class="' + (i < 10 ? 'pg' : '') + '"><h1>Dossiê · Empresa ' + String(i).padStart(2,'0') + '</h1><p class="sub">Pitch Day · edição 2 · 29 ago · folha do conselheiro · confidencial</p>'
+        + '<div class="bx"><span class="lbl">Empresa / fundador</span><div class="wr"></div></div>'
+        + '<div class="bx"><span class="lbl">Mercado em que está</span><div class="wr"></div></div>'
+        + '<div class="bx"><span class="lbl">Problema que resolve</span><div class="wr"></div></div>'
+        + '<div class="bx"><span class="lbl">Solução</span><div class="wr"></div></div>'
+        + '<div class="bx"><span class="lbl">Faturamento hoje · projeção</span><div class="wr"></div></div>'
+        + '<div class="bx"><span class="lbl">Maior gargalo · onde pede ajuda do conselho</span><div class="wr"></div></div>'
+        + '<div class="bx"><span class="lbl">Por que quer — e por que merece — os 120 dias</span><div class="wr"></div></div>'
+        + '<h2>Scorecard · 100 pontos</h2><table><tr><th>Critério</th><th style="width:70px">Máx.</th><th style="width:90px">Nota</th></tr>'
+        + '<tr><td>Problema e mercado</td><td>20</td><td></td></tr><tr><td>Solução e diferencial</td><td>20</td><td></td></tr>'
+        + '<tr><td>Tração e modelo</td><td>20</td><td></td></tr><tr><td>Time</td><td>15</td><td></td></tr>'
+        + '<tr><td>Fit com a aceleração</td><td>15</td><td></td></tr><tr><td>Pitch e clareza</td><td>10</td><td></td></tr>'
+        + '<tr><td><b>Total</b></td><td><b>100</b></td><td></td></tr></table>'
+        + '<div class="bx" style="margin-top:10px"><span class="lbl">Notas do conselheiro · parecer</span><div class="wr" style="min-height:60px"></div></div></div>';
+    }
+    pWin('Dossiê das empresas · Pitch Day', pages);
+  }
+  document.querySelectorAll('[data-print]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var k = b.dataset.print;
+      if (k === 'crono') sheetCrono();
+      else if (k === 'takes') sheetTakes();
+      else if (k === 'dossie') sheetDossie();
+    });
+  });
 
   /* ── scrollspy ── */
   var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
