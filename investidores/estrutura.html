@@ -147,6 +147,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .s-light .tb td,.s-paper .tb td{color:var(--ink-2);border-color:var(--rule-2)}
 .tb tr:last-child td{border-bottom:none}
 .tb .r{text-align:right;font-variant-numeric:tabular-nums}
+.tb .drv{display:block;font-family:var(--mono);font-size:calc(var(--u)*.64);letter-spacing:.03em;
+  color:var(--gold-dp);margin-top:calc(var(--u)*.14);font-weight:400;white-space:nowrap}
+.tb .gan{color:#1F7A4D;font-weight:600}
+.tb tr.hl td{background:rgba(212,164,55,.07)}
 .tb tbody tr{transition:background .2s}
 .s-paper .tb tbody tr:hover,.s-light .tb tbody tr:hover{background:var(--sand-2)}
 .s-dark .tb tbody tr:hover{background:rgba(255,255,255,.05)}
@@ -1065,7 +1069,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
           <thead><tr><th>Sócio</th><th class="r">Hoje</th><th class="r">Curto · pós anjo</th><th class="r">Médio · 2027</th><th class="r">Longo · 2028</th></tr></thead>
           <tbody>
             <tr><td>Lúcio Santana · chairman <small style="color:var(--ink-4)">(residual)</small></td><td class="r">79,50%</td><td class="r">75,53%</td><td class="r">63,15%</td><td class="r">48,42%</td></tr>
-            <tr><td><strong>Gustavo Marion</strong> · managing partner</td><td class="r">7,0%</td><td class="r"><strong>6,65%</strong></td><td class="r"><strong>10,80%</strong></td><td class="r"><strong>14,45%</strong></td></tr>
+            <tr class="hl"><td><strong>Gustavo Marion</strong> · managing partner<small style="display:block;color:var(--ink-4)">+5 pontos a cada meta entregue — e a tranche nova dilui junto</small></td><td class="r">7,0%<small class="drv">concessão inicial</small></td><td class="r"><strong>6,65%</strong><small class="drv">7% − anjo</small></td><td class="r"><strong>10,80%</strong><small class="drv"><span class="gan">+5 pp</span> → 12% − rodada</small></td><td class="r"><strong>14,45%</strong><small class="drv"><span class="gan">+5 pp</span> → 17% − fundo</small></td></tr>
             <tr><td><strong>Alexandre Medeiros</strong> · líder da operação</td><td class="r"><strong>5,0%</strong></td><td class="r"><strong>4,75%</strong></td><td class="r"><strong>4,28%</strong></td><td class="r"><strong>3,63%</strong></td></tr>
             <tr><td>Giva · gestão de marketing <small style="color:var(--ink-4)">(e conselheiro de área)</small></td><td class="r">2,0%</td><td class="r">1,90%</td><td class="r">1,71%</td><td class="r">1,45%</td></tr>
             <tr><td>Conselheiros de área · <strong>1,5% cada</strong>, 4 cadeiras</td><td class="r">6,0%</td><td class="r">5,70%</td><td class="r">5,13%</td><td class="r">4,36%</td></tr>
