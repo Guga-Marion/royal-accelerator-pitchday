@@ -401,20 +401,60 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
 
 /* gantt */
 .gnt-wrap{overflow-x:auto}
-.gnt{min-width:920px;position:relative}
-.gnt-hd{display:grid;grid-template-columns:250px 1fr;border-bottom:1px solid var(--rule);background:var(--sand-2)}
+.gnt{min-width:1560px;position:relative}
+.gnt-hd{display:grid;grid-template-columns:302px 1fr;border-bottom:1px solid var(--rule);background:var(--sand-2)}
 .gnt-hd .lft{padding:9px 14px;font-family:var(--mono);font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-4)}
-.gnt-hd .mos{display:grid;grid-template-columns:repeat(14,1fr)}
-.gnt-hd .mos span{grid-column:span 2;text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:9px 0;border-left:1px solid var(--rule-2)}
-.gnt-gr{display:grid;grid-template-columns:250px 1fr;align-items:stretch;border-bottom:1px solid var(--rule-2)}
+.gnt-hd .mos{display:grid;grid-template-columns:repeat(28,1fr)}
+.gnt-hd .mos span{grid-column:span 4;text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:9px 0;border-left:1px solid var(--rule)}
+.gnt-gr{display:grid;grid-template-columns:302px 1fr;align-items:stretch;border-bottom:1px solid var(--rule-2)}
 .gnt-gr:last-child{border-bottom:none}
-.gnt-gr .lbl{display:flex;gap:10px;align-items:center;padding:10px 14px;min-width:0}
+.gnt-gr .lbl{display:flex;gap:9px;align-items:center;padding:7px 14px;min-width:0}
+.gnt-gr .lbl .avx{width:21px;height:21px;font-size:7.5px}
 .gnt-gr .lbl .tx{min-width:0;flex:1}
-.gnt-gr .lbl .tt{font-size:12.5px;font-weight:600;line-height:1.3}
+.gnt-gr .lbl .tt{font-size:11.9px;font-weight:600;line-height:1.3}
 .gnt-gr .lbl .ss{font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);margin-top:2px;display:block}
-.gnt-gr .trk{display:grid;grid-template-columns:repeat(14,1fr);align-items:center;position:relative;background:
+.gnt-gr .trk{display:grid;grid-template-columns:repeat(28,1fr);align-items:center;position:relative;background:
   repeating-linear-gradient(90deg,transparent 0,transparent calc(100%/7 - 1px),var(--rule-2) calc(100%/7 - 1px),var(--rule-2) calc(100%/7))}
-.gnt-gr .bar{height:16px;border-radius:3px;background:var(--navy-3);position:relative;margin:0 3px}
+.gnt-gr .bar{height:14px;border-radius:3px;background:var(--navy-3);position:relative;margin:0 2px}
+.gnt-gr.marco .tt::before{content:"\25C6 ";color:var(--gold-dp);font-size:9px}
+.gnt-gr.marco{background:#FDFAF1}
+.gnt-gr .bar.mk{background:var(--gold);box-shadow:0 0 0 1px #fff,0 0 0 2px var(--gold)}
+.gnt-lg{display:flex;gap:16px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid var(--rule-2);background:var(--sand-2)}
+.gnt-lg i{display:inline-block;width:16px;height:8px;border-radius:2px;vertical-align:0;margin-right:6px}
+.gnt-lg span{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+/* ações inline no gantt */
+.gnt-gr .acts{margin-left:auto;display:flex;gap:3px;opacity:0;transition:opacity .15s}
+.gnt-gr:hover .acts{opacity:1}
+.gnt-gr .acts button{width:19px;height:19px;border-radius:4px;border:1px solid transparent;color:var(--ink-4);display:grid;place-items:center;font-size:10px;line-height:1}
+.gnt-gr .acts button:hover{border-color:var(--gold);color:var(--gold-dp);background:#FDFAF1}
+.gnt-gr .acts button.dl:hover{border-color:var(--warn-line);color:var(--warn);background:var(--warn-bg)}
+.gnt-add{display:grid;grid-template-columns:302px 1fr;border-bottom:1px solid var(--rule-2)}
+.gnt-add .a1{padding:5px 14px}
+.gnt-add button{font-family:var(--mono);font-size:8.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold-dp)}
+.gnt-add button:hover{color:var(--ink-2)}
+/* formulário de entrega */
+.gform{background:var(--sand-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:13px 16px;display:grid;gap:8px}
+.gform[hidden]{display:none}
+.gform .r1{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gform .r2{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.gform label{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:3px}
+.gform input,.gform select{font:inherit;font-size:12.2px;padding:6px 8px;border:1px solid var(--rule);border-radius:5px;background:#fff;color:var(--ink);width:100%}
+.gform input:focus,.gform select:focus{outline:2px solid var(--gold-dp);outline-offset:0}
+.gform .r3{display:flex;gap:7px;align-items:center}
+.gform .sv2{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:#fff;border-radius:5px;padding:8px 14px}
+.gform .cn2{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);padding:8px 10px}
+.gform .warn2{margin-left:auto;font-family:var(--mono);font-size:8.5px;letter-spacing:.08em;color:var(--warn)}
+.gchip{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--rule);background:var(--paper);color:var(--ink-2);border-radius:999px;padding:5px 10px;transition:all .15s}
+.gchip:hover{border-color:var(--gold)}
+.gchip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+/* RACI */
+table.raci td,table.raci th{font-size:12px}
+table.raci th.c small{display:block;font-family:var(--mono);font-size:7.5px;letter-spacing:.08em;color:var(--ink-4);text-transform:none;margin-top:3px;font-weight:400}
+.rc{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;font-family:var(--mono);font-size:9px;font-weight:600;margin:0 1px}
+.rc.r{background:var(--gold);color:#fff}
+.rc.a{background:var(--navy);color:var(--gold-hi)}
+.rc.c{background:var(--info-bg);color:var(--info);border:1px solid var(--info-line)}
+.rc.i{background:var(--sand-2);color:var(--ink-4);border:1px solid var(--rule)}
 .gnt-gr .bar.gold{background:var(--gold)}
 .gnt-gr .bar.soft{background:var(--sand-3);border:1px dashed var(--ink-4)}
 .gnt-gr .bar.blue{background:var(--exit)}
@@ -589,8 +629,8 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
       <a href="#semana"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2.2"/></svg>Semana e cadência</a>
 
       <span class="grp">Execução</span>
-      <a href="#cronograma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h9M4 12h13M4 18h7"/><rect x="15" y="4" width="6" height="4" rx="1"/><rect x="19" y="10" width="2" height="4" rx="1"/><rect x="13" y="16" width="8" height="4" rx="1"/></svg>Cronograma</a>
       <a href="#pitchday"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2.2"/><path d="M12 3v1M21 12h-1M12 21v-1M3 12h1"/></svg>Pitch Day · dia D</a>
+      <a href="#cronograma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h9M4 12h13M4 18h7"/><rect x="15" y="4" width="6" height="4" rx="1"/><rect x="19" y="10" width="2" height="4" rx="1"/><rect x="13" y="16" width="8" height="4" rx="1"/></svg>Cronograma</a>
       <a href="#tarefas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6l2 2 3.5-4M4 13l2 2 3.5-4M4 20l2 2 3.5-4" transform="translate(0,-1.5)"/><path d="M12 6h9M12 12h9M12 18h9"/></svg>Tarefas por time</a>
 
       <span class="grp">Acompanhamento</span>
@@ -1017,56 +1057,11 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         </div>
       </section>
 
-      <!-- ════ CRONOGRAMA ════ -->
-      <section class="sec" id="cronograma">
-        <div class="sec-h">
-          <div class="l">
-            <span class="kx">05 · Cronograma</span>
-            <h2>O curto prazo inteiro, numa régua só</h2>
-            <p>Ago 2026 → fev 2027, por time. As rotinas contínuas vivem aqui — sem duplicar nas tarefas. Marque o checkbox quando a entrega fechar.</p>
-          </div>
-          <div class="r">médio e longo prazo<br>entram depois, aqui</div>
-        </div>
-
-        <div class="card">
-          <div class="gnt-wrap"><div class="gnt" id="gnt">
-            <div class="gnt-now" style="left:calc(250px + (100% - 250px)*0.095)"><i>hoje</i></div>
-            <div class="gnt-hd"><div class="lft">Entrega · time</div><div class="mos"><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div></div>
-
-            <div class="gnt-sec">Produção &amp; Eventos</div>
-            <div class="gnt-gr" data-g="g-ed2"><div class="lbl"><input type="checkbox" class="ck" id="g-ed2"><div class="tx"><span class="tt">Edição 2 · 29–30 ago · Orlando</span><span class="ss">AM · <a href="#pitchday" style="color:var(--gold-dp);font-weight:600">cronograma do dia ↓</a></span></div></div><div class="trk"><i class="bar gold" style="grid-column:2/3"><span class="bl">evento</span></i></div></div>
-            <div class="gnt-gr" data-g="g-pos2"><div class="lbl"><input type="checkbox" class="ck" id="g-pos2"><div class="tx"><span class="tt">Pós-produção da edição 2</span><span class="ss">FV · 30+ cortes em 2 semanas</span></div></div><div class="trk"><i class="bar" style="grid-column:3/5"><span class="bl">edição + cortes</span></i></div></div>
-            <div class="gnt-gr" data-g="g-r123"><div class="lbl"><input type="checkbox" class="ck" id="g-r123"><div class="tx"><span class="tt">R1 → R2 → R3 da edição 3</span><span class="ss">GM · out, nov e semana do evento</span></div></div><div class="trk"><i class="bar soft" style="grid-column:5/10"><span class="bl">organizar</span></i></div></div>
-            <div class="gnt-gr" data-g="g-ed3"><div class="lbl"><input type="checkbox" class="ck" id="g-ed3"><div class="tx"><span class="tt">Edição 3 · dezembro</span><span class="ss">AM · fecha o ano</span></div></div><div class="trk"><i class="bar gold" style="grid-column:9/11"><span class="bl">evento</span></i></div></div>
-
-            <div class="gnt-sec">Marketing &amp; Growth</div>
-            <div class="gnt-gr" data-g="g-traf"><div class="lbl"><input type="checkbox" class="ck" id="g-traf"><div class="tx"><span class="tt">Tráfego + inscrições · 500 leads</span><span class="ss">GM · contínuo</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:1/15"><span class="bl">contínuo</span></i></div></div>
-            <div class="gnt-gr" data-g="g-yt"><div class="lbl"><input type="checkbox" class="ck" id="g-yt"><div class="tx"><span class="tt">1 vídeo longo / semana · 24 no curto</span><span class="ss">GI + SM · YouTube</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:1/15"><span class="bl">semanal</span></i></div></div>
-            <div class="gnt-gr" data-g="g-cuts"><div class="lbl"><input type="checkbox" class="ck" id="g-cuts"><div class="tx"><span class="tt">10 cortes / semana · 240 no curto</span><span class="ss">SM · Reels, Shorts, TikTok</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:1/15"><span class="bl">semanal</span></i></div></div>
-
-            <div class="gnt-sec">Customer Experience</div>
-            <div class="gnt-gr" data-g="g-call"><div class="lbl"><input type="checkbox" class="ck" id="g-call"><div class="tx"><span class="tt">Calls de triagem · 100 no curto</span><span class="ss">AM · bloco de quarta</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:3/15"><span class="bl">semanal</span></i></div></div>
-            <div class="gnt-gr" data-g="g-t1"><div class="lbl"><input type="checkbox" class="ck" id="g-t1"><div class="tx"><span class="tt">Turma 1 · 8 encontros quinzenais</span><span class="ss">AM + LU · pós-edição de ago</span></div></div><div class="trk"><i class="bar" style="grid-column:3/11"><span class="bl">120 dias</span></i></div></div>
-            <div class="gnt-gr" data-g="g-inv1"><div class="lbl"><input type="checkbox" class="ck" id="g-inv1"><div class="tx"><span class="tt">Encontro 8 · decisão de investimento</span><span class="ss">comitê · 1º cheque</span></div></div><div class="trk"><i class="bar blue" style="grid-column:11/13"><span class="bl">comitê</span></i></div></div>
-
-            <div class="gnt-sec">Comercial · programas Deploy</div>
-            <div class="gnt-gr" data-g="g-dep2"><div class="lbl"><input type="checkbox" class="ck" id="g-dep2"><div class="tx"><span class="tt">Oferta aos não selecionados · pós-edição 2</span><span class="ss">GM + LU · só depois da decisão</span></div></div><div class="trk"><i class="bar gold" style="grid-column:3/6"><span class="bl">vender</span></i></div></div>
-            <div class="gnt-gr" data-g="g-dep3"><div class="lbl"><input type="checkbox" class="ck" id="g-dep3"><div class="tx"><span class="tt">Oferta aos não selecionados · pós-edição 3</span><span class="ss">GM + LU · 5 projetos no curto</span></div></div><div class="trk"><i class="bar gold" style="grid-column:11/14"><span class="bl">vender</span></i></div></div>
-
-            <div class="gnt-sec">Financeiro &amp; captação</div>
-            <div class="gnt-gr" data-g="g-anjo"><div class="lbl"><input type="checkbox" class="ck" id="g-anjo"><div class="tx"><span class="tt">Rodada anjo · US$ 250 mil</span><span class="ss">GM · SAFE na Carta</span></div></div><div class="trk"><i class="bar blue" style="grid-column:1/6"><span class="bl">rodada</span></i></div></div>
-            <div class="gnt-gr" data-g="g-rmens"><div class="lbl"><input type="checkbox" class="ck" id="g-rmens"><div class="tx"><span class="tt">Relatório mensal RBG · todo mês</span><span class="ss">GM + LU · alimenta o painel do investidor</span></div></div><div class="trk"><i class="bar dotd" style="grid-column:3/15"><span class="bl">mensal</span></i></div></div>
-          </div></div>
-          <div class="card-f"><b>Barra tracejada = rotina contínua</b> (o checkbox marca a rotina como de pé, não como encerrada). Barra dourada = janela de evento ou venda; azul = capital. Quando o médio prazo chegar, a régua estende aqui mesmo.</div>
-        </div>
-      </section>
-
-
       <!-- ════ PITCH DAY · DIA D ════ -->
       <section class="sec" id="pitchday">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">06 · Pitch Day · edição 2</span>
+            <span class="kx">05 · Pitch Day · edição 2</span>
             <h2>29–30 de agosto — o dia, minuto a minuto</h2>
             <p>Formato Shark Tank: 10 empresas, banca de conselheiros, pitches de 5 minutos cravados e anúncio no fim do sábado. Tudo é gravado — a lista de takes está ao lado do cronograma, e os materiais do dia saem daqui para a impressora.</p>
           </div>
@@ -1194,13 +1189,73 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
         </div>
       </section>
 
+      <!-- ════ CRONOGRAMA ════ -->
+      <section class="sec" id="cronograma">
+        <div class="sec-h">
+          <div class="l">
+            <span class="kx">06 · Cronograma</span>
+            <h2>Depois do palco: o que constrói a empresa</h2>
+            <p>Semana a semana, de agora até fevereiro. Cada linha tem <b>dono</b>, prazo e checkbox. Crie e edite entregas direto aqui — <b>+ nova entrega</b> em cada bloco, ✎ para editar, × para remover. É deste cronograma que sai a lista de tarefas da semana.</p>
+          </div>
+          <div class="r">
+            <div class="filters" style="justify-content:flex-end;margin-bottom:6px">
+              <span class="lbl">Ver</span>
+              <button class="gchip" data-gf="all" aria-pressed="true">Todos</button>
+              <button class="gchip" data-gf="GM" aria-pressed="false">GM</button>
+              <button class="gchip" data-gf="LU" aria-pressed="false">LU</button>
+              <button class="gchip" data-gf="AM" aria-pressed="false">AM</button>
+              <button class="gchip" data-gf="GI" aria-pressed="false">GI</button>
+              <button class="gchip" data-gf="LS" aria-pressed="false">LS</button>
+            </div>
+            <span class="upd-stamp" id="gCount">—</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="gnt-wrap"><div class="gnt" id="gnt">
+            <div class="gnt-now" style="left:calc(302px + (100% - 302px)*0.1071)"><i>hoje · 22 ago</i></div>
+            <div class="gnt-hd"><div class="lft">Entrega · responsável</div><div class="mos"><span>Ago</span><span>Set</span><span>Out</span><span>Nov</span><span>Dez</span><span>Jan</span><span>Fev</span></div></div>
+            <div id="gntBody"></div>
+          </div></div>
+          <div class="gnt-lg">
+            <span><i style="background:var(--navy-3)"></i>trabalho</span>
+            <span><i style="background:var(--gold)"></i>entrega-chave</span>
+            <span><i style="background:var(--gold);box-shadow:0 0 0 1px #fff,0 0 0 2px var(--gold)"></i>◆ marco</span>
+            <span><i style="background:var(--exit)"></i>capital</span>
+            <span><i style="background:var(--sand-3);border:1px dashed var(--ink-4)"></i>planejamento</span>
+            <span><i style="background:repeating-linear-gradient(90deg,var(--navy-3) 0 6px,transparent 6px 10px)"></i>rotina contínua</span>
+          </div>
+          <div class="card-f"><b>As colunas são semanas.</b> Cada mês tem 4. A linha tracejada marca hoje. Marcos (◆) são as datas que não podem escorregar: contratar o editor na 1ª semana de setembro, publicar o vídeo longo na 2ª, e <b>fechar a captação até o fim de outubro</b>.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-h"><h3>Matriz RACI · quem responde por cada frente</h3><span class="sub">R responsável · A aprova · C consultado · I informado</span></div>
+          <div class="tw"><table class="raci">
+            <thead><tr><th>Frente</th><th class="c">Lúcio<small>chairman</small></th><th class="c">Gustavo<small>managing partner</small></th><th class="c">Alexandre<small>líder da operação</small></th><th class="c">Lucilene<small>gerência de operações</small></th><th class="c">Giva<small>marketing</small></th><th class="c">Conselheiros<small>4 cadeiras</small></th><th class="c">Deploy US<small>parceira</small></th></tr></thead>
+            <tbody>
+              <tr><td><b>Conta bancária e caixa</b><div class="sub-l">abertura, depósito e acesso</div></td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c">—</td><td class="c">—</td></tr>
+              <tr><td><b>Contábil, fiscal e Carta</b><div class="sub-l">registro societário e rotina</div></td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c"><span class="rc c">C</span></td><td class="c">—</td></tr>
+              <tr><td><b>Captação · rodada anjo</b><div class="sub-l">apresentação, reuniões e fechamento</div></td><td class="c"><span class="rc r">R</span><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc c">C</span></td><td class="c"><span class="rc i">I</span></td></tr>
+              <tr><td><b>Relação com as empresas</b><div class="sub-l">1º call, triagem e seleção</div></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc c">C</span></td><td class="c">—</td><td class="c"><span class="rc c">C</span></td><td class="c">—</td></tr>
+              <tr><td><b>Pitch Day · edições</b><div class="sub-l">R1, R2, R3 e o dia do evento</div></td><td class="c"><span class="rc c">C</span></td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc i">I</span></td></tr>
+              <tr><td><b>Identidade e canais</b><div class="sub-l">YouTube, Instagram e kit do editor</div></td><td class="c">—</td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c"><span class="rc c">C</span></td></tr>
+              <tr><td><b>Conteúdo e publicação</b><div class="sub-l">vídeo longo, cortes e calendário</div></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc a">A</span></td><td class="c">—</td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c">—</td></tr>
+              <tr><td><b>E-mail marketing e base</b><div class="sub-l">lista, ferramenta e campanhas</div></td><td class="c">—</td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc c">C</span></td><td class="c">—</td><td class="c">—</td></tr>
+              <tr><td><b>Comercial · programas Deploy</b><div class="sub-l">e-mail, apresentação e fechamento</div></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc r">R</span><span class="rc a">A</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c">—</td><td class="c"><span class="rc r">R</span></td></tr>
+              <tr><td><b>Programa 120 dias</b><div class="sub-l">8 encontros e experiência da turma</div></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc c">C</span></td></tr>
+              <tr><td><b>Decisão de investimento</b><div class="sub-l">encontro 8 · comitê</div></td><td class="c"><span class="rc a">A</span></td><td class="c"><span class="rc r">R</span></td><td class="c"><span class="rc c">C</span></td><td class="c"><span class="rc i">I</span></td><td class="c"><span class="rc c">C</span></td><td class="c"><span class="rc r">R</span></td><td class="c">—</td></tr>
+            </tbody>
+          </table></div>
+          <div class="card-f"><b>Uma regra por linha:</b> só existe <b>um A</b> por frente — quem aprova e responde se der errado. <b>R</b> é quem põe a mão. O <b>voto final no comitê de investimento é do chairman</b>, com parecer escrito das cadeiras de área.</div>
+        </div>
+      </section>
       <!-- ════ TAREFAS ════ -->
       <section class="sec" id="tarefas">
         <div class="sec-h">
           <div class="l">
-            <span class="kx">07 · Tarefas por time</span>
+            <span class="kx">07 · Tarefas da semana</span>
             <h2>O que sai esta semana — enxuto, sem duplicar o cronograma</h2>
-            <p>As rotinas contínuas moram no cronograma; aqui entram as tarefas da semana, por time. Crie com <b>+ nova tarefa</b>, delete com o <b>×</b>, marque quando fechar. A Weekly de Operação lê esta lista de cima a baixo.</p>
+            <p>Esta lista é o <b><a href="#cronograma" style="color:var(--gold-dp)">cronograma</a> aterrissado na semana</b>: cada tarefa aqui destrava uma entrega de lá. As rotinas contínuas ficam só no cronograma — aqui não se duplica nada. Crie com <b>+ nova tarefa</b>, delete com o <b>×</b>, marque quando fechar. A Weekly de Operação lê de cima a baixo.</p>
           </div>
           <div class="r"><button class="btn" id="resetWeek" type="button">↻ reiniciar semana</button></div>
         </div>
@@ -1394,6 +1449,8 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
   S.tasks   = S.tasks   || {};   // team -> [{id,tt,why,who,due}]
   S.metrics = S.metrics || {};   // m -> {v, ts}
   S.lib     = S.lib     || [];   // [{id,nm,tp,url}]
+  S.grows   = S.grows   || [];   // entregas criadas no cronograma
+  S.gedit   = S.gedit   || {};   // edições de entregas padrão
   function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch(e){} }
   function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
   function uid(){ return 'u' + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36); }
@@ -1649,6 +1706,200 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
     });
   }
 
+
+  /* ══ CRONOGRAMA · render + CRUD ══ */
+  var GSECS = [{k:'pd2',n:'Pitch Day · edição 2 · o que ainda sai deste fim de semana'},
+    {k:'fin',n:'Estrutura & Financeiro · a empresa de pé'},
+    {k:'idn',n:'Identidade & Canais · antes de publicar qualquer coisa'},
+    {k:'con',n:'Conteúdo & Publicação · a máquina começa a girar'},
+    {k:'com',n:'Comercial · programas Deploy · o braço de educação'},
+    {k:'cap',n:'Captação · rodada anjo · US$ 250 mil'},
+    {k:'cx',n:'Programa 120 dias · Customer Experience'},
+    {k:'pd3',n:'Pitch Day · edição 3 · dezembro'}];
+  var GDEF = [
+    {id:'g-r3',sec:'pd2',tt:'R3 · ensaio geral e impressão dos materiais',ss:'sex 28 · roteiro minuto a minuto na mão de todos',who:'GM',c1:4,c2:5,cls:'gold',lab:'R3',mk:0},
+    {id:'g-ed2',sec:'pd2',tt:'Edição 2 · 29–30 ago · Orlando',ss:'o dia inteiro está na seção Pitch Day · dia D',who:'AM',c1:4,c2:5,cls:'mk',lab:'evento',mk:1},
+    {id:'g-dec',sec:'pd2',tt:'Decupagem do material bruto',ss:'o fornecedor separa e nomeia tudo que foi gravado',who:'FV',c1:5,c2:6,cls:'',lab:'decupar',mk:0},
+    {id:'g-bank',sec:'fin',tt:'Abrir a conta bancária da RBG',ss:'conta operacional em nome da companhia',who:'GM',c1:4,c2:6,cls:'blue',lab:'conta',mk:0},
+    {id:'g-dep',sec:'fin',tt:'Depositar os custos do 1º mês',ss:'caixa de operação disponível para rodar',who:'GM',c1:5,c2:6,cls:'blue',lab:'depósito',mk:0},
+    {id:'g-acc',sec:'fin',tt:'Liberar acesso da conta para a Lucilene',ss:'usuário próprio + alçada definida',who:'GM',c1:5,c2:6,cls:'blue',lab:'acesso',mk:0},
+    {id:'g-cont',sec:'fin',tt:'Contratar contábil e fiscal · US$ 1.000/mês',ss:'abertura fiscal e rotina mensal',who:'LU',c1:5,c2:7,cls:'',lab:'contábil',mk:0},
+    {id:'g-carta',sec:'fin',tt:'Registro societário na Carta.com',ss:'SAFE, conselho e time no mesmo lugar',who:'GM',c1:5,c2:8,cls:'',lab:'carta',mk:0},
+    {id:'g-cx7',sec:'fin',tt:'Fechamento de caixa semanal',ss:'toda sexta, entra nos números da weekly',who:'LU',c1:6,c2:29,cls:'dotd',lab:'rotina semanal',mk:0},
+    {id:'g-dre',sec:'fin',tt:'DRE mensal + relatório mensal RBG',ss:'até 5 dias úteis após fechar o mês',who:'LU',c1:7,c2:29,cls:'dotd',lab:'rotina mensal',mk:0},
+    {id:'g-yt',sec:'idn',tt:'Auditar o canal do YouTube · criar se não existir',ss:'domínio do canal, e-mail e permissões da RBG',who:'GI',c1:4,c2:6,cls:'soft',lab:'auditar',mk:0},
+    {id:'g-id',sec:'idn',tt:'Nova identidade visual dos canais',ss:'aplicação da marca para vídeo e social',who:'GI',c1:5,c2:7,cls:'',lab:'identidade',mk:0},
+    {id:'g-idy',sec:'idn',tt:'Aplicar no YouTube · banner, avatar, thumbnails',ss:'canal pronto para receber o vídeo do Pitch Day',who:'GI',c1:6,c2:8,cls:'',lab:'aplicar',mk:0},
+    {id:'g-idi',sec:'idn',tt:'Aplicar no Instagram · bio, destaques e grid',ss:'mesma identidade nos dois canais',who:'GI',c1:6,c2:8,cls:'',lab:'aplicar',mk:0},
+    {id:'g-kit',sec:'idn',tt:'Kit de identidade para o editor',ss:'templates, tipografia, lower thirds, trilha',who:'GI',c1:6,c2:8,cls:'',lab:'kit',mk:0},
+    {id:'g-hire',sec:'idn',tt:'Contratar editor de vídeo / social media',ss:'1ª semana de setembro · edita e posta',who:'GI',c1:5,c2:6,cls:'mk',lab:'contratar',mk:1},
+    {id:'g-onb',sec:'idn',tt:'Onboarding do editor · acessos e 1ª pauta',ss:'entrega o kit e a fila de edição',who:'GI',c1:6,c2:7,cls:'',lab:'onboarding',mk:0},
+    {id:'g-long',sec:'con',tt:'Edição do vídeo longo do Pitch Day · 20–30 min',ss:'o Shark Tank completo — a peça principal',who:'GI',c1:5,c2:7,cls:'gold',lab:'editar longo',mk:0},
+    {id:'g-pub1',sec:'con',tt:'Publicar o vídeo longo no YouTube',ss:'2ª semana de setembro · abre o canal novo',who:'GI',c1:6,c2:7,cls:'mk',lab:'publicar',mk:1},
+    {id:'g-cuts',sec:'con',tt:'Edição dos 30+ cortes da edição 2',ss:'matéria-prima de dois meses de social',who:'GI',c1:6,c2:9,cls:'',lab:'editar cortes',mk:0},
+    {id:'g-post',sec:'con',tt:'Publicar cortes · 10 por semana',ss:'Reels, Shorts e TikTok — a partir da 3ª semana',who:'GI',c1:7,c2:29,cls:'dotd',lab:'rotina semanal',mk:0},
+    {id:'g-wk',sec:'con',tt:'Vídeo longo semanal · 1 por semana',ss:'ritmo de canal depois do vídeo do Pitch Day',who:'GI',c1:8,c2:29,cls:'dotd',lab:'rotina semanal',mk:0},
+    {id:'g-mail',sec:'con',tt:'Montar base e ferramenta de e-mail marketing',ss:'lista limpa, segmentada e com opt-in',who:'LU',c1:6,c2:8,cls:'',lab:'base',mk:0},
+    {id:'g-mail1',sec:'con',tt:'1ª campanha de e-mail marketing',ss:'conteúdo do Pitch Day para toda a base',who:'LU',c1:7,c2:8,cls:'gold',lab:'campanha',mk:0},
+    {id:'g-list',sec:'com',tt:'Lista dos não selecionados da edição 2',ss:'quem foi ao palco e não passou + inscritos',who:'LU',c1:5,c2:6,cls:'',lab:'lista',mk:0},
+    {id:'g-seq',sec:'com',tt:'Sequência de e-mail comercial · não selecionados',ss:'oferta só depois da decisão do palco',who:'LU',c1:5,c2:8,cls:'',lab:'e-mails',mk:0},
+    {id:'g-agen',sec:'com',tt:'Agendar apresentações do programa',ss:'call de 30 min para apresentar a Deploy',who:'LU',c1:6,c2:10,cls:'',lab:'agendar',mk:0},
+    {id:'g-fech',sec:'com',tt:'Apresentar e fechar os primeiros projetos',ss:'tradicionais US$ 5 mil · startups US$ 12 mil',who:'GM',c1:7,c2:13,cls:'gold',lab:'vender',mk:0},
+    {id:'g-meta',sec:'com',tt:'Meta: 5 projetos · US$ 13,75 mil de comissão',ss:'25% do faturado na Deploy',who:'GM',c1:13,c2:14,cls:'mk',lab:'meta',mk:1},
+    {id:'g-apr',sec:'cap',tt:'Montar a apresentação para investidores',ss:'tese, estrutura, números e uso dos recursos',who:'GM',c1:5,c2:7,cls:'',lab:'montar',mk:0},
+    {id:'g-alvo',sec:'cap',tt:'Lista de investidores-alvo',ss:'nome, ticket possível e quem apresenta',who:'GM',c1:6,c2:8,cls:'',lab:'lista',mk:0},
+    {id:'g-val',sec:'cap',tt:'Validar a apresentação com Lúcio e conselho',ss:'ensaio antes da primeira reunião real',who:'LS',c1:7,c2:8,cls:'',lab:'validar',mk:0},
+    {id:'g-reu',sec:'cap',tt:'Reuniões com investidores · abre a captação',ss:'Lúcio abre as portas, Gustavo conduz',who:'LS',c1:8,c2:12,cls:'blue',lab:'reuniões',mk:0},
+    {id:'g-dd',sec:'cap',tt:'Due diligence e negociação do SAFE',ss:'documentos, cap de valuation e condições',who:'GM',c1:10,c2:13,cls:'blue',lab:'negociar',mk:0},
+    {id:'g-close',sec:'cap',tt:'Fechar a captação · US$ 250 mil',ss:'meta: fim de outubro',who:'GM',c1:12,c2:13,cls:'mk',lab:'fechar',mk:1},
+    {id:'g-safe',sec:'cap',tt:'SAFE assinado e registrado na Carta',ss:'dinheiro em conta, investidor no painel',who:'GM',c1:13,c2:14,cls:'blue',lab:'assinar',mk:0},
+    {id:'g-onbd',sec:'cx',tt:'Onboarding das 2 aceleradas',ss:'boas-vindas, acessos e expectativa dos 120 dias',who:'LU',c1:5,c2:6,cls:'gold',lab:'onboarding',mk:0},
+    {id:'g-ag8',sec:'cx',tt:'Agendar os 8 encontros quinzenais',ss:'agenda fechada com cada conselheiro',who:'LU',c1:5,c2:6,cls:'',lab:'agendar',mk:0},
+    {id:'g-enc',sec:'cx',tt:'Encontros 1 a 8 · quinzenais, um por conselheiro',ss:'a empresa traz número, o conselheiro conduz',who:'AM',c1:6,c2:21,cls:'',lab:'120 dias',mk:0},
+    {id:'g-inv',sec:'cx',tt:'Encontro 8 · decisão de investimento',ss:'comitê colegiado — nenhum cheque antes',who:'AM',c1:20,c2:21,cls:'mk',lab:'comitê',mk:1},
+    {id:'g-r1',sec:'pd3',tt:'R1 · kickoff da edição 3',ss:'data, banca, meta de inscrições e orçamento',who:'GM',c1:9,c2:10,cls:'soft',lab:'R1',mk:0},
+    {id:'g-div',sec:'pd3',tt:'Divulgação e inscrições da edição 3',ss:'agora sim entra tráfego pago no funil',who:'GI',c1:10,c2:17,cls:'',lab:'divulgar',mk:0},
+    {id:'g-r2',sec:'pd3',tt:'R2 · produção e divulgação',ss:'palco, cenário e mapa de gravação',who:'GM',c1:13,c2:14,cls:'soft',lab:'R2',mk:0},
+    {id:'g-tri',sec:'pd3',tt:'Triagem e seleção das 10 empresas',ss:'calls de triagem e escolha da turma',who:'AM',c1:14,c2:17,cls:'',lab:'triagem',mk:0},
+    {id:'g-r3b',sec:'pd3',tt:'R3 · ensaio geral',ss:'checklist final e roteiro do dia',who:'GM',c1:17,c2:18,cls:'soft',lab:'R3',mk:0},
+    {id:'g-ed3',sec:'pd3',tt:'Edição 3 · dezembro',ss:'fecha o ano com a terceira turma',who:'AM',c1:18,c2:19,cls:'mk',lab:'evento',mk:1}
+  ];
+  var MESES = ['Ago','Set','Out','Nov','Dez','Jan','Fev'];
+  var TIPOS = [['','Trabalho'],['gold','Entrega-chave'],['mk','Marco'],['blue','Capital'],['soft','Planejamento'],['dotd','Rotina contínua']];
+  var GNAMES = {GM:'GM', LU:'LU', AM:'AM', GI:'GI', LS:'LS', FV:'FV'};
+  var gFilter = 'all';
+
+  function gAll(){
+    var out = [];
+    GDEF.forEach(function(r){ if (!S.hidden[r.id]) out.push(S.gedit[r.id] ? Object.assign({}, r, S.gedit[r.id]) : r); });
+    (S.grows || []).forEach(function(r){ out.push(r); });
+    return out;
+  }
+  function colLabel(c){ var i = c - 1; return MESES[Math.floor(i / 4)] + ' · sem ' + ((i % 4) + 1); }
+  function gRowHTML(r){
+    var bar = 'bar' + (r.cls ? ' ' + r.cls : '');
+    var wide = (r.c2 - r.c1) >= 2 || r.cls === 'mk';
+    return '<div class="gnt-gr' + (r.mk ? ' marco' : '') + '" data-g="' + r.id + '" data-who="' + r.who + '">'
+      + '<div class="lbl"><input type="checkbox" class="ck" id="' + r.id + '">'
+      + '<span class="avx' + (r.who === 'FV' ? ' alt' : '') + '">' + (GNAMES[r.who] || r.who) + '</span>'
+      + '<div class="tx"><span class="tt">' + esc(r.tt) + '</span><span class="ss">' + esc(r.ss || '') + '</span></div>'
+      + '<span class="acts"><button type="button" class="ed" title="Editar" aria-label="Editar">&#9998;</button>'
+      + '<button type="button" class="dl" title="Remover" aria-label="Remover">&times;</button></span></div>'
+      + '<div class="trk"><i class="' + bar + '" style="grid-column:' + r.c1 + '/' + r.c2 + '">'
+      + (wide ? '<span class="bl">' + esc(r.lab || '') + '</span>' : '') + '</i></div></div>';
+  }
+  function renderGantt(){
+    var body = document.getElementById('gntBody');
+    if (!body) return;
+    var rows = gAll(), html = '';
+    GSECS.forEach(function(sc){
+      var rs = rows.filter(function(r){ return r.sec === sc.k; });
+      html += '<div class="gnt-sec">' + sc.n + '</div>';
+      rs.forEach(function(r){ html += gRowHTML(r); });
+      html += '<div class="gnt-add" data-sec="' + sc.k + '"><div class="a1"><button type="button">+ nova entrega</button></div><div></div></div>';
+    });
+    body.innerHTML = html;
+    bindChecks(); applyGFilter(); refresh();
+    var gc = document.getElementById('gCount');
+    if (gc){
+      var done = rows.filter(function(r){ return S.checks[r.id]; }).length;
+      gc.innerHTML = '<b>' + done + '</b> de ' + rows.length + ' entregas concluídas';
+    }
+  }
+  function applyGFilter(){
+    document.querySelectorAll('.gnt-gr[data-who]').forEach(function(r){
+      r.style.display = (gFilter === 'all' || r.dataset.who === gFilter) ? '' : 'none';
+    });
+    document.querySelectorAll('.gnt-sec, .gnt-add').forEach(function(el){
+      el.style.display = (gFilter === 'all') ? '' : 'none';
+    });
+  }
+  document.querySelectorAll('.gchip').forEach(function(c){
+    c.addEventListener('click', function(){
+      document.querySelectorAll('.gchip').forEach(function(o){ o.setAttribute('aria-pressed', String(o === c)); });
+      gFilter = c.dataset.gf; applyGFilter();
+    });
+  });
+
+  /* ── formulário de entrega ── */
+  function gFormHTML(){
+    function opts(list, sel, useIdx){
+      return list.map(function(o, i){
+        var v = useIdx ? i : o[0], t = useIdx ? o : o[1];
+        return '<option value="' + v + '"' + (String(v) === String(sel) ? ' selected' : '') + '>' + t + '</option>';
+      }).join('');
+    }
+    return '<form class="gform" hidden>'
+      + '<div class="r1"><div><label>Entrega</label><input type="text" name="tt" placeholder="Ex.: Abrir a conta bancária da RBG" required></div>'
+      + '<div><label>Detalhe</label><input type="text" name="ss" placeholder="Uma linha de contexto"></div></div>'
+      + '<div class="r2">'
+      + '<div><label>Responsável</label><select name="who">' + Object.keys(GNAMES).map(function(k){ return '<option value="' + k + '">' + k + '</option>'; }).join('') + '</select></div>'
+      + '<div><label>Mês início</label><select name="m1">' + opts(MESES, 0, true) + '</select></div>'
+      + '<div><label>Sem.</label><select name="w1"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>'
+      + '<div><label>Mês fim</label><select name="m2">' + opts(MESES, 0, true) + '</select></div>'
+      + '<div><label>Sem.</label><select name="w2"><option>1</option><option>2</option><option>3</option><option>4</option></select></div>'
+      + '<div><label>Tipo</label><select name="cls">' + opts(TIPOS, '', false) + '</select></div>'
+      + '</div>'
+      + '<div class="r3"><button type="submit" class="sv2">Salvar</button><button type="button" class="cn2">cancelar</button><span class="warn2"></span></div>'
+      + '</form>';
+  }
+  function openGForm(host, sec, row){
+    document.querySelectorAll('.gform').forEach(function(f){ f.remove(); });
+    host.insertAdjacentHTML('afterend', gFormHTML());
+    var f = host.nextElementSibling;
+    f.hidden = false;
+    f.dataset.sec = sec;
+    if (row){
+      f.dataset.eid = row.id;
+      f.tt.value = row.tt; f.ss.value = row.ss || ''; f.who.value = row.who;
+      f.m1.value = Math.floor((row.c1 - 1) / 4); f.w1.value = ((row.c1 - 1) % 4) + 1;
+      var e = row.c2 - 1;
+      f.m2.value = Math.min(6, Math.floor((e - 1) / 4)); f.w2.value = (((e - 1) % 4) + 1);
+      f.cls.value = row.cls || '';
+    }
+    f.tt.focus();
+    f.querySelector('.cn2').addEventListener('click', function(){ f.remove(); });
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var c1 = (+f.m1.value) * 4 + (+f.w1.value);
+      var c2 = (+f.m2.value) * 4 + (+f.w2.value) + 1;
+      if (c2 <= c1){ f.querySelector('.warn2').textContent = 'o fim precisa ser igual ou depois do início'; return; }
+      var cls = f.cls.value;
+      var data = { tt: f.tt.value.trim(), ss: f.ss.value.trim(), who: f.who.value, c1: c1, c2: c2,
+                   cls: cls, lab: f.tt.value.trim().split(' ').slice(0, 2).join(' ').toLowerCase(), mk: cls === 'mk' ? 1 : 0 };
+      if (!data.tt) return;
+      var eid = f.dataset.eid;
+      if (eid){
+        if (GDEF.some(function(r){ return r.id === eid; })) S.gedit[eid] = data;
+        else S.grows = (S.grows || []).map(function(r){ return r.id === eid ? Object.assign(r, data) : r; });
+      } else {
+        data.id = uid(); data.sec = f.dataset.sec;
+        (S.grows = S.grows || []).push(data);
+      }
+      save(); f.remove(); renderGantt();
+    });
+  }
+  document.addEventListener('click', function(e){
+    var add = e.target.closest('.gnt-add button');
+    if (add){ var box = add.closest('.gnt-add'); openGForm(box, box.dataset.sec, null); return; }
+    var ed = e.target.closest('.gnt-gr .ed');
+    if (ed){
+      var row = ed.closest('.gnt-gr'), id = row.dataset.g;
+      var r = gAll().filter(function(x){ return x.id === id; })[0];
+      if (r) openGForm(row, r.sec, r);
+      return;
+    }
+    var dl = e.target.closest('.gnt-gr .dl');
+    if (dl){
+      var row2 = dl.closest('.gnt-gr'), id2 = row2.dataset.g;
+      if (!confirm('Remover esta entrega do cronograma?')) return;
+      if (GDEF.some(function(r){ return r.id === id2; })) S.hidden[id2] = 1;
+      else S.grows = (S.grows || []).filter(function(r){ return r.id !== id2; });
+      delete S.checks[id2]; delete S.gedit[id2];
+      save(); renderGantt();
+    }
+  });
+
   /* ══ IMPRESSÃO · materiais do dia · identidade RBG ══ */
   var FONTS = (function(){
     var st = document.querySelector('style');
@@ -1841,6 +2092,6 @@ tr.row.open .exp{background:var(--navy);border-color:var(--navy);color:#fff}
     secs.forEach(function(s){ spy.observe(s); });
   }
 
-  renderTasks(); renderMetrics(); renderLib();
+  renderTasks(); renderGantt(); renderMetrics(); renderLib();
 })();
 </script>
