@@ -399,11 +399,6 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
       </span>
     </div>
 
-    <div class="notice">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
-      <p><b>Isto é uma planilha, não uma imagem.</b> Clique em qualquer número e edite — totais, resultado, caixa acumulado, gráfico e blocos recalculam na hora. Dá para renomear linhas, criar novas (<b>+ linha</b> em cada bloco) e remover (<b>×</b>). O que você mexer fica salvo neste navegador; <b>restaurar originais</b> volta tudo. Período: os seis meses do cronograma, <b>setembro de 2026 a fevereiro de 2027</b> — agosto não entra porque a operação paga começa em setembro.</p>
-    </div>
-
     <div class="content">
 
       <section class="sec">
@@ -442,10 +437,7 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
         <div class="sec-h"><div class="l"><span class="kx">02 · Mês a mês</span><h2>Onde cada dólar entra e sai</h2>
         <p>Valores em dólar. Saídas entre parênteses. A última linha é o caixa acumulado partindo de zero em 1º de setembro.</p></div></div>
         <div class="card">
-          <div class="tbar2">
-            <span class="hint2">Clique num número para editar · Enter confirma</span>
-            <button type="button" class="btn rst" id="rstBtn">&#8635; restaurar originais</button>
-          </div>
+          <div class="tbar2"><button type="button" class="btn rst" id="rstBtn">&#8635; restaurar originais</button></div>
           <div class="tw"><table class="dremes" id="dreTable"></table></div>
           <div class="card-f"><b>O capital de portfólio não passa por aqui.</b> Dos US$ 250 mil da rodada, US$ 200 mil viram portfólio e entram no balanço — só os US$ 50 mil de taxa de administração aparecem nesta DRE.</div>
         </div>
@@ -468,55 +460,9 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
       </section>
 
       <section class="sec">
-        <div class="sec-h"><div class="l"><span class="kx">05 · Premissas</span><h2>O que está por trás de cada número</h2></div></div>
-        <div class="cols c-2">
-          <div class="card">
-            <div class="card-h"><h3>Confirmado por você</h3><span class="sub">23 ago 2026</span></div>
-            <div class="card-b"><table><tbody>
-              <tr><td>Software</td><td class="r"><b>US$ 500/mês</b></td></tr>
-              <tr><td>Claude Code</td><td class="r"><b>US$ 100/mês</b></td></tr>
-              <tr><td>Carta.com</td><td class="r"><b>sem custo agora</b></td></tr>
-              <tr><td>Tráfego pago</td><td class="r"><b>US$ 500/mês</b></td></tr>
-              <tr><td>Social media</td><td class="r"><b>US$ 800/mês</b></td></tr>
-              <tr><td>Editor de vídeo</td><td class="r"><b>US$ 500/mês</b></td></tr>
-              <tr><td>Produção audiovisual · diária</td><td class="r"><b>US$ 600 · só em dez</b></td></tr>
-              <tr><td>Lucilene</td><td class="r"><b>US$ 800/mês</b></td></tr>
-              <tr><td>Gustavo · managing partner</td><td class="r"><b>US$ 2.000/mês</b></td></tr>
-              <tr><td>Pitch Day de dezembro</td><td class="r"><b>teto de US$ 3.000</b></td></tr>
-              <tr><td>Pitch Day de agosto</td><td class="r"><b>fora do período</b></td></tr>
-            </tbody></table></div>
-          </div>
-          <div class="card" style="border-color:var(--warn-line)">
-            <div class="card-h"><h3>Assumido por mim — confirme</h3><span class="sub">muda a conta se estiver errado</span></div>
-            <div class="card-b"><table><tbody>
-              <tr><td><b>Contábil e fiscal · US$ 1.000/mês</b><div class="sub-l">você mandou separar a linha mas não deu o valor — mantive a premissa que já estava no deck</div></td><td class="r"><b>6.000</b></td></tr>
-              <tr><td><b>Taxa de administração entra em novembro</b><div class="sub-l">o cronograma fecha a captação no fim de outubro e o SAFE é assinado na 1ª semana de novembro — é isso que cria o buraco</div></td><td class="r"><b>50.000</b></td></tr>
-              <tr><td><b>Comissão: 1 projeto por mês, de outubro a fevereiro</b><div class="sub-l">5 projetos × US$ 2.750 (25% do ticket médio de US$ 11 mil)</div></td><td class="r"><b>13.750</b></td></tr>
-              <tr><td><b>Caixa começa em zero</b><div class="sub-l">sem saldo herdado de agosto</div></td><td class="r"><b>0</b></td></tr>
-            </tbody></table></div>
-            <div class="card-f">Os três primeiros mexem direto no resultado — e agora você pode testar cada um editando a tabela.</div>
-          </div>
-        </div>
-      </section>
-
-      <section class="sec">
-        <div class="card">
-          <div class="card-h"><h3>O que muda em relação ao slide 20 do deck</h3><span class="sub">acompanha as suas edições</span></div>
-          <div class="tw"><table>
-            <thead><tr><th>Linha</th><th class="r">Deck · slide 20</th><th class="r">Esta planilha</th></tr></thead>
-            <tbody>
-              <tr><td>Período</td><td class="r">ago → fev</td><td class="r">set → fev</td></tr>
-              <tr><td>Entradas</td><td class="r">63.750</td><td class="r" id="c-ent">—</td></tr>
-              <tr><td>Total comp management</td><td class="r">(12.000)</td><td class="r" id="c-mgmt">—</td></tr>
-              <tr><td>Time operacional</td><td class="r">(9.000)</td><td class="r" id="c-time">—</td></tr>
-              <tr><td>Conteúdo</td><td class="r">(13.000)</td><td class="r" id="c-cont">—</td></tr>
-              <tr><td>Estrutura</td><td class="r">(9.000)</td><td class="r" id="c-est">—</td></tr>
-              <tr><td>Tráfego e ferramentas</td><td class="r">(4.000)</td><td class="r" id="c-traf">—</td></tr>
-              <tr><td>Eventos</td><td class="r">(4.000)</td><td class="r" id="c-evt">—</td></tr>
-              <tr class="row"><td><b>Resultado</b></td><td class="r"><b>12.750</b></td><td class="r" id="c-res">—</td></tr>
-            </tbody>
-          </table></div>
-          <div class="card-f"><b>O deck ainda mostra os números antigos.</b> Quando você fechar os valores aqui, eu propago para o slide 20, para o slide 24 (uso dos recursos) e para o resumo — mas isso mexe no material que vai para investidor, então prefiro confirmar antes.</div>
+        <div class="note" style="background:var(--paper);border:1px solid var(--rule);border-left:2px solid var(--gold);border-radius:5px;padding:14px 18px;font-size:12.4px;color:var(--ink-3);line-height:1.65">
+          <b style="color:var(--ink-2)">Três premissas de calendário</b> — não são custos, são datas, e mudam o caixa se estiverem erradas:
+          a <b>taxa de administração entra em novembro</b> (quando o SAFE é assinado), a <b>comissão da Deploy entra a 1 projeto por mês</b> de outubro a fevereiro (5 × US$ 2.750) e o <b>caixa começa em zero</b> em 1º de setembro.
         </div>
       </section>
 
@@ -546,10 +492,10 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
     {id:'guga',g:'pes',nm:'Gustavo Marion',sb:'managing partner · US$ 2.000/mês',v:[2000,2000,2000,2000,2000,2000]},
     {id:'luci',g:'pes',nm:'Lucilene',sb:'gerência de operações · US$ 800/mês',v:[800,800,800,800,800,800]},
     {id:'socm',g:'con',nm:'Social media',sb:'posta e cria conteúdo · US$ 800/mês',v:[800,800,800,800,800,800]},
-    {id:'edit',g:'con',nm:'Editor de vídeo',sb:'edição do longo e dos cortes · US$ 500/mês',v:[500,500,500,500,500,500]},
+    {id:'edit',g:'con',nm:'Editor de vídeo',sb:'edição do longo e dos cortes · US$ 600/mês',v:[600,600,600,600,600,600]},
     {id:'audi',g:'con',nm:'Produção audiovisual · diária',sb:'1 diária no evento de dezembro · US$ 600',v:[0,0,0,600,0,0]},
-    {id:'cont',g:'est',nm:'Contábil e fiscal',sb:'rotina mensal · US$ 1.000/mês',v:[1000,1000,1000,1000,1000,1000]},
-    {id:'soft',g:'est',nm:'Software',sb:'sistema próprio e ferramentas · US$ 500/mês',v:[500,500,500,500,500,500]},
+    {id:'cont',g:'est',nm:'Contábil e fiscal',sb:'rotina mensal · US$ 500/mês',v:[500,500,500,500,500,500]},
+    {id:'prog',g:'est',nm:'Suporte programador',sb:'manutenção e evolução do sistema · US$ 400/mês',v:[400,400,400,400,400,400]},
     {id:'code',g:'est',nm:'Claude Code',sb:'US$ 100/mês',v:[100,100,100,100,100,100]},
     {id:'cart',g:'est',nm:'Carta.com',sb:'sem custo neste período',v:[0,0,0,0,0,0]},
     {id:'traf',g:'aqu',nm:'Tráfego pago',sb:'US$ 500/mês nos seis meses',v:[500,500,500,500,500,500]},
@@ -667,16 +613,6 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
       }).join('');
     }
     /* comparativo */
-    function lineTot(id){ var l=c.L.filter(function(x){return x.id===id;})[0]; return l?sum(l.v):0; }
-    function put(el,v){ var e=document.getElementById(el); if(e) e.textContent=v?'('+v.toLocaleString('pt-BR')+')':'—'; }
-    put('c-mgmt', lineTot('guga'));
-    put('c-time', sum(c.byg.pes||[0]) - lineTot('guga'));
-    put('c-cont', sum(c.byg.con||[0]));
-    put('c-est',  sum(c.byg.est||[0]));
-    put('c-traf', sum(c.byg.aqu||[0]));
-    put('c-evt',  sum(c.byg.evt||[0]));
-    var cr=document.getElementById('c-res'); if(cr) cr.innerHTML='<b>'+fmt(resu)+'</b>';
-    var ce=document.getElementById('c-ent'); if(ce) ce.textContent=ents.toLocaleString('pt-BR');
   }
 
   /* ── edição ── */
