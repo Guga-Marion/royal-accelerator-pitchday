@@ -417,22 +417,6 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
         </div>
       </section>
 
-      <section class="sec" id="alertBox" hidden>
-        <div class="alert">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l9.5 17h-19z"/><path d="M12 9v5M12 17.5h.01"/></svg>
-          <div>
-            <h4 id="alTitle">—</h4>
-            <p id="alBody">—</p>
-            <p>Três saídas, em ordem de preferência:</p>
-            <ul>
-              <li><b>Antecipar o fechamento da rodada</b> — se a taxa entrar em outubro em vez de novembro, sobra só setembro descoberto. Mude a linha da taxa na tabela e veja o efeito.</li>
-              <li><b>Aporte-ponte do chairman</b>, devolvido quando a taxa entrar.</li>
-              <li><b>Escalonar as contratações</b> — segurar social media e editor até outubro corta US$ 2.600, mas atrasa o conteúdo, que é o topo do funil inteiro.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section class="sec">
         <div class="sec-h"><div class="l"><span class="kx">02 · Mês a mês</span><h2>Onde cada dólar entra e sai</h2>
         <p>Valores em dólar. Saídas entre parênteses. A última linha é o caixa acumulado partindo de zero em 1º de setembro.</p></div></div>
@@ -580,16 +564,6 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
     set('res',fmt(resu)); set('fixo',fixo.toLocaleString('pt-BR'));
     set('pior',fmt(Math.min(0,pior))); set('verm',String(verm));
     set('pctres', ents? Math.round(resu/ents*100)+'%' : '—');
-    /* alerta */
-    var al=document.getElementById('alertBox');
-    if(al){
-      if(verm>0){
-        al.hidden=false;
-        var meses=[]; c.acc.forEach(function(x,i){ if(x<0) meses.push(M[i]); });
-        document.getElementById('alTitle').textContent='Buraco de caixa em '+meses.join(' e ').toLowerCase()+' — US$ '+Math.abs(pior).toLocaleString('pt-BR');
-        document.getElementById('alBody').innerHTML='O plano fecha no total, mas <b>não fecha no tempo</b>. Enquanto a taxa de administração não entra, a empresa gasta <b>US$ '+fixo.toLocaleString('pt-BR')+'/mês</b> e recebe quase nada — o caixa acumulado chega a <b>('+Math.abs(pior).toLocaleString('pt-BR')+')</b>.';
-      } else { al.hidden=true; }
-    }
     /* gráfico */
     var mx=Math.max(0,Math.max.apply(null,c.acc)), mn=Math.min(0,Math.min.apply(null,c.acc));
     var rng=(mx-mn)||1, H=210, upH=H*(mx/rng), dnH=H*(Math.abs(mn)/rng);
