@@ -1,0 +1,42 @@
+:root{
+  --navy:#08132B; --navy-2:#0C1B3D; --navy-3:#16295A;
+  --gold:#C2922A; --gold-lt:#D4A437; --gold-hi:#F0C44D; --gold-dp:#A87C18;
+  --on:#F5F2E8; --on-2:#A9B4D0; --on-3:#6E7CA2; --on-rule:#1D2C50;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden}
+body{
+  font-family:'Inter',sans-serif;color:var(--on);
+  background:
+    radial-gradient(120% 90% at 78% -10%, rgba(194,146,42,.16), transparent 55%),
+    radial-gradient(90% 70% at 12% 110%, rgba(22,41,90,.85), transparent 60%),
+    linear-gradient(158deg, var(--navy-2), var(--navy) 62%);
+}
+.serif{font-family:'Cormorant Garamond',serif}
+.mono{font-family:'JetBrains Mono',monospace}
+.eb{font-family:'JetBrains Mono',monospace;text-transform:uppercase;
+  letter-spacing:.42em;color:var(--gold-lt);font-weight:500}
+.goldtext{background:linear-gradient(112deg,#F0C44D 8%,#D4A437 42%,#C2922A 72%,#A87C18);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0 34px,var(--on-rule) 34px)}
+.chip{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.18em;
+  border:1px solid var(--on-rule);color:var(--on-2);border-radius:999px;
+  padding:.62em 1.25em;font-size:15px;white-space:nowrap}
+.chip b{color:var(--gold-hi);font-weight:600}
+.datebox{display:flex;align-items:stretch;border:1px solid rgba(194,146,42,.55);
+  background:rgba(8,19,43,.55);backdrop-filter:blur(2px)}
+.datebox .d{padding:.45em .9em;text-align:center;border-right:1px solid rgba(194,146,42,.35);
+  display:flex;flex-direction:column;justify-content:center}
+.datebox .d .n{font-family:'Cormorant Garamond',serif;font-weight:700;line-height:.95;color:var(--on)}
+.datebox .d .m{font-family:'JetBrains Mono',monospace;letter-spacing:.3em;color:var(--gold-lt);
+  text-transform:uppercase;margin-top:.5em}
+.datebox .loc{display:flex;flex-direction:column;justify-content:center;padding:.45em 1.1em}
+.datebox .loc .c{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;color:var(--gold-hi);line-height:1}
+.datebox .loc .s{font-family:'JetBrains Mono',monospace;letter-spacing:.26em;color:var(--on-2);
+  text-transform:uppercase;margin-top:.55em}
+.logo-lock{display:flex;align-items:center;gap:.55em}
+.logo-lock img{display:block}
+.foot{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.3em;
+  color:var(--on-3);display:flex;align-items:center;gap:1.2em}
+.foot b{color:var(--gold-lt);font-weight:500}
+.foot .dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.7}

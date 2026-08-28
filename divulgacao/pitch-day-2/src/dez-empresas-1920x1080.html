@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="base.css">
+<style>
+body{width:1920px;height:1080px;position:relative;overflow:hidden}
+.photo{position:absolute;inset:0;
+  background:url('../../../assets/conselho-pitch-day.jpg') 78% 30%/cover no-repeat}
+.photo::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(94deg, #08132B 0 34%, rgba(8,19,43,.94) 46%, rgba(8,19,43,.55) 62%, rgba(8,19,43,.18) 82%, rgba(8,19,43,.45))}
+.photo::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(8,19,43,.85), rgba(8,19,43,0) 30% 80%, rgba(8,19,43,.5))}
+.glow{position:absolute;left:-10%;top:-20%;width:60%;height:80%;
+  background:radial-gradient(closest-side, rgba(194,146,42,.14), transparent 70%)}
+.co{position:absolute;left:96px;top:0;bottom:0;width:880px;display:flex;
+  flex-direction:column;justify-content:center;z-index:2}
+.hd{position:absolute;top:46px;left:96px;right:96px;display:flex;
+  justify-content:space-between;align-items:center;z-index:3}
+.hd img{height:96px;filter:brightness(1.12)}
+.hd .ed{font-family:'JetBrains Mono',monospace;letter-spacing:.34em;color:var(--on-2);
+  text-transform:uppercase;font-size:16px;border:1px solid var(--on-rule);padding:.7em 1.3em;
+  background:rgba(8,19,43,.5)}
+.hd .ed b{color:var(--gold-hi);font-weight:600}
+.eb{font-size:17px}
+.big{display:flex;align-items:baseline;gap:22px;margin-top:8px}
+.big .n{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:252px;line-height:.86;font-variant-numeric:lining-nums;letter-spacing:-.01em}
+.big .t{font-family:'Cormorant Garamond',serif;font-size:58px;line-height:1.06;font-weight:600}
+.big .t i{color:var(--on-2)}
+.copy{margin-top:34px;font-size:23.5px;line-height:1.62;color:#C6CDDF;max-width:760px}
+.copy b{color:var(--gold-hi);font-weight:650}
+.copy strong{color:#fff;font-weight:650}
+.rule{width:520px;margin-top:36px}
+.datebox{margin-top:36px;align-self:flex-start}
+.datebox .d .n{font-size:64px}
+.datebox .d{min-width:118px}
+.datebox .d .m{font-size:12px}
+.datebox .loc .c{font-size:35px}
+.datebox .loc .s{font-size:11.5px}
+.ft{position:absolute;left:96px;bottom:38px;z-index:3}
+.ft .foot{font-size:13.5px;text-shadow:0 2px 14px rgba(8,19,43,.95)}
+</style></head><body>
+  <div class="photo"></div><div class="glow"></div>
+  <div class="hd">
+    <img src="logo-rbg-transp.png" alt="">
+    <div class="ed">PITCH DAY · <b>2ª EDIÇÃO</b></div>
+  </div>
+  <div class="co">
+    <span class="eb">Royal Business Growth · Pitch Day</span>
+    <div class="big">
+      <span class="n goldtext">10</span>
+      <span class="t">empresas<br><i>na disputa.</i></span>
+    </div>
+    <p class="copy"><strong>Dez empresas brasileiras selecionadas</strong> pitcham ao vivo para os
+      <b>investidores e conselheiros</b> da Royal Business Growth — concorrendo a uma
+      <b>aceleração</b> e à chance de serem <b>investidas</b>.</p>
+    <div class="rule"></div>
+    <div class="datebox">
+      <div class="d"><span class="n">29</span><span class="m">Agosto</span></div>
+      <div class="d"><span class="n">30</span><span class="m">Agosto</span></div>
+      <div class="loc"><span class="c">Orlando</span><span class="s">Flórida · 2026</span></div>
+    </div>
+  </div>
+  <div class="ft"><div class="foot"><span>Royal Business Growth</span><span class="dot"></span><b>Royal Accelerator × Deploy US</b></div></div>
+</body></html>

@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="base.css">
+<style>
+body{width:1080px;height:1350px;position:relative;overflow:hidden}
+.photo{position:absolute;inset:0;background:url('crop-6.jpg') center top/cover no-repeat}
+.photo::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(8,19,43,.94) 0%, rgba(8,19,43,.72) 16%, rgba(8,19,43,.3) 30%, rgba(8,19,43,.14) 40% 48%, rgba(8,19,43,.6) 68%, rgba(8,19,43,.97) 88%, #08132B 100%)}
+.photo::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(8,19,43,.72), rgba(8,19,43,0) 26% 62%, rgba(8,19,43,.9))}
+.hd{position:absolute;top:40px;left:56px;right:56px;display:flex;
+  justify-content:space-between;align-items:center;z-index:3}
+.hd img{height:84px;filter:brightness(1.15) drop-shadow(0 2px 12px rgba(8,19,43,.95))}
+.hd .ed{font-family:'JetBrains Mono',monospace;letter-spacing:.28em;color:#D7DCEA;
+  text-transform:uppercase;font-size:13.5px;border:1px solid rgba(245,242,232,.28);
+  padding:.7em 1.2em;background:rgba(8,19,43,.55)}
+.hd .ed b{color:var(--gold-hi);font-weight:600}
+.bd{position:absolute;left:64px;right:64px;bottom:64px;z-index:3}
+.eb{font-size:15px;letter-spacing:.4em}
+h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:88px;line-height:1;
+  margin-top:18px;color:var(--on)}
+.area{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:37px;
+  color:var(--gold-hi);font-weight:600;margin-top:12px;line-height:1.15}
+.rule{margin-top:30px}
+.meta{margin-top:26px;display:flex;align-items:center;gap:1.1em;
+  font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.26em;
+  font-size:14px;color:var(--on-2)}
+.meta b{color:var(--on);font-weight:500}
+.meta .dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.8}
+</style></head><body>
+  <div class="photo"></div>
+  <div class="hd">
+    <img src="logo-rbg-transp.png" alt="">
+    <div class="ed">PITCH DAY · <b>2ª EDIÇÃO</b></div>
+  </div>
+  <div class="bd">
+    <span class="eb">A banca do Pitch Day</span>
+    <h1>Kamila Adamatti</h1>
+    <div class="area">Conselheira de Liderança e Gestão Organizacional</div>
+    <div class="rule"></div>
+    <div class="meta"><b>29–30 AGO 2026</b><span class="dot"></span><span>Orlando · FL</span></div>
+  </div>
+</body></html>
