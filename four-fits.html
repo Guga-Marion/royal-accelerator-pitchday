@@ -64,8 +64,36 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
 .dhd{position:absolute;top:86px;left:110px;right:110px}
 .dhd h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:72px;
   line-height:1;margin-top:12px}
-.duo{position:absolute;left:110px;right:110px;top:266px;bottom:176px;display:grid;
+.duo{position:absolute;left:110px;right:110px;top:266px;bottom:96px;display:grid;
   grid-template-columns:1fr 1fr;gap:28px}
+.fitrow{display:flex;align-items:center;gap:16px}
+.pic{width:42px;height:42px;stroke:#D4A437;stroke-width:2.2;fill:none;flex:none;
+  stroke-linecap:round;stroke-linejoin:round}
+.excard{border:1px solid rgba(194,146,42,.35);background:rgba(194,146,42,.07);
+  padding:16px 20px;display:flex;gap:16px;align-items:flex-start}
+.excard .mg{width:46px;height:46px;border:1.5px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:25px;
+  color:var(--gold-hi);flex:none}
+.excard .xt{font-size:16.5px;color:var(--on-2);line-height:1.5}
+.excard .xt .xk{display:block;font-family:'JetBrains Mono',monospace;
+  text-transform:uppercase;letter-spacing:.2em;font-size:11.5px;color:var(--gold-lt);
+  margin-bottom:7px}
+.excard .xt b{color:var(--on);font-weight:600}
+.cic{width:26px;height:26px;stroke:#D4A437;stroke-width:2.4;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;vertical-align:-7px;margin-right:11px}
+.mchart{display:flex;flex-direction:column;gap:9px;padding:16px 30px;
+  border-bottom:1px solid var(--on-rule)}
+.mrow{display:flex;align-items:center;gap:12px}
+.mrow span{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--on-3);width:66px;flex:none}
+.mbar{flex:1;height:9px;background:rgba(29,44,80,.7)}
+.mbar i{display:block;height:100%;
+  background:linear-gradient(90deg,var(--gold-dp),var(--gold-hi));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1s cubic-bezier(.2,.7,.2,1) 1s}
+.sl.in .mbar i{transform:scaleX(1)}
+html.shot .mbar i{transition:none!important}
 .exbar{position:absolute;left:110px;right:110px;bottom:88px;
   border:1px solid rgba(194,146,42,.4);background:rgba(8,19,43,.6);
   padding:17px 28px;display:flex;align-items:center;gap:22px}
@@ -458,7 +486,7 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
     </div>
     <div class="duo">
       <div class="panel a" style="--d:.4s">
-        <span class="fit">Encaixe 1 · Market → Product</span>
+        <div class="fitrow"><svg class="pic" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="8.5"/><circle cx="24" cy="24" r="1.6"/></svg><span class="fit">Encaixe 1 · Market → Product</span></div>
         <div class="two">
           <div>
             <h4>Market</h4>
@@ -479,23 +507,26 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
             </ul>
           </div>
         </div>
-        <p class="brk">Se quebra: <b>você constrói o que ninguém pediu</b> — retenção zero, churn acima de 10% ao mês, ninguém indica.</p>
+        <div class="excard"><span class="mg">N</span><div class="xt">
+          <span class="xk">Case real · Nubank</span>
+          Dor: tarifas e burocracia dos bancões · persona: o jovem digital ·
+          promessa: <b>"conta grátis, no celular"</b> · hook: cartão aprovado em minutos.</div></div>
         <p class="law">"O mercado vem primeiro. Mapeie a dor — <b>depois</b> desenhe o produto."</p>
       </div>
       <div class="panel a" style="--d:.6s">
-        <span class="fit">Encaixe 2 · Product → Channel</span>
+        <div class="fitrow"><svg class="pic" viewBox="0 0 48 48"><path d="M6 25 42 10 31 41l-7.5-11.5zM23.5 29.5 42 10"/></svg><span class="fit">Encaixe 2 · Product → Channel</span></div>
         <div class="chrows">
           <div class="chrow"><span class="cn">Viralidade</span><span class="cr">valor rápido + efeito de rede<br><i>WhatsApp · Slack · Figma</i></span></div>
           <div class="chrow"><span class="cn">Mídia paga</span><span class="cr">valor rápido + compra transacional<br><i>Dollar Shave Club · DraftKings</i></span></div>
           <div class="chrow"><span class="cn">Conteúdo · SEO</span><span class="cr">usuários criam milhões de páginas<br><i>TripAdvisor · Reddit · Yelp</i></span></div>
         </div>
-        <p class="brk">Se quebra: <b>o canal rejeita o produto</b> — CAC maior que LTV e mídia cada vez mais cara.</p>
+        <div class="excard"><span class="mg">F</span><div class="xt">
+          <span class="xk">Case real · Figma</span>
+          Colaborativo por natureza: <b>cada convite ao time é aquisição</b>.
+          O produto é o próprio canal — viralidade desenhada, não sorte.</div></div>
         <p class="law">"Produto se constrói <b>para</b> o canal — nunca o contrário."</p>
       </div>
     </div>
-    <div class="exbar a" style="--d:.85s"><span class="tag">Case · HubSpot</span>
-      <p>Dor: <b>marketing fragmentado</b> no mid market → produto <b>all-in-one</b>, fácil de adotar →
-      canal desenhado junto: <span class="gd">conteúdo e inbound</span> (blog, ferramentas grátis) — não outbound.</p></div>
   </section>
 
   <!-- 5 · FIT 3 e 4 -->
@@ -506,7 +537,7 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
     </div>
     <div class="duo">
       <div class="panel a" style="--d:.4s">
-        <span class="fit">Encaixe 3 · Channel → Model</span>
+        <div class="fitrow"><svg class="pic" viewBox="0 0 48 48"><path d="M24 9v28M13 37h22M24 9 11 17m13-8 13 8"/><path d="M6 17h10l-5 9zM32 17h10l-5 9z"/></svg><span class="fit">Encaixe 3 · Channel → Model</span></div>
         <div>
           <div class="sbar">
             <div class="z ok">ticket baixo<br>CAC baixo</div>
@@ -520,11 +551,14 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
           </div>
         </div>
         <div class="forms">Formas de cobrar: <b>ads · freemium · transacional · trial · anual antecipado · por assento · por uso</b></div>
-        <p class="brk">Se quebra: <b>você escala prejuízo</b> — cresce a receita e cresce o buraco junto.</p>
+        <div class="excard"><span class="mg">P</span><div class="xt">
+          <span class="xk">Case real · Palantir × WhatsApp</span>
+          <b>Palantir:</b> contratos milionários bancam venda enterprise de CAC alto.
+          <b>WhatsApp:</b> CAC quase zero, ticket quase zero. <b>Os extremos funcionam — o meio quebra.</b></div></div>
         <p class="law">"O que o canal <b>custa</b> tem que caber no que o cliente <b>paga</b>."</p>
       </div>
       <div class="panel a" style="--d:.6s">
-        <span class="fit">Encaixe 4 · Model → Market</span>
+        <div class="fitrow"><svg class="pic" viewBox="0 0 48 48"><ellipse cx="24" cy="13" rx="14" ry="5.5"/><path d="M10 13v11c0 3 6.3 5.5 14 5.5S38 27 38 24V13M10 24v11c0 3 6.3 5.5 14 5.5S38 38 38 35V24"/></svg><span class="fit">Encaixe 4 · Model → Market</span></div>
         <div class="formula">ARPU × nº de clientes × % que você captura <b>≥ R$ 100M</b></div>
         <div class="dials">
           <div class="dial"><span class="dn">1</span><span>Cobrar <b>mais</b> por cliente</span></div>
@@ -534,14 +568,13 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
           <li class="ok">Funciona: <b>poucos clientes × ticket alto</b> (enterprise) ou <b>milhões × ticket baixo</b> (consumer)</li>
           <li class="no">Não funciona: <b>meio-termo</b> em que nenhuma das duas alavancas consegue 10×</li>
         </ul>
-        <p class="brk">Se quebra: <b>teto eterno de R$ 5–10M</b> — preço que o mercado não paga, ou mercado pequeno demais.</p>
+        <div class="excard"><span class="mg">M</span><div class="xt">
+          <span class="xk">Case real · Mailchimp</span>
+          Freemium viral: <b>ticket baixo × milhões de SMBs</b> passa de R$ 100M.
+          Se quebra o encaixe, o teto é eterno: <b>R$ 5–10M</b>.</div></div>
         <p class="law">"O preço tem que caber no bolso do mercado — e o mercado tem que ser <b>grande o suficiente</b> para importar."</p>
       </div>
     </div>
-    <div class="exbar a" style="--d:.85s"><span class="tag">Case · Mailchimp × Marketo</span>
-      <p><b>Mailchimp:</b> viral + freemium, ticket baixo × <span class="gd">milhões de SMBs</span>.
-      <b>Marketo:</b> outbound caro, ticket enterprise × <span class="gd">poucos clientes grandes</span>.
-      Combinações opostas — <b>as duas fecham a conta</b>.</p></div>
   </section>
 
   <!-- 6 · AS QUATRO PERGUNTAS -->
@@ -554,22 +587,22 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
     </div>
     <div class="grid">
       <div class="card a" style="--d:.35s"><span class="num">1</span>
-        <span class="fit">Market → Product</span>
+        <span class="fit"><svg class="cic" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><circle cx="24" cy="24" r="8.5"/><circle cx="24" cy="24" r="1.6"/></svg>Market → Product</span>
         <div class="q">Quem sente a dor — e o que você promete em uma frase?</div>
         <div class="br">Se quebra: <b>você constrói o que ninguém pediu</b> — retenção zero, churn acima de 10% ao mês.</div>
       </div>
       <div class="card a" style="--d:.5s"><span class="num">2</span>
-        <span class="fit">Product → Channel</span>
+        <span class="fit"><svg class="cic" viewBox="0 0 48 48"><path d="M6 25 42 10 31 41l-7.5-11.5zM23.5 29.5 42 10"/></svg>Product → Channel</span>
         <div class="q">Seu produto foi construído para o canal onde ele vai crescer?</div>
         <div class="br">Se quebra: <b>o canal rejeita o produto</b> — CAC maior que LTV, mídia cada vez mais cara.</div>
       </div>
       <div class="card a" style="--d:.65s"><span class="num">3</span>
-        <span class="fit">Channel → Model</span>
+        <span class="fit"><svg class="cic" viewBox="0 0 48 48"><path d="M24 9v28M13 37h22M24 9 11 17m13-8 13 8"/><path d="M6 17h10l-5 9zM32 17h10l-5 9z"/></svg>Channel → Model</span>
         <div class="q">O que o canal custa cabe no que o cliente paga?</div>
         <div class="br">Se quebra: <b>você escala prejuízo</b> — produto viral com preço enterprise, ou ticket baixo vendido via outbound.</div>
       </div>
       <div class="card a" style="--d:.8s"><span class="num">4</span>
-        <span class="fit">Model → Market</span>
+        <span class="fit"><svg class="cic" viewBox="0 0 48 48"><ellipse cx="24" cy="13" rx="14" ry="5.5"/><path d="M10 13v11c0 3 6.3 5.5 14 5.5S38 27 38 24V13M10 24v11c0 3 6.3 5.5 14 5.5S38 38 38 35V24"/></svg>Model → Market</span>
         <div class="q">O mercado paga esse preço — e é grande o suficiente?</div>
         <div class="br">Se quebra: <b>teto eterno de R$ 5–10M</b> — preço que o mercado não paga ou mercado pequeno demais.</div>
       </div>
@@ -587,6 +620,7 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
     <div class="cols">
       <div class="col a" style="--d:.45s">
         <h3>Marketo</h3>
+        <div class="mchart"><div class="mrow"><span>ticket</span><div class="mbar"><i style="width:92%"></i></div></div><div class="mrow"><span>clientes</span><div class="mbar"><i style="width:14%"></i></div></div></div>
         <div class="row"><span class="k">Mercado</span><span class="v"><b>Enterprise</b></span></div>
         <div class="row"><span class="k">Produto</span><span class="v">altamente customizável</span></div>
         <div class="row"><span class="k">Modelo</span><span class="v">contrato <b>alto</b></span></div>
@@ -594,6 +628,7 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
       </div>
       <div class="col mid a" style="--d:.6s">
         <h3>HubSpot</h3>
+        <div class="mchart"><div class="mrow"><span>ticket</span><div class="mbar"><i style="width:55%"></i></div></div><div class="mrow"><span>clientes</span><div class="mbar"><i style="width:55%"></i></div></div></div>
         <div class="row"><span class="k">Mercado</span><span class="v"><b>mid market</b></span></div>
         <div class="row"><span class="k">Produto</span><span class="v">all-in-one</span></div>
         <div class="row"><span class="k">Modelo</span><span class="v">contrato <b>médio</b></span></div>
@@ -601,6 +636,7 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
       </div>
       <div class="col a" style="--d:.75s">
         <h3>Mailchimp</h3>
+        <div class="mchart"><div class="mrow"><span>ticket</span><div class="mbar"><i style="width:14%"></i></div></div><div class="mrow"><span>clientes</span><div class="mbar"><i style="width:92%"></i></div></div></div>
         <div class="row"><span class="k">Mercado</span><span class="v"><b>SMB</b></span></div>
         <div class="row"><span class="k">Produto</span><span class="v">simples, self-service</span></div>
         <div class="row"><span class="k">Modelo</span><span class="v">freemium, ticket <b>baixo</b></span></div>
