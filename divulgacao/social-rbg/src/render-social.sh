@@ -19,4 +19,15 @@ shot social-capa-youtube          2560 1440
 shot social-capa-linkedin         1584 396
 shot social-capa-linkedin-empresa 1128 191
 
+mkdir -p "$OUT/posts-foto"
+shotp () { # nome largura altura  -> posts-foto/
+  echo "→ posts-foto/$1 (${2}x${3})"
+  "$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+    --virtual-time-budget=9000 \
+    --window-size=$2,$3 --screenshot="$OUT/posts-foto/$1-$2x$3.png" "file://$SRC/$1.html" >/dev/null 2>&1
+}
+shotp post-foto-feed     1080 1350
+shotp post-foto-quadrado 1080 1080
+shotp post-foto-story    1080 1920
+
 echo "PNGs em: $OUT"

@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:Inter,sans-serif;overflow:hidden;background:#08132B}
+.board{position:relative;overflow:hidden;color:#fff}
+.ph{position:absolute;inset:0;object-fit:cover;width:100%;height:100%}
+.veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,19,43,.78) 0%,rgba(8,19,43,.08) 34%,rgba(8,19,43,.05) 52%,rgba(8,19,43,.88) 82%,rgba(7,14,34,.96) 100%)}
+.veil2{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 42%,transparent 55%,rgba(8,19,43,.55) 100%)}
+.frame{position:absolute;border:1.5px solid rgba(212,164,55,.55);pointer-events:none}
+.lock{display:flex;align-items:center;gap:18px}
+.lock .emb{flex:none}
+.lk1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;color:#fff;line-height:1.02;letter-spacing:.01em}
+.lk2{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:600;color:#E9B73C;line-height:1.02}
+.eb{font-family:"JetBrains Mono",monospace;text-transform:uppercase;color:#F0C44D;font-weight:600}
+.tt{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;line-height:1.04;letter-spacing:-.01em}
+.tt em{font-style:italic;color:#F0C44D}
+.foot{font-family:"JetBrains Mono",monospace;text-transform:uppercase;color:#9AA6C4;font-weight:500}
+.foot b{color:#F0C44D;font-weight:600}</style>
+<style>.board{width:1080px;height:1350px;background:radial-gradient(95% 130% at 50% -10%,#21376a 0%,#10204a 36%,#0a1430 66%,#070e22 100%)}
+.strip{position:absolute;left:0;right:0;top:308px;height:600px;overflow:hidden;border-top:1.5px solid rgba(212,164,55,.55);border-bottom:1.5px solid rgba(212,164,55,.55)}
+.strip .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 82%}
+.strip .sveil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,19,43,.55) 0%,rgba(8,19,43,0) 30%,rgba(8,19,43,0) 62%,rgba(8,19,43,.6) 100%)}
+.frame{inset:34px}
+.top{position:absolute;top:96px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:26px}
+.lock .emb{width:76px;height:76px}.lk1,.lk2{font-size:33px}
+.ebt{font-family:"JetBrains Mono",monospace;text-transform:uppercase;color:#F0C44D;font-weight:600;font-size:15px;letter-spacing:.32em;display:flex;align-items:center;gap:15px}
+.ebt::before,.ebt::after{content:"";width:34px;height:1px;background:rgba(240,196,77,.7)}
+.low{position:absolute;left:76px;right:76px;bottom:104px;text-align:left}
+.eb{font-size:16px;letter-spacing:.3em;display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.eb::before{content:"";width:34px;height:1px;background:rgba(240,196,77,.7)}
+.tt{font-size:78px;max-width:14ch}
+.foot{position:absolute;left:76px;right:76px;bottom:44px;font-size:12.5px;letter-spacing:.18em}
+</style></head><body>
+<div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"><svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><path d="M29 60v-9l9-8 6 6 9-10 6 6 12-14v29z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="63.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></svg><div><span class="lk1">Royal Business</span> <span class="lk2">Growth</span></div></div>
+  <div class="ebt">Conselho Estratégico</div></div>
+  <div class="strip"><img class="ph" src="../../../assets/conselho-pitch-day.jpg" alt=""><div class="sveil"></div></div>
+  <div class="low">
+    <div class="tt">A banca que decide <em>quem acelera</em>.</div>
+  </div>
+  <div class="foot">Orlando · Flórida &nbsp;·&nbsp; <b>royalbusinessgrowth</b></div>
+</div>
+</body></html>

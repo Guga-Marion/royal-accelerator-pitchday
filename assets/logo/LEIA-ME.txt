@@ -1,0 +1,16 @@
+Royal Business Growth · Pacote de logo (identidade 2026)
+========================================================
+A marca: a coroa em tendencia de alta — coroa de tres pontas ascendentes,
+com tres joias que sao pontos de dado numa curva que so sobe.
+A barra e a base: estrutura antes de escala.
+
+svg/  vetor (escala infinita): emblema ouro / branco / navy
+png/  assinaturas prontas:
+  horizontal-navy | horizontal-transp   2752x1536  assinatura principal
+  vertical-navy   | vertical-transp     2000x2000  capas e aberturas
+  banner-navy     | banner-transp       2752x600   topos e rodapes
+  mono-branco     | mono-navy           2752x1536  monocromaticas
+  emblema-transp                        1600x1600  o selo isolado
+
+Regras completas: manual-marca.html · capitulo 01.
+Colorida so sobre navy. Fundo claro: apenas mono-navy.
