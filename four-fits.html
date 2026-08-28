@@ -64,8 +64,17 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
 .dhd{position:absolute;top:86px;left:110px;right:110px}
 .dhd h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:72px;
   line-height:1;margin-top:12px}
-.duo{position:absolute;left:110px;right:110px;top:266px;bottom:96px;display:grid;
+.duo{position:absolute;left:110px;right:110px;top:266px;bottom:176px;display:grid;
   grid-template-columns:1fr 1fr;gap:28px}
+.exbar{position:absolute;left:110px;right:110px;bottom:88px;
+  border:1px solid rgba(194,146,42,.4);background:rgba(8,19,43,.6);
+  padding:17px 28px;display:flex;align-items:center;gap:22px}
+.exbar .tag{font-family:'JetBrains Mono',monospace;text-transform:uppercase;
+  letter-spacing:.22em;font-size:12.5px;color:var(--gold-hi);white-space:nowrap;
+  border-right:1px solid rgba(194,146,42,.35);padding-right:22px}
+.exbar p{font-size:18.5px;color:var(--on-2);line-height:1.5}
+.exbar p b{color:var(--on);font-weight:600}
+.exbar p .gd{color:var(--gold-hi);font-weight:600}
 .panel{border:1px solid var(--on-rule);background:rgba(12,27,61,.55);padding:34px 40px;
   display:flex;flex-direction:column;gap:26px;position:relative;overflow:hidden}
 .brk{font-size:17.5px;color:var(--on-3);line-height:1.5}
@@ -158,11 +167,9 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
 #s1.in .photo .kenburns img{animation:kb 14s ease-out forwards}
 @keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
 #s1 .photo::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(8,19,43,.92), rgba(8,19,43,.35) 26%, rgba(8,19,43,0) 44%),
-             linear-gradient(90deg, var(--navy) 0%, rgba(8,19,43,.55) 34%, rgba(8,19,43,.18) 62%),
-             linear-gradient(0deg, rgba(8,19,43,.8), rgba(8,19,43,.1) 40%),
-             linear-gradient(270deg, rgba(8,19,43,.35), rgba(8,19,43,.12) 40%),
-             rgba(12,27,61,.18)}
+  background:linear-gradient(180deg, rgba(8,19,43,.85), rgba(8,19,43,.25) 24%, rgba(8,19,43,0) 40%),
+             linear-gradient(90deg, var(--navy) 0%, rgba(8,19,43,.38) 30%, rgba(8,19,43,.05) 58%),
+             linear-gradient(0deg, rgba(8,19,43,.55), rgba(8,19,43,0) 34%)}
 #s1 .co{position:absolute;left:110px;top:0;bottom:0;width:52%;display:flex;
   flex-direction:column;justify-content:center;z-index:2}
 #s1 .logo{position:absolute;top:44px;left:110px;height:100px;filter:brightness(1.12);z-index:3}
@@ -486,6 +493,9 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
         <p class="law">"Produto se constrói <b>para</b> o canal — nunca o contrário."</p>
       </div>
     </div>
+    <div class="exbar a" style="--d:.85s"><span class="tag">Case · HubSpot</span>
+      <p>Dor: <b>marketing fragmentado</b> no mid market → produto <b>all-in-one</b>, fácil de adotar →
+      canal desenhado junto: <span class="gd">conteúdo e inbound</span> (blog, ferramentas grátis) — não outbound.</p></div>
   </section>
 
   <!-- 5 · FIT 3 e 4 -->
@@ -528,6 +538,10 @@ html.shot #s8.in .tick path{stroke-dashoffset:0}
         <p class="law">"O preço tem que caber no bolso do mercado — e o mercado tem que ser <b>grande o suficiente</b> para importar."</p>
       </div>
     </div>
+    <div class="exbar a" style="--d:.85s"><span class="tag">Case · Mailchimp × Marketo</span>
+      <p><b>Mailchimp:</b> viral + freemium, ticket baixo × <span class="gd">milhões de SMBs</span>.
+      <b>Marketo:</b> outbound caro, ticket enterprise × <span class="gd">poucos clientes grandes</span>.
+      Combinações opostas — <b>as duas fecham a conta</b>.</p></div>
   </section>
 
   <!-- 6 · AS QUATRO PERGUNTAS -->
