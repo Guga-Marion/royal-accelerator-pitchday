@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_social-base.css">
+<style>
+.board{width:1584px;height:396px}
+.frame{position:absolute;inset:22px;border:1px solid rgba(212,164,55,.26);border-radius:10px}
+/* zona livre à esquerda: a foto de perfil sobrepõe até ~x=400 */
+.cont{position:absolute;left:412px;right:44px;top:0;bottom:0;display:flex;align-items:center;gap:40px;z-index:2}
+.lock{display:flex;align-items:center;gap:20px;flex:none}
+.lock .emb{width:104px;height:104px;flex:none}
+.lock .txt{display:flex;flex-direction:column;text-align:left}
+.lock .lk1{font-size:46px}
+.lock .lk2{font-size:46px}
+.vr{width:1px;align-self:stretch;margin:74px 0;background:linear-gradient(180deg,transparent,rgba(212,164,55,.5),transparent);flex:none}
+.right{display:flex;flex-direction:column;gap:15px;flex:none}
+.line{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:42px;color:#EDF1F9;line-height:1.12}
+.line b{font-style:normal;font-weight:700;
+  background:linear-gradient(180deg,#F4D06A,#D4A437);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.kick{white-space:nowrap;font-size:14px;letter-spacing:.2em;display:flex;align-items:center;gap:12px}
+.kick i{width:4px;height:4px;border-radius:50%;background:rgba(212,164,55,.75);display:inline-block;font-style:normal}
+</style></head><body>
+<div class="board">
+  <div class="frame"></div>
+  <div class="cont">
+    <div class="lock">
+      <svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><g transform="translate(0,-9.5)"><path d="M29 65V49l7 6 7-13 7 11 7-13 7 13 7-6v16z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="68.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></g></svg>
+      <div class="txt"><span class="lk1">Royal Business</span><span class="lk2">Growth</span></div>
+    </div>
+    <div class="vr"></div>
+    <div class="right">
+      <div class="line">Empresas precisam de <b>estrutura</b><br>antes de <b>escala</b>.</div>
+      <div class="kick">Aceleração <i></i> Venture Building <i></i> Investimento <i></i> Orlando · FL</div>
+    </div>
+  </div>
+</div>
+</body></html>

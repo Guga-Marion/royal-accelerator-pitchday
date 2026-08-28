@@ -1,0 +1,13 @@
+/* Base visual RBG — social 2026. Paleta e emblema extraídos de logo-rbg.png / art-wide.html */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#070e22}
+body{font-family:'Inter',sans-serif;overflow:hidden}
+.board{position:relative;overflow:hidden;color:#fff;
+  background:radial-gradient(95% 130% at 50% -10%,#21376a 0%,#10204a 36%,#0a1430 66%,#070e22 100%)}
+.board::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(46% 60% at 50% 38%,rgba(212,164,55,.16),transparent 62%)}
+.board::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(125% 125% at 50% 46%,transparent 34%,rgba(4,8,20,.50) 100%)}
+.lk1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:#fff;letter-spacing:.01em;line-height:1.02}
+.lk2{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;color:#E9B73C;line-height:1.02}
+.kick{font-family:'Inter',sans-serif;text-transform:uppercase;color:#F0C44D;font-weight:600}

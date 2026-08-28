@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_social-base.css">
+<style>
+.board{width:2560px;height:1440px}
+.frame{position:absolute;inset:96px;border:1.5px solid rgba(212,164,55,.22);border-radius:14px}
+.frame::before{content:"";position:absolute;inset:13px;border:1px solid rgba(212,164,55,.09);border-radius:8px}
+/* área segura de todos os dispositivos: 1546x423 centralizada */
+.safe{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:1546px;height:423px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2}
+.lock{display:flex;align-items:center;gap:34px}
+.lock .emb{width:180px;height:180px;flex:none}
+.lock .txt{display:flex;flex-direction:column;text-align:left}
+.lock .lk1{font-size:86px}
+.lock .lk2{font-size:86px}
+.rule{width:600px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,164,55,.65),transparent);margin:34px 0 26px}
+.kick{white-space:nowrap;font-size:26px;letter-spacing:.32em;display:flex;align-items:center;gap:18px}
+.kick i{width:5px;height:5px;border-radius:50%;background:rgba(212,164,55,.75);display:inline-block;font-style:normal}
+.sub{white-space:nowrap;margin-top:22px;font-size:29px;color:#CDD5E7;font-weight:400;letter-spacing:.01em}
+.sub b{color:#fff;font-weight:600}
+</style></head><body>
+<div class="board">
+  <div class="frame"></div>
+  <div class="safe">
+    <div class="lock">
+      <svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><g transform="translate(0,-9.5)"><path d="M29 65V49l7 6 7-13 7 11 7-13 7 13 7-6v16z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="68.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></g></svg>
+      <div class="txt"><span class="lk1">Royal Business</span><span class="lk2">Growth</span></div>
+    </div>
+    <div class="rule"></div>
+    <div class="kick">Aceleração <i></i> Venture Building <i></i> Investimento</div>
+    <div class="sub">Empresas brasileiras nos <b>Estados Unidos</b> &nbsp;·&nbsp; Orlando, Flórida</div>
+  </div>
+</div>
+</body></html>
