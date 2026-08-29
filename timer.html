@@ -207,7 +207,7 @@ body:not(.nopanel) .ptoggle{left:344px}
 <aside class="panel" id="panel">
   <div class="ph2">
     <div class="pt1">Ordem dos pitches</div>
-    <div class="pt2">clique na empresa para cronometrar · setas reordenam</div>
+    <div class="pt2">clique na empresa para cronometrar · ordem final · 28 ago</div>
   </div>
   <div class="plist" id="plist"></div>
   <div class="pfoot">
@@ -365,19 +365,15 @@ body:not(.nopanel) .ptoggle{left:344px}
   /* ===== ordem dos pitches · edição 2 ===== */
   var EMPRESAS=[
     {id:'agq',  n:'AG Quality Construction', f:'Gheysa Coelho · Utilities installation', conf:true},
+    {id:'ag2g', n:'AG2G',                    f:'Renato Rodrigues · Licitação pública',   conf:true},
     {id:'aka',  n:'Akafloor Industrial',     f:'Eone De Souza · Pisos de madeira',       conf:true},
-    {id:'blcg', n:'BLCG Consulting',         f:'Carlos Bispo · Consultoria financeira',  conf:true},
     {id:'gf',   n:'GREEN FLOW',              f:'Filipe Quintao',                         conf:true},
-    {id:'int',  n:'Interfy',                 f:'Lecivania Martins · Docs e processos',   conf:true},
     {id:'l5',   n:'Level Five Group',        f:'Diego Mendes · Construção',              conf:true},
-    {id:'mac',  n:'Macaw Country Club',      f:'Murilo Souza Silva · Clube e eventos',   conf:true},
     {id:'war',  n:'Wartek',                  f:'Jaylan Mobley · Wearable technology',    conf:true},
-    {id:'ag2g', n:'AG2G',                    f:'Renato Rodrigues · Licitação pública',   conf:false},
-    {id:'chr',  n:'Chrysalis Remodel',       f:'Pablo Prata · Remodeling residencial',   conf:false},
-    {id:'jrs',  n:'JR Siding',               f:'Rimon Souza · Construção · siding',      conf:false},
-    {id:'ner',  n:'Northeast Ind. Roofing',  f:'Silvio Rodrigues · Roofing comercial',   conf:false}
+    {id:'blc',  n:'Brazilian Log Car',       f:'fundador a confirmar',                   conf:true},
+    {id:'ger',  n:'Geromel Construction',    f:'fundador a confirmar',                   conf:true}
   ];
-  var KEY='rbg-timer-pitches-v1', st={order:EMPRESAS.map(function(e){return e.id}), done:{}, cur:null};
+  var KEY='rbg-timer-pitches-v2', st={order:EMPRESAS.map(function(e){return e.id}), done:{}, cur:null};
   try{
     var sv=JSON.parse(localStorage.getItem(KEY));
     if(sv && sv.order){
