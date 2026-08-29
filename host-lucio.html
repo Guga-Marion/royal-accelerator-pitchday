@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cartões do Host · Lúcio · Pitch Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  @page{size:A4 portrait;margin:0}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  :root{--navy:#08132B;--gold:#C2922A;--gold-dp:#A87C18;--ink:#111827;--mut:#6B7280;--line:#D8D2C4}
+  body{background:#3d4148;font-family:Inter,sans-serif;color:var(--ink)}
+
+  /* barra (some na impressão) */
+  .bar{position:sticky;top:0;z-index:9;display:flex;gap:12px;align-items:center;background:#111;color:#fff;padding:11px 16px;font-size:12.5px}
+  .bar b{font-size:13.5px}
+  .bar span{color:#9aa}
+  .bar button{margin-left:auto;background:#fff;color:#111;border:0;border-radius:6px;padding:8px 16px;font-weight:700;font-size:12.5px;cursor:pointer;font-family:inherit}
+  @media print{.bar{display:none}body{background:#fff}}
+
+  .sheet{width:210mm;height:296mm;background:#fff;margin:18px auto;display:flex;flex-direction:column;page-break-after:always;position:relative;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  @media print{.sheet{margin:0;box-shadow:none}}
+  .sheet .cut{position:absolute;top:148mm;left:0;right:0;border-top:1.2px dashed #b7b0a0;z-index:2}
+  .sheet .cut::after{content:"✂ cortar aqui";position:absolute;right:6mm;top:-5.4mm;font-family:'JetBrains Mono',monospace;font-size:7pt;color:#b7b0a0;background:#fff;padding:0 4px}
+  @media print{.sheet .cut::after{content:"✂"}}
+
+  /* ---------- o cartão (meia página · 210×148mm) ---------- */
+  .card{height:148mm;padding:9mm 10mm 7mm;display:flex;flex-direction:column;overflow:hidden;position:relative}
+  .card::before{content:"";position:absolute;inset:4.5mm;border:1.3pt solid var(--gold);border-radius:3mm;pointer-events:none}
+  .card::after{content:"";position:absolute;inset:6mm;border:.5pt solid #E4D9BE;border-radius:2.2mm;pointer-events:none}
+  .chd{display:flex;align-items:baseline;gap:10px;border-bottom:1pt solid var(--gold);padding-bottom:2.6mm;margin-bottom:3mm}
+  .chd .no{font-family:'JetBrains Mono',monospace;font-size:8pt;font-weight:600;color:var(--gold-dp);letter-spacing:.14em}
+  .chd h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17.5pt;color:var(--navy);letter-spacing:-.01em}
+  .chd .hr{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9.5pt;font-weight:600;color:var(--gold-dp);white-space:nowrap}
+  .cft{margin-top:auto;padding-top:2mm;border-top:.5pt solid var(--line);display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:6.6pt;letter-spacing:.12em;text-transform:uppercase;color:#9a927e}
+
+  /* timeline compacta */
+  .tl{display:flex;flex-direction:column;gap:0}
+  .tr{display:flex;gap:3.2mm;padding:1.55mm 0;border-bottom:.4pt dotted #ddd6c6;align-items:flex-start}
+  .tr:last-child{border-bottom:0}
+  .tr .h{font-family:'JetBrains Mono',monospace;font-size:8pt;font-weight:600;color:var(--navy);white-space:nowrap;width:15.5mm;flex:none;padding-top:.3mm}
+  .tr .x{flex:1;font-size:8.4pt;line-height:1.42}
+  .tr .x b{font-weight:600;color:var(--navy)}
+  .tr .w{font-family:'JetBrains Mono',monospace;font-size:6.4pt;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dp);white-space:nowrap;flex:none;padding-top:.7mm}
+  .tr.hl{background:#FBF6E9;border-radius:2mm;padding-left:2mm;padding-right:2mm;border-bottom:0}
+
+  /* fala / script */
+  .fala{border:1pt solid var(--gold);border-radius:2.5mm;background:#FDFBF5;padding:3.2mm 4mm;font-family:'Cormorant Garamond',serif;font-size:11.3pt;line-height:1.52;color:#1c2333}
+  .fala p{margin-bottom:1.6mm}
+  .fala b{font-weight:700;color:var(--navy)}
+  .fala .dir{font-family:'JetBrains Mono',monospace;font-size:7pt;color:var(--gold-dp);letter-spacing:.06em;display:block;margin:1mm 0}
+  .nota{font-size:7.6pt;color:var(--mut);line-height:1.45;margin-top:2mm}
+  .nota b{color:var(--navy)}
+
+  /* ordem das empresas */
+  .slots{display:grid;grid-template-columns:1fr 1fr;column-gap:6mm;row-gap:0}
+  .slot{display:flex;gap:2.6mm;align-items:baseline;padding:1.5mm 0;border-bottom:.4pt dotted #ddd6c6}
+  .slot .n{font-family:'JetBrains Mono',monospace;font-size:9pt;font-weight:600;color:var(--gold-dp);width:7mm;flex:none}
+  .slot .e{font-size:9.2pt;font-weight:600;color:var(--navy)}
+  .slot .e small{display:block;font-weight:400;font-size:6.9pt;color:var(--mut);margin-top:.2mm}
+  .slot .e.blank{color:#b7b0a0;font-weight:400;letter-spacing:.06em}
+  .blkhd{grid-column:1/-1;font-family:'JetBrains Mono',monospace;font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dp);border-bottom:.8pt solid var(--gold);padding:2mm 0 1mm;font-weight:600;display:flex;justify-content:space-between}
+  .blkhd span{color:var(--mut);letter-spacing:.08em}
+
+  .kv{display:flex;gap:2mm;margin-top:2.4mm}
+  .kv div{flex:1;border:.8pt solid var(--line);border-radius:1.8mm;padding:1.8mm;text-align:center}
+  .kv .k{font-family:'JetBrains Mono',monospace;font-size:5.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+  .kv .v{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13pt;color:var(--navy);margin-top:.4mm}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <b>Cartões do Host · Lúcio</b>
+  <span>4 folhas A4 · frente · cortar na linha tracejada = 8 cartões de meia página</span>
+  <button onclick="window.print()">Imprimir / salvar PDF</button>
+</div>
+
+<!-- ============ FOLHA 1 ============ -->
+<div class="sheet"><div class="cut"></div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 1/8</span><h2>Manhã — da chegada à abertura</h2><span class="hr">8h00 → 9h45</span></div>
+  <div class="tl">
+    <div class="tr"><span class="h">8h00</span><span class="x"><b>Chegada e walkthrough.</b> Passar pelo palco com Alexandre: som, telão, cadeiras da banca, cronômetro. Testar o seu microfone.</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">8h30</span><span class="x"><b>Receber a banca.</b> Os conselheiros chegam meia hora antes de todo mundo. Café com eles, alinhar o tom do dia. Lucilene entrega crachás e os dossiês (10 folhas por conselheiro).</span><span class="w">café</span></div>
+    <div class="tr"><span class="h">9h00</span><span class="x"><b>Credenciamento.</b> Fundadores chegando — circular, cumprimentar cada um pelo nome. A câmera está pegando a chegada. Lucilene opera a mesa; você é o anfitrião.</span><span class="w">entrada</span></div>
+    <div class="tr"><span class="h">9h30</span><span class="x"><b>Fundadores sentam.</b> Alexandre dá o briefing das regras. Você: bastidor, água, revisar o cartão 2, checar o microfone de lapela.</span><span class="w">bastidor</span></div>
+    <div class="tr hl"><span class="h">9h45</span><span class="x"><b>ABERTURA OFICIAL — você no palco, 10 minutos.</b> A fala completa está no cartão 2. Depois: Gustavo (5’) e Alexandre (5’).</span><span class="w">palco</span></div>
+  </div>
+  <div class="nota"><b>Os números que não mudam o dia inteiro:</b> dez empresas · cinco minutos cravados · cento e vinte dias · duas vagas.</div>
+  <div class="kv">
+    <div><span class="k">Empresas</span><div class="v">10</div></div>
+    <div><span class="k">Pitch</span><div class="v">5 min</div></div>
+    <div><span class="k">Programa</span><div class="v">120 dias</div></div>
+    <div><span class="k">Aceleradas</span><div class="v">2</div></div>
+  </div>
+  <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago · Orlando</span><span>Cartão 1 · manhã</span></div>
+</div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 2/8</span><h2>Fala de abertura</h2><span class="hr">9h45 · 10 min · ao vivo</span></div>
+  <div class="fala" style="font-size:10.6pt">
+    <p>“Sejam muito bem-vindos a mais uma edição do <b>Pitch Day da Royal Business Growth</b>. Hoje, <b>dez empresas brasileiras</b> sobem a este palco para concorrer a um programa de aceleração de <b>cento e vinte dias</b> — e à possibilidade de serem <b>investidas</b> pela Royal Business Growth e pelos seus conselheiros.</p>
+    <p>O Pitch Day é uma iniciativa para o <b>empreendedor brasileiro que está construindo nos Estados Unidos</b>. Aqui a gente traz ferramentas de gestão, inteligência artificial, finanças — e a experiência de quem já percorreu esse caminho. E abre a porta para você fazer parte das nossas <b>empresas investidas</b>.</p>
+    <span class="dir">[apresentando a banca — uma cadeira por vez]</span>
+    <p>Carlos Osorio — governança financeira e performance. Fernando Alves — estratégia comercial e crescimento. Kamila Adamatti — liderança e gestão organizacional. Alex Zocche — processos. Gustavo Marion — growth e go to market. Vocês têm hoje a chance de ser <b>mentorados — e investidos</b> — por essas pessoas.</p>
+    <p>A regra é simples: <b>cinco minutos cravados</b> de pitch, sem slides. Até dez minutos de banca. Scorecard de cem pontos. E <b>duas empresas saem daqui aceleradas</b>. Boa sorte. <b>O tempo começa agora.”</b></p>
+  </div>
+  <div class="nota"><b>Gravação:</b> a fala inteira sem cortes; depois o vídeo pede só a frase <b>“duas empresas saem daqui aceleradas”</b> repetida isolada, na lente.</div>
+  <div class="cft"><span>Teleprompter-ready · pode ler literal ou usar como espinha</span><span>Cartão 2 · abertura</span></div>
+</div>
+</div>
+
+<!-- ============ FOLHA 2 ============ -->
+<div class="sheet"><div class="cut"></div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 3/8</span><h2>Vitrine do Conselho — você apresenta cada cadeira</h2><span class="hr">10h05 → 11h20</span></div>
+  <div class="tl">
+    <div class="tr"><span class="h">10h05</span><span class="x"><b>1/4 · Alex Zocche — Processos.</b> Sua deixa (3’): “como uma empresa cresce sem quebrar por dentro — processo, rotina, operação.” Ele fala 8’, fecha com o que espera dos participantes (4’).</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">10h20</span><span class="x"><b>2/4 · Kamila Adamatti — Liderança.</b> Deixa: “time, cultura e a passagem de fundador para líder — o gargalo que quase ninguém sabe que tem.”</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">10h35</span><span class="x"><b>3/4 · Giva — Marketing.</b> Deixa: “marca, conteúdo e aquisição — como construir audiência nos EUA sem queimar caixa em tráfego.”</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">10h50</span><span class="x"><b>4/4 · Gustavo Marion — Growth &amp; GTM.</b> Deixa: “go-to-market no mercado americano — como uma empresa brasileira entra, testa e escala.”</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">11h05</span><span class="x"><b>Pausa café + take Shark Tank.</b> Você e os conselheiros tomam as cadeiras — take coreografado que abre o vídeo da edição. Seguir a marcação do videomaker.</span><span class="w">set</span></div>
+  </div>
+  <div class="nota"><b>Regra da vitrine:</b> 15 minutos cravados por cadeira, cronômetro visível — o mesmo rigor do pitch. Você abre e fecha cada cadeira; se estourar, é você quem corta, com elegância.</div>
+  <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago</span><span>Cartão 3 · vitrine</span></div>
+</div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 4/8</span><h2>Ordem dos pitches — quem você chama</h2><span class="hr">3 blocos · 5’ + banca</span></div>
+  <div class="slots">
+    <div class="blkhd">Bloco 1 · 11h20–12h30 <span>empresas 1–4</span></div>
+    <div class="slot"><span class="n">01</span><span class="e">AG Quality Construction<small>Gheysa Coelho · utilities installation</small></span></div>
+    <div class="slot"><span class="n">02</span><span class="e">Akafloor Industrial<small>Eone De Souza · pisos de madeira</small></span></div>
+    <div class="slot"><span class="n">03</span><span class="e">BLCG Consulting<small>Carlos Bispo · consultoria financeira</small></span></div>
+    <div class="slot"><span class="n">04</span><span class="e">GREEN FLOW<small>Filipe Quintao</small></span></div>
+    <div class="blkhd">Bloco 2 · 13h30–14h25 <span>empresas 5–7</span></div>
+    <div class="slot"><span class="n">05</span><span class="e">Interfy<small>Lecivania Martins · docs e processos</small></span></div>
+    <div class="slot"><span class="n">06</span><span class="e">Level Five Group<small>Diego Mendes · construção</small></span></div>
+    <div class="slot"><span class="n">07</span><span class="e">Macaw Country Club<small>Murilo Souza Silva · clube e eventos</small></span></div>
+    <div class="blkhd">Bloco 3 · 14h45–15h40 <span>empresas 8–10</span></div>
+    <div class="slot"><span class="n">08</span><span class="e">Wartek<small>Jaylan Mobley · wearable technology</small></span></div>
+    <div class="slot"><span class="n">09</span><span class="e blank">____________________<small>a confirmar: AG2G · Chrysalis Remodel</small></span></div>
+    <div class="slot"><span class="n">10</span><span class="e blank">____________________<small>a confirmar: JR Siding · Northeast Roofing</small></span></div>
+  </div>
+  <div class="nota"><b>A chamada, sempre igual:</b> “Empresa número ___, <b>[nome]</b>, de <b>[fundador]</b> — o palco é seu. <b>Cinco minutos. O tempo começa agora.”</b> · Depois da banca: “Obrigado, [nome]” + chama a próxima. Ordem final sai do Alexandre até sexta — preencher 09 e 10 à caneta e ajustar no timer.</div>
+  <div class="cft"><span>A mesma ordem do timer do telão</span><span>Cartão 4 · pitches</span></div>
+</div>
+</div>
+
+<!-- ============ FOLHA 3 ============ -->
+<div class="sheet"><div class="cut"></div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 5/8</span><h2>Tarde — dos pitches à deliberação</h2><span class="hr">11h20 → 17h20</span></div>
+  <div class="tl">
+    <div class="tr"><span class="h">11h20</span><span class="x"><b>Bloco 1 · empresas 1–4.</b> Você chama cada uma (cartão 4). Por empresa: 5’ de pitch + até 10’ de banca + ~2’ de troca.</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">12h30</span><span class="x"><b>Almoço (1h cravada).</b> No meio dele: gravar a <b>locução do cold open</b> em sala silenciosa, 3 tomadas, ritmo seco — <i>“Dez empresas. Cinco minutos cada. Duas saem daqui com cento e vinte dias de aceleração.”</i></span><span class="w">sala vo</span></div>
+    <div class="tr"><span class="h">13h30</span><span class="x"><b>Bloco 2 · empresas 5–7.</b> Mesmo formato, mesma chamada.</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">14h25</span><span class="x"><b>Pausa café.</b> Videomaker grava depoimentos de quem já pitchou. Você circula com a plateia.</span><span class="w">café</span></div>
+    <div class="tr"><span class="h">14h45</span><span class="x"><b>Bloco 3 · empresas 8–10.</b> Últimos três pitches.</span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">16h00</span><span class="x"><b>Deliberação fechada.</b> Você na sala com a banca: soma dos scorecards e decisão. Às 16h50, confirmar com Alexandre <b>os dois nomes</b> e a pronúncia. Plateia em networking lá fora.</span><span class="w">sala</span></div>
+    <div class="tr"><span class="h">17h00</span><span class="x"><b>Comentários gerais da banca.</b> Você modera de volta ao palco: o que o conselho viu no dia — <b>sem anunciar ainda</b>.</span><span class="w">palco</span></div>
+  </div>
+  <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago</span><span>Cartão 5 · tarde</span></div>
+</div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 6/8</span><h2>O anúncio — o clímax do dia</h2><span class="hr">17h20 · ao vivo</span></div>
+  <div class="fala">
+    <p>“Chegou a hora. A banca deliberou.</p>
+    <span class="dir">[pausa de três segundos — em silêncio, olhando a plateia. A pausa é sagrada.]</span>
+    <p>As duas empresas que entram hoje para o programa de aceleração da Royal Business Growth são…</p>
+    <span class="dir">[nome da empresa 1 — espera a reação acabar]</span>
+    <span class="dir">[nome da empresa 2 — espera a reação acabar]</span>
+    <p>Parabéns. Os cento e vinte dias de vocês <b>começam agora</b>.</p>
+    <p>E para quem não ouviu o próprio nome: o que aconteceu neste palco <b>não termina aqui</b>. Vocês fazem parte da comunidade da Royal — e a próxima edição já tem data.”</p>
+  </div>
+  <div class="nota"><b>Depois da fala:</b> fotos oficiais com a banca e os vencedores. <b>Gravação:</b> a câmera está na cara dos fundadores, não em você — segure o ritmo, sem pressa. Escrever os dois nomes aqui às 16h50: <span style="font-family:'JetBrains Mono',monospace">1) ______________________ &nbsp; 2) ______________________</span></div>
+  <div class="cft"><span>Confirmar os nomes e a pronúncia às 16h50</span><span>Cartão 6 · anúncio</span></div>
+</div>
+</div>
+
+<!-- ============ FOLHA 4 ============ -->
+<div class="sheet"><div class="cut"></div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 7/8</span><h2>Fim do dia — encerramento e brinde</h2><span class="hr">17h45 → 19h30</span></div>
+  <div class="tl">
+    <div class="tr"><span class="h">17h45</span><span class="x"><b>O programa de 120 dias (45’).</b> Palco é do Alexandre + Gustavo: os 8 encontros quinzenais, um conselheiro por encontro, decisão de investimento no 8º. Você: descanso de voz, água — e revisar a chamada da próxima edição (abaixo).</span><span class="w">plateia</span></div>
+    <div class="tr hl"><span class="h">18h30</span><span class="x"><b>ENCERRAMENTO — você + Gustavo (10’).</b> Três recados, nesta ordem: <b>1)</b> amanhã tem o café de domingo com os vencedores; <b>2)</b> o onboarding começa segunda-feira; <b>3)</b> obrigado a banca, aos fundadores e à plateia. <i>(A oferta dos programas Deploy é fora do palco, depois.)</i></span><span class="w">palco</span></div>
+    <div class="tr"><span class="h">18h40</span><span class="x"><b>Confraternização e brinde.</b> Você puxa o brinde: “às dez empresas que subiram neste palco — e às duas que saem aceleradas.” Fotos e takes livres.</span><span class="w">hub</span></div>
+    <div class="tr"><span class="h">noite</span><span class="x"><b>Take · chamada da próxima edição</b> (30–40 s na lente, hub ao fundo, 3 tomadas): <i>“Se você é empreendedor brasileiro e está construindo o seu negócio nos Estados Unidos, o seu lugar é aqui. A próxima edição do Pitch Day já está com inscrições abertas: cinco minutos de palco, uma banca de conselheiros — e a chance de ser acelerado e investido pela Royal Business Growth. O link está aqui embaixo. <b>Te vejo no próximo palco.</b>”</i> A última frase também isolada.</span><span class="w">lente</span></div>
+  </div>
+  <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago</span><span>Cartão 7 · fim do dia</span></div>
+</div>
+
+<div class="card">
+  <div class="chd"><span class="no">CARTÃO 8/8</span><h2>Colinha — o dia inteiro num olhar</h2><span class="hr">8h00 → 19h30</span></div>
+  <div class="slots" style="column-gap:7mm">
+    <div>
+      <div class="tl">
+        <div class="tr"><span class="h">8h00</span><span class="x">Walkthrough + mic</span></div>
+        <div class="tr"><span class="h">8h30</span><span class="x">Café com a banca</span></div>
+        <div class="tr"><span class="h">9h00</span><span class="x">Credenciamento · anfitrião</span></div>
+        <div class="tr"><span class="h">9h45</span><span class="x"><b>Abertura (cartão 2)</b></span></div>
+        <div class="tr"><span class="h">10h05</span><span class="x">Vitrine · 4 cadeiras (cartão 3)</span></div>
+        <div class="tr"><span class="h">11h05</span><span class="x">Café + take Shark Tank</span></div>
+        <div class="tr"><span class="h">11h20</span><span class="x"><b>Bloco 1 · empresas 1–4</b></span></div>
+        <div class="tr"><span class="h">12h30</span><span class="x">Almoço + locução VO</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="tl">
+        <div class="tr"><span class="h">13h30</span><span class="x"><b>Bloco 2 · empresas 5–7</b></span></div>
+        <div class="tr"><span class="h">14h45</span><span class="x"><b>Bloco 3 · empresas 8–10</b></span></div>
+        <div class="tr"><span class="h">16h00</span><span class="x">Deliberação · sala fechada</span></div>
+        <div class="tr"><span class="h">16h50</span><span class="x"><b>Confirmar os 2 nomes</b></span></div>
+        <div class="tr"><span class="h">17h00</span><span class="x">Comentários da banca</span></div>
+        <div class="tr"><span class="h">17h20</span><span class="x"><b>Anúncio (cartão 6)</b></span></div>
+        <div class="tr"><span class="h">18h30</span><span class="x"><b>Encerramento (cartão 7)</b></span></div>
+        <div class="tr"><span class="h">18h40</span><span class="x">Brinde + take próx. edição</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="kv">
+    <div><span class="k">Empresas</span><div class="v">10</div></div>
+    <div><span class="k">Pitch</span><div class="v">5 min</div></div>
+    <div><span class="k">Banca</span><div class="v">até 10’</div></div>
+    <div><span class="k">Programa</span><div class="v">120 dias</div></div>
+    <div><span class="k">Aceleradas</span><div class="v">2</div></div>
+  </div>
+  <div class="cft"><span>Domingo: café da manhã com os vencedores</span><span>Cartão 8 · colinha</span></div>
+</div>
+</div>
+
+</body>
+</html>
