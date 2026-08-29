@@ -112,12 +112,109 @@ body.over .glow{opacity:1}
 }
 body.over .flash{animation:flashin .9s ease-out 1}
 @keyframes flashin{0%{opacity:.5}100%{opacity:0}}
+
+/* ---- painel · ordem dos pitches ---- */
+.panel{
+  position:fixed; left:0; top:0; bottom:0; width:330px; z-index:4;
+  background:linear-gradient(160deg,var(--navy-2),var(--navy));
+  border-right:1px solid var(--on-rule);
+  display:flex; flex-direction:column; padding:26px 0 14px;
+  transition:transform .35s ease;
+}
+body.nopanel .panel{transform:translateX(-100%)}
+.panel .ph2{padding:0 24px 14px; border-bottom:1px solid var(--on-rule)}
+.panel .pt1{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--on)}
+.panel .pt2{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--on-3); margin-top:6px}
+.plist{flex:1; overflow-y:auto; padding:10px 12px 10px 16px; scrollbar-width:thin}
+.pco{
+  display:flex; align-items:center; gap:11px; padding:9px 10px; border-radius:12px;
+  cursor:pointer; border:1px solid transparent; transition:background .2s,border-color .2s; user-select:none;
+}
+.pco:hover{background:rgba(22,41,90,.5); border-color:var(--on-rule)}
+.pco .num{
+  font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--on-3);
+  width:22px; flex:none; text-align:right; font-weight:600;
+}
+.pco .nm2{flex:1; min-width:0}
+.pco .nm2 b{display:block; font-size:13.5px; font-weight:600; color:var(--on-2);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:.01em}
+.pco .nm2 small{display:block; font-size:10.5px; color:var(--on-3); margin-top:1px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.pco .flag{font-family:'JetBrains Mono',monospace; font-size:8.5px; letter-spacing:.12em;
+  color:#D9A94E; border:1px solid rgba(212,164,55,.4); border-radius:99px; padding:2px 7px; flex:none}
+.pco .mv{display:flex; flex-direction:column; gap:2px; flex:none; opacity:0; transition:opacity .2s}
+.pco:hover .mv{opacity:1}
+.pco .mv button{
+  background:transparent; border:0; color:var(--on-3); cursor:pointer; font-size:10px;
+  line-height:1; padding:2px 4px; border-radius:5px;
+}
+.pco .mv button:hover{color:var(--gold-hi); background:rgba(22,41,90,.8)}
+.pco.cur{background:rgba(194,146,42,.13); border-color:rgba(212,164,55,.5)}
+.pco.cur .num,.pco.cur .nm2 b{color:var(--gold-hi)}
+.pco.done{opacity:.42}
+.pco.done .nm2 b{text-decoration:line-through; text-decoration-color:var(--on-3)}
+.pco .ok{flex:none; width:15px; text-align:center; color:var(--gold-lt); font-size:12px}
+.panel .pfoot{padding:10px 24px 0; border-top:1px solid var(--on-rule);
+  display:flex; justify-content:space-between; align-items:center}
+.panel .pfoot button{
+  background:transparent; border:0; cursor:pointer; font-family:'JetBrains Mono',monospace;
+  font-size:9.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--on-3); padding:6px 0;
+}
+.panel .pfoot button:hover{color:var(--on-2)}
+.ptoggle{
+  position:fixed; left:14px; top:14px; z-index:6; background:transparent;
+  border:1px solid var(--on-rule); color:var(--on-3); border-radius:99px;
+  font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em;
+  text-transform:uppercase; padding:8px 14px; cursor:pointer; transition:all .25s;
+}
+.ptoggle:hover{color:var(--on); border-color:var(--on-3)}
+/* palco desloca com o painel aberto */
+body:not(.nopanel) .hd,body:not(.nopanel) .controls{left:330px}
+body:not(.nopanel) .stage{transform:translate(165px,-3vh)}
+body:not(.nopanel) .ptoggle{left:344px}
+/* nome da empresa no palco */
+.coname{
+  font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600;
+  font-size:clamp(20px,3.4vmin,34px); color:var(--gold-hi); min-height:1.2em;
+  margin-bottom:.4vmin; letter-spacing:.01em;
+}
+.coname small{
+  display:block; font-family:'JetBrains Mono',monospace; font-style:normal; font-weight:500;
+  font-size:clamp(8px,1vmin,11px); letter-spacing:.34em; text-transform:uppercase;
+  color:var(--on-3); margin-bottom:.8vmin;
+}
+@media (max-width:900px){
+  .panel{width:280px}
+  body:not(.nopanel) .hd,body:not(.nopanel) .controls{left:280px}
+  body:not(.nopanel) .stage{transform:translate(140px,-3vh)}
+  body:not(.nopanel) .ptoggle{left:294px}
+}
+@media (max-width:640px){
+  body:not(.nopanel) .hd,body:not(.nopanel) .controls{left:0}
+  body:not(.nopanel) .stage{transform:translateY(-3vh)}
+}
+
 @media (max-height:560px){.hd{display:none}.controls{bottom:3vh}}
 </style>
 </head>
 <body>
 <div class="glow"></div>
 <div class="flash"></div>
+
+
+<button class="ptoggle" id="ptoggle">Empresas</button>
+<aside class="panel" id="panel">
+  <div class="ph2">
+    <div class="pt1">Ordem dos pitches</div>
+    <div class="pt2">clique na empresa para cronometrar · setas reordenam</div>
+  </div>
+  <div class="plist" id="plist"></div>
+  <div class="pfoot">
+    <button id="pnext">próxima ▸</button>
+    <button id="preset">reiniciar dia</button>
+  </div>
+</aside>
 
 <header class="hd">
   <span class="eb">Royal Business Growth<span class="sep">·</span>Pitch Day</span>
@@ -141,6 +238,7 @@ body.over .flash{animation:flashin .9s ease-out 1}
     <circle class="dot" id="dot" r="1.8"/>
   </svg>
   <div class="readout">
+    <div class="coname" id="coname"><small id="conum"></small><span id="conm"></span></div>
     <div class="time" id="time">5:00</div>
     <div class="sub" id="sub">Pronto para começar</div>
   </div>
@@ -159,7 +257,7 @@ body.over .flash{animation:flashin .9s ease-out 1}
     <button class="cta" id="main">Iniciar</button>
     <button class="cta alt" id="reset">Zerar</button>
   </div>
-  <div class="hint"><b>espaço</b> inicia / pausa &nbsp;·&nbsp; <b>R</b> zera &nbsp;·&nbsp; <b>F</b> tela cheia</div>
+  <div class="hint"><b>espaço</b> inicia / pausa &nbsp;·&nbsp; <b>R</b> zera &nbsp;·&nbsp; <b>N</b> próxima empresa &nbsp;·&nbsp; <b>E</b> painel &nbsp;·&nbsp; <b>F</b> tela cheia</div>
 </div>
 
 <script>
@@ -231,6 +329,7 @@ body.over .flash{animation:flashin .9s ease-out 1}
       remaining=0; running=false; paint();
       body.classList.remove('running'); body.classList.add('over');
       sub.textContent='Tempo encerrado';
+      if(st.cur){ st.done[st.cur]=true; saveSt(); renderList(); }
       main.textContent='Iniciar';
       beep([[0,.35,880],[.4,.35,880],[.8,.7,1174.66]]);
       return;
@@ -262,6 +361,99 @@ body.over .flash{animation:flashin .9s ease-out 1}
     paint();
   }
 
+
+  /* ===== ordem dos pitches · edição 2 ===== */
+  var EMPRESAS=[
+    {id:'agq',  n:'AG Quality Construction', f:'Gheysa Coelho · Utilities installation', conf:true},
+    {id:'aka',  n:'Akafloor Industrial',     f:'Eone De Souza · Pisos de madeira',       conf:true},
+    {id:'blcg', n:'BLCG Consulting',         f:'Carlos Bispo · Consultoria financeira',  conf:true},
+    {id:'gf',   n:'GREEN FLOW',              f:'Filipe Quintao',                         conf:true},
+    {id:'int',  n:'Interfy',                 f:'Lecivania Martins · Docs e processos',   conf:true},
+    {id:'l5',   n:'Level Five Group',        f:'Diego Mendes · Construção',              conf:true},
+    {id:'mac',  n:'Macaw Country Club',      f:'Murilo Souza Silva · Clube e eventos',   conf:true},
+    {id:'war',  n:'Wartek',                  f:'Jaylan Mobley · Wearable technology',    conf:true},
+    {id:'ag2g', n:'AG2G',                    f:'Renato Rodrigues · Licitação pública',   conf:false},
+    {id:'chr',  n:'Chrysalis Remodel',       f:'Pablo Prata · Remodeling residencial',   conf:false},
+    {id:'jrs',  n:'JR Siding',               f:'Rimon Souza · Construção · siding',      conf:false},
+    {id:'ner',  n:'Northeast Ind. Roofing',  f:'Silvio Rodrigues · Roofing comercial',   conf:false}
+  ];
+  var KEY='rbg-timer-pitches-v1', st={order:EMPRESAS.map(function(e){return e.id}), done:{}, cur:null};
+  try{
+    var sv=JSON.parse(localStorage.getItem(KEY));
+    if(sv && sv.order){
+      // mantém só ids válidos e acrescenta novos ao fim
+      var valid=EMPRESAS.map(function(e){return e.id});
+      st.order=sv.order.filter(function(id){return valid.indexOf(id)>=0});
+      valid.forEach(function(id){ if(st.order.indexOf(id)<0) st.order.push(id); });
+      st.done=sv.done||{}; st.cur=sv.cur||null;
+    }
+  }catch(e){}
+  function saveSt(){ try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){} }
+  function co(id){ for(var k=0;k<EMPRESAS.length;k++) if(EMPRESAS[k].id===id) return EMPRESAS[k]; }
+
+  var plist=document.getElementById('plist'),
+      conm=document.getElementById('conm'), conum=document.getElementById('conum');
+
+  function renderList(){
+    var h='';
+    st.order.forEach(function(id,ix){
+      var e=co(id), cls='pco'+(st.cur===id?' cur':'')+(st.done[id]?' done':'');
+      h+='<div class="'+cls+'" data-id="'+id+'">'
+        +'<span class="num">'+String(ix+1).padStart(2,'0')+'</span>'
+        +'<span class="nm2"><b>'+e.n+'</b><small>'+e.f+'</small></span>'
+        +(e.conf?'':'<span class="flag">a confirmar</span>')
+        +(st.done[id]?'<span class="ok">✓</span>':'')
+        +'<span class="mv"><button data-mv="-1" title="sobe">▲</button><button data-mv="1" title="desce">▼</button></span>'
+        +'</div>';
+    });
+    plist.innerHTML=h;
+  }
+  function setStage(id){
+    if(!id){ conm.textContent=''; conum.textContent=''; return; }
+    var e=co(id), ix=st.order.indexOf(id);
+    conum.textContent='Empresa '+String(ix+1).padStart(2,'0')+' de '+st.order.length;
+    conm.textContent=e.n;
+  }
+  function startCompany(id){
+    if(st.cur && st.cur!==id && (running || body.classList.contains('over'))){
+      st.done[st.cur]=true;           // a anterior saiu do palco
+    }
+    st.cur=id; delete st.done[id]; saveSt();
+    setStage(id); renderList();
+    cancelAnimationFrame(raf); running=false;
+    resetTimer();                      // zera no tempo do chip atual
+    start();
+  }
+  plist.addEventListener('click',function(e){
+    var mv=e.target.closest('button[data-mv]');
+    if(mv){
+      var row=e.target.closest('.pco'), id=row.getAttribute('data-id'),
+          ix=st.order.indexOf(id), nx=ix+(+mv.getAttribute('data-mv'));
+      if(nx<0||nx>=st.order.length) return;
+      st.order.splice(ix,1); st.order.splice(nx,0,id);
+      saveSt(); renderList(); if(st.cur) setStage(st.cur);
+      return;
+    }
+    var row=e.target.closest('.pco'); if(!row) return;
+    startCompany(row.getAttribute('data-id'));
+  });
+  function nextCompany(){
+    for(var k=0;k<st.order.length;k++){
+      var id=st.order[k];
+      if(!st.done[id] && id!==st.cur){ startCompany(id); return; }
+    }
+  }
+  document.getElementById('pnext').addEventListener('click',nextCompany);
+  document.getElementById('preset').addEventListener('click',function(){
+    if(!confirm('Reiniciar o dia? Limpa a ordem editada e as empresas já cronometradas.')) return;
+    st={order:EMPRESAS.map(function(e){return e.id}), done:{}, cur:null};
+    saveSt(); renderList(); setStage(null); resetTimer();
+  });
+  document.getElementById('ptoggle').addEventListener('click',function(){
+    body.classList.toggle('nopanel');
+  });
+  renderList(); if(st.cur) setStage(st.cur);
+
   main.addEventListener('click',function(){ running?pause():start(); });
   resetBtn.addEventListener('click',resetTimer);
 
@@ -276,6 +468,8 @@ body.over .flash{animation:flashin .9s ease-out 1}
   document.addEventListener('keydown',function(e){
     if(e.code==='Space'){ e.preventDefault(); running?pause():start(); }
     else if(e.key==='r'||e.key==='R'){ resetTimer(); }
+    else if(e.key==='n'||e.key==='N'){ nextCompany(); }
+    else if(e.key==='e'||e.key==='E'){ body.classList.toggle('nopanel'); }
     else if(e.key==='f'||e.key==='F'){
       document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
     }
