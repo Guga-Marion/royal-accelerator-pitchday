@@ -73,10 +73,13 @@
     color:#F5F2E8;align-items:center;justify-content:center;text-align:center;gap:0}
   .card.cover::before{border-color:rgba(212,164,55,.65)}
   .card.cover::after{border-color:rgba(212,164,55,.18)}
-  .cover .emb{width:34mm;height:34mm}
-  .cover.back .emb{width:24mm;height:24mm}
-  .cv-lk{margin-top:5mm;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17pt;letter-spacing:.01em}
-  .cv-lk i{font-style:italic;color:#E9B73C}
+  .cover .cv-lock .emb{width:26mm;height:26mm;flex:none}
+  .cover.back .cv-lock .emb{width:19mm;height:19mm}
+  .cv-lock{display:flex;align-items:center;gap:6mm}
+  .cv-lock .txt{display:flex;flex-direction:column;text-align:left;line-height:1.04}
+  .cv-lock .lk1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19pt;color:#fff;letter-spacing:.01em}
+  .cv-lock .lk2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:19pt;color:#E9B73C}
+  .cover.back .cv-lock .lk1,.cover.back .cv-lock .lk2{font-size:14.5pt}
   .cv-rule{width:34mm;height:.4mm;margin:5.5mm auto;background:linear-gradient(90deg,transparent,rgba(212,164,55,.8),transparent)}
   .cv-t{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26pt;letter-spacing:-.01em;line-height:1.05}
   .cv-s{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.3em;text-transform:uppercase;color:#D4A437;margin-top:3.5mm;font-weight:600}
@@ -97,8 +100,7 @@
 <div class="sheet"><div class="cut"></div>
 
 <div class="card cover">
-  <svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><g transform="translate(0,-9.5)"><path d="M29 65V49l7 6 7-13 7 11 7-13 7 13 7-6v16z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="68.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></g></svg>
-  <div class="cv-lk">Royal Business <i>Growth</i></div>
+  <div class="cv-lock"><svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><g transform="translate(0,-9.5)"><path d="M29 65V49l7 6 7-13 7 11 7-13 7 13 7-6v16z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="68.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></g></svg><div class="txt"><span class="lk1">Royal Business</span><span class="lk2">Growth</span></div></div>
   <div class="cv-rule"></div>
   <div class="cv-t">Lúcio Santana</div>
   <div class="cv-s">Pitch Day · 2ª edição</div>
@@ -265,7 +267,7 @@
 </div>
 
 <div class="card cover back">
-  <svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><g transform="translate(0,-9.5)"><path d="M29 65V49l7 6 7-13 7 11 7-13 7 13 7-6v16z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="68.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></g></svg>
+  <div class="cv-lock"><svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="2"/><circle cx="50" cy="50" r="39" stroke="rgba(212,164,55,.35)" stroke-width="1"/><g transform="translate(0,-9.5)"><path d="M29 65V49l7 6 7-13 7 11 7-13 7 13 7-6v16z" stroke="#F0C44D" stroke-width="2.4" stroke-linejoin="round"/><rect x="29" y="68.5" width="42" height="3.4" rx="1.3" fill="#F0C44D"/></g></svg><div class="txt"><span class="lk1">Royal Business</span><span class="lk2">Growth</span></div></div>
   <div class="cv-tese">“Empresas precisam de <b>estrutura</b><br>antes de <b>escala</b>.”</div>
   <div class="cv-rule" style="margin-top:6mm"></div>
   <div class="cv-s" style="margin-top:0">A maior aceleradora de negócios<br>brasileiros dos Estados Unidos</div>
