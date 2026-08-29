@@ -67,18 +67,43 @@
   .kv div{flex:1;border:.8pt solid var(--line);border-radius:1.8mm;padding:1.8mm;text-align:center}
   .kv .k{font-family:'JetBrains Mono',monospace;font-size:5.8pt;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
   .kv .v{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13pt;color:var(--navy);margin-top:.4mm}
+
+  /* capa e contracapa */
+  .card.cover{background:radial-gradient(95% 130% at 50% -10%,#21376a 0%,#10204a 36%,#0a1430 66%,#070e22 100%);
+    color:#F5F2E8;align-items:center;justify-content:center;text-align:center;gap:0}
+  .card.cover::before{border-color:rgba(212,164,55,.65)}
+  .card.cover::after{border-color:rgba(212,164,55,.18)}
+  .cover .emb{width:34mm;height:34mm}
+  .cover.back .emb{width:24mm;height:24mm}
+  .cv-lk{margin-top:5mm;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17pt;letter-spacing:.01em}
+  .cv-lk i{font-style:italic;color:#E9B73C}
+  .cv-rule{width:34mm;height:.4mm;margin:5.5mm auto;background:linear-gradient(90deg,transparent,rgba(212,164,55,.8),transparent)}
+  .cv-t{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26pt;letter-spacing:-.01em;line-height:1.05}
+  .cv-s{font-family:'JetBrains Mono',monospace;font-size:8pt;letter-spacing:.3em;text-transform:uppercase;color:#D4A437;margin-top:3.5mm;font-weight:600}
+  .cv-f{position:absolute;left:0;right:0;bottom:9mm;font-family:'JetBrains Mono',monospace;font-size:6.8pt;letter-spacing:.22em;text-transform:uppercase;color:#6E7CA2}
+  .cv-tese{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:15.5pt;color:#EDF1F9;margin-top:6mm;max-width:120mm;line-height:1.35}
+  .cv-tese b{font-style:italic;color:#E9B73C;font-weight:700}
 </style>
 </head>
 <body>
 
 <div class="bar">
   <b>Cartões do Host · Lúcio</b>
-  <span>4 folhas A4 · frente · cortar na linha tracejada = 8 cartões de meia página</span>
+  <span>5 folhas A4 · frente · cortar na linha tracejada = capa + 8 cartões + contracapa</span>
   <button onclick="window.print()">Imprimir / salvar PDF</button>
 </div>
 
-<!-- ============ FOLHA 1 ============ -->
+<!-- ============ FOLHA 1 · capa ============ -->
 <div class="sheet"><div class="cut"></div>
+
+<div class="card cover">
+  <svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="1.3"/><circle cx="50" cy="50" r="40.5" stroke="rgba(212,164,55,.4)" stroke-width=".7"/><path d="M30 63l7-15 6.5 12 6.5-19 6.5 17 6.5-25 7 30" stroke="#F0C44D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="37" cy="43.2" r="1.6" fill="#F0C44D"/><circle cx="50" cy="36.2" r="1.6" fill="#F0C44D"/><circle cx="63" cy="28.2" r="1.6" fill="#F0C44D"/><path d="M30 67.5h40" stroke="#F0C44D" stroke-width="1.5" stroke-linecap="round"/></svg>
+  <div class="cv-lk">Royal Business <i>Growth</i></div>
+  <div class="cv-rule"></div>
+  <div class="cv-t">Cartões do Host</div>
+  <div class="cv-s">Lúcio Santana · Pitch Day · 2ª edição</div>
+  <div class="cv-f">Sábado · 29 de agosto de 2026 · Orlando, Flórida</div>
+</div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 1/8</span><h2>Manhã — da chegada à abertura</h2><span class="hr">8h00 → 9h45</span></div>
@@ -98,6 +123,10 @@
   </div>
   <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago · Orlando</span><span>Cartão 1 · manhã</span></div>
 </div>
+</div>
+
+<!-- ============ FOLHA 2 ============ -->
+<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 2/8</span><h2>Fala de abertura</h2><span class="hr">9h45 · 10 min · ao vivo</span></div>
@@ -112,10 +141,6 @@
   <div class="nota"><b>Gravação:</b> a fala inteira sem cortes; depois o vídeo pede só a frase <b>“duas empresas saem daqui aceleradas”</b> repetida isolada, na lente.</div>
   <div class="cft"><span>Teleprompter-ready · pode ler literal ou usar como espinha</span><span>Cartão 2 · abertura</span></div>
 </div>
-</div>
-
-<!-- ============ FOLHA 2 ============ -->
-<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 3/8</span><h2>Vitrine do Conselho — você apresenta cada cadeira</h2><span class="hr">10h05 → 11h20</span></div>
@@ -129,6 +154,10 @@
   <div class="nota"><b>Regra da vitrine:</b> 15 minutos cravados por cadeira, cronômetro visível — o mesmo rigor do pitch. Você abre e fecha cada cadeira; se estourar, é você quem corta, com elegância.</div>
   <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago</span><span>Cartão 3 · vitrine</span></div>
 </div>
+</div>
+
+<!-- ============ FOLHA 3 ============ -->
+<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 4/8</span><h2>Ordem dos pitches — quem você chama</h2><span class="hr">8 empresas · 3 blocos</span></div>
@@ -148,10 +177,6 @@
   <div class="nota"><b>A chamada, sempre igual:</b> “Empresa número ___, <b>[nome]</b>, de <b>[fundador]</b> — o palco é seu. <b>Cinco minutos. O tempo começa agora.”</b> · Depois da banca: “Obrigado, [nome]” + chama a próxima. <b>Esta é a ordem final</b> (fechada em 28/ago) — com 8 empresas, os blocos ganham folga; os horários são os do cronograma.</div>
   <div class="cft"><span>A mesma ordem do timer do telão</span><span>Cartão 4 · pitches</span></div>
 </div>
-</div>
-
-<!-- ============ FOLHA 3 ============ -->
-<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 5/8</span><h2>Tarde — dos pitches à deliberação</h2><span class="hr">11h20 → 17h20</span></div>
@@ -166,6 +191,10 @@
   </div>
   <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago</span><span>Cartão 5 · tarde</span></div>
 </div>
+</div>
+
+<!-- ============ FOLHA 4 ============ -->
+<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 6/8</span><h2>O anúncio — o clímax do dia</h2><span class="hr">17h20 · ao vivo</span></div>
@@ -181,10 +210,6 @@
   <div class="nota"><b>Depois da fala:</b> fotos oficiais com a banca e os vencedores. <b>Gravação:</b> a câmera está na cara dos fundadores, não em você — segure o ritmo, sem pressa. Escrever os dois nomes aqui às 16h50: <span style="font-family:'JetBrains Mono',monospace">1) ______________________ &nbsp; 2) ______________________</span></div>
   <div class="cft"><span>Confirmar os nomes e a pronúncia às 16h50</span><span>Cartão 6 · anúncio</span></div>
 </div>
-</div>
-
-<!-- ============ FOLHA 4 ============ -->
-<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 7/8</span><h2>Fim do dia — encerramento e brinde</h2><span class="hr">17h45 → 19h30</span></div>
@@ -196,6 +221,10 @@
   </div>
   <div class="cft"><span>Pitch Day · 2ª edição · sáb 29 ago</span><span>Cartão 7 · fim do dia</span></div>
 </div>
+</div>
+
+<!-- ============ FOLHA 5 · contracapa ============ -->
+<div class="sheet"><div class="cut"></div>
 
 <div class="card">
   <div class="chd"><span class="no">CARTÃO 8/8</span><h2>Colinha — o dia inteiro num olhar</h2><span class="hr">8h00 → 19h30</span></div>
@@ -234,7 +263,14 @@
   </div>
   <div class="cft"><span>Domingo: café da manhã com os vencedores</span><span>Cartão 8 · colinha</span></div>
 </div>
-</div>
 
+<div class="card cover back">
+  <svg class="emb" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="1.3"/><circle cx="50" cy="50" r="40.5" stroke="rgba(212,164,55,.4)" stroke-width=".7"/><path d="M30 63l7-15 6.5 12 6.5-19 6.5 17 6.5-25 7 30" stroke="#F0C44D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="37" cy="43.2" r="1.6" fill="#F0C44D"/><circle cx="50" cy="36.2" r="1.6" fill="#F0C44D"/><circle cx="63" cy="28.2" r="1.6" fill="#F0C44D"/><path d="M30 67.5h40" stroke="#F0C44D" stroke-width="1.5" stroke-linecap="round"/></svg>
+  <div class="cv-tese">“Empresas precisam de <b>estrutura</b><br>antes de <b>escala</b>.”</div>
+  <div class="cv-rule" style="margin-top:6mm"></div>
+  <div class="cv-s" style="margin-top:0">A maior aceleradora de negócios<br>brasileiros dos Estados Unidos</div>
+  <div class="cv-f">Royal Business Growth · começa em Orlando. Depois, o país inteiro.</div>
+</div>
+</div>
 </body>
 </html>
