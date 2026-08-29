@@ -11,30 +11,17 @@ body{width:1920px;height:1080px;position:relative}
 .photo::after{content:'';position:absolute;inset:0;
   background:linear-gradient(90deg, rgba(8,19,43,.5), rgba(8,19,43,0) 18% 82%, rgba(8,19,43,.5))}
 /* conteúdo superior */
-.top{position:absolute;left:0;right:0;top:0;height:640px;padding:46px 96px 0;text-align:center}
+.top{position:absolute;left:0;right:0;top:0;height:130px;padding:46px 96px 0;text-align:center}
 .hd{display:flex;justify-content:space-between;align-items:center}
 .hd .logo-lock img{height:96px;filter:brightness(1.12)}
 .hd .ed{font-family:'JetBrains Mono',monospace;letter-spacing:.34em;color:var(--on-2);
   text-transform:uppercase;font-size:16px;border:1px solid var(--on-rule);padding:.7em 1.3em}
 .hd .ed b{color:var(--gold-hi);font-weight:600}
-.eb{font-size:18px;margin-top:16px;display:block}
-h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:172px;line-height:.94;margin-top:6px}
+/* bloco de título, baixo, encostado no início da foto */
+.titleblock{position:absolute;left:0;right:0;top:430px;text-align:center;z-index:3}
+.eb{font-size:18px;display:block}
+h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:172px;line-height:.94;margin-top:10px}
 h1 .n2{font-style:italic}
-.sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:38px;color:var(--on-2);
-  font-weight:500;margin-top:10px}
-.sub b{color:var(--on);font-weight:700}
-/* linha data + copy, sobre a emenda foto/navy */
-.band{position:absolute;left:0;right:0;top:588px;display:flex;justify-content:center;z-index:3}
-.datebox .d .n{font-size:74px}
-.datebox .d{min-width:132px}
-.datebox .d .m{font-size:13px}
-.datebox .loc .c{font-size:40px}
-.datebox .loc .s{font-size:12px}
-.copy{position:absolute;left:0;right:0;top:462px;z-index:3;display:flex;justify-content:center}
-.copy p{max-width:1060px;text-align:center;font-size:23px;line-height:1.58;color:#C6CDDF;
-  font-weight:400}
-.copy b{color:var(--gold-hi);font-weight:650}
-.copy strong{color:#fff;font-weight:650}
 .ft{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center;z-index:3}
 .ft .foot{font-size:14px;text-shadow:0 2px 14px rgba(8,19,43,.95)}
 </style></head><body>
@@ -44,19 +31,10 @@ h1 .n2{font-style:italic}
       <div class="logo-lock"><img src="logo-rbg-transp.png" alt=""></div>
       <div class="ed">PITCH DAY · <b>2ª EDIÇÃO</b></div>
     </div>
+  </div>
+  <div class="titleblock">
     <span class="eb">Royal Business Growth · Aceleradora e Venture Capital</span>
     <h1><span class="goldtext">Pitch <span class="n2">Day</span></span></h1>
-    <div class="sub"><b>10 empresas</b>, um palco em Orlando — e a banca que decide quem acelera.</div>
   </div>
-  <div class="band">
-    <div class="datebox">
-      <div class="d"><span class="n">29</span><span class="m">Agosto</span></div>
-      <div class="d"><span class="n">30</span><span class="m">Agosto</span></div>
-      <div class="loc"><span class="c">Orlando</span><span class="s">Flórida · 2026</span></div>
-    </div>
-  </div>
-  <div class="copy"><p><strong>10 empresas selecionadas</strong> apresentam ao vivo para os
-    <b>investidores e conselheiros</b> da Royal Business Growth — concorrendo a uma
-    <b>aceleração</b> e à chance de serem <b>investidas</b>.</p></div>
   <div class="ft"><div class="foot"><span>Royal Business Growth</span><span class="dot"></span><b>Royal Accelerator × Deploy US</b></div></div>
 </body></html>
