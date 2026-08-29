@@ -169,6 +169,13 @@ body.nopanel .panel{transform:translateX(-100%)}
   text-transform:uppercase; padding:8px 14px; cursor:pointer; transition:all .25s;
 }
 .ptoggle:hover{color:var(--on); border-color:var(--on-3)}
+.fstoggle{
+  position:fixed; right:14px; top:14px; z-index:6; background:transparent;
+  border:1px solid var(--on-rule); color:var(--on-3); border-radius:99px;
+  font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em;
+  text-transform:uppercase; padding:8px 14px; cursor:pointer; transition:all .25s;
+}
+.fstoggle:hover{color:var(--on); border-color:var(--on-3)}
 /* palco desloca com o painel aberto */
 body:not(.nopanel) .hd,body:not(.nopanel) .controls{left:330px}
 body:not(.nopanel) .stage{transform:translate(165px,-3vh)}
@@ -204,6 +211,7 @@ body:not(.nopanel) .ptoggle{left:344px}
 
 
 <button class="ptoggle" id="ptoggle">Empresas</button>
+<button class="fstoggle" id="fstoggle" title="Tela cheia (F)" aria-label="Tela cheia">⛶ Tela cheia</button>
 <aside class="panel" id="panel">
   <div class="ph2">
     <div class="pt1">Ordem dos pitches</div>
@@ -448,6 +456,14 @@ body:not(.nopanel) .ptoggle{left:344px}
   document.getElementById('ptoggle').addEventListener('click',function(){
     body.classList.toggle('nopanel');
   });
+  var fsBtn=document.getElementById('fstoggle');
+  function toggleFullscreen(){
+    document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
+  }
+  fsBtn.addEventListener('click',toggleFullscreen);
+  document.addEventListener('fullscreenchange',function(){
+    fsBtn.innerHTML=document.fullscreenElement?'⛶ Sair tela cheia':'⛶ Tela cheia';
+  });
   renderList(); if(st.cur) setStage(st.cur);
 
   main.addEventListener('click',function(){ running?pause():start(); });
@@ -466,9 +482,7 @@ body:not(.nopanel) .ptoggle{left:344px}
     else if(e.key==='r'||e.key==='R'){ resetTimer(); }
     else if(e.key==='n'||e.key==='N'){ nextCompany(); }
     else if(e.key==='e'||e.key==='E'){ body.classList.toggle('nopanel'); }
-    else if(e.key==='f'||e.key==='F'){
-      document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();
-    }
+    else if(e.key==='f'||e.key==='F'){ toggleFullscreen(); }
   });
 
   paint();
