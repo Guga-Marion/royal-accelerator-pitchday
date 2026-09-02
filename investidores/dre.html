@@ -1,4 +1,7 @@
 <meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>DRE mensal · curto prazo · Royal Business Growth</title>
@@ -379,9 +382,6 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
 .nmin{font:inherit;font-size:12.4px;font-weight:600;width:100%;border:1px solid transparent;border-radius:4px;padding:3px 5px;background:transparent;color:inherit}
 .nmin:hover{border-color:var(--rule);background:#fff}
 .nmin:focus{outline:none;border-color:var(--gold);background:#fff}
-.subin{font:inherit;font-size:11.5px;color:var(--ink-3);width:100%;border:1px solid transparent;border-radius:4px;padding:2px 5px;background:transparent;margin-top:1px}
-.subin:hover{border-color:var(--rule-2);background:#fff}
-.subin:focus{outline:none;border-color:var(--gold);background:#fff}
 .tbar2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:11px 16px;border-bottom:1px solid var(--rule-2);background:var(--sand-2)}
 .tbar2 .hint2{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4)}
 .tbar2 .rst{margin-left:auto}
@@ -461,7 +461,7 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
 
 <script>
 (function(){
-  var KEY='rbg-dre-v1', M=['Set','Out','Nov','Dez','Jan','Fev'];
+  var KEY='rbg-dre-v2', M=['Set','Out','Nov','Dez','Jan','Fev'];
   var GRUPOS=[
     {k:'ent',n:'Entradas',sign:1},
     {k:'pes',n:'Pessoas · folha do time',sign:-1},
@@ -471,19 +471,19 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
     {k:'evt',n:'Eventos',sign:-1}
   ];
   var BASE=[
-    {id:'taxa',g:'ent',nm:'Taxa de administração',sb:'20% da rodada anjo · entra com o SAFE assinado',v:[0,0,50000,0,0,0]},
-    {id:'comi',g:'ent',nm:'Comissão da Deploy',sb:'25% do faturado · 1 projeto/mês a partir de outubro',v:[0,2750,2750,2750,2750,2750]},
-    {id:'guga',g:'pes',nm:'Gustavo Marion',sb:'managing partner · US$ 2.000/mês',v:[2000,2000,2000,2000,2000,2000]},
-    {id:'luci',g:'pes',nm:'Lucilene',sb:'gerência de operações · US$ 800/mês',v:[800,800,800,800,800,800]},
-    {id:'socm',g:'con',nm:'Social media',sb:'posta e cria conteúdo · US$ 800/mês',v:[800,800,800,800,800,800]},
-    {id:'edit',g:'con',nm:'Editor de vídeo',sb:'edição do longo e dos cortes · US$ 600/mês',v:[600,600,600,600,600,600]},
-    {id:'audi',g:'con',nm:'Produção audiovisual · diária',sb:'1 diária no evento de dezembro · US$ 600',v:[0,0,0,600,0,0]},
-    {id:'cont',g:'est',nm:'Contábil e fiscal',sb:'rotina mensal · US$ 500/mês',v:[500,500,500,500,500,500]},
-    {id:'prog',g:'est',nm:'Suporte programador',sb:'manutenção e evolução do sistema · US$ 400/mês',v:[400,400,400,400,400,400]},
-    {id:'code',g:'est',nm:'Claude Code',sb:'US$ 100/mês',v:[100,100,100,100,100,100]},
-    {id:'cart',g:'est',nm:'Carta.com',sb:'sem custo neste período',v:[0,0,0,0,0,0]},
-    {id:'traf',g:'aqu',nm:'Tráfego pago',sb:'US$ 500/mês nos seis meses',v:[500,500,500,500,500,500]},
-    {id:'pdez',g:'evt',nm:'Pitch Day · edição de dezembro',sb:'teto de US$ 3.000 · espaço é da casa',v:[0,0,0,3000,0,0]}
+    {id:'taxa',g:'ent',nm:'Taxa de administração',v:[0,0,50000,0,0,0]},
+    {id:'comi',g:'ent',nm:'Comissão da Deploy',v:[0,2750,2750,2750,2750,2750]},
+    {id:'guga',g:'pes',nm:'Gustavo Marion',v:[2000,2000,2000,2000,2000,2000]},
+    {id:'luci',g:'pes',nm:'Lucilene',v:[800,800,800,800,800,800]},
+    {id:'socm',g:'con',nm:'Social media',v:[800,800,800,800,800,800]},
+    {id:'edit',g:'con',nm:'Editor de vídeo',v:[600,600,600,600,600,600]},
+    {id:'audi',g:'con',nm:'Produção audiovisual · diária',v:[0,0,0,600,0,0]},
+    {id:'cont',g:'est',nm:'Contábil e fiscal',v:[500,500,500,500,500,500]},
+    {id:'prog',g:'est',nm:'Suporte programador',v:[500,500,500,500,500,500]},
+    {id:'code',g:'est',nm:'Claude Code',v:[100,100,100,100,100,100]},
+    {id:'cart',g:'est',nm:'Carta.com',v:[0,0,0,0,0,0]},
+    {id:'traf',g:'aqu',nm:'Tráfego pago',v:[500,500,500,500,500,500]},
+    {id:'pdez',g:'evt',nm:'Pitch Day · edição de dezembro',v:[0,0,0,3000,0,0]}
   ];
   var S={};
   try{ S=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ S={}; }
@@ -499,9 +499,9 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
     BASE.forEach(function(b){
       if(S.del[b.id]) return;
       var o=S.ov[b.id]||{};
-      out.push({id:b.id,g:o.g||b.g,nm:o.nm!=null?o.nm:b.nm,sb:o.sb!=null?o.sb:b.sb,v:(o.v||b.v).slice(),base:true});
+      out.push({id:b.id,g:o.g||b.g,nm:o.nm!=null?o.nm:b.nm,v:(o.v||b.v).slice(),base:true});
     });
-    S.extra.forEach(function(e){ out.push({id:e.id,g:e.g,nm:e.nm,sb:e.sb,v:e.v.slice(),base:false}); });
+    S.extra.forEach(function(e){ out.push({id:e.id,g:e.g,nm:e.nm,v:e.v.slice(),base:false}); });
     return out;
   }
   function setv(id,i,val){
@@ -539,8 +539,7 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
       h+='<tr class="gh"><td colspan="8">'+g.n+'<button type="button" class="gadd" data-g="'+g.k+'">+ linha</button></td></tr>';
       c.L.filter(function(l){return l.g===g.k;}).forEach(function(l){
         h+='<tr data-id="'+l.id+'"><td><div class="lncell"><div class="txx">'
-          +'<input class="nmin" value="'+esc(l.nm)+'" data-f="nm">'
-          +'<input class="subin" value="'+esc(l.sb)+'" data-f="sb"></div>'
+          +'<input class="nmin" value="'+esc(l.nm)+'" data-f="nm"></div>'
           +'<button type="button" class="dlx" title="Remover linha">&times;</button></div></td>';
         for(var i=0;i<6;i++) h+='<td class="r ed"><input class="cin" data-i="'+i+'" value="'+fmtIn(l.v[i])+'" inputmode="numeric"></td>';
         h+='<td class="r tot'+(g.sign<0?' neg':'')+'">'+(g.sign<0&&sum(l.v)>0?'('+sum(l.v).toLocaleString('pt-BR')+')':fmt(sum(l.v)))+'</td></tr>';
@@ -607,7 +606,7 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
     var add=e.target.closest('.gadd');
     if(add){
       var id='x'+Date.now().toString(36);
-      S.extra.push({id:id,g:add.dataset.g,nm:'Nova linha',sb:'descreva o custo',v:[0,0,0,0,0,0]});
+      S.extra.push({id:id,g:add.dataset.g,nm:'Nova linha',v:[0,0,0,0,0,0]});
       save(); render();
       var el=document.querySelector('tr[data-id="'+id+'"] .nmin'); if(el){ el.focus(); el.select(); }
       return;
