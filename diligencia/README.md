@@ -16,39 +16,33 @@ diligencia/
 └── testar.sh         prova de ponta a ponta do backend
 ```
 
-## Setup — 3 passos, ~2 minutos
+## Como funciona hoje — sem servidor nenhum
 
-**1.** Abra <https://script.google.com> → **Novo projeto**. Apague o conteúdo do `Código.gs`
-e cole o `apps-script.gs` inteiro.
+1. Você manda o link do formulário para a empresa.
+2. Ela preenche e clica em enviar. O formulário baixa dois arquivos — um **.json**
+   com tudo (inclusive os documentos embutidos) e um **.txt** legível — e abre um
+   e-mail já preenchido para `emailDestino`.
+3. Ela anexa e envia. Você recebe por e-mail.
+4. Você abre o **painel**, arrasta os `.json` das duas empresas para dentro dele e
+   vê a ficha completa, os documentos e o comparativo com gráficos.
 
-**2.** No topo do arquivo, troque a `SENHA` e confira o e-mail em `AVISAR`.
+O painel **não tem login e não precisa de servidor**: ele lê os arquivos no seu
+próprio navegador. Nada sobe para lugar nenhum. As empresas ficam guardadas no
+navegador entre as visitas (os documentos não — para abri-los, rearraste o `.json`).
 
-**3.** **Implantar → Nova implantação → App da Web**:
-*Executar como:* **Eu** · *Quem pode acessar:* **Qualquer pessoa** — esse segundo campo é
-o que permite Bruno e Daniel enviarem sem login Google. Autorize quando o Google pedir e
-copie a URL gerada (termina em `/exec`).
+## Modo automático — opcional
 
-Cole a URL em `diligencia/config.js`, commit e push:
+Se quiser que as respostas caiam sozinhas numa planilha do Google e nos documentos
+no Drive, publique o `apps-script.gs`:
 
-```js
-window.RBG_CONFIG = {
-  endpoint: "https://script.google.com/macros/s/AKfyc.../exec",
-  ...
-};
-```
+1. <https://script.google.com> → **Novo projeto** → cole o `apps-script.gs`.
+2. Troque a `SENHA` e confira o `AVISAR`.
+3. **Implantar → Nova implantação → App da Web** · *Executar como:* **Eu** ·
+   *Quem pode acessar:* **Qualquer pessoa**. Copie a URL (termina em `/exec`).
+4. Cole em `config.js` no campo `endpoint`.
 
-Não precisa criar planilha, pasta nem inventar segredo: o script cria e guarda tudo
-sozinho no primeiro envio. Para descobrir onde ele criou, rode a função `ondeEstá` no
-editor e olhe **Ver → Registro de execução**.
-
-Para conferir que está tudo gravando de verdade:
-
-```bash
-./testar.sh "https://script.google.com/macros/s/AKfyc.../exec"
-```
-
-> Ao editar o `apps-script.gs` depois, use **Implantar → Gerenciar implantações → editar
-> → Nova versão**. Criar uma implantação nova muda a URL e quebra o `config.js`.
+Com o endpoint preenchido o formulário envia direto para lá e o plano B acima só
+entra se a rede falhar. Para conferir: `./testar.sh "<url>/exec"`.
 
 ## Os links
 
@@ -58,7 +52,8 @@ Para conferir que está tudo gravando de verdade:
 | Personalizado | `…/diligencia/?e=bruno` · `…/diligencia/?e=daniel` — abre com o nome dele na capa |
 | Painel interno | `…/diligencia/painel.html` |
 
-Login do painel: usuário `rbg` e a `SENHA` que você definiu. Sessão dura 12 h.
+O painel abre direto, sem senha — ele não guarda nada de ninguém, só lê os arquivos
+que você arrasta para dentro.
 
 ## O que mudou em relação ao PDF
 
