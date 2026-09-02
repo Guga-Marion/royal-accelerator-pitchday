@@ -11,6 +11,7 @@ var arquivos = {};   // {campo: {nome, tipo, b64, tam}}
 var socios = [];     // [{...}]
 var atual = 0;
 var enviado = false;
+var protocolo = null;   // fixado no primeiro envio
 
 var $ = function(s,r){return (r||document).querySelector(s)};
 var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
@@ -615,7 +616,13 @@ function envia(){
 
   var ks = Object.keys(arquivos);
   var total = 1 + ks.length, feito = 0;
-  var proto = "RBG-" + (CFG.ano||"2026") + "-" + Math.random().toString(36).slice(2,7).toUpperCase();
+  // o protocolo é gerado uma vez e reaproveitado nas tentativas seguintes,
+  // senão um retry vira uma segunda linha na planilha
+  if(!protocolo){
+    protocolo = "RBG-" + (CFG.ano||"2026") + "-" + Math.random().toString(36).slice(2,7).toUpperCase();
+    try{ localStorage.setItem(CHAVE+"-proto", protocolo) }catch(e){}
+  }
+  var proto = protocolo;
 
   function passo(){ feito++; pb.style.width = (feito/total*100)+"%" }
 
@@ -646,7 +653,7 @@ function envia(){
   })
   .then(function(){
     txt.textContent = "Concluído.";
-    try{ localStorage.removeItem(CHAVE) }catch(e){}
+    try{ localStorage.removeItem(CHAVE); localStorage.removeItem(CHAVE+"-proto") }catch(e){}
     setTimeout(function(){
       load.classList.remove("on");
       $("#proto-n").textContent = proto;
@@ -705,10 +712,26 @@ function iniciar(){
     $("#capa-nome").style.display = "block";
   }
 
+  try{ protocolo = localStorage.getItem(CHAVE+"-proto") || null }catch(e){}
+
+  var ligado = CFG.endpoint && CFG.endpoint.indexOf("script.google.com") >= 0;
+  if(!ligado){
+    var cta = $("#capa-cta");
+    cta.disabled = true;
+    cta.textContent = "Recebimento ainda não configurado";
+    var av = $("#capa-retomar");
+    av.style.display = "block";
+    av.style.color = "#E8846C";
+    av.textContent = "Falta publicar o Apps Script e colar a URL em config.js. "
+                   + "Até lá o formulário não tem para onde enviar — veja o README.";
+  }
+
   var salvo = restaurar();
   if(salvo){
-    $("#capa-cta").textContent = "Continuar de onde parei";
-    $("#capa-retomar").style.display = "block";
+    if(ligado){
+      $("#capa-cta").textContent = "Continuar de onde parei";
+      $("#capa-retomar").style.display = "block";
+    }
     montar();
     Object.keys(salvo.arquivos||{}).forEach(function(k){
       var d = $('[data-drop="'+k+'"]');
