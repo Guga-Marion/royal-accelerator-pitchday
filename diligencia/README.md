@@ -69,6 +69,17 @@ Login do painel: usuário `rbg` e a `SENHA` que você definiu. Sessão dura 12 h
 - Assinatura é desenhada na tela e salva como `assinatura.png` na pasta do protocolo.
 - Cada envio ganha um protocolo (`RBG-2026-XXXXX`), usado como nome da pasta no Drive.
 
+## Plano B — enquanto o Apps Script não estiver publicado
+
+O formulário está aberto e funcionando. Se o `endpoint` do `config.js` estiver vazio, ou se
+o envio falhar por rede, o formulário **não perde nada**: ao clicar em enviar ele baixa dois
+arquivos (`RBG-2026-XXXXX.json` com tudo, inclusive os anexos embutidos, e um `.txt`
+legível) e abre um e-mail já preenchido para o `emailDestino`. A pessoa só anexa os
+arquivos e envia.
+
+É rede de segurança, não substituto: sem o Apps Script publicado, nada entra na planilha
+nem aparece no painel.
+
 ## Onde as respostas chegam — três lugares
 
 1. **E-mail.** No fim de cada envio o script manda para o `AVISAR` a resposta inteira

@@ -14,7 +14,7 @@
 
 // ══════════════════════════ CONFIGURE AQUI ══════════════════════════
 var SENHA  = 'RoyalDD2026!';            // senha do painel (usuário é sempre "rbg")
-var AVISAR = 'gmarion@deployux.com';    // quem recebe a resposta completa por e-mail
+var AVISAR = 'guga@rbg-hub.com';      // quem recebe a resposta completa por e-mail
 // ════════════════════════════════════════════════════════════════════
 
 var USUARIO = 'rbg';

@@ -603,6 +603,71 @@ function restaurar(){
 /* ─────────────────── envio ─────────────────── */
 /* monta a resposta em rótulo → valor, na ordem do formulário,
    para o e-mail chegar legível sem o servidor conhecer o schema */
+/* Rede de segurança. Se o servidor ainda não estiver publicado — ou se o envio
+   falhar —, empacotamos tudo: baixa o arquivo com as respostas completas e abre
+   um e-mail já preenchido. O trabalho de quem preencheu nunca se perde. */
+function planoB(proto, motivo){
+  var resumo = montarResumo();
+  var linhas = ["ROYAL BUSINESS GROWTH — DILIGENCIA INICIAL",
+                "Protocolo: " + proto,
+                "Enviado em: " + new Date().toLocaleString("pt-BR"), ""];
+  resumo.forEach(function(sec){
+    linhas.push("── " + sec.n + " · " + sec.t.toUpperCase() + " ──");
+    sec.itens.forEach(function(it){ linhas.push(it.k + ": " + it.v) });
+    linhas.push("");
+  });
+  if(socios.length){
+    linhas.push("── QUADRO SOCIETARIO ──");
+    socios.forEach(function(so,i){
+      linhas.push((i+1) + ". " + (so.nome||"") + " — " + (so.percentual||"") + "% — " + (so.cargo||""));
+      linhas.push("   " + (so.email||"") + " · " + (so.telefone||""));
+    });
+    linhas.push("");
+  }
+  var docs = Object.keys(arquivos);
+  linhas.push("── DOCUMENTOS A ANEXAR NESTE E-MAIL (" + docs.length + ") ──");
+  docs.forEach(function(k){ linhas.push("• " + arquivos[k].nome) });
+  var texto = linhas.join("\n");
+
+  // pacote completo em JSON, com os arquivos embutidos
+  baixar(proto + ".json", JSON.stringify({
+    protocolo:proto, dados:dados, socios:socios, resumo:resumo,
+    assinatura:assinatura, arquivos:arquivos
+  }, null, 2), "application/json");
+  // e a versão legível
+  setTimeout(function(){ baixar(proto + ".txt", texto, "text/plain") }, 600);
+
+  var para = CFG.emailDestino || "";
+  var corpo = texto.length > 1600 ? texto.slice(0,1600) + "\n\n[continua no arquivo anexo]" : texto;
+  setTimeout(function(){
+    location.href = "mailto:" + para
+      + "?subject=" + encodeURIComponent("Diligência RBG — " + (dados.razao_social||"minha empresa"))
+      + "&body=" + encodeURIComponent(corpo + "\n\n---\nAnexe os dois arquivos que acabaram de ser baixados"
+        + (docs.length ? " e os " + docs.length + " documentos listados acima." : "."));
+  }, 1200);
+
+  $("#load").classList.remove("on");
+  $("#proto-n").textContent = proto;
+  var fim = $("#fim");
+  $(".fim-in h2", fim).innerHTML = 'Respostas <em>salvas</em>.';
+  $$(".fim-in p", fim)[0].innerHTML =
+    "Baixamos o arquivo com todas as suas respostas e abrimos um e-mail para <b style=\"color:var(--gold-hi)\">"
+    + esc(para) + "</b> já preenchido.";
+  $$(".fim-in p", fim)[1].innerHTML =
+    "Anexe os dois arquivos baixados" + (docs.length ? " e os " + docs.length + " documentos que você selecionou" : "")
+    + " e envie. É só isso.";
+  fim.classList.add("on");
+  faiscas();
+}
+
+function baixar(nome, conteudo, tipo){
+  var b = new Blob([conteudo], {type:tipo});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(b); a.download = nome;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(a.href) }, 2000);
+}
+
 function montarResumo(){
   return SECOES.map(function(sec){
     var itens = [];
@@ -637,23 +702,22 @@ function envia(){
   for(var i=0;i<SECOES.length;i++){
     if(!validaSecao(i)){ ir(i,false); toast("Faltam campos na etapa "+SECOES[i].n+" — "+SECOES[i].t, 1); return }
   }
-  if(!CFG.endpoint || CFG.endpoint.indexOf("script.google.com") < 0){
-    toast("O endereço de recebimento ainda não foi configurado em config.js.", 1); return;
-  }
   salvar();
   enviado = true;
+  if(!protocolo){
+    protocolo = "RBG-" + (CFG.ano||"2026") + "-" + Math.random().toString(36).slice(2,7).toUpperCase();
+    try{ localStorage.setItem(CHAVE+"-proto", protocolo) }catch(e){}
+  }
+  if(!CFG.endpoint || CFG.endpoint.indexOf("script.google.com") < 0){
+    planoB(protocolo, "sem endpoint");
+    return;
+  }
   var load = $("#load"), pb = $("#load-pb"), txt = $("#load-t");
   load.classList.add("on");
 
   var ks = Object.keys(arquivos);
   var total = 2 + ks.length, feito = 0;
-  // o protocolo é gerado uma vez e reaproveitado nas tentativas seguintes,
-  // senão um retry vira uma segunda linha na planilha
-  if(!protocolo){
-    protocolo = "RBG-" + (CFG.ano||"2026") + "-" + Math.random().toString(36).slice(2,7).toUpperCase();
-    try{ localStorage.setItem(CHAVE+"-proto", protocolo) }catch(e){}
-  }
-  var proto = protocolo;
+  var proto = protocolo;   // fixado acima; um retry reaproveita, não duplica a linha
 
   function passo(){ feito++; pb.style.width = (feito/total*100)+"%" }
 
@@ -699,9 +763,8 @@ function envia(){
     }, 500);
   })
   .catch(function(e){
-    enviado = false;
-    load.classList.remove("on");
-    toast("Não consegui enviar: " + (e.message||"erro de rede") + ". Tente de novo — nada foi perdido.", 1);
+    toast("O envio automático falhou. Preparando o pacote para você mandar por e-mail…", 1);
+    setTimeout(function(){ planoB(proto, e.message||"falha de rede") }, 900);
   });
 }
 
@@ -751,24 +814,12 @@ function iniciar(){
 
   try{ protocolo = localStorage.getItem(CHAVE+"-proto") || null }catch(e){}
 
-  var ligado = CFG.endpoint && CFG.endpoint.indexOf("script.google.com") >= 0;
-  if(!ligado){
-    var cta = $("#capa-cta");
-    cta.disabled = true;
-    cta.textContent = "Recebimento ainda não configurado";
-    var av = $("#capa-retomar");
-    av.style.display = "block";
-    av.style.color = "#E8846C";
-    av.textContent = "Falta publicar o Apps Script e colar a URL em config.js. "
-                   + "Até lá o formulário não tem para onde enviar — veja o README.";
-  }
+  var ligado = true;
 
   var salvo = restaurar();
   if(salvo){
-    if(ligado){
-      $("#capa-cta").textContent = "Continuar de onde parei";
-      $("#capa-retomar").style.display = "block";
-    }
+    $("#capa-cta").textContent = "Continuar de onde parei";
+    $("#capa-retomar").style.display = "block";
     montar();
     Object.keys(salvo.arquivos||{}).forEach(function(k){
       var d = $('[data-drop="'+k+'"]');
