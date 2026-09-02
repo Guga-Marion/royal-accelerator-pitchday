@@ -1,16 +1,20 @@
-Royal Business Growth · Pacote de logo (identidade 2026)
-========================================================
-A marca: a coroa em tendencia de alta — coroa de tres pontas ascendentes,
-com tres joias que sao pontos de dado numa curva que so sobe.
-A barra e a base: estrutura antes de escala.
+Royal Business Growth · Pacote de logo (identidade 2026 · emblema v3, 2026-09-02)
+================================================================================
+A marca: a coroa ascendente — três pontas côncavas, cada uma mais alta que a
+anterior, com as pontas alinhadas numa reta: a coroa é o gráfico. A faixa é a
+base: estrutura antes de escala. O anel duplo é o selo: instituição, chancela.
 
-svg/  vetor (escala infinita): emblema ouro / branco / navy
+svg/  vetor (escala infinita):
+  emblema-ouro | emblema-branco | emblema-navy            uso normal (>= 40 px)
+  emblema-*-mini                                          lados retos, anel mais
+                                                          grosso: favicon e <= 40 px
 png/  assinaturas prontas:
   horizontal-navy | horizontal-transp   2752x1536  assinatura principal
   vertical-navy   | vertical-transp     2000x2000  capas e aberturas
-  banner-navy     | banner-transp       2752x600   topos e rodapes
-  mono-branco     | mono-navy           2752x1536  monocromaticas
+  banner-navy     | banner-transp       2752x600   topos e rodapés
+  mono-branco     | mono-navy           2752x1536  monocromáticas
   emblema-transp                        1600x1600  o selo isolado
 
-Regras completas: manual-marca.html · capitulo 01.
-Colorida so sobre navy. Fundo claro: apenas mono-navy.
+Regras completas: manual-marca.html · capítulo 01.
+Colorida (ouro) só sobre navy. Fundo claro: apenas mono-navy.
+Fonte da geometria: src/emblema_v3.py (gera os SVGs e patcheia os HTMLs).

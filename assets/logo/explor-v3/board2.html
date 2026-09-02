@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1800px;height:1150px;background:#08132B;font-family:"JetBrains Mono",monospace;color:#A9B4D0;padding:50px}
+h1{font-family:"Cormorant Garamond",serif;color:#F5F2E8;font-weight:600;font-size:34px;margin-bottom:26px}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.c{border:1px solid #1D2C50;padding:26px;display:flex;flex-direction:column;gap:18px}
+.c .k{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#D4A437}
+.row{display:flex;align-items:center;gap:22px}
+.big{width:260px;height:260px}
+.sm{width:64px;height:64px}
+.xs{width:28px;height:28px}
+.sand{background:#F6F2E9;padding:16px;display:flex;gap:16px;align-items:center}
+.ig{width:110px;height:110px;border-radius:50%;background:radial-gradient(70% 70% at 50% 40%,#16295A,#08132B);display:flex;align-items:center;justify-content:center}
+.ig svg{width:78px;height:78px}
+</style></head><body>
+<h1>RBG · emblema v3 · rodada 2</h1>
+<div class="g" id="g"></div>
+<script>
+const G='<linearGradient id="gg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#C2922A"/><stop offset=".55" stop-color="#D4A437"/><stop offset="1" stop-color="#F0C44D"/></linearGradient>';
+const marks=[
+ ['D · Escada · três degraus, três horizontes',
+  '<path d="M22 66 V56 H40 V44 H58 V30 H78 V66 Z"/><rect x="22" y="70" width="56" height="6"/>'],
+ ['E · Coroa de três pontas · pilares fundidos na base',
+  '<path d="M22 72 V56 L30 46 L38 56 V72 Z M42 72 V42 L50 32 L58 42 V72 Z M62 72 V28 L70 18 L78 28 V72 Z"/><rect x="22" y="72" width="56" height="7"/>'],
+ ['F · Coroa ascendente · vales rasos até a faixa',
+  '<path d="M22 70 V54 L31 40 L40 70 Z M40 70 L49 30 L58 70 Z M58 70 L67 20 L78 70 Z"/><rect x="22" y="73" width="56" height="6"/>'],
+ ['G · Coroa-gráfico · pontas em degrau, cortes largos',
+  '<path d="M22 70 V50 L30 42 L36 50 V70 Z M40 70 V40 L48 32 L56 40 V70 Z M60 70 V28 L68 20 L78 30 V70 Z"/><rect x="22" y="74" width="56" height="6"/>'],
+];
+const ring=(c,w)=>`<circle cx="50" cy="50" r="46" fill="none" stroke="${c}" stroke-width="${w}"/>`;
+const svg=(cls,fill,body,r)=>`<svg class="${cls}" viewBox="0 0 100 100"><defs>${G}</defs>${r||''}<g fill="${fill}">${body}</g></svg>`;
+document.getElementById('g').innerHTML=marks.map(([k,b])=>`<div class="c"><span class="k">${k}</span>
+ ${svg('big','url(#gg)',b,ring('#D4A437',1.2))}
+ <div class="row">${svg('sm','#D4A437',b,ring('#D4A437',1.6))}${svg('xs','#D4A437',b)}<div class="sand">${svg('sm','#08132B',b,ring('#08132B',1.6))}</div></div>
+ <div class="row"><div class="ig">${svg('','#D4A437',b)}</div><div class="ig">${svg('','#F5F2E8',b)}</div></div>
+</div>`).join('');
+</script>
+</body></html>
