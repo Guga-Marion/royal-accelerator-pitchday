@@ -33,7 +33,6 @@ IMGS = {
   "m-emblema-transp.png":  (PNG / "emblema-transp-1600x1600.png", 480, "png"),
   "m-mono-branco.png":     (PNG / "mono-branco-2752x1536.png", 1000, "png"),
   "m-mono-navy.png":       (PNG / "mono-navy-2752x1536.png", 1000, "png"),
-  "m-rodadas.jpg":         (ROOT / "assets/logo/explor-v4/rodada-10.png", 1400, "jpeg"),
   "m-avatar-ig.jpg":       (ROOT / "divulgacao/social-rbg/social-avatar-instagram-1080x1080.png", 540, "jpeg"),
   "m-avatar-li.jpg":       (ROOT / "divulgacao/social-rbg/social-avatar-linkedin-1080x1080.png", 540, "jpeg"),
   # capítulo 09 · cortes & reels
@@ -72,6 +71,14 @@ else:
     s = s.replace('<footer>', cap9 + '<footer>', 1)
 if '<a href="#cortes">' not in s:
     s = s.replace('<a href="#social"><b>08</b>Social</a>', '<a href="#social"><b>08</b>Social</a>\n  <a href="#cortes"><b>09</b>Cortes</a>', 1)
+
+# 1c. cap. 08 · linhas do YouTube (2048x1152 e avatar 98x98) na tabela de download
+ROW = ('<tr><td><a href="divulgacao/social-rbg/youtube-capa-2048x1152.png" download>youtube-capa-2048x1152</a> · '
+       '<a href="divulgacao/social-rbg/youtube-avatar-98x98.png" download>youtube-avatar-98x98</a></td>'
+       '<td>banner do canal no tamanho mínimo do YouTube (≤ 6 MB) e foto de perfil do canal (≤ 4 MB)</td></tr>')
+if "youtube-capa-2048x1152" not in s:
+    s = s.replace('<tr><td><a href="divulgacao/social-rbg/social-capa-youtube-2560x1440.png" download>social-capa-youtube</a></td><td>banner do canal</td></tr>',
+                  '<tr><td><a href="divulgacao/social-rbg/social-capa-youtube-2560x1440.png" download>social-capa-youtube</a></td><td>banner do canal · 2560×1440</td></tr>\n    ' + ROW, 1)
 
 # 2. hero (primeira <img> do arquivo)
 s = re.sub(r'(<div class="hero">\s*<img src=")data:image/[^"]+(")', lambda m: m.group(1) + b64["m-hero.png"] + m.group(2), s, count=1)

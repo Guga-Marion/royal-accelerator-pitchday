@@ -30,4 +30,11 @@ shotp post-foto-feed     1080 1350
 shotp post-foto-quadrado 1080 1080
 shotp post-foto-story    1080 1920
 
+# YouTube: banner no tamanho mínimo (2048x1152, <= 6 MB) e foto de perfil (98x98, <= 4 MB)
+echo "→ youtube-capa (2048x1152)"
+"$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=0.8 \
+  --virtual-time-budget=8000 --window-size=2560,1440 --screenshot="$OUT/youtube-capa-2048x1152.png" \
+  "file://$SRC/social-capa-youtube.html" >/dev/null 2>&1
+echo "→ youtube-avatar (98x98)"
+sips -Z 98 "$OUT/social-avatar-instagram-1080x1080.png" --out "$OUT/youtube-avatar-98x98.png" >/dev/null
 echo "PNGs em: $OUT"
