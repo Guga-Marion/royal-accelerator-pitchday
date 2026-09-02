@@ -1,0 +1,29 @@
+/* Base visual RBG — cortes e Reels 2026. Mesma paleta e tipografia do manual da marca. */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#08132B}
+body{font-family:'Inter',sans-serif;overflow:hidden;color:#F5F2E8}
+.board{position:relative;overflow:hidden;
+  background:radial-gradient(95% 130% at 50% -10%,#16295A 0%,#0C1B3D 40%,#08132B 75%)}
+/* vídeo: sempre um <div class="video"> com a imagem/frame dentro, proporção 16:9 */
+.video{position:absolute;overflow:hidden;background:#000}
+.video img{width:100%;height:100%;object-fit:cover;display:block}
+.video::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1.5px rgba(212,164,55,.55)}
+/* tipografia */
+.eb{font-family:'JetBrains Mono',monospace;text-transform:uppercase;color:#F0C44D;font-weight:600;letter-spacing:.32em}
+.hook{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.02;letter-spacing:-.01em;color:#F5F2E8;text-wrap:balance}
+.hook em{font-style:italic;color:#F0C44D}
+.cap{font-family:'Inter',sans-serif;font-weight:800;line-height:1.22;color:#F5F2E8;text-wrap:balance}
+.cap .now{background:#F0C44D;color:#08132B;border-radius:.16em;padding:0 .16em;margin:0 .02em}
+.cap .next{opacity:.5}
+.name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1;color:#F5F2E8}
+.role{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.24em;color:#A9B4D0;font-weight:500}
+/* lockup */
+.lock{display:flex;align-items:center;gap:14px}
+.lock .emb{flex:none}
+.lk1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:#F5F2E8;line-height:1;letter-spacing:.01em}
+.lk2{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;color:#F0C44D;line-height:1}
+/* régua dos horizontes */
+.ramp{position:absolute;left:0;right:0;bottom:0;height:10px;display:flex}
+.ramp i{flex:1}.ramp i:nth-child(1){background:#D4A437}.ramp i:nth-child(2){background:#A87C18}.ramp i:nth-child(3){background:#4C74D9}
+/* zona segura (só para conferência; não renderiza) */
+.safe{display:none}

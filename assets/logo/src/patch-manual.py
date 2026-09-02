@@ -36,6 +36,13 @@ IMGS = {
   "m-rodadas.jpg":         (ROOT / "assets/logo/explor-v4/rodada-10.png", 1400, "jpeg"),
   "m-avatar-ig.jpg":       (ROOT / "divulgacao/social-rbg/social-avatar-instagram-1080x1080.png", 540, "jpeg"),
   "m-avatar-li.jpg":       (ROOT / "divulgacao/social-rbg/social-avatar-linkedin-1080x1080.png", 540, "jpeg"),
+  # capítulo 09 · cortes & reels
+  "c-reel-padrao.jpg":     (ROOT / "divulgacao/cortes/reel-padrao-1080x1920.png", 720, "jpeg"),
+  "c-reel-fullbleed.jpg":  (ROOT / "divulgacao/cortes/reel-fullbleed-1080x1920.png", 720, "jpeg"),
+  "c-reel-editorial.jpg":  (ROOT / "divulgacao/cortes/reel-editorial-1080x1920.png", 720, "jpeg"),
+  "c-tiktok-padrao.jpg":   (ROOT / "divulgacao/cortes/tiktok-padrao-1080x1920.png", 720, "jpeg"),
+  "c-corte-horizontal.jpg":(ROOT / "divulgacao/cortes/corte-horizontal-1920x1080.png", 1200, "jpeg"),
+  "c-corte-horizontal-quadro.jpg": (ROOT / "divulgacao/cortes/corte-horizontal-quadro-1920x1080.png", 1200, "jpeg"),
 }
 b64 = {k: prep(v[0], k, v[1], v[2]) for k, v in IMGS.items()}
 
@@ -54,6 +61,17 @@ s = MAN.read_text()
 # 1. capítulo 01 inteiro
 a = s.index('<section id="marca">'); b = s.index('<section id="cor">')
 s = s[:a] + cap + s[b:]
+
+# 1b. capítulo 09 · cortes & reels (insere antes do <footer>, ou substitui se já existe)
+cap9 = (SRC / "manual-cap09.html").read_text()
+cap9 = re.sub(r"\{\{B64:([^}]+)\}\}", lambda m: b64[m.group(1)], cap9)
+if '<section id="cortes">' in s:
+    a = s.index('<section id="cortes">'); b = s.index('<footer>')
+    s = s[:a] + cap9 + s[b:]
+else:
+    s = s.replace('<footer>', cap9 + '<footer>', 1)
+if '<a href="#cortes">' not in s:
+    s = s.replace('<a href="#social"><b>08</b>Social</a>', '<a href="#social"><b>08</b>Social</a>\n  <a href="#cortes"><b>09</b>Cortes</a>', 1)
 
 # 2. hero (primeira <img> do arquivo)
 s = re.sub(r'(<div class="hero">\s*<img src=")data:image/[^"]+(")', lambda m: m.group(1) + b64["m-hero.png"] + m.group(2), s, count=1)
