@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diligência Inicial · Royal Business Growth</title>
+<meta name="description" content="Formulário de diligência inicial das empresas selecionadas no RBG Pitch Day.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- ─────────────── CAPA ─────────────── -->
+<div class="capa" id="capa">
+  <div class="glow"></div><div class="grid-bg"></div>
+  <div class="capa-in">
+    <svg class="emb" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="1.6"/>
+      <circle cx="50" cy="50" r="39" stroke="#D4A437" stroke-width=".8" opacity=".55"/>
+      <path d="M29 60 V51 L38 43 L44 49 L53 38 L59 44 L71 29 V60 Z" stroke="#F0C44D" stroke-width="1.8" stroke-linejoin="round"/>
+      <rect x="29" y="63.5" width="42" height="3" rx="1.5" fill="#F0C44D"/>
+    </svg>
+    <span class="eb mono rise" style="animation-delay:.15s">Royal Business Growth · Pitch Day 2026</span>
+    <h1 class="rise" style="animation-delay:.25s">
+      <span id="capa-nome" style="display:none;color:var(--gold-hi)"></span>
+      sua empresa foi <em>selecionada</em>.
+    </h1>
+    <p class="rise" style="animation-delay:.35s">
+      Este é o formulário de diligência inicial. Ele consolida as informações cadastrais, societárias,
+      financeiras, comerciais e operacionais que abrem o diagnóstico da sua empresa dentro do RBG.
+      É a base de tudo o que vem depois.
+    </p>
+    <div class="meta rise" style="animation-delay:.45s">
+      <div><b>11</b><span>etapas</span></div>
+      <div><b>~20</b><span>minutos</span></div>
+      <div><b>10</b><span>documentos</span></div>
+    </div>
+    <button class="btn rise" id="capa-cta" style="animation-delay:.55s">
+      Começar <span style="font-size:15px;line-height:0">&rarr;</span>
+    </button>
+    <div class="rise" id="capa-retomar" style="display:none;animation-delay:.6s;margin-top:14px;color:var(--on-3);font-size:12.5px">
+      Encontramos um preenchimento em andamento neste navegador.
+    </div>
+    <div class="conf rise" style="animation-delay:.65s">
+      <svg viewBox="0 0 16 16" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="7" width="10" height="7" rx="1.4"/><path d="M5.2 7V4.8a2.8 2.8 0 015.6 0V7"/>
+      </svg>
+      Salvo automaticamente no seu navegador · tratado como confidencial
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────── APP ─────────────── -->
+<div class="app">
+  <aside class="rail">
+    <div class="glow"></div>
+    <div class="rail-h">
+      <div class="row">
+        <svg class="emb" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="1.6"/>
+          <circle cx="50" cy="50" r="39" stroke="#D4A437" stroke-width=".8" opacity=".55"/>
+          <path d="M29 60 V51 L38 43 L44 49 L53 38 L59 44 L71 29 V60 Z" stroke="#F0C44D" stroke-width="1.8" stroke-linejoin="round"/>
+          <rect x="29" y="63.5" width="42" height="3" rx="1.5" fill="#F0C44D"/>
+        </svg>
+        <span class="nm"><b>Royal Business Growth</b>Diligência inicial</span>
+      </div>
+      <div class="prog">
+        <div class="ring">
+          <svg viewBox="0 0 46 46" width="46" height="46">
+            <circle class="bg" cx="23" cy="23" r="20"/>
+            <circle class="fg" id="ring-fg" cx="23" cy="23" r="20" stroke-dasharray="126" stroke-dashoffset="126"/>
+          </svg>
+          <b><span id="ring-n">0</span></b>
+        </div>
+        <div class="txt" id="prog-t"><b>0 de 11 etapas</b>~24 min restantes</div>
+      </div>
+    </div>
+    <div class="steps" id="steps"></div>
+    <div class="rail-f">
+      <div class="save" id="save"><i></i><span id="save-t">Salvo neste navegador</span></div>
+    </div>
+  </aside>
+
+  <main class="palco" id="palco"></main>
+</div>
+
+<!-- ─────────────── NAV ─────────────── -->
+<div class="nav">
+  <div class="st" id="nav-st"></div>
+  <div class="gr">
+    <button class="btn ghost" id="prev">&larr; Voltar</button>
+    <button class="btn" id="next">Continuar &rarr;</button>
+  </div>
+</div>
+
+<!-- ─────────────── TOAST ─────────────── -->
+<div class="toast" id="toast">
+  <svg viewBox="0 0 16 16" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="8" r="6.4"/><path d="M8 5v3.6M8 11h.01"/>
+  </svg>
+  <span id="toast-t"></span>
+</div>
+
+<!-- ─────────────── ENVIANDO ─────────────── -->
+<div class="load" id="load">
+  <div class="load-in">
+    <div class="sp"></div>
+    <p id="load-t">Registrando as respostas…</p>
+    <small>Não feche esta janela. Documentos grandes levam alguns segundos cada.</small>
+    <div class="pb"><i id="load-pb"></i></div>
+  </div>
+</div>
+
+<!-- ─────────────── FIM ─────────────── -->
+<div class="fim" id="fim">
+  <div class="glow"></div>
+  <div class="fim-in">
+    <div class="selo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="45" stroke="#D4A437" stroke-width="1.6"/>
+        <circle cx="50" cy="50" r="39" stroke="#D4A437" stroke-width=".8" opacity=".55"/>
+      </svg>
+      <div class="ck"><svg viewBox="0 0 24 24"><path d="M4 12.5l5.2 5.2L20 7"/></svg></div>
+    </div>
+    <h2>Diligência <em>recebida</em>.</h2>
+    <p>Suas informações e documentos chegaram ao Royal Business Growth. A partir daqui a equipe monta o diagnóstico da sua empresa e agenda o primeiro encontro.</p>
+    <p style="font-size:13.5px;color:var(--on-3)">Se algum documento ficou de fora, é só responder o e-mail de confirmação com o anexo e o número do protocolo.</p>
+    <div class="prot"><span>Protocolo</span><b id="proto-n"></b></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="schema.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
