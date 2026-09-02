@@ -57,33 +57,47 @@ summary{cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:
 summary::-webkit-details-marker{display:none}
 summary .eb{font-size:10.5px}
 summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
+
+/* rodada 9 · lockups */
+.lk{border:1px solid var(--on-rule);background:rgba(12,27,61,.35);display:grid;grid-template-rows:auto auto}
+.lk.pick{border-color:rgba(212,164,55,.55)}
+.lk .stage{position:relative;padding:54px 40px;display:flex;align-items:center;justify-content:center;gap:34px;
+  background:radial-gradient(70% 90% at 50% 30%,var(--navy-3),var(--navy));border-bottom:1px solid var(--on-rule)}
+.lk .stage svg{width:104px;height:104px;color:var(--gold-lt);flex:none}
+.lk .stage .wm{font-size:44px;gap:2px}
+.lk .n{position:absolute;left:16px;top:14px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:30px;color:var(--gold-hi);line-height:1}
+.lk .star{position:absolute;right:14px;top:14px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);border:1px solid rgba(212,164,55,.5);padding:3px 7px}
+.lk .row{display:grid;grid-template-columns:1fr 1fr;min-height:150px}
+.lk .sand{background:var(--sand);display:flex;align-items:center;justify-content:center;gap:16px;padding:22px}
+.lk .sand svg{width:56px;height:56px;color:var(--navy)}
+.lk .sand .wm{font-size:22px;color:var(--ink)}.lk .sand .wm i{color:var(--gold-dp)}
+.lk .stack{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:22px;border-left:1px solid var(--on-rule)}
+.lk .stack svg{width:44px;height:44px;color:var(--gold-lt)}
+.lk .stack .wm{font-size:16px;align-items:center;text-align:center}
+.lk .meta{padding:20px 24px 24px;border-top:1px solid var(--on-rule)}
+.lk .meta h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:28px;line-height:1.05}
+.lk .meta h2 span{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:6px;font-weight:500}
+.lk .meta p{color:var(--on-2);font-size:13.5px;margin-top:8px;max-width:66ch}
+.grid.one{grid-template-columns:1fr}
 </style>
 
 <header><div class="wrap">
-  <span class="eb">Royal Business Growth · símbolo · rodada 8 · método svg-design</span>
-  <h1>Institucional, <i>geométrico</i>, uma travessia</h1>
-  <p>Rodada feita com a skill do artigo (<b>svg-design</b>, tryopendata) — e com o briefing que você fechou: <b>institucional &amp; geométrico</b>,
-    o símbolo diz <b>o que fazemos</b>, referência <b>Sequoia</b> (um objeto real, reduzido, ao lado de uma serifa elegante).
-    A skill é explícita: <i>"bar charts going up"</i> é o clichê nº&nbsp;1 de finanças — por isso o gráfico saiu de cena.
-    Em vez dele, o mundo da RBG: <b>travessia do sul para o norte, ponte, arcada, portal, bússola, hemisfério</b>.
-    A aceleração continua — como inclinação, trajetória e direção, não como barra.</p>
+  <span class="eb">Royal Business Growth · símbolo · rodada 9 · fino</span>
+  <h1>O gráfico, <i>em linha fina</i></h1>
+  <p>O elemento é o gráfico — a ideia que você quer. O que muda é a disciplina, agora a da <b>logo-generator</b>:
+    <b>traço de 3 a 3,6</b> (não mais 7), <b>mais da metade do canvas vazio</b>, <b>assimetria intencional</b> e um só ponto focal.
+    Linha fina conversa com a serifa: a Cormorant tem hairlines, e o símbolo passa a ter o mesmo peso que os traços finos das letras.
+    Cada candidato já está montado <b>com a tipografia ao lado</b>, sobre navy e sobre claro, e empilhado para avatar e capa.</p>
   <div class="brief">
-    <div><span class="k">Domínio minerado</span><p>Brasil→EUA · sul→norte · ponte · arcada/aqueduto · portal · bússola · hemisfério · selo · coroa · estrutura antes de escala.</p></div>
-    <div><span class="k">Categorias cobertas</span><p>Símbolo arquitetônico · símbolo de travessia · abstrato de direção · letra + metáfora · espaço negativo.</p></div>
-    <div><span class="k">Como responder</span><p>Um número. Fecho peso, mono, mini e anel de avatar — e aplico em manual, avatares, assinaturas e artes.</p></div>
+    <div><span class="k">A regra</span><p>Nada de barra, nada de bloco, nada de ponto. Só linha — base, curva, anel, eixos, degraus — e ar em volta.</p></div>
+    <div><span class="k">O lockup</span><p>Símbolo à esquerda com a altura das duas linhas do wordmark; folga de meio símbolo entre eles. "Growth" em itálico dourado.</p></div>
+    <div><span class="k">Como responder</span><p>Um número. Fecho geometria final, mono, mini, anel de avatar — e aplico em manual, avatares, assinaturas e artes.</p></div>
   </div>
 </div></header>
 
 <main class="wrap">
-  <div class="fam"><h2>Símbolo · <i>arquitetura</i></h2><span>A arcada: instituição, estrutura, ponte e coroa numa forma só.</span></div>
-  <div class="grid" id="k1"></div>
-  <div class="fam"><h2>Símbolo · <i>travessia</i></h2><span>Ponte e portal: a passagem para o mercado americano.</span></div>
-  <div class="grid" id="k2"></div>
-  <div class="fam"><h2>Abstrato · <i>direção</i></h2><span>Norte e hemisfério: a geografia da tese, reduzida a geometria.</span></div>
-  <div class="grid" id="k3"></div>
-  <div class="fam"><h2>Letra + <i>metáfora</i></h2><span>A inicial de Growth carregando o gesto.</span></div>
-  <div class="grid" id="k4"></div>
-  <div class="fam"><h2>Teste de favicon</h2><span>Os sete a 48, 32 e 16 px.</span></div>
+  <div class="grid one" id="l9"></div>
+  <div class="fam"><h2>Teste de favicon</h2><span>Os seis a 48, 32 e 16 px — linha fina é o teste mais duro.</span></div>
   <div class="strip" id="strip"></div>
 </main>
 
@@ -93,6 +107,7 @@ summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
     nos avatares, nas assinaturas de e-mail (a versão navy + ouro que você pediu) e nas artes.</p>
 </div></section>
 
+<details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 8 · Institucional, geométrico, uma travessia</summary><div class="grid" id="g8"></div></div></details>
 <details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 7 · O gráfico dentro do anel</summary><div class="grid" id="g7"></div></div></details>
 <details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 6 · Blocos que sobem</summary><div class="grid" id="g6"></div></div></details>
 <details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 5 · Degrau e Vértice acelerados</summary><div class="grid" id="g5"></div></div></details>
@@ -100,6 +115,7 @@ summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
 
 <script>
 // Cada símbolo em viewBox 0 0 100 100 com currentColor — a mesma geometria muda de cor por contexto.
+const R9 = [{"id": "curva", "nome": "Curva", "tese": "A curva que sai da linha", "pick": true, "txt": "Uma linha de base curta e uma curva que nasce nela, quase plana, e dispara para o alto à direita — a aceleração desenhada como matemática. Dois traços, o resto é ar. É a forma mais próxima de uma serifa: fina, precisa, elegante.", "svg": "<path d=\"M20 74 H58\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M20 68 C40 68 52 64 60 52 C66 42 70 34 78 22\" stroke=\"currentColor\" stroke-width=\"3.4\"/>"}, {"id": "eixos", "nome": "Eixos", "tese": "O gráfico inteiro, em três linhas", "pick": true, "txt": "Os dois eixos de um gráfico, finos, e a curva mais pesada que os atravessa e sai pelo canto aberto. Lê 'gráfico' instantaneamente sem uma barra sequer. O canto aberto no alto à direita é a assimetria que dá vida à forma.", "svg": "<path d=\"M24 22 V76 H76\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M24 70 C44 70 56 64 64 50 C70 40 74 32 80 22\" stroke=\"currentColor\" stroke-width=\"3.6\"/>"}, {"id": "anel-fino", "nome": "Anel", "tese": "A curva que rompe o selo", "pick": true, "txt": "O anel do selo, fino, e a curva de aceleração saindo por ele no alto à direita. É o mesmo gesto da rodada 7 (que você gostou) reduzido à disciplina certa: traço 3, muito ar, um só ponto focal onde a linha cruza o anel.", "svg": "<path d=\"M80.8 35.6 A34 34 0 1 1 64.4 19.2\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M30 64 C44 64 54 58 60 48 C65 40 70 32 80 20\" stroke=\"currentColor\" stroke-width=\"3.4\"/>"}, {"id": "tracos", "nome": "Traços", "tese": "Três linhas, cada uma mais longa", "txt": "Três diagonais paralelas na mesma inclinação, cada uma mais longa que a anterior, todas nascendo da mesma base. Crescimento em três horizontes, velocidade, ritmo — sem gráfico, sem barra. A mais abstrata e a mais tipográfica.", "svg": "<path d=\"M22 72 L34 60 M36 72 L56 52 M50 72 L78 44\" stroke=\"currentColor\" stroke-width=\"3.4\"/>"}, {"id": "apice", "nome": "Ápice", "tese": "A linha do gráfico e a base deslocada", "txt": "A polilinha clássica — cai, sobe, dispara — em traço fino, sobre uma base curta que não a acompanha até o fim. A distância entre a base e a ponta é a história: de onde saiu, até onde foi.", "svg": "<path d=\"M24 62 L36 50 L44 58 L76 26\" stroke=\"currentColor\" stroke-width=\"3.4\" stroke-linejoin=\"miter\"/><path d=\"M24 72 H58\" stroke=\"currentColor\" stroke-width=\"3\"/>"}, {"id": "degraus-finos", "nome": "Degraus", "tese": "A escada que vira rampa", "txt": "Uma linha só: sobe em degraus e, no último, deixa de ser escada e vira uma reta para o alto. É o programa de aceleração como desenho — passos e depois o salto. Fina, contínua, lê a 16 px.", "svg": "<path d=\"M20 76 H32 V64 H44 V52 H56 V40 L78 18\" stroke=\"currentColor\" stroke-width=\"3.4\" stroke-linejoin=\"miter\"/>"}];
 const R8 = [{"id": "arcada", "grp": "Símbolo · arquitetura", "nome": "Arcada", "tese": "Um aqueduto que sobe", "txt": "Três arcos sobre colunas compartilhadas, cada vão mais alto que o anterior. É arquitetura — instituição, estrutura antes de escala — e é uma ponte que sobe. As três arcadas lêem também como coroa. Sequoia tem a árvore; a RBG tem a arcada.", "svg": "<path d=\"M14 82 V72 A12 12 0 0 1 38 72 V82 M38 82 V58 A12 12 0 0 1 62 58 V82 M62 82 V44 A12 12 0 0 1 86 44 V82\" stroke=\"currentColor\" stroke-width=\"7\"/>", "pick": true}, {"id": "arcada-solida", "grp": "Símbolo · arquitetura", "nome": "Arcada sólida", "tese": "A mesma ideia, em massa", "txt": "Um bloco em degraus com os três arcos recortados em espaço negativo. Mais pesado, mais selo, mais 'moeda'. Perde um pouco a 16 px (os arcos fecham), ganha muito em avatar e carimbo.", "svg": "<path fill-rule=\"evenodd\" fill=\"currentColor\" d=\"M12 84 V64 H38 V50 H62 V36 H88 V84 Z M17 84 V75 A8 8 0 0 1 33 75 V84 Z M42 84 V61 A8 8 0 0 1 58 61 V84 Z M67 84 V47 A8 8 0 0 1 83 47 V84 Z\"/>", "pick": false}, {"id": "viaduto", "grp": "Símbolo · travessia", "nome": "Viaduto", "tese": "A ponte que também é a curva", "txt": "Um tabuleiro que sobe da esquerda para a direita, apoiado em dois arcos que crescem. A ponte é a travessia Brasil→EUA; os arcos são a estrutura; a inclinação é o crescimento. Uma cena inteira em três traços.", "svg": "<path d=\"M8 76 L92 30\" stroke=\"currentColor\" stroke-width=\"8\"/><path d=\"M16 88 A12 12 0 0 1 40 88 M44 88 A20 20 0 0 1 84 88\" stroke=\"currentColor\" stroke-width=\"7\"/>", "pick": true}, {"id": "portal", "grp": "Símbolo · travessia", "nome": "Portal", "tese": "Passar pelo arco", "txt": "Um único arco — o portal, o Gateway Arch, a porta de entrada no mercado americano — atravessado por uma trajetória que começa dentro e termina fora, acima. A forma mais reduzida da travessia.", "svg": "<path d=\"M14 86 A36 36 0 0 1 86 86\" stroke=\"currentColor\" stroke-width=\"8\"/><path d=\"M36 74 L84 26\" stroke=\"currentColor\" stroke-width=\"8\"/>", "pick": false}, {"id": "norte", "grp": "Abstrato · direção", "nome": "Norte", "tese": "Ir para o norte", "txt": "O Brasil está ao sul; os EUA, ao norte. A agulha da bússola com o norte cheio e o sul vazado, dentro do anel do selo. Direção, navegação, instituição — e a assimetria entre o cheio e o vazio conta a história sem uma palavra.", "svg": "<circle cx=\"50\" cy=\"50\" r=\"42\" stroke=\"currentColor\" stroke-width=\"5\"/><path d=\"M50 8 L62 50 H38 Z\" fill=\"currentColor\"/><path d=\"M50 92 L62 50 H38 Z\" stroke=\"currentColor\" stroke-width=\"5\" stroke-linejoin=\"miter\"/>", "pick": true}, {"id": "hemisferio", "grp": "Abstrato · direção", "nome": "Hemisfério", "tese": "Cruzar o equador", "txt": "A metade de baixo do disco é cheia (o sul, de onde a empresa vem); a de cima é anel (o norte, o espaço para onde ela vai). No meio da subida, a seta. Moeda, globo e nascer do sol ao mesmo tempo.", "svg": "<path d=\"M10 52 A40 40 0 0 0 90 52 Z\" fill=\"currentColor\"/><path d=\"M10 52 A40 40 0 0 1 90 52\" stroke=\"currentColor\" stroke-width=\"6\"/><path d=\"M50 16 L64 38 H36 Z\" fill=\"currentColor\"/>", "pick": false}, {"id": "g-anel", "grp": "Letra + metáfora", "nome": "G de Growth", "tese": "A letra que sobe", "txt": "Um G geométrico: o anel aberto à direita e a barra que, em vez de ficar reta, sobe e sai pelo vão. É o Órbita das rodadas anteriores, agora com um motivo para existir — é a inicial de Growth. Pode viver dentro do próprio wordmark.", "svg": "<path d=\"M82.8 72.9 A40 40 0 1 1 82.8 27.1\" stroke=\"currentColor\" stroke-width=\"8\"/><path d=\"M50 52 H70 L88 34\" stroke=\"currentColor\" stroke-width=\"8\" stroke-linejoin=\"miter\"/>", "pick": false}];
 const R7 = {
  linha: [
@@ -222,14 +238,20 @@ const card = (s,n) => `
     <div class="tiny">${svg(s.svg,24)}<i>24 px</i></div>
   </div>
 </article>`;
-let n = 0;
-const by = g => R8.filter(s=>s.grp===g);
-document.getElementById('k1').innerHTML = by('Símbolo · arquitetura').map(s=>card(s,++n)).join('');
-document.getElementById('k2').innerHTML = by('Símbolo · travessia').map(s=>card(s,++n)).join('');
-document.getElementById('k3').innerHTML = by('Abstrato · direção').map(s=>card(s,++n)).join('');
-document.getElementById('k4').innerHTML = by('Letra + metáfora').map(s=>card(s,++n)).join('');
-document.getElementById('strip').innerHTML = R8.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
+const WM = (cls='') => `<div class="wm ${cls}"><span>Royal Business</span><i>Growth</i></div>`;
+const lk = (s,n) => `
+<article class="lk${s.pick?' pick':''}" id="${s.id}">
+  <div class="stage"><span class="n">${String(n).padStart(2,'0')}</span>${s.pick?'<span class="star">aposta</span>':''}${svg(s.svg)}${WM()}</div>
+  <div class="row">
+    <div class="sand">${svg(s.svg)}${WM()}</div>
+    <div class="stack">${svg(s.svg)}${WM()}</div>
+  </div>
+  <div class="meta"><h2><span>${s.tese}</span>${s.nome}</h2><p>${s.txt}</p></div>
+</article>`;
+document.getElementById('l9').innerHTML = R9.map((s,i)=>lk(s,i+1)).join('');
+document.getElementById('strip').innerHTML = R9.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
 const nopick = a => a.map(s=>({...s,pick:false}));
+document.getElementById('g8').innerHTML = nopick(R8).map((s,i)=>card(s,i+1)).join('');
 document.getElementById('g7').innerHTML = nopick([...R7.linha, ...R7.solido]).map((s,i)=>card(s,i+1)).join('');
 document.getElementById('g6').innerHTML = nopick([...R6.blocos, ...R6.barras, ...R6.caixa]).map((s,i)=>card(s,i+1)).join('');
 document.getElementById('g5').innerHTML = nopick([...R5.degrau, ...R5.vertice, ...R5.fusao]).map((s,i)=>card(s,i+1)).join('');

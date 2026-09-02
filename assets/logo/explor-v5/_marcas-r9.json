@@ -1,0 +1,47 @@
+[
+ {
+  "id": "curva",
+  "nome": "Curva",
+  "tese": "A curva que sai da linha",
+  "pick": true,
+  "txt": "Uma linha de base curta e uma curva que nasce nela, quase plana, e dispara para o alto à direita — a aceleração desenhada como matemática. Dois traços, o resto é ar. É a forma mais próxima de uma serifa: fina, precisa, elegante.",
+  "svg": "<path d=\"M20 74 H58\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M20 68 C40 68 52 64 60 52 C66 42 70 34 78 22\" stroke=\"currentColor\" stroke-width=\"3.4\"/>"
+ },
+ {
+  "id": "eixos",
+  "nome": "Eixos",
+  "tese": "O gráfico inteiro, em três linhas",
+  "pick": true,
+  "txt": "Os dois eixos de um gráfico, finos, e a curva mais pesada que os atravessa e sai pelo canto aberto. Lê 'gráfico' instantaneamente sem uma barra sequer. O canto aberto no alto à direita é a assimetria que dá vida à forma.",
+  "svg": "<path d=\"M24 22 V76 H76\" stroke=\"currentColor\" stroke-width=\"2.6\"/><path d=\"M24 70 C44 70 56 64 64 50 C70 40 74 32 80 22\" stroke=\"currentColor\" stroke-width=\"3.6\"/>"
+ },
+ {
+  "id": "anel-fino",
+  "nome": "Anel",
+  "tese": "A curva que rompe o selo",
+  "pick": true,
+  "txt": "O anel do selo, fino, e a curva de aceleração saindo por ele no alto à direita. É o mesmo gesto da rodada 7 (que você gostou) reduzido à disciplina certa: traço 3, muito ar, um só ponto focal onde a linha cruza o anel.",
+  "svg": "<path d=\"M80.8 35.6 A34 34 0 1 1 64.4 19.2\" stroke=\"currentColor\" stroke-width=\"3\"/><path d=\"M30 64 C44 64 54 58 60 48 C65 40 70 32 80 20\" stroke=\"currentColor\" stroke-width=\"3.4\"/>"
+ },
+ {
+  "id": "tracos",
+  "nome": "Traços",
+  "tese": "Três linhas, cada uma mais longa",
+  "txt": "Três diagonais paralelas na mesma inclinação, cada uma mais longa que a anterior, todas nascendo da mesma base. Crescimento em três horizontes, velocidade, ritmo — sem gráfico, sem barra. A mais abstrata e a mais tipográfica.",
+  "svg": "<path d=\"M22 72 L34 60 M36 72 L56 52 M50 72 L78 44\" stroke=\"currentColor\" stroke-width=\"3.4\"/>"
+ },
+ {
+  "id": "apice",
+  "nome": "Ápice",
+  "tese": "A linha do gráfico e a base deslocada",
+  "txt": "A polilinha clássica — cai, sobe, dispara — em traço fino, sobre uma base curta que não a acompanha até o fim. A distância entre a base e a ponta é a história: de onde saiu, até onde foi.",
+  "svg": "<path d=\"M24 62 L36 50 L44 58 L76 26\" stroke=\"currentColor\" stroke-width=\"3.4\" stroke-linejoin=\"miter\"/><path d=\"M24 72 H58\" stroke=\"currentColor\" stroke-width=\"3\"/>"
+ },
+ {
+  "id": "degraus-finos",
+  "nome": "Degraus",
+  "tese": "A escada que vira rampa",
+  "txt": "Uma linha só: sobe em degraus e, no último, deixa de ser escada e vira uma reta para o alto. É o programa de aceleração como desenho — passos e depois o salto. Fina, contínua, lê a 16 px.",
+  "svg": "<path d=\"M20 76 H32 V64 H44 V52 H56 V40 L78 18\" stroke=\"currentColor\" stroke-width=\"3.4\" stroke-linejoin=\"miter\"/>"
+ }
+]

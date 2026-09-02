@@ -3,6 +3,53 @@ window.VARIANTS = {
   "brandName": "Royal Business Growth",
   "concepts": [
     {
+      "name": "Rodada 9 · linha fina",
+      "variants": [
+        {
+          "id": "9.1",
+          "name": "Curva",
+          "description": "A curva que sai da linha — Uma linha de base curta e uma curva que nasce nela, quase plana, e dispara para o alto à direita — a aceleração desenhada como matemática. Dois traços, o resto é ar. É a forma mais próxima de uma serifa: fina, precisa, elegante.",
+          "light": "logo-r9-curva.svg",
+          "dark": "logo-r9-curva-dark.svg"
+        },
+        {
+          "id": "9.2",
+          "name": "Eixos",
+          "description": "O gráfico inteiro, em três linhas — Os dois eixos de um gráfico, finos, e a curva mais pesada que os atravessa e sai pelo canto aberto. Lê 'gráfico' instantaneamente sem uma barra sequer. O canto aberto no alto à direita é a assimetria que dá vida à forma.",
+          "light": "logo-r9-eixos.svg",
+          "dark": "logo-r9-eixos-dark.svg"
+        },
+        {
+          "id": "9.3",
+          "name": "Anel",
+          "description": "A curva que rompe o selo — O anel do selo, fino, e a curva de aceleração saindo por ele no alto à direita. É o mesmo gesto da rodada 7 (que você gostou) reduzido à disciplina certa: traço 3, muito ar, um só ponto focal onde a linha cruza o anel.",
+          "light": "logo-r9-anel-fino.svg",
+          "dark": "logo-r9-anel-fino-dark.svg"
+        },
+        {
+          "id": "9.4",
+          "name": "Traços",
+          "description": "Três linhas, cada uma mais longa — Três diagonais paralelas na mesma inclinação, cada uma mais longa que a anterior, todas nascendo da mesma base. Crescimento em três horizontes, velocidade, ritmo — sem gráfico, sem barra. A mais abstrata e a mais tipográfica.",
+          "light": "logo-r9-tracos.svg",
+          "dark": "logo-r9-tracos-dark.svg"
+        },
+        {
+          "id": "9.5",
+          "name": "Ápice",
+          "description": "A linha do gráfico e a base deslocada — A polilinha clássica — cai, sobe, dispara — em traço fino, sobre uma base curta que não a acompanha até o fim. A distância entre a base e a ponta é a história: de onde saiu, até onde foi.",
+          "light": "logo-r9-apice.svg",
+          "dark": "logo-r9-apice-dark.svg"
+        },
+        {
+          "id": "9.6",
+          "name": "Degraus",
+          "description": "A escada que vira rampa — Uma linha só: sobe em degraus e, no último, deixa de ser escada e vira uma reta para o alto. É o programa de aceleração como desenho — passos e depois o salto. Fina, contínua, lê a 16 px.",
+          "light": "logo-r9-degraus-finos.svg",
+          "dark": "logo-r9-degraus-finos-dark.svg"
+        }
+      ]
+    },
+    {
       "name": "Símbolo · arquitetura",
       "variants": [
         {
