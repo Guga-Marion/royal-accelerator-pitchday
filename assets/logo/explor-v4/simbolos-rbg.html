@@ -60,30 +60,30 @@ summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
 </style>
 
 <header><div class="wrap">
-  <span class="eb">Royal Business Growth · símbolo · rodada 5</span>
-  <h1>Degrau e Vértice, <i>acelerados</i></h1>
-  <p>Você escolheu os dois caminhos mais reduzidos da rodada 4 — <b>Degrau</b> (dois blocos, um salto) e <b>Vértice</b>
-    (o canto que se solta). Aqui eles evoluem numa direção só: <b>aceleração</b>. Em todos, o bloco de baixo é a estrutura
-    — a empresa como ela chega — e o que sai dele para cima e para a direita é o que a RBG faz com ela.
-    Quatro variações por família, mais duas que fundem as duas. Tudo em forma cheia ou traço grosso, para valer a 16&nbsp;px.</p>
+  <span class="eb">Royal Business Growth · símbolo · rodada 6</span>
+  <h1>Blocos que <i>sobem</i></h1>
+  <p>Você tinha razão: bloco e canto sozinhos não contam a história. Aqui o Degrau e o Vértice se cruzam com a ideia
+    original — <b>o gráfico que sobe</b> — para que o elemento, <b>sozinho, sem o wordmark</b>, diga "crescimento"
+    em meio segundo. Todos usam o mesmo vocabulário: sólidos, degraus, uma diagonal que acelera. Nada de pontinhos,
+    nada de linha fina, nada que suma a 16&nbsp;px.</p>
   <div class="brief">
-    <div><span class="k">O gesto</span><p>Sempre a mesma diagonal — de baixo à esquerda para cima à direita. O olho aprende uma vez e reconhece em qualquer tamanho.</p></div>
-    <div><span class="k">O que muda entre elas</span><p>O quanto de "velocidade" a forma carrega: de um bloco que apenas sobe até um que vira flecha, gema ou rastro.</p></div>
-    <div><span class="k">Como responder</span><p>Um número. Se quiser, diga o que ajustar (peso, proporção, com ou sem anel). O vencedor vai para o manual, avatares e assinaturas.</p></div>
+    <div><span class="k">O que precisa ler sozinho</span><p>Subida. Um degrau depois do outro, e no fim um salto — a aceleração que a RBG dá.</p></div>
+    <div><span class="k">O que muda entre elas</span><p>Como a subida é contada: em blocos, em barras, em escada sólida, em linha que rompe a caixa.</p></div>
+    <div><span class="k">Como responder</span><p>Um número. Ajustes de peso, proporção e anel eu fecho na sequência, e aí aplico em tudo.</p></div>
   </div>
 </div></header>
 
 <main class="wrap">
-  <div class="fam"><h2>Família <i>Degrau</i></h2><span>Dois sólidos encostados pelo vértice. A evolução: o bloco de cima deixa de ser cópia do de baixo e ganha direção.</span></div>
-  <div class="grid" id="g1"></div>
+  <div class="fam"><h2>Em <i>blocos</i></h2><span>Os sólidos do Degrau, agora em escada — e o último bloco ganha aceleração.</span></div>
+  <div class="grid" id="h1"></div>
 
-  <div class="fam"><h2>Família <i>Vértice</i></h2><span>Um quadrado que abre o canto. A evolução: o que sai pelo canto aberto passa a ter velocidade.</span></div>
-  <div class="grid" id="g2"></div>
+  <div class="fam"><h2>Em <i>barras e silhueta</i></h2><span>O gráfico de barras e a área de gráfico, reduzidos a uma forma cheia com corte diagonal.</span></div>
+  <div class="grid" id="h2"></div>
 
-  <div class="fam"><h2>Fusões</h2><span>Onde as duas famílias se encontram — sólido embaixo, gesto em cima.</span></div>
-  <div class="grid" id="g3"></div>
+  <div class="fam"><h2>Rompendo a <i>caixa</i></h2><span>O Vértice com a linha do gráfico saindo pelo canto aberto.</span></div>
+  <div class="grid" id="h3"></div>
 
-  <div class="fam"><h2>Teste de favicon</h2><span>Os dez a 48, 32 e 16 px. O que sumir aqui não vai para a frente.</span></div>
+  <div class="fam"><h2>Teste de favicon</h2><span>Os oito a 48, 32 e 16 px. O que sumir aqui não vai para a frente.</span></div>
   <div class="strip" id="strip"></div>
 </main>
 
@@ -93,10 +93,43 @@ summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
     nos avatares, nas assinaturas de e-mail (a versão navy + ouro que você pediu) e nas artes.</p>
 </div></section>
 
+<details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 5 · Degrau e Vértice acelerados</summary><div class="grid" id="g5"></div></div></details>
 <details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 4 · os oito originais</summary><div class="grid" id="g0"></div></div></details>
 
 <script>
 // Cada símbolo em viewBox 0 0 100 100 com currentColor — a mesma geometria muda de cor por contexto.
+const R6 = {
+ blocos: [
+  { id:'escada', nome:'Escada', tese:'Três blocos, três degraus',
+    txt:'O Degrau com um passo a mais: três sólidos encostados pelo vértice, subindo. Sozinho já lê "crescimento" — é um gráfico de degraus feito de blocos. A base da família; as próximas partem dela.',
+    svg:'<rect x="20" y="58" width="20" height="20" fill="currentColor"/><rect x="40" y="38" width="20" height="20" fill="currentColor"/><rect x="60" y="18" width="20" height="20" fill="currentColor"/>' },
+  { id:'escada-rampa', nome:'Escada-rampa', tese:'O último degrau vira flecha', pick:true,
+    txt:'Dois blocos sobem em degrau; o terceiro é cortado na diagonal e vira uma ponta para o alto à direita. Subida + aceleração numa silhueta só. É a Rampa da rodada 5 com a história completa — a minha aposta principal.',
+    svg:'<rect x="20" y="58" width="20" height="20" fill="currentColor"/><rect x="40" y="38" width="20" height="20" fill="currentColor"/><path d="M60 38 H80 V18 Z" fill="currentColor"/>' },
+  { id:'decolagem', nome:'Decolagem', tese:'O terceiro bloco se solta',
+    txt:'Dois degraus firmes e o terceiro bloco desprendido, mais alto e mais à direita do que a escada previa. O Vértice aplicado à escada: a empresa segue a rampa e, no fim, decola. Precisa de respiro em volta.',
+    svg:'<rect x="20" y="58" width="20" height="20" fill="currentColor"/><rect x="40" y="38" width="20" height="20" fill="currentColor"/><rect x="66" y="10" width="20" height="20" fill="currentColor"/>' },
+  { id:'crescente', nome:'Crescente', tese:'Sobe e cresce',
+    txt:'Três sólidos na diagonal, cada um maior e mais alto que o anterior. Não é só subir: é ficar maior enquanto sobe — valuation, time, alcance. Simples e muito moderna; a 16 px o primeiro bloco fica pequeno.',
+    svg:'<rect x="20" y="66" width="11" height="11" fill="currentColor"/><rect x="37" y="44" width="16" height="16" fill="currentColor"/><rect x="59" y="14" width="24" height="24" fill="currentColor"/>' },
+ ],
+ barras: [
+  { id:'laminas', nome:'Lâminas', tese:'Barras cortadas na diagonal', pick:true,
+    txt:'Três barras crescentes — o gráfico mais reconhecível que existe — com o topo cortado na mesma diagonal ascendente. As barras viram lâminas; o gráfico ganha velocidade. Moderna, sólida, lê em qualquer tamanho.',
+    svg:'<path d="M22 78 V60 L36 46 V78 Z M43 78 V44 L57 30 V78 Z M64 78 V28 L78 14 V78 Z" fill="currentColor"/>' },
+  { id:'cume', nome:'Cume', tese:'A área do gráfico, em degraus e rampa',
+    txt:'Uma silhueta só: degraus que sobem e, no fim, uma rampa íngreme até o topo. É a área de um gráfico que acelera — o crescimento primeiro em passos, depois em salto. A mais pesada e a mais icônica em avatar.',
+    svg:'<path d="M20 78 V62 H36 V46 H52 L78 20 V78 Z" fill="currentColor"/>' },
+ ],
+ caixa: [
+  { id:'ruptura', nome:'Ruptura', tese:'O gráfico sai da caixa', pick:true,
+    txt:'O Vértice com a linha do gráfico dentro: ela oscila, sobe e rompe pelo canto aberto com uma ponta. É a aceleradora contada em uma cena — a empresa estava dentro dos próprios limites e saiu. A mais narrativa; a mais "logo de VC".',
+    svg:'<path d="M52 30 H30 V70 H70 V48" stroke="currentColor" stroke-width="7"/><path d="M36 62 L48 48 L56 56 L76 28" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/><path d="M62 24 H80 V42" stroke="currentColor" stroke-width="7"/>' },
+  { id:'escadaria', nome:'Escadaria', tese:'Degraus em linha, ponta para cima',
+    txt:'A escada desenhada em traço grosso, terminando numa seta para cima. Um contraponto de linha às versões sólidas: mais leve, mais gráfica, boa em bordado e gravação. Dupla leitura imediata: escada e crescimento.',
+    svg:'<path d="M22 76 H40 V58 H56 V40 H66 V22" stroke="currentColor" stroke-width="7"/><path d="M56 32 L66 22 L76 32" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/>' },
+ ],
+};
 const R5 = {
  degrau: [
   { id:'rampa', nome:'Rampa', tese:'O bloco vira flecha', pick:true,
@@ -156,10 +189,12 @@ const card = (s,n) => `
     <div class="tiny">${svg(s.svg,24)}<i>24 px</i></div>
   </div>
 </article>`;
-let n = 0; const all = [...R5.degrau, ...R5.vertice, ...R5.fusao];
-document.getElementById('g1').innerHTML = R5.degrau.map(s=>card(s,++n)).join('');
-document.getElementById('g2').innerHTML = R5.vertice.map(s=>card(s,++n)).join('');
-document.getElementById('g3').innerHTML = R5.fusao.map(s=>card(s,++n)).join('');
-document.getElementById('strip').innerHTML = all.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
+let n = 0; const all6 = [...R6.blocos, ...R6.barras, ...R6.caixa];
+document.getElementById('h1').innerHTML = R6.blocos.map(s=>card(s,++n)).join('');
+document.getElementById('h2').innerHTML = R6.barras.map(s=>card(s,++n)).join('');
+document.getElementById('h3').innerHTML = R6.caixa.map(s=>card(s,++n)).join('');
+document.getElementById('strip').innerHTML = all6.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
+const all5 = [...R5.degrau, ...R5.vertice, ...R5.fusao].map(s=>({...s,pick:false}));
+document.getElementById('g5').innerHTML = all5.map((s,i)=>card(s,i+1)).join('');
 document.getElementById('g0').innerHTML = R4.map((s,i)=>card(s,i+1)).join('');
 </script>
