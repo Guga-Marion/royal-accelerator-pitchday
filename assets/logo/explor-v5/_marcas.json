@@ -1,0 +1,58 @@
+[
+ {
+  "id": "arcada",
+  "grp": "Símbolo · arquitetura",
+  "nome": "Arcada",
+  "tese": "Um aqueduto que sobe",
+  "txt": "Três arcos sobre colunas compartilhadas, cada vão mais alto que o anterior. É arquitetura — instituição, estrutura antes de escala — e é uma ponte que sobe. As três arcadas lêem também como coroa. Sequoia tem a árvore; a RBG tem a arcada.",
+  "svg": "<path d=\"M14 82 V72 A12 12 0 0 1 38 72 V82 M38 82 V58 A12 12 0 0 1 62 58 V82 M62 82 V44 A12 12 0 0 1 86 44 V82\" stroke=\"C\" stroke-width=\"7\"/>"
+ },
+ {
+  "id": "arcada-solida",
+  "grp": "Símbolo · arquitetura",
+  "nome": "Arcada sólida",
+  "tese": "A mesma ideia, em massa",
+  "txt": "Um bloco em degraus com os três arcos recortados em espaço negativo. Mais pesado, mais selo, mais 'moeda'. Perde um pouco a 16 px (os arcos fecham), ganha muito em avatar e carimbo.",
+  "svg": "<path fill-rule=\"evenodd\" fill=\"C\" d=\"M12 84 V64 H38 V50 H62 V36 H88 V84 Z M17 84 V75 A8 8 0 0 1 33 75 V84 Z M42 84 V61 A8 8 0 0 1 58 61 V84 Z M67 84 V47 A8 8 0 0 1 83 47 V84 Z\"/>"
+ },
+ {
+  "id": "viaduto",
+  "grp": "Símbolo · travessia",
+  "nome": "Viaduto",
+  "tese": "A ponte que também é a curva",
+  "txt": "Um tabuleiro que sobe da esquerda para a direita, apoiado em dois arcos que crescem. A ponte é a travessia Brasil→EUA; os arcos são a estrutura; a inclinação é o crescimento. Uma cena inteira em três traços.",
+  "svg": "<path d=\"M8 76 L92 30\" stroke=\"C\" stroke-width=\"8\"/><path d=\"M16 88 A12 12 0 0 1 40 88 M44 88 A20 20 0 0 1 84 88\" stroke=\"C\" stroke-width=\"7\"/>"
+ },
+ {
+  "id": "portal",
+  "grp": "Símbolo · travessia",
+  "nome": "Portal",
+  "tese": "Passar pelo arco",
+  "txt": "Um único arco — o portal, o Gateway Arch, a porta de entrada no mercado americano — atravessado por uma trajetória que começa dentro e termina fora, acima. A forma mais reduzida da travessia.",
+  "svg": "<path d=\"M14 86 A36 36 0 0 1 86 86\" stroke=\"C\" stroke-width=\"8\"/><path d=\"M36 74 L84 26\" stroke=\"C\" stroke-width=\"8\"/>"
+ },
+ {
+  "id": "norte",
+  "grp": "Abstrato · direção",
+  "nome": "Norte",
+  "tese": "Ir para o norte",
+  "txt": "O Brasil está ao sul; os EUA, ao norte. A agulha da bússola com o norte cheio e o sul vazado, dentro do anel do selo. Direção, navegação, instituição — e a assimetria entre o cheio e o vazio conta a história sem uma palavra.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"42\" stroke=\"C\" stroke-width=\"5\"/><path d=\"M50 8 L62 50 H38 Z\" fill=\"C\"/><path d=\"M50 92 L62 50 H38 Z\" stroke=\"C\" stroke-width=\"5\" stroke-linejoin=\"miter\"/>"
+ },
+ {
+  "id": "hemisferio",
+  "grp": "Abstrato · direção",
+  "nome": "Hemisfério",
+  "tese": "Cruzar o equador",
+  "txt": "A metade de baixo do disco é cheia (o sul, de onde a empresa vem); a de cima é anel (o norte, o espaço para onde ela vai). No meio da subida, a seta. Moeda, globo e nascer do sol ao mesmo tempo.",
+  "svg": "<path d=\"M10 52 A40 40 0 0 0 90 52 Z\" fill=\"C\"/><path d=\"M10 52 A40 40 0 0 1 90 52\" stroke=\"C\" stroke-width=\"6\"/><path d=\"M50 16 L64 38 H36 Z\" fill=\"C\"/>"
+ },
+ {
+  "id": "g-anel",
+  "grp": "Letra + metáfora",
+  "nome": "G de Growth",
+  "tese": "A letra que sobe",
+  "txt": "Um G geométrico: o anel aberto à direita e a barra que, em vez de ficar reta, sobe e sai pelo vão. É o Órbita das rodadas anteriores, agora com um motivo para existir — é a inicial de Growth. Pode viver dentro do próprio wordmark.",
+  "svg": "<path d=\"M82.8 72.9 A40 40 0 1 1 82.8 27.1\" stroke=\"C\" stroke-width=\"8\"/><path d=\"M50 52 H70 L88 34\" stroke=\"C\" stroke-width=\"8\" stroke-linejoin=\"miter\"/>"
+ }
+]
