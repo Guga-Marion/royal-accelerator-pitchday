@@ -28,23 +28,27 @@ R=$(post "{\"acao\":\"arquivo\",\"protocolo\":\"$PROTO\",\"campo\":\"doc_ein\",
   \"nome\":\"teste.txt\",\"tipo\":\"text/plain\",\"b64\":\"$B64\"}")
 echo "$R" | grep -q '"ok":true' && ok "arquivo salvo no Drive" || fail "não salvou o arquivo: $R"
 
-echo "→ 4. login do painel"
+echo "→ 4. dispara o e-mail com a resposta completa"
+R=$(post "{\"acao\":\"finalizar\",\"protocolo\":\"$PROTO\"}")
+echo "$R" | grep -q '"ok":true' && ok "e-mail disparado (confira a caixa de entrada)" || fail "não finalizou: $R"
+
+echo "→ 5. login do painel"
 T=$(post "{\"acao\":\"login\",\"usuario\":\"$USUARIO\",\"senha\":\"$SENHA\"}" \
     | sed -n 's/.*"token":"\([^"]*\)".*/\1/p')
 [ -n "$T" ] && ok "login aceito, token emitido" || fail "login recusado"
 
-echo "→ 5. senha errada é recusada"
+echo "→ 6. senha errada é recusada"
 post "{\"acao\":\"login\",\"usuario\":\"$USUARIO\",\"senha\":\"errada\"}" \
   | grep -q '"ok":false' && ok "senha inválida barrada" || fail "aceitou senha errada"
 
-echo "→ 6. o painel lê de volta"
+echo "→ 7. o painel lê de volta"
 R=$(post "{\"acao\":\"listar\",\"token\":\"$T\"}")
 echo "$R" | grep -q "$PROTO"           && ok "submissão aparece na listagem"   || fail "não achou o protocolo"
 echo "$R" | grep -q "Empresa de Teste" && ok "campos vieram completos"         || fail "campos vazios"
 echo "$R" | grep -q "Sócio Teste"      && ok "sócios vieram completos"         || fail "sócios vazios"
 echo "$R" | grep -q "doc_ein"          && ok "documento ligado à submissão"    || fail "arquivo não vinculado"
 
-echo "→ 7. listar sem token é recusado"
+echo "→ 8. listar sem token é recusado"
 post "{\"acao\":\"listar\",\"token\":\"invalido\"}" | grep -q '"ok":false' \
   && ok "acesso sem token barrado" || fail "vazou dado sem token"
 

@@ -601,6 +601,37 @@ function restaurar(){
 }
 
 /* ─────────────────── envio ─────────────────── */
+/* monta a resposta em rótulo → valor, na ordem do formulário,
+   para o e-mail chegar legível sem o servidor conhecer o schema */
+function montarResumo(){
+  return SECOES.map(function(sec){
+    var itens = [];
+    sec.campos.forEach(function(c){
+      if(c.tipo === "div" || c.tipo === "socios" || c.tipo === "assinatura") return;
+      if(c.tipo === "arquivo"){
+        var a = arquivos[c.k];
+        itens.push({k:c.l, v: a ? a.nome : (dados[c.k+"__na"]==="1" ? "não se aplica" : "não enviado")});
+        return;
+      }
+      if(c.tipo === "aceite"){
+        if(dados[c.k] === "1") itens.push({k:"Declaração", v:"aceita"});
+        return;
+      }
+      if(c.tipo === "lista3"){
+        for(var i=0;i<3;i++) if(dados[c.k+"_"+i]) itens.push({k:c.l+" "+(i+1), v:dados[c.k+"_"+i]});
+        return;
+      }
+      var v = dados[c.k];
+      if(v === "" || v == null) return;
+      if(c.tipo === "money") v = "US$ " + v;
+      if(c.tipo === "pct")   v = v + "%";
+      if(c.tipo === "ssn4")  v = "XXX-XX-" + v;
+      itens.push({k:c.l, v:String(v)});
+    });
+    return {n:sec.n, t:sec.t, itens:itens};
+  }).filter(function(s){ return s.itens.length });
+}
+
 function envia(){
   if(enviado) return;
   for(var i=0;i<SECOES.length;i++){
@@ -615,7 +646,7 @@ function envia(){
   load.classList.add("on");
 
   var ks = Object.keys(arquivos);
-  var total = 1 + ks.length, feito = 0;
+  var total = 2 + ks.length, feito = 0;
   // o protocolo é gerado uma vez e reaproveitado nas tentativas seguintes,
   // senão um retry vira uma segunda linha na planilha
   if(!protocolo){
@@ -639,7 +670,7 @@ function envia(){
 
   txt.textContent = "Registrando as respostas…";
   post({ acao:"submissao", protocolo:proto, dados:dados, socios:socios,
-         assinatura:assinatura, agente:navigator.userAgent })
+         resumo:montarResumo(), assinatura:assinatura, agente:navigator.userAgent })
   .then(function(){
     passo();
     return ks.reduce(function(cad, k, idx){
@@ -650,6 +681,12 @@ function envia(){
                .then(passo);
       });
     }, Promise.resolve());
+  })
+  .then(function(){
+    txt.textContent = "Enviando a confirmação…";
+    // o e-mail sai por último para já carregar os links dos documentos;
+    // se falhar, o envio continua válido — os dados já estão gravados
+    return post({ acao:"finalizar", protocolo:proto }).then(passo).catch(passo);
   })
   .then(function(){
     txt.textContent = "Concluído.";

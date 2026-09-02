@@ -12,43 +12,43 @@ diligencia/
 ├── estilo.css        sistema visual do formulário
 ├── app.js            motor do formulário
 ├── fonts.css         Cormorant / Inter / JetBrains Mono em base64
-└── apps-script.gs    backend — colar no Google Apps Script
+├── apps-script.gs    backend — colar no Google Apps Script
+└── testar.sh         prova de ponta a ponta do backend
 ```
 
-## Setup — uma vez, ~3 minutos
+## Setup — 3 passos, ~2 minutos
 
-**1. Criar o script**
-1. Abra <https://script.google.com> → **Novo projeto**.
-2. Apague o conteúdo do `Código.gs` e cole o `apps-script.gs` inteiro.
-3. No bloco `CONFIG` no topo, troque **`SENHA`** e **`SEGREDO`**. Confira o `AVISAR`
-   (e-mail que recebe o aviso a cada envio).
-4. Salve.
+**1.** Abra <https://script.google.com> → **Novo projeto**. Apague o conteúdo do `Código.gs`
+e cole o `apps-script.gs` inteiro.
 
-**2. Autorizar e criar planilha + pasta**
-1. No seletor de função, escolha **`preparar`** e clique em **Executar**.
-2. O Google vai pedir autorização — aceite (é a sua própria conta escrevendo na sua Drive).
-3. Abra **Ver → Registro de execução**. Ele imprime a URL da planilha, a URL da pasta e os
-   dois IDs. Cole os IDs em `PLANILHA_ID` e `PASTA_ID` no `CONFIG` e salve.
+**2.** No topo do arquivo, troque a `SENHA` e confira o e-mail em `AVISAR`.
 
-**3. Publicar**
-1. **Implantar → Nova implantação** → tipo **App da Web**.
-2. *Executar como:* **Eu**. *Quem pode acessar:* **Qualquer pessoa**.
-   (Isso é obrigatório — é o que permite Bruno e Daniel enviarem sem login Google.)
-3. Copie a URL gerada (termina em `/exec`).
+**3.** **Implantar → Nova implantação → App da Web**:
+*Executar como:* **Eu** · *Quem pode acessar:* **Qualquer pessoa** — esse segundo campo é
+o que permite Bruno e Daniel enviarem sem login Google. Autorize quando o Google pedir e
+copie a URL gerada (termina em `/exec`).
 
-**4. Ligar o front**
-Cole a URL em `diligencia/config.js`:
+Cole a URL em `diligencia/config.js`, commit e push:
+
 ```js
 window.RBG_CONFIG = {
   endpoint: "https://script.google.com/macros/s/AKfyc.../exec",
   ...
 };
 ```
-Commit + push. Pronto.
 
-> Sempre que editar o `apps-script.gs`, use **Implantar → Gerenciar implantações → editar
-> → Nova versão**. Se criar uma implantação nova a URL muda e você precisa atualizar o
-> `config.js`.
+Não precisa criar planilha, pasta nem inventar segredo: o script cria e guarda tudo
+sozinho no primeiro envio. Para descobrir onde ele criou, rode a função `ondeEstá` no
+editor e olhe **Ver → Registro de execução**.
+
+Para conferir que está tudo gravando de verdade:
+
+```bash
+./testar.sh "https://script.google.com/macros/s/AKfyc.../exec"
+```
+
+> Ao editar o `apps-script.gs` depois, use **Implantar → Gerenciar implantações → editar
+> → Nova versão**. Criar uma implantação nova muda a URL e quebra o `config.js`.
 
 ## Os links
 
@@ -58,7 +58,7 @@ Commit + push. Pronto.
 | Personalizado | `…/diligencia/?e=bruno` · `…/diligencia/?e=daniel` — abre com o nome dele na capa |
 | Painel interno | `…/diligencia/painel.html` |
 
-Login do painel: o `USUARIO` / `SENHA` do `CONFIG`. Sessão dura 12 h.
+Login do painel: usuário `rbg` e a `SENHA` que você definiu. Sessão dura 12 h.
 
 ## O que mudou em relação ao PDF
 
@@ -68,6 +68,14 @@ Login do painel: o `USUARIO` / `SENHA` do `CONFIG`. Sessão dura 12 h.
   participações fecha em 100%.
 - Assinatura é desenhada na tela e salva como `assinatura.png` na pasta do protocolo.
 - Cada envio ganha um protocolo (`RBG-2026-XXXXX`), usado como nome da pasta no Drive.
+
+## Onde as respostas chegam — três lugares
+
+1. **E-mail.** No fim de cada envio o script manda para o `AVISAR` a resposta inteira
+   formatada — todas as seções, o quadro societário e os links de cada documento. Mesmo
+   que você nunca abra a planilha nem o painel, a resposta completa está na sua caixa.
+2. **Painel** (`painel.html`) — a ficha navegável, com status e anotações.
+3. **Planilha + Drive** — o registro bruto.
 
 ## Como fica organizado
 
