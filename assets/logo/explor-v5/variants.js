@@ -3,6 +3,67 @@ window.VARIANTS = {
   "brandName": "Royal Business Growth",
   "concepts": [
     {
+      "name": "Rodada 10 · a partir do v1",
+      "variants": [
+        {
+          "id": "10.1",
+          "name": "V1 afinado",
+          "description": "O original, com a linha mais fina — A mesma construção do print — anel duplo, área de gráfico em contorno, barra de base — só que com o traço reduzido (1,8 em vez de 2,4), os picos alinhados numa tendência que acelera e a barra mais leve. É o v1 desenhado com régua.",
+          "light": "logo-r10-v1-afinado.svg",
+          "dark": "logo-r10-v1-afinado-dark.svg"
+        },
+        {
+          "id": "10.2",
+          "name": "Linha aberta",
+          "description": "Só a linha do gráfico, sem fechar a área — Tira as duas verticais e o fundo: fica a linha do gráfico flutuando sobre a barra, dentro do anel duplo. Mais leve, mais moderno, e a barra passa a ser claramente o chão. A que melhor conversa com os hairlines da Cormorant.",
+          "light": "logo-r10-v1-linha.svg",
+          "dark": "logo-r10-v1-linha-dark.svg"
+        },
+        {
+          "id": "10.3",
+          "name": "Área cheia",
+          "description": "A mesma área, em ouro sólido — A área do gráfico preenchida, sem contorno. Ganha massa e sobrevive a 16 px sem esforço — é a versão para avatar e favicon. Anel duplo fino em volta, barra separada por uma folga.",
+          "light": "logo-r10-v1-cheio.svg",
+          "dark": "logo-r10-v1-cheio-dark.svg"
+        },
+        {
+          "id": "10.4",
+          "name": "Rompendo o anel",
+          "description": "O último pico atravessa o anel interno — Igual ao V1 afinado, mas a última subida continua até cruzar o anel interno — o gráfico sai do próprio selo. É a aceleração que faltava no original, contada com um único detalhe.",
+          "light": "logo-r10-v1-rompe.svg",
+          "dark": "logo-r10-v1-rompe-dark.svg"
+        },
+        {
+          "id": "10.5",
+          "name": "Curva",
+          "description": "O zigue-zague vira uma curva — A área do gráfico com o topo em curva suave em vez de picos — uma leitura mais orgânica, quase financeira-editorial. Mesma estrutura, outra temperatura: menos 'ação', mais 'instituição'.",
+          "light": "logo-r10-v1-curva.svg",
+          "dark": "logo-r10-v1-curva-dark.svg"
+        },
+        {
+          "id": "10.6",
+          "name": "Um pico só",
+          "description": "Menos pontos, mais leitura — A área reduzida a uma subida, uma queda e a grande subida final. Menos informação para o olho, mais clareza no favicon. Perde um pouco de 'gráfico', ganha em ícone.",
+          "light": "logo-r10-v1-simples.svg",
+          "dark": "logo-r10-v1-simples-dark.svg"
+        },
+        {
+          "id": "10.7",
+          "name": "Degraus",
+          "description": "O gráfico em escada — A mesma área, com o topo em degraus — o gráfico de passos do programa de aceleração. Mais geométrica e mais 'estrutura antes de escala'. Lê bem em qualquer tamanho.",
+          "light": "logo-r10-v1-degraus.svg",
+          "dark": "logo-r10-v1-degraus-dark.svg"
+        },
+        {
+          "id": "10.8",
+          "name": "Anel único",
+          "description": "Sem o anel interno, sem a barra — A mesma área do gráfico com um anel só e sem barra: o mínimo que ainda é o V1. Para quem acha o anel duplo 'clássico demais' — mais próximo de uma marca moderna, mesma linhagem.",
+          "light": "logo-r10-v1-anel-unico.svg",
+          "dark": "logo-r10-v1-anel-unico-dark.svg"
+        }
+      ]
+    },
+    {
       "name": "Rodada 9 · linha fina",
       "variants": [
         {

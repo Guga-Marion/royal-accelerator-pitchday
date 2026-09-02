@@ -1,0 +1,61 @@
+[
+ {
+  "id": "v1-afinado",
+  "nome": "V1 afinado",
+  "tese": "O original, com a linha mais fina",
+  "pick": true,
+  "txt": "A mesma construção do print — anel duplo, área de gráfico em contorno, barra de base — só que com o traço reduzido (1,8 em vez de 2,4), os picos alinhados numa tendência que acelera e a barra mais leve. É o v1 desenhado com régua.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 60 V51 L38 43 L44 49 L53 38 L59 44 L71 29 V60 Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-linha",
+  "nome": "Linha aberta",
+  "tese": "Só a linha do gráfico, sem fechar a área",
+  "pick": true,
+  "txt": "Tira as duas verticais e o fundo: fica a linha do gráfico flutuando sobre a barra, dentro do anel duplo. Mais leve, mais moderno, e a barra passa a ser claramente o chão. A que melhor conversa com os hairlines da Cormorant.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 52 L38 43 L44 49 L53 38 L59 44 L71 29\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-cheio",
+  "nome": "Área cheia",
+  "tese": "A mesma área, em ouro sólido",
+  "txt": "A área do gráfico preenchida, sem contorno. Ganha massa e sobrevive a 16 px sem esforço — é a versão para avatar e favicon. Anel duplo fino em volta, barra separada por uma folga.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 60 V51 L38 43 L44 49 L53 38 L59 44 L71 29 V60 Z\" fill=\"currentColor\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-rompe",
+  "nome": "Rompendo o anel",
+  "tese": "O último pico atravessa o anel interno",
+  "pick": true,
+  "txt": "Igual ao V1 afinado, mas a última subida continua até cruzar o anel interno — o gráfico sai do próprio selo. É a aceleração que faltava no original, contada com um único detalhe.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 60 V51 L38 43 L44 49 L53 38 L59 44 L79 21 V60 Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-curva",
+  "nome": "Curva",
+  "tese": "O zigue-zague vira uma curva",
+  "txt": "A área do gráfico com o topo em curva suave em vez de picos — uma leitura mais orgânica, quase financeira-editorial. Mesma estrutura, outra temperatura: menos 'ação', mais 'instituição'.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 60 V53 Q37 44 45 48 Q52 51 58 40 Q64 31 71 29 V60 Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-simples",
+  "nome": "Um pico só",
+  "tese": "Menos pontos, mais leitura",
+  "txt": "A área reduzida a uma subida, uma queda e a grande subida final. Menos informação para o olho, mais clareza no favicon. Perde um pouco de 'gráfico', ganha em ícone.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 60 V50 L45 39 L52 46 L71 27 V60 Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-degraus",
+  "nome": "Degraus",
+  "tese": "O gráfico em escada",
+  "txt": "A mesma área, com o topo em degraus — o gráfico de passos do programa de aceleração. Mais geométrica e mais 'estrutura antes de escala'. Lê bem em qualquer tamanho.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"45\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"50\" cy=\"50\" r=\"39\" stroke=\"currentColor\" stroke-width=\"0.8\" opacity=\".55\"/><path d=\"M29 60 V50 H40 V42 H52 V34 H62 V26 H71 V60 Z\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/><rect x=\"29\" y=\"63.5\" width=\"42\" height=\"3\" rx=\"1.5\" fill=\"currentColor\"/>"
+ },
+ {
+  "id": "v1-anel-unico",
+  "nome": "Anel único",
+  "tese": "Sem o anel interno, sem a barra",
+  "txt": "A mesma área do gráfico com um anel só e sem barra: o mínimo que ainda é o V1. Para quem acha o anel duplo 'clássico demais' — mais próximo de uma marca moderna, mesma linhagem.",
+  "svg": "<circle cx=\"50\" cy=\"50\" r=\"44\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M27 64 V52 L37 43 L44 50 L53 38 L59 45 L73 28 V64 Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/>"
+ }
+]
