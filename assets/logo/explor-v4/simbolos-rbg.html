@@ -8,7 +8,6 @@ html{color-scheme:dark}
 body{background:var(--navy);color:var(--on);font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1180px;margin:0 auto;padding:0 32px}
 .eb{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.32em;font-size:11.5px;color:var(--gold-lt);font-weight:500}
-.serif{font-family:'Cormorant Garamond',Georgia,serif}
 header{padding:72px 0 40px;border-bottom:1px solid var(--on-rule);
   background:radial-gradient(80% 60% at 50% -10%,rgba(194,146,42,.14),transparent 60%)}
 header h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:64px;line-height:1;margin-top:16px;text-wrap:balance}
@@ -19,12 +18,18 @@ header p b{color:var(--on);font-weight:600}
 .brief div{border:1px solid var(--on-rule);padding:16px 18px;background:rgba(12,27,61,.45)}
 .brief .k{display:block;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.24em;font-size:10.5px;color:var(--gold-lt);margin-bottom:8px}
 .brief p{font-size:13.5px;color:var(--on-2);margin:0}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:44px 0 60px}
+.fam{display:flex;align-items:baseline;gap:18px;padding:44px 0 6px}
+.fam h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:34px;line-height:1}
+.fam h2 i{font-style:italic;color:var(--gold-hi)}
+.fam span{font-size:13.5px;color:var(--on-3);max-width:60ch}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:18px 0 22px}
 @media(max-width:860px){.grid{grid-template-columns:1fr}.brief{grid-template-columns:1fr}header h1{font-size:44px}}
 .card{border:1px solid var(--on-rule);background:rgba(12,27,61,.35);display:grid;grid-template-columns:200px minmax(0,1fr);grid-template-rows:auto auto;min-width:0}
+.card.pick{border-color:rgba(212,164,55,.55)}
 .hero{grid-row:1/3;background:radial-gradient(75% 75% at 50% 40%,var(--navy-3),var(--navy));display:flex;align-items:center;justify-content:center;border-right:1px solid var(--on-rule);position:relative}
 .hero svg{width:150px;height:150px;color:var(--gold-lt)}
 .hero .n{position:absolute;left:14px;top:12px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:30px;color:var(--gold-hi);line-height:1}
+.hero .star{position:absolute;right:12px;top:12px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-hi);border:1px solid rgba(212,164,55,.5);padding:3px 7px}
 .meta{padding:22px 24px 12px}
 .meta h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:30px;line-height:1.05}
 .meta h2 span{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:6px;font-weight:500}
@@ -39,74 +44,122 @@ header p b{color:var(--on);font-weight:600}
 .tiny{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:0 14px;border-left:1px solid var(--on-rule)}
 .tiny svg{color:var(--gold-lt)}
 .tiny i{font-family:'JetBrains Mono',monospace;font-style:normal;font-size:9px;letter-spacing:.14em;color:var(--on-3);white-space:nowrap}
-.howto{border-top:1px solid var(--on-rule);padding:36px 0 70px;color:var(--on-2);font-size:14px}
+.strip{border:1px solid var(--on-rule);background:rgba(12,27,61,.45);padding:22px 24px;display:flex;flex-wrap:wrap;gap:28px 40px;align-items:flex-end;margin-top:6px}
+.strip .s{display:flex;flex-direction:column;align-items:center;gap:8px}
+.strip .s div{display:flex;align-items:flex-end;gap:10px}
+.strip svg{color:var(--gold-lt)}
+.strip i{font-family:'JetBrains Mono',monospace;font-style:normal;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--on-3)}
+.howto{border-top:1px solid var(--on-rule);padding:36px 0 40px;color:var(--on-2);font-size:14px}
 .howto b{color:var(--on)}
 .howto .eb{display:block;margin-bottom:10px}
-.type{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:22px;padding:22px 24px;border:1px solid var(--on-rule);background:rgba(12,27,61,.45)}
-.type .big{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:38px;line-height:1;color:var(--on)}
-.type .big i{color:var(--gold-hi)}
-.type span.note{font-size:13px;color:var(--on-3);max-width:40ch}
+details{border-top:1px solid var(--on-rule);padding:26px 0 60px}
+summary{cursor:pointer;font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;font-weight:600;color:var(--on-2);list-style:none;display:flex;align-items:baseline;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary .eb{font-size:10.5px}
+summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
 </style>
 
 <header><div class="wrap">
-  <span class="eb">Royal Business Growth · símbolo · rodada 4</span>
-  <h1>Oito símbolos <i>para aprovar</i></h1>
-  <p>O wordmark fica como está — <b>Cormorant Garamond</b>, navy e ouro. O que muda é o elemento. Cada candidato é um
-    <b>vetor desenhado à mão</b> (não gerado por IA): geometria fechada, uma ideia por símbolo, sem pontinhos, sem gráfico literal.
-    Todos aparecem em quatro situações: grande sobre navy, na assinatura com o wordmark, mono navy sobre claro e a 24&nbsp;px.</p>
+  <span class="eb">Royal Business Growth · símbolo · rodada 5</span>
+  <h1>Degrau e Vértice, <i>acelerados</i></h1>
+  <p>Você escolheu os dois caminhos mais reduzidos da rodada 4 — <b>Degrau</b> (dois blocos, um salto) e <b>Vértice</b>
+    (o canto que se solta). Aqui eles evoluem numa direção só: <b>aceleração</b>. Em todos, o bloco de baixo é a estrutura
+    — a empresa como ela chega — e o que sai dele para cima e para a direita é o que a RBG faz com ela.
+    Quatro variações por família, mais duas que fundem as duas. Tudo em forma cheia ou traço grosso, para valer a 16&nbsp;px.</p>
   <div class="brief">
-    <div><span class="k">O que precisa dizer</span><p>Aceleradora: algo que te tira do lugar e te leva para cima. Royal: uma marca de chancela, não de festa.</p></div>
-    <div><span class="k">Como precisa parecer</span><p>Minimalista e moderno. Uma forma que um designer de marcas assinaria — reduzida, geométrica, ownable, que casa com uma serifa elegante.</p></div>
-    <div><span class="k">Como responder</span><p>Diga o número (ou dois) e o que te atrai nele. Eu refino esse caminho em variações e só depois aplico no manual e no resto.</p></div>
+    <div><span class="k">O gesto</span><p>Sempre a mesma diagonal — de baixo à esquerda para cima à direita. O olho aprende uma vez e reconhece em qualquer tamanho.</p></div>
+    <div><span class="k">O que muda entre elas</span><p>O quanto de "velocidade" a forma carrega: de um bloco que apenas sobe até um que vira flecha, gema ou rastro.</p></div>
+    <div><span class="k">Como responder</span><p>Um número. Se quiser, diga o que ajustar (peso, proporção, com ou sem anel). O vencedor vai para o manual, avatares e assinaturas.</p></div>
   </div>
-  <div class="type"><span class="big">Royal Business <i>Growth</i></span><span class="note">Tipografia mantida. O símbolo entra à esquerda do wordmark, na altura das duas linhas.</span></div>
 </div></header>
 
-<main class="wrap"><div class="grid" id="grid"></div></main>
+<main class="wrap">
+  <div class="fam"><h2>Família <i>Degrau</i></h2><span>Dois sólidos encostados pelo vértice. A evolução: o bloco de cima deixa de ser cópia do de baixo e ganha direção.</span></div>
+  <div class="grid" id="g1"></div>
+
+  <div class="fam"><h2>Família <i>Vértice</i></h2><span>Um quadrado que abre o canto. A evolução: o que sai pelo canto aberto passa a ter velocidade.</span></div>
+  <div class="grid" id="g2"></div>
+
+  <div class="fam"><h2>Fusões</h2><span>Onde as duas famílias se encontram — sólido embaixo, gesto em cima.</span></div>
+  <div class="grid" id="g3"></div>
+
+  <div class="fam"><h2>Teste de favicon</h2><span>Os dez a 48, 32 e 16 px. O que sumir aqui não vai para a frente.</span></div>
+  <div class="strip" id="strip"></div>
+</main>
 
 <section class="howto"><div class="wrap">
   <span class="eb">Próximo passo</span>
-  <p><b>Escolha um ou dois caminhos.</b> Da escolha saem 4–6 variações (proporção, peso do traço, com e sem anel, cor)
-    numa segunda rodada aqui mesmo. Só o vencedor entra no manual, nos avatares, nas assinaturas de e-mail e nas artes.</p>
+  <p><b>Escolha um.</b> Depois fecho proporções finais, versões mono e mini, o anel opcional para avatar, e aplico no manual,
+    nos avatares, nas assinaturas de e-mail (a versão navy + ouro que você pediu) e nas artes.</p>
 </div></section>
 
+<details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 4 · os oito originais</summary><div class="grid" id="g0"></div></div></details>
+
 <script>
-// Cada símbolo em viewBox 0 0 100 100, desenhado com currentColor para trocar de cor por contexto.
-const S = [
- { id:'orbita', nome:'Órbita', tese:'Saindo da órbita',
-   txt:'Um anel aberto e uma trajetória que rompe por cima, à direita. É o que uma aceleradora faz: tira a empresa da órbita em que ela estava. Moderno, geométrico, lê a 16 px.',
-   svg:'<path d="M79.5 46.8 A30 30 0 1 1 55.2 22.5" stroke="currentColor" stroke-width="6" stroke-linecap="butt"/><path d="M50 52 L76 26" stroke="currentColor" stroke-width="6"/><path d="M62 18 H84 V40" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/>' },
- { id:'elevacao', nome:'Elevação', tese:'A metade que sobe',
-   txt:'Um disco cortado na diagonal; a metade de cima se desloca para o alto e para a direita. Uma só gesto: algo que estava inteiro ganha impulso. Abstrato, premium, memorável.',
-   svg:'<path d="M28.8 71.2 A30 30 0 0 0 71.2 28.8 Z" fill="currentColor" transform="translate(-4 4)"/><path d="M28.8 71.2 A30 30 0 0 1 71.2 28.8 Z" fill="currentColor" transform="translate(4 -4)"/>' },
- { id:'expansao', nome:'Expansão', tese:'Ondas a partir de um ponto',
-   txt:'Três arcos que crescem a partir do mesmo vértice. O canto é a empresa; os arcos são os raios que ela alcança a cada horizonte. Silencioso, elegante, quase um radar.',
-   svg:'<path d="M26 74 L40 74 A14 14 0 0 0 26 60 Z" fill="currentColor"/><path d="M56 74 A30 30 0 0 0 26 44" stroke="currentColor" stroke-width="6"/><path d="M72 74 A46 46 0 0 0 26 28" stroke="currentColor" stroke-width="6"/>' },
- { id:'vertice', nome:'Vértice', tese:'O canto que se solta',
-   txt:'Um quadrado — a estrutura — cujo canto superior direito se desprende e sobe. Estrutura antes de escala, e depois a escala. Muito moderno; lembra marcas de tecnologia.',
-   svg:'<path d="M54 30 H30 V70 H70 V46" stroke="currentColor" stroke-width="6"/><path d="M62 20 H80 V38" stroke="currentColor" stroke-width="6"/>' },
- { id:'coroa', nome:'Coroa', tese:'Uma coroa em uma linha',
-   txt:'A coroa reduzida ao mínimo: uma linha em zigue-zague de três pontas, a do meio mais alta, e a faixa embaixo. Royal sem heráldica — uma coroa que um app moderno usaria.',
-   svg:'<path d="M22 62 L33 42 L44 62 L50 30 L56 62 L67 42 L78 62" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/><path d="M22 73 H78" stroke="currentColor" stroke-width="6"/>' },
- { id:'ascensao', nome:'Ascensão', tese:'Três degraus para cima',
-   txt:'Três chevrons empilhados, cada um mais largo — a base sustenta, o topo aponta. Lê "para cima" em qualquer tamanho e ecoa os três horizontes sem virar gráfico.',
-   svg:'<path d="M40 32 L50 22 L60 32" stroke="currentColor" stroke-width="5.5"/><path d="M34 54 L50 38 L66 54" stroke="currentColor" stroke-width="5.5"/><path d="M28 78 L50 56 L72 78" stroke="currentColor" stroke-width="5.5"/>' },
- { id:'flecha', nome:'Flecha coroada', tese:'A coroa é a ponta',
-   txt:'Uma flecha cuja ponta é uma coroa de três pontas. Royal + Growth num único sólido. O risco: é a mais expressiva da série — ou vira a assinatura da casa, ou é demais.',
-   svg:'<path d="M26 54 L33 30 L43 44 L50 20 L57 44 L67 30 L74 54 Z" fill="currentColor"/><rect x="45.5" y="54" width="9" height="28" fill="currentColor"/>' },
- { id:'degrau', nome:'Degrau', tese:'Dois blocos, um salto',
-   txt:'Dois quadrados sólidos encostados pelo vértice, o segundo acima do primeiro. A forma mais reduzida possível de "próximo nível". Funciona como padrão, como favicon, como carimbo.',
-   svg:'<rect x="26" y="52" width="24" height="24" fill="currentColor"/><rect x="50" y="26" width="24" height="24" fill="currentColor"/>' },
+// Cada símbolo em viewBox 0 0 100 100 com currentColor — a mesma geometria muda de cor por contexto.
+const R5 = {
+ degrau: [
+  { id:'rampa', nome:'Rampa', tese:'O bloco vira flecha', pick:true,
+    txt:'O quadrado de baixo é a estrutura. O de cima foi cortado na diagonal: virou um triângulo apontando para cima e para a direita. Mesmo peso, mesma pegada — mas agora tem direção. A mais limpa da série.',
+    svg:'<rect x="26" y="52" width="24" height="24" fill="currentColor"/><path d="M50 50 H74 V26 Z" fill="currentColor"/>' },
+  { id:'salto', nome:'Salto', tese:'A gema que sobe',
+    txt:'O bloco de cima gira 45° e vira um losango flutuando acima do vértice — a joia da coroa sem a coroa. Royal na forma, aceleração no deslocamento. Mais elegante, um pouco menos "tech".',
+    svg:'<rect x="26" y="52" width="24" height="24" fill="currentColor"/><path d="M65 20 L80 35 L65 50 L50 35 Z" fill="currentColor"/>' },
+  { id:'trajetoria', nome:'Trajetória', tese:'Três blocos, cada vez mais longe',
+    txt:'Três sólidos na mesma diagonal: cada um menor e mais distante que o anterior. É a física da aceleração — o intervalo cresce. Três horizontes, sem virar gráfico. Muito moderna; pede espaço ao redor.',
+    svg:'<rect x="22" y="56" width="22" height="22" fill="currentColor"/><rect x="50" y="35" width="15" height="15" fill="currentColor"/><rect x="72" y="18" width="10" height="10" fill="currentColor"/>' },
+  { id:'degrau-flecha', nome:'Degrau-flecha', tese:'O segundo bloco aponta',
+    txt:'Os dois blocos originais, mas o de cima ganha uma ponta: um pentágono que aponta para o alto à direita. Fica entre o Degrau puro e a Rampa — mais massa que a Rampa, mais direção que o Degrau.',
+    svg:'<rect x="26" y="52" width="24" height="24" fill="currentColor"/><path d="M50 50 V26 H62 L74 38 V50 Z" fill="currentColor"/>' },
+ ],
+ vertice: [
+  { id:'lancamento', nome:'Lançamento', tese:'Saindo da caixa', pick:true,
+    txt:'O quadrado abre o canto e uma flecha sai por ele. É o Vértice com velocidade: a haste nasce no centro da estrutura e a ponta é o próprio canto que se soltou. Lê "aceleradora" sem explicação.',
+    svg:'<path d="M52 30 H30 V70 H70 V48" stroke="currentColor" stroke-width="7"/><path d="M52 48 L74 26" stroke="currentColor" stroke-width="7"/><path d="M60 22 H78 V40" stroke="currentColor" stroke-width="7"/>' },
+  { id:'vertice-solido', nome:'Vértice sólido', tese:'Massa, não linha',
+    txt:'A mesma ideia do Vértice, em forma cheia: um quadrado sólido com o canto recortado, e o canto flutuando acima. Mais pesado, mais moderno, imbatível a 16 px. Funciona como padrão e como carimbo.',
+    svg:'<path d="M28 28 H54 V46 H72 V72 H28 Z" fill="currentColor"/><rect x="64" y="18" width="18" height="18" fill="currentColor"/>' },
+  { id:'vertice-gema', nome:'Vértice-gema', tese:'O que sai do canto é uma joia',
+    txt:'O quadrado aberto e, no lugar do canto, um losango. A estrutura libera a gema — royal e growth na mesma frase. Fica bonito grande; a 16 px o losango precisa de um pouco mais de folga.',
+    svg:'<path d="M52 30 H30 V70 H70 V48" stroke="currentColor" stroke-width="7"/><path d="M71 16 L84 29 L71 42 L58 29 Z" fill="currentColor"/>' },
+  { id:'angulo', nome:'Ângulo', tese:'Dois cantos, uma diagonal',
+    txt:'O Vértice reduzido a dois colchetes: o de baixo à esquerda (a base) e o de cima à direita, deslocado para fora. O quadrado deixa de existir — só restam a estrutura e o salto. A mais abstrata e a mais quieta.',
+    svg:'<path d="M30 42 V70 H58" stroke="currentColor" stroke-width="7"/><path d="M60 22 H82 V50" stroke="currentColor" stroke-width="7"/>' },
+ ],
+ fusao: [
+  { id:'impulso', nome:'Impulso', tese:'Sólido embaixo, canto em cima', pick:true,
+    txt:'O bloco do Degrau com o canto do Vértice: a estrutura é massa; o que sai dela é um colchete apontando para o alto à direita. Duas famílias numa forma só — e a que melhor conversa com a serifa do wordmark.',
+    svg:'<rect x="26" y="50" width="26" height="26" fill="currentColor"/><path d="M56 24 H76 V44" stroke="currentColor" stroke-width="7"/>' },
+  { id:'ascensor', nome:'Ascensor', tese:'Bloco e flecha',
+    txt:'O bloco embaixo e, saindo do vértice, uma flecha completa — haste e ponta. A mais literal em "aceleração"; também a que mais lembra ícone de interface. Está aqui como referência de limite.',
+    svg:'<rect x="24" y="52" width="26" height="26" fill="currentColor"/><path d="M52 50 L76 26" stroke="currentColor" stroke-width="7"/><path d="M60 22 H80 V42" stroke="currentColor" stroke-width="7"/>' },
+ ],
+};
+const R4 = [
+ { id:'orbita', nome:'Órbita', tese:'Saindo da órbita', txt:'Anel aberto + trajetória rompendo por cima.', svg:'<path d="M79.5 46.8 A30 30 0 1 1 55.2 22.5" stroke="currentColor" stroke-width="6"/><path d="M50 52 L76 26" stroke="currentColor" stroke-width="6"/><path d="M62 18 H84 V40" stroke="currentColor" stroke-width="6"/>' },
+ { id:'elevacao', nome:'Elevação', tese:'A metade que sobe', txt:'Disco cortado na diagonal; a metade de cima sobe.', svg:'<path d="M28.8 71.2 A30 30 0 0 0 71.2 28.8 Z" fill="currentColor" transform="translate(-4 4)"/><path d="M28.8 71.2 A30 30 0 0 1 71.2 28.8 Z" fill="currentColor" transform="translate(4 -4)"/>' },
+ { id:'expansao', nome:'Expansão', tese:'Ondas a partir de um ponto', txt:'Três arcos crescendo de um vértice.', svg:'<path d="M26 74 L40 74 A14 14 0 0 0 26 60 Z" fill="currentColor"/><path d="M56 74 A30 30 0 0 0 26 44" stroke="currentColor" stroke-width="6"/><path d="M72 74 A46 46 0 0 0 26 28" stroke="currentColor" stroke-width="6"/>' },
+ { id:'vertice', nome:'Vértice', tese:'O canto que se solta', txt:'Quadrado cujo canto se desprende e sobe.', svg:'<path d="M54 30 H30 V70 H70 V46" stroke="currentColor" stroke-width="6"/><path d="M62 20 H80 V38" stroke="currentColor" stroke-width="6"/>' },
+ { id:'coroa', nome:'Coroa', tese:'Uma coroa em uma linha', txt:'Zigue-zague de três pontas + faixa.', svg:'<path d="M22 62 L33 42 L44 62 L50 30 L56 62 L67 42 L78 62" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/><path d="M22 73 H78" stroke="currentColor" stroke-width="6"/>' },
+ { id:'ascensao', nome:'Ascensão', tese:'Três degraus para cima', txt:'Três chevrons empilhados.', svg:'<path d="M40 32 L50 22 L60 32" stroke="currentColor" stroke-width="5.5"/><path d="M34 54 L50 38 L66 54" stroke="currentColor" stroke-width="5.5"/><path d="M28 78 L50 56 L72 78" stroke="currentColor" stroke-width="5.5"/>' },
+ { id:'flecha', nome:'Flecha coroada', tese:'A coroa é a ponta', txt:'Flecha cuja ponta é uma coroa.', svg:'<path d="M26 54 L33 30 L43 44 L50 20 L57 44 L67 30 L74 54 Z" fill="currentColor"/><rect x="45.5" y="54" width="9" height="28" fill="currentColor"/>' },
+ { id:'degrau', nome:'Degrau', tese:'Dois blocos, um salto', txt:'Dois quadrados encostados pelo vértice.', svg:'<rect x="26" y="52" width="24" height="24" fill="currentColor"/><rect x="50" y="26" width="24" height="24" fill="currentColor"/>' },
 ];
 const svg = (inner, w) => `<svg viewBox="0 0 100 100" fill="none" ${w?`style="width:${w}px;height:${w}px"`:''}>${inner}</svg>`;
-document.getElementById('grid').innerHTML = S.map((s,i)=>`
-<article class="card" id="${s.id}">
-  <div class="hero"><span class="n">${String(i+1).padStart(2,'0')}</span>${svg(s.svg)}</div>
+const card = (s,n) => `
+<article class="card${s.pick?' pick':''}" id="${s.id}">
+  <div class="hero"><span class="n">${String(n).padStart(2,'0')}</span>${s.pick?'<span class="star">aposta</span>':''}${svg(s.svg)}</div>
   <div class="meta"><h2><span>${s.tese}</span>${s.nome}</h2><p>${s.txt}</p></div>
   <div class="apps">
     <div class="lock">${svg(s.svg)}<div class="wm"><span>Royal Business</span><i>Growth</i></div></div>
     <div class="light">${svg(s.svg)}</div>
     <div class="tiny">${svg(s.svg,24)}<i>24 px</i></div>
   </div>
-</article>`).join('');
+</article>`;
+let n = 0; const all = [...R5.degrau, ...R5.vertice, ...R5.fusao];
+document.getElementById('g1').innerHTML = R5.degrau.map(s=>card(s,++n)).join('');
+document.getElementById('g2').innerHTML = R5.vertice.map(s=>card(s,++n)).join('');
+document.getElementById('g3').innerHTML = R5.fusao.map(s=>card(s,++n)).join('');
+document.getElementById('strip').innerHTML = all.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
+document.getElementById('g0').innerHTML = R4.map((s,i)=>card(s,i+1)).join('');
 </script>
