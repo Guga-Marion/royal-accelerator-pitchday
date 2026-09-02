@@ -1,40 +1,76 @@
-import re, pathlib, collections
+import re, pathlib, base64
 D = pathlib.Path(__file__).parent
 rd = lambda n: (D / n).read_text(encoding='utf-8')
 
 # Símbolo Deploy: "D" sólido dourado com dois dentes à esquerda e estrela de 4 pontas vazada
 DPATH = ('M7 3 H21 A17 17 0 0 1 21 37 H7 V29 H11.5 V24.5 H7 V15.5 H11.5 V11 H7 Z '
          'M21 11 L23.4 17.6 L30 20 L23.4 22.4 L21 29 L18.6 22.4 L12 20 L18.6 17.6 Z')
-DLOGO = ('<svg viewBox="0 0 40 40" aria-hidden="true"><path d="%s" fill="#D4A437" fill-rule="evenodd"/></svg>' % DPATH)
-DLOGO_BIG = ('<svg viewBox="0 0 40 40" role="img" aria-label="Deploy"><path d="%s" fill="#D4A437" fill-rule="evenodd"/></svg>' % DPATH)
+DLOGO = '<svg viewBox="0 0 40 40" aria-hidden="true"><path d="%s" fill="#D4A437" fill-rule="evenodd"/></svg>' % DPATH
+DLOGO_BIG = '<svg viewBox="0 0 40 40" role="img" aria-label="Deploy"><path d="%s" fill="#D4A437" fill-rule="evenodd"/></svg>' % DPATH
 
-# Geometria de fundo (no lugar de foto): anéis dourados + "D" gigante em marca d'água
-GEO = ('<svg class="dp-geo" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'
-       '<defs><radialGradient id="dpg" cx="72%" cy="40%" r="55%"><stop offset="0" stop-color="#2E56A6" stop-opacity=".42"/><stop offset="1" stop-color="#08132B" stop-opacity="0"/></radialGradient>'
-       '<linearGradient id="dpl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0C44D" stop-opacity=".16"/><stop offset="1" stop-color="#C2922A" stop-opacity=".03"/></linearGradient></defs>'
-       '<rect width="1600" height="900" fill="url(#dpg)"/>'
-       '<g class="dp-orb" style="--dd:150ms"><circle cx="1230" cy="380" r="560" fill="none" stroke="#C2922A" stroke-opacity=".07" stroke-width="1"/></g>'
-       '<g class="dp-orb" style="--dd:300ms"><circle cx="1230" cy="380" r="420" fill="none" stroke="#C2922A" stroke-opacity=".1" stroke-width="1"/></g>'
-       '<g class="dp-orb" style="--dd:450ms"><circle cx="1230" cy="380" r="290" fill="none" stroke="#D4A437" stroke-opacity=".14" stroke-width="1.2"/></g>'
-       '<g class="dp-orb" style="--dd:600ms"><circle cx="1230" cy="380" r="170" fill="none" stroke="#F0C44D" stroke-opacity=".18" stroke-width="1.4"/></g>'
-       '<g class="dp-orb" style="--dd:750ms" transform="translate(1030 180) scale(10)"><path d="%s" fill="url(#dpl)" fill-rule="evenodd"/></g>'
-       '<path d="M0 760 L1600 520" stroke="#C2922A" stroke-opacity=".08"/><path d="M0 860 L1600 620" stroke="#C2922A" stroke-opacity=".05"/>'
-       '</svg>').replace('%s', DPATH)
+# ── logos reais → data URI ─────────────────────────────────────────────
+LOGOS = {
+    'newbalance': ('newbalance.svg', 'New Balance'),
+    'kipling': ('kipling.svg', 'Kipling'),
+    'northface': ('northface.svg', 'The North Face'),
+    'coach': ('coach.svg', 'Coach'),
+    'sephora': ('sephora.svg', 'Sephora'),
+    'estapar': ('estapar.svg', 'Estapar'),
+    'rossi': ('rossi-white.svg', 'Rossi'),
+    'uniconstrutora': ('uniconstrutora.png', 'Uniconstrutor'),
+    'petropolis': ('petropolis.png', 'Águas de Petrópolis'),
+}
+MIME = {'.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg'}
 
-body = rd('body-deploy.html').replace('{{DLOGO_BIG}}', DLOGO_BIG).replace('{{DLOGO}}', DLOGO).replace('{{GEO}}', GEO)
-assert '{{' not in body, 'placeholder sobrando'
+def fix_svg(name, txt):
+    # The North Face: quadrado vermelho + letras brancas → fundo transparente, letras pretas, viewBox recortado
+    if name == 'northface':
+        txt = (txt.replace('.fil0 {fill:#DA2427}', '.fil0 {fill:none}')
+                  .replace('.fil2 {fill:#DA2427;fill-rule:nonzero}', '.fil2 {fill:none}')
+                  .replace('.fil1 {fill:white}', '.fil1 {fill:#000}')
+                  .replace('.fil3 {fill:white;fill-rule:nonzero}', '.fil3 {fill:#000;fill-rule:nonzero}')
+                  .replace('viewBox="0 0 170 170"', 'viewBox="20 48 135 70"'))
+        assert '.fil0 {fill:none}' in txt and '.fil1 {fill:#000}' in txt
+    # Estapar: currentColor dentro de <img> → preto; o gradiente vira cor sólida
+    if name == 'estapar':
+        txt = txt.replace('fill="url(#estapar_svg__a)"', 'fill="#000"').replace('fill="currentColor"', 'fill="#000"')
+    if name == 'rossi':
+        txt = txt.replace('fill="#fff"', 'fill="#000"')
+    return txt
+
+def logo_tag(name):
+    fn, alt = LOGOS[name]
+    p = D / 'logos' / fn
+    ext = p.suffix.lower()
+    if ext == '.svg':
+        raw = fix_svg(name, p.read_text(encoding='utf-8')).encode('utf-8')
+    else:
+        raw = p.read_bytes()
+    uri = 'data:%s;base64,%s' % (MIME[ext], base64.b64encode(raw).decode('ascii'))
+    return '<img src="%s" alt="%s">' % (uri, alt)
+
+# ── painel (JPEG já reduzido para 1100 px) ─────────────────────────────
+panel_b64 = base64.b64encode((D / 'painel-acelerada.jpg').read_bytes()).decode('ascii')
+PANEL = '<img src="data:image/jpeg;base64,%s" alt="Painel da empresa acelerada: visão geral da trilha, encontros, tarefas e métricas.">' % panel_b64
+
+body = rd('body-deploy.html').replace('{{DLOGO_BIG}}', DLOGO_BIG).replace('{{DLOGO}}', DLOGO).replace('{{PANEL}}', PANEL)
+body = re.sub(r'\{\{LOGO:([a-z]+)\}\}', lambda m: logo_tag(m.group(1)), body)
+assert '{{' not in body, 'placeholder sobrando: ' + body[body.index('{{'):body.index('{{') + 40]
 
 html = ('<meta charset="utf-8">\n<title>Deploy · Aceleração Empresarial</title>\n'
         '<meta name="viewport" content="width=device-width,initial-scale=1">\n<style>\n'
-        + rd('_fonts.css') + '\n' + rd('base.css') + '\n' + rd('extra.css') + '\n</style>\n'
+        + rd('_fonts.css') + '\n' + rd('_imgs.css') + '\n' + rd('base.css') + '\n' + rd('extra.css') + '\n</style>\n'
         + body + '\n<script>\n' + rd('deck.js') + '\n</script>\n')
 out = D / 'deploy-aceleracao.html'
 out.write_text(html, encoding='utf-8')
 
 # balanço de tags no corpo (sem o CSS/JS)
-tags = ['div', 'section', 'svg', 'g', 'span', 'p', 'ul', 'li', 'table', 'tr', 'td', 'a', 'h1', 'h2', 'h3', 'button']
+body_nolog = re.sub(r'<img [^>]*>', '<img>', body)
+tags = ['div', 'section', 'svg', 'g', 'span', 'p', 'ul', 'li', 'table', 'tr', 'td', 'th', 'a', 'h1', 'h2', 'h3', 'button']
+bad = 0
 for t in tags:
-    o = len(re.findall(r'<%s(?=[\s>])' % t, body)); c = len(re.findall(r'</%s>' % t, body))
-    flag = '' if o == c else '   <-- DESBALANCEADO'
+    o = len(re.findall(r'<%s(?=[\s>])' % t, body_nolog)); c = len(re.findall(r'</%s>' % t, body_nolog))
+    flag = '' if o == c else '   <-- DESBALANCEADO'; bad += (o != c)
     print('%-8s abre %3d fecha %3d%s' % (t, o, c, flag))
-print('slides:', len(re.findall(r'<section class="slide', body)), '| bytes:', out.stat().st_size, '| price-tbd:', body.count('price-tbd'))
+print('slides:', len(re.findall(r'<section class="slide', body)), '| bytes:', out.stat().st_size,
+      '| imgs:', len(re.findall(r'<img', body)), '| desbalanceados:', bad)
