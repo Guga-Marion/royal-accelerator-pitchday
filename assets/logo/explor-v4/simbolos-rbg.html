@@ -60,30 +60,27 @@ summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
 </style>
 
 <header><div class="wrap">
-  <span class="eb">Royal Business Growth · símbolo · rodada 6</span>
-  <h1>Blocos que <i>sobem</i></h1>
-  <p>Você tinha razão: bloco e canto sozinhos não contam a história. Aqui o Degrau e o Vértice se cruzam com a ideia
-    original — <b>o gráfico que sobe</b> — para que o elemento, <b>sozinho, sem o wordmark</b>, diga "crescimento"
-    em meio segundo. Todos usam o mesmo vocabulário: sólidos, degraus, uma diagonal que acelera. Nada de pontinhos,
-    nada de linha fina, nada que suma a 16&nbsp;px.</p>
+  <span class="eb">Royal Business Growth · símbolo · rodada 7</span>
+  <h1>O gráfico <i>dentro do anel</i></h1>
+  <p>De volta ao que funcionava: <b>o anel</b> — a moeda, o selo, a chancela — com <b>o gráfico dentro</b>. O que muda
+    é o rigor: um peso de traço só, geometria fechada no compasso, e a linha do gráfico <b>interagindo</b> com o anel
+    em vez de só morar dentro dele. Em todas, o gráfico acelera — e em quase todas ele <b>rompe o anel</b> no alto à direita.
+    É esse rompimento que diz "aceleradora".</p>
   <div class="brief">
-    <div><span class="k">O que precisa ler sozinho</span><p>Subida. Um degrau depois do outro, e no fim um salto — a aceleração que a RBG dá.</p></div>
-    <div><span class="k">O que muda entre elas</span><p>Como a subida é contada: em blocos, em barras, em escada sólida, em linha que rompe a caixa.</p></div>
-    <div><span class="k">Como responder</span><p>Um número. Ajustes de peso, proporção e anel eu fecho na sequência, e aí aplico em tudo.</p></div>
+    <div><span class="k">A regra do anel</span><p>Anel de raio 40, traço 7. Tudo o que entra ou sai dele passa pelo mesmo ponto: 45° acima, à direita — o lugar do salto.</p></div>
+    <div><span class="k">O que muda entre elas</span><p>A natureza do gráfico: curva exponencial, linha, degraus, barras, área sólida, ponteiro.</p></div>
+    <div><span class="k">Como responder</span><p>Um número. Depois fecho peso, mono e mini, e aplico em manual, avatares, assinaturas e artes.</p></div>
   </div>
 </div></header>
 
 <main class="wrap">
-  <div class="fam"><h2>Em <i>blocos</i></h2><span>Os sólidos do Degrau, agora em escada — e o último bloco ganha aceleração.</span></div>
-  <div class="grid" id="h1"></div>
+  <div class="fam"><h2>A linha que <i>rompe</i></h2><span>Curva, polilinha e ponteiro: o gráfico como linha, saindo do anel.</span></div>
+  <div class="grid" id="j1"></div>
 
-  <div class="fam"><h2>Em <i>barras e silhueta</i></h2><span>O gráfico de barras e a área de gráfico, reduzidos a uma forma cheia com corte diagonal.</span></div>
-  <div class="grid" id="h2"></div>
+  <div class="fam"><h2>Sólidos no <i>anel</i></h2><span>Degraus, barras e área: o gráfico como massa, dentro da moeda.</span></div>
+  <div class="grid" id="j2"></div>
 
-  <div class="fam"><h2>Rompendo a <i>caixa</i></h2><span>O Vértice com a linha do gráfico saindo pelo canto aberto.</span></div>
-  <div class="grid" id="h3"></div>
-
-  <div class="fam"><h2>Teste de favicon</h2><span>Os oito a 48, 32 e 16 px. O que sumir aqui não vai para a frente.</span></div>
+  <div class="fam"><h2>Teste de favicon</h2><span>Os oito a 48, 32 e 16 px.</span></div>
   <div class="strip" id="strip"></div>
 </main>
 
@@ -93,11 +90,42 @@ summary:focus-visible{outline:1px solid var(--gold-lt);outline-offset:6px}
     nos avatares, nas assinaturas de e-mail (a versão navy + ouro que você pediu) e nas artes.</p>
 </div></section>
 
+<details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 6 · Blocos que sobem</summary><div class="grid" id="g6"></div></div></details>
 <details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 5 · Degrau e Vértice acelerados</summary><div class="grid" id="g5"></div></div></details>
 <details><div class="wrap"><summary><span class="eb">Arquivo</span>Rodada 4 · os oito originais</summary><div class="grid" id="g0"></div></div></details>
 
 <script>
 // Cada símbolo em viewBox 0 0 100 100 com currentColor — a mesma geometria muda de cor por contexto.
+const R7 = {
+ linha: [
+  { id:'exponencial', nome:'Exponencial', tese:'A curva que acelera e sai', pick:true,
+    txt:'Uma curva só: começa quase plana, inclina, dispara — a matemática da aceleração — e atravessa o anel no alto à direita. Sem pontas, sem marcadores: a forma da curva já é a flecha. Elegante como uma serifa; lê a 16 px porque é uma linha grossa e um círculo.',
+    svg:'<path d="M86.8 34.4 A40 40 0 1 1 65.6 13.2" stroke="currentColor" stroke-width="7"/><path d="M24 66 C46 66 58 60 66 46 C72 36 77 26 86 14" stroke="currentColor" stroke-width="7"/>' },
+  { id:'orbita', nome:'Órbita', tese:'A linha do gráfico vira flecha no anel', pick:true,
+    txt:'A polilinha clássica do gráfico — cai, sobe, dispara — e a ponta da flecha ocupa exatamente o pedaço do anel que abriu. A flecha é o anel; o anel é a flecha. A mais "logo de VC" da série, e a mais legível sozinha.',
+    svg:'<path d="M86.8 34.4 A40 40 0 1 1 65.6 13.2" stroke="currentColor" stroke-width="7"/><path d="M28 66 L44 50 L52 58 L74 36" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/><path d="M66 26 H84 V44" stroke="currentColor" stroke-width="7"/>' },
+  { id:'acelerometro', nome:'Acelerômetro', tese:'O ponteiro passa do limite',
+    txt:'O anel vira um mostrador — aberto embaixo, como um velocímetro — e a linha do gráfico é o ponteiro que sobe e ultrapassa a escala. Aceleração literal, mas abstraída o suficiente para virar selo.',
+    svg:'<path d="M21.7 78.3 A40 40 0 1 1 72.9 17.2" stroke="currentColor" stroke-width="7"/><path d="M82.8 27.1 A40 40 0 0 1 78.3 78.3" stroke="currentColor" stroke-width="7"/><path d="M30 66 L44 52 L52 60 L86 16" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/>' },
+  { id:'traco', nome:'Traço', tese:'Linha e anel num só gesto',
+    txt:'Um traço contínuo: entra por dentro como gráfico, sobe, e ao tocar o anel vira o próprio anel — dá a volta e termina à esquerda. Uma forma só, sem emendas; lembra um G de Growth sem escrever G. A mais autoral.',
+    svg:'<path d="M28 64 L44 48 L52 56 L78.3 21.7 A40 40 0 1 1 10.6 43.1" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/>' },
+ ],
+ solido: [
+  { id:'escada-anel', nome:'Escada no anel', tese:'Os degraus rompem a moeda', pick:true,
+    txt:'A Escada da rodada 6 dentro do anel — e o terceiro bloco atravessa a borda. A moeda é o que a empresa vale hoje; o bloco que sai é o que ela vai valer. Sólido, moderno, funciona como padrão e como avatar.',
+    svg:'<path d="M86.3 33.1 A40 40 0 1 1 63.7 12.4" stroke="currentColor" stroke-width="7"/><rect x="32" y="50" width="15" height="15" fill="currentColor"/><rect x="48" y="34" width="15" height="15" fill="currentColor"/><rect x="64" y="18" width="15" height="15" fill="currentColor"/>' },
+  { id:'laminas-anel', nome:'Lâminas no anel', tese:'A barra mais alta corta o anel',
+    txt:'Três barras crescentes com o topo em diagonal, dentro do anel; a mais alta chega até a borda e a abre. O gráfico de barras que todo mundo reconhece, com a velocidade das lâminas e a chancela da moeda.',
+    svg:'<path d="M79.7 23.2 A40 40 0 1 1 61.7 11.8" stroke="currentColor" stroke-width="7"/><path d="M30 72 V58 L41 47 V72 Z M45 72 V44 L56 33 V72 Z M60 72 V28 L71 17 V72 Z" fill="currentColor"/>' },
+  { id:'moeda', nome:'Moeda', tese:'A moeda que se enche em degraus',
+    txt:'O disco sólido preenchido por baixo, com a superfície em degraus que terminam numa rampa. A parte cheia é o que já foi construído; a vazia, o espaço para crescer. A mais icônica e a mais pesada — imbatível em avatar.',
+    svg:'<clipPath id="cpMoeda"><circle cx="50" cy="50" r="35"/></clipPath><circle cx="50" cy="50" r="41" stroke="currentColor" stroke-width="5"/><path d="M8 92 V62 H30 V48 H48 V34 H64 L92 6 V92 Z" fill="currentColor" clip-path="url(#cpMoeda)"/>' },
+  { id:'horizonte', nome:'Horizonte', tese:'A base cheia, a linha que sobe',
+    txt:'O anel reduzido ao que importa: a metade de baixo, sólida — a base, o hub, a estrutura — e a linha do gráfico subindo por cima dela, saindo do enquadramento. Um nascer do sol que é um gráfico. A mais quente da série.',
+    svg:'<path d="M10 54 A40 40 0 0 0 90 54 Z" fill="currentColor"/><path d="M28 48 L44 32 L52 40 L82 10" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/>' },
+ ],
+};
 const R6 = {
  blocos: [
   { id:'escada', nome:'Escada', tese:'Três blocos, três degraus',
@@ -189,12 +217,12 @@ const card = (s,n) => `
     <div class="tiny">${svg(s.svg,24)}<i>24 px</i></div>
   </div>
 </article>`;
-let n = 0; const all6 = [...R6.blocos, ...R6.barras, ...R6.caixa];
-document.getElementById('h1').innerHTML = R6.blocos.map(s=>card(s,++n)).join('');
-document.getElementById('h2').innerHTML = R6.barras.map(s=>card(s,++n)).join('');
-document.getElementById('h3').innerHTML = R6.caixa.map(s=>card(s,++n)).join('');
-document.getElementById('strip').innerHTML = all6.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
-const all5 = [...R5.degrau, ...R5.vertice, ...R5.fusao].map(s=>({...s,pick:false}));
-document.getElementById('g5').innerHTML = all5.map((s,i)=>card(s,i+1)).join('');
+let n = 0; const all7 = [...R7.linha, ...R7.solido];
+document.getElementById('j1').innerHTML = R7.linha.map(s=>card(s,++n)).join('');
+document.getElementById('j2').innerHTML = R7.solido.map(s=>card(s,++n)).join('');
+document.getElementById('strip').innerHTML = all7.map((s,i)=>`<div class="s"><i>${String(i+1).padStart(2,'0')} ${s.nome}</i><div>${svg(s.svg,48)}${svg(s.svg,32)}${svg(s.svg,16)}</div></div>`).join('');
+const nopick = a => a.map(s=>({...s,pick:false}));
+document.getElementById('g6').innerHTML = nopick([...R6.blocos, ...R6.barras, ...R6.caixa]).map((s,i)=>card(s,i+1)).join('');
+document.getElementById('g5').innerHTML = nopick([...R5.degrau, ...R5.vertice, ...R5.fusao]).map((s,i)=>card(s,i+1)).join('');
 document.getElementById('g0').innerHTML = R4.map((s,i)=>card(s,i+1)).join('');
 </script>
