@@ -1,13 +1,13 @@
-Royal Business Growth · Pacote de logo (identidade 2026 · emblema v3, 2026-09-02)
+Royal Business Growth · Pacote de logo (identidade 2026 · emblema final, 2026-09-02)
 ================================================================================
-A marca: a coroa ascendente — três pontas côncavas, cada uma mais alta que a
-anterior, com as pontas alinhadas numa reta: a coroa é o gráfico. A faixa é a
-base: estrutura antes de escala. O anel duplo é o selo: instituição, chancela.
+A marca: o selo (anel duplo), o chão (barra de base) e o gráfico que sobe (área em
+contorno, com picos numa tendência que acelera). É o emblema original, com o traço
+fino e a geometria fechada.
 
 svg/  vetor (escala infinita):
   emblema-ouro | emblema-branco | emblema-navy            uso normal (>= 40 px)
-  emblema-*-mini                                          lados retos, anel mais
-                                                          grosso: favicon e <= 40 px
+  emblema-*-mini                                          área cheia, anel único:
+                                                          favicon e <= 40 px
 png/  assinaturas prontas:
   horizontal-navy | horizontal-transp   2752x1536  assinatura principal
   vertical-navy   | vertical-transp     2000x2000  capas e aberturas

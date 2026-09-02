@@ -14,7 +14,7 @@ TMP = SRC / "_manual-img"; TMP.mkdir(exist_ok=True)
 PNG = ROOT / "assets/logo/png"
 MAN = ROOT / "manual-marca.html"
 
-VERSAO, DATA = "3.0", "2026-09-02"
+VERSAO, DATA = "4.0", "2026-09-02"
 
 def prep(src, name, width, fmt):
     """redimensiona com sips para o manual (jpeg para fundo opaco, png para transparente)"""
@@ -33,8 +33,7 @@ IMGS = {
   "m-emblema-transp.png":  (PNG / "emblema-transp-1600x1600.png", 480, "png"),
   "m-mono-branco.png":     (PNG / "mono-branco-2752x1536.png", 1000, "png"),
   "m-mono-navy.png":       (PNG / "mono-navy-2752x1536.png", 1000, "png"),
-  "m-board2.jpg":          (ROOT / "assets/logo/explor-v3/board2.png", 1400, "jpeg"),
-  "m-board3.jpg":          (ROOT / "assets/logo/explor-v3/board3.png", 1400, "jpeg"),
+  "m-rodadas.jpg":         (ROOT / "assets/logo/explor-v4/rodada-10.png", 1400, "jpeg"),
   "m-avatar-ig.jpg":       (ROOT / "divulgacao/social-rbg/social-avatar-instagram-1080x1080.png", 540, "jpeg"),
   "m-avatar-li.jpg":       (ROOT / "divulgacao/social-rbg/social-avatar-linkedin-1080x1080.png", 540, "jpeg"),
 }
@@ -72,10 +71,14 @@ s = s.replace(
   '<div class="note"><p><b>Emblema v3 (capítulo 01):</b> os dois avatares já estão na versão nova. Capas e posts com foto ainda mostram o emblema anterior e serão regenerados em lote na sequência — os HTMLs em <code class="mono" style="font-size:12.5px">divulgacao/social-rbg/src/</code> já apontam para o <code class="mono" style="font-size:12.5px">_emblema.svg</code> novo.</p></div>')
 
 # 5. versão e data
-s = s.replace('<span class="spec">Versão <b>2.1</b></span>', f'<span class="spec">Versão <b>{VERSAO}</b></span>')
-s = s.replace('<span class="spec">2026-08-28</span>', f'<span class="spec">{DATA}</span>')
-s = s.replace('<b>Manual da Marca · v2.1</b><span class="dot"></span><span>2026-08-28</span>',
-              f'<b>Manual da Marca · v{VERSAO}</b><span class="dot"></span><span>{DATA}</span>')
+s = re.sub(r'<span class="spec">Versão <b>[\d.]+</b></span>', f'<span class="spec">Versão <b>{VERSAO}</b></span>', s)
+s = re.sub(r'(<span class="spec">Versão <b>[\d.]+</b></span>\s*<span class="spec">)\d{4}-\d{2}-\d{2}', lambda m: m.group(1) + DATA, s)
+s = re.sub(r'<b>Manual da Marca · v[\d.]+</b><span class="dot"></span><span>\d{4}-\d{2}-\d{2}</span>',
+           f'<b>Manual da Marca · v{VERSAO}</b><span class="dot"></span><span>{DATA}</span>', s)
+# nota do capítulo 08 (versão v3 → final)
+s = s.replace(
+  '<div class="note"><p><b>Emblema v3 (capítulo 01):</b> os dois avatares já estão na versão nova. Capas e posts com foto ainda mostram o emblema anterior e serão regenerados em lote na sequência — os HTMLs em <code class="mono" style="font-size:12.5px">divulgacao/social-rbg/src/</code> já apontam para o <code class="mono" style="font-size:12.5px">_emblema.svg</code> novo.</p></div>',
+  '<div class="note"><p><b>Emblema final (capítulo 01):</b> avatares, capas e posts abaixo já estão na versão final. Fonte em <code class="mono" style="font-size:12.5px">divulgacao/social-rbg/src/</code>; <code class="mono" style="font-size:12.5px">render-social.sh</code> regenera tudo.</p></div>')
 
 # 6. CSS das aplicações do emblema (idempotente)
 CSS = """
