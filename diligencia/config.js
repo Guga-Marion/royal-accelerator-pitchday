@@ -1,11 +1,10 @@
 /* RBG · Diligência — configuração. */
 window.RBG_CONFIG = {
-  // URL do Web App do Apps Script (Implantar → App da Web → copiar, termina em /exec).
-  // Enquanto estiver vazia, o formulário usa o plano B: baixa o pacote completo
-  // das respostas e abre um e-mail já preenchido para emailDestino.
-  endpoint: "",
+  // Endpoint que recebe as respostas (edge function no Supabase). As respostas
+  // caem direto no painel: https://rbg-project.lovable.app/admin/diligencia
+  endpoint: "https://jktjurezegjksruyybzx.supabase.co/functions/v1/diligencia",
 
   emailDestino: "guga@rbg-hub.com",
   ano: "2026",
-  limiteArquivoMB: 18
+  limiteArquivoMB: 15
 };

@@ -708,7 +708,7 @@ function envia(){
     protocolo = "RBG-" + (CFG.ano||"2026") + "-" + Math.random().toString(36).slice(2,7).toUpperCase();
     try{ localStorage.setItem(CHAVE+"-proto", protocolo) }catch(e){}
   }
-  if(!CFG.endpoint || CFG.endpoint.indexOf("script.google.com") < 0){
+  if(!CFG.endpoint || !/^https:\/\//.test(CFG.endpoint)){
     planoB(protocolo, "sem endpoint");
     return;
   }
@@ -734,7 +734,8 @@ function envia(){
 
   txt.textContent = "Registrando as respostas…";
   post({ acao:"submissao", protocolo:proto, dados:dados, socios:socios,
-         resumo:montarResumo(), assinatura:assinatura, agente:navigator.userAgent })
+         resumo:montarResumo(), assinatura:assinatura, agente:navigator.userAgent,
+         respondente:(function(){ try{ return new URLSearchParams(location.search).get("e") || "" }catch(e){ return "" } })() })
   .then(function(){
     passo();
     return ks.reduce(function(cad, k, idx){
