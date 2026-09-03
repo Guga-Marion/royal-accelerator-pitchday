@@ -253,7 +253,9 @@ function stagger(){
 /* ─────────────────── eventos ─────────────────── */
 function ligar(raiz){
   $$("input,textarea,select", raiz).forEach(function(el){
-    if(el.__lig) return; el.__lig = 1;
+    // o input de arquivo e o toggle N/A têm handlers próprios mais abaixo;
+    // se passarem por aqui, ganham a marca __lig e nunca recebem o handler certo
+    if(el.__lig || el.type === "file" || el.dataset.na != null) return; el.__lig = 1;
 
     if(el.dataset.mask){
       el.addEventListener("input", function(){
@@ -432,8 +434,9 @@ function valida(el){
   if(f.hasAttribute("data-dep") && !f.classList.contains("on")) return true;
   var ok = true, msg = "Campo obrigatório.";
   if(el.type==="radio" || el.type==="checkbox"){
-    ok = $$('input[name="'+CSS.escape(el.name)+'"]:checked').length > 0;
-    msg = "Escolha uma opção.";
+    // o aceite da declaração é um checkbox solto, sem name: vale o próprio checked
+    if(el.name){ ok = $$('input[name="'+CSS.escape(el.name)+'"]:checked').length > 0; msg = "Escolha uma opção." }
+    else { ok = el.checked; msg = "É preciso aceitar para enviar." }
   } else {
     ok = String(el.value||"").trim() !== "";
     if(ok && el.type==="email" && !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(el.value)){ ok=false; msg="E-mail inválido." }
@@ -491,6 +494,7 @@ function completa(i){
     var f = el.closest(".f");
     if(f && f.hasAttribute("data-dep") && !f.classList.contains("on")) return;
     if(el.type==="radio" || el.type==="checkbox"){
+      if(!el.name){ if(!el.checked) ok = false; return }
       if(vistos[el.name]) return; vistos[el.name]=1;
       if(!$$('input[name="'+CSS.escape(el.name)+'"]:checked').length) ok = false;
     } else if(!String(el.value||"").trim()) ok = false;
