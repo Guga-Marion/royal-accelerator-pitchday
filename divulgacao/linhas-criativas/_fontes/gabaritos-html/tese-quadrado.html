@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1080px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.ghost{right:58px;top:52px;font-size:400px}
+.mid{position:absolute;left:84px;right:84px;top:50%;transform:translateY(-46%);z-index:3}
+.mid .eb{font-size:16px;margin-bottom:38px}
+.tt{font-size:126px;max-width:12ch}
+.foot{left:84px;right:84px;bottom:74px;font-size:13px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="ghost" data-f="n"></div>
+  <div class="mid"><div class="eb rule" data-f="eb"></div><div class="tt" data-f="t"></div></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>var i=+p('v',1)-1,d=RBG.teses[i];fill({eb:d.eb,t:d.t,n:String(i+1).padStart(2,'0'),city:RBG.city,handle:RBG.handle});</script>
+</body></html>

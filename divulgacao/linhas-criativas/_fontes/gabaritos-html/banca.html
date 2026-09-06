@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1350px}
+.ph{object-position:50% 18%}
+.veil{background:linear-gradient(180deg,rgba(8,19,43,.9) 0%,rgba(8,19,43,.55) 16%,rgba(8,19,43,.08) 34%,rgba(8,19,43,.05) 46%,rgba(8,19,43,.9) 68%,rgba(7,14,34,.98) 100%)}
+.veil2{background:radial-gradient(70% 62% at 50% 44%,transparent 40%,rgba(8,19,43,.78) 100%)}
+.top{position:absolute;left:84px;right:84px;top:84px;z-index:3;display:flex;justify-content:space-between;align-items:center}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.top .eb{font-size:14px;letter-spacing:.3em;text-align:right;line-height:1.7}
+.low{position:absolute;left:84px;right:84px;bottom:110px;z-index:3}
+.qm{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:200px;line-height:.5;color:var(--gold-hi);opacity:.9;height:80px}
+.tt{font-size:82px;font-weight:600;max-width:15ch}
+.who{display:flex;align-items:center;gap:22px;margin-top:44px}
+.bar{height:64px}.name{font-size:40px}.role{font-size:15px;margin-top:10px}
+.foot{left:84px;right:84px;bottom:66px;font-size:13px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <img class="ph" data-f="" alt=""><div class="veil"></div><div class="veil2"></div>
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div><div class="eb" data-f="eb"></div></div>
+  <div class="low"><div class="qm">“</div><div class="tt" data-f="q"></div>
+    <div class="who"><div class="bar"></div><div><div class="name" data-f="nome"></div><div class="role" data-f="cargo"></div></div></div></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>var c=+p('c',3),d=RBG.banca[c-1];document.querySelector('.ph').src='../../pitch-day-2/src/'+d.foto;fill({eb:'A banca fala<br>'+d.cargo.split('·').pop().trim(),q:d.q,nome:d.nome,cargo:d.cargo,city:RBG.city,handle:RBG.handle});</script>
+</body></html>

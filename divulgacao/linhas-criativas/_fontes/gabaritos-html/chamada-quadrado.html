@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1080px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.mid{position:absolute;left:84px;right:84px;top:250px;z-index:3}
+.mid .eb{font-size:16px;margin-bottom:34px}
+.tt{font-size:110px;max-width:12ch}
+.chips{display:flex;gap:14px;flex-wrap:wrap;margin-top:46px}
+.chip{height:54px;padding:0 22px;font-size:20px}
+.btns{display:flex;gap:16px;margin-top:40px}
+.pill{height:92px;padding:0 40px;font-size:16px}
+.foot{left:84px;right:84px;bottom:70px;font-size:13px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="mid"><div class="eb rule" data-f="eb"></div><div class="tt" data-f="t"></div>
+    <div class="chips" data-f="chips"></div>
+    <div class="btns"><span class="pill solid" data-f="b1"></span></div></div>
+  <div class="foot"><span data-f="s"></span><b data-f="site"></b></div>
+</div>
+<script>var d=RBG.chamada;fill({eb:d.eb,t:d.t,chips:d.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join(''),b1:d.b1,s:d.s,site:RBG.site});</script>
+</body></html>

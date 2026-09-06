@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1350px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.ghost{right:40px;top:150px;font-size:620px}
+.mid{position:absolute;left:84px;right:84px;top:300px;z-index:3}
+.mid .eb{font-size:16px;margin-bottom:34px}
+.k{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.3em;font-size:20px;color:var(--on-2);margin-bottom:22px}
+.tt{font-size:112px;max-width:11ch}.tt.q{font-size:104px;max-width:12ch}.tt.cta{font-size:96px;max-width:13ch}
+.sub{font-size:40px;margin-top:34px;max-width:22em}
+.dica{position:absolute;left:84px;right:84px;bottom:330px;font-family:Inter,sans-serif;font-size:30px;color:var(--on-2);max-width:26em;z-index:3;line-height:1.4}
+.yn{position:absolute;left:84px;bottom:190px;display:flex;gap:16px;z-index:3}
+.yn .pill{height:84px;padding:0 40px;font-size:16px}
+.btn{margin-top:56px;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.pill{height:92px;padding:0 44px;font-size:17px}.chip{height:56px;padding:0 24px;font-size:20px}
+.dots{left:50%;transform:translateX(-50%);bottom:130px}
+.foot{left:84px;right:84px;bottom:74px;font-size:13px;display:flex;justify-content:space-between}
+.swipe{position:absolute;right:84px;bottom:130px;font-family:"JetBrains Mono",monospace;font-size:14px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-hi);z-index:3}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="ghost" data-f="n"></div>
+  <div class="mid" data-f="mid"></div>
+  <div class="dica" data-f="dica"></div><div class="yn" data-f="yn"></div>
+  <div class="dots" data-f="dots"></div><div class="swipe" data-f="swipe"></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>
+var n=+p('n',1),D=RBG.diagnostico,I=D.itens,N=I.length,m={city:RBG.city,handle:RBG.handle,mid:'',dica:'',yn:'',n:'',swipe:''};
+var dots='';for(var i=0;i<N+2;i++)dots+='<i class="'+(i===n?'on':'')+'"></i>';m.dots=dots;
+if(n===0){m.mid='<div class="eb rule">Diagnóstico · carrossel</div><div class="tt">'+D.capa.t+'</div><div class="sub">'+D.capa.s+'</div>';m.swipe='arraste &nbsp;→'}
+else if(n>N){m.mid='<div class="eb rule">Diagnóstico · resultado</div><div class="tt cta">'+D.cta.t+'</div><div class="btn"><span class="pill solid">'+D.cta.b1+'</span><span class="chip">'+D.cta.s+'</span></div>'}
+else{var it=I[n-1];m.n=it.n;m.mid='<div class="eb rule">Diagnóstico · '+it.n+' / 0'+N+'</div><div class="k">'+it.frente+'</div><div class="tt q">'+it.q+'</div>';m.dica=it.dica;m.yn='<span class="pill">Sim</span><span class="pill solid">Não</span>'}
+fill(m);
+</script></body></html>

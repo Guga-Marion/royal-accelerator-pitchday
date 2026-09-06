@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1920px;height:1080px}
+.top{position:absolute;left:96px;top:80px;z-index:3}
+.lock .emb{width:72px;height:72px}.lk1,.lk2{font-size:28px}
+.rt{position:absolute;right:-40px;bottom:-30px;opacity:.32;z-index:1}
+.mid{position:absolute;left:96px;right:96px;top:50%;transform:translateY(-50%);text-align:center;z-index:3}
+.mid .eb{font-size:19px;letter-spacing:.42em;margin-bottom:40px}
+.tt{font-size:230px;line-height:.9}
+.grad em{color:inherit}
+.sub{font-size:44px;margin-top:40px}
+.foot{left:96px;right:96px;bottom:60px;font-size:14px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <div class="top"><div class="lock"></div></div>
+  <div class="rt" data-f="rt"></div>
+  <div class="mid"><div class="eb rule center" data-f="eb"></div><div class="tt grad" data-f="t"></div><div class="sub" data-f="s"></div></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+  <div class="ramp"><i></i><i></i><i></i></div>
+</div>
+<script>var d=RBG.cartela;fill({eb:d.eb,t:d.t,s:d.s,rt:route(-2,1100,760),city:RBG.city,handle:RBG.handle});</script>
+</body></html>

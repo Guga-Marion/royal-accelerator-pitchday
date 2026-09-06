@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1080px}
+.top{position:absolute;top:84px;left:0;right:0;display:flex;justify-content:center;z-index:3}
+.lock .emb{width:64px;height:64px}.lk1,.lk2{font-size:26px}
+.low{position:absolute;left:84px;right:84px;bottom:110px;z-index:3}
+.low .eb{font-size:15px;margin-bottom:26px}
+.tt{font-size:86px;max-width:13ch}
+.foot{left:84px;right:84px;bottom:64px;font-size:13px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <img class="ph" alt=""><div class="veil"></div><div class="veil2"></div>
+  <div class="frame"></div>
+  <div class="top"><div class="lock inline"></div></div>
+  <div class="low"><div class="eb rule" data-f="eb"></div><div class="tt" data-f="t"></div></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>var d=RBG.bastidores[+p('v',1)-1],ph=document.querySelector('.ph');ph.src=d.foto;ph.style.objectPosition=d.pos;fill({eb:d.eb,t:d.t,city:RBG.city,handle:RBG.handle});</script>
+</body></html>

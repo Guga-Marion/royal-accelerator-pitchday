@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1920px}
+.frame{inset:40px}
+.top{position:absolute;left:0;right:0;top:230px;display:flex;justify-content:center;z-index:3}
+.lock{flex-direction:column;gap:20px;text-align:center}.lock .emb{width:96px;height:96px}.lk1,.lk2{font-size:30px}
+.mid{position:absolute;left:90px;right:90px;top:600px;text-align:center;z-index:3}
+.mid .eb{font-size:17px;margin-bottom:40px}
+.tt{font-size:128px}
+.chips{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:60px}
+.chip{height:58px;padding:0 26px;font-size:21px}
+.btns{display:flex;flex-direction:column;align-items:center;gap:20px;margin-top:70px}
+.pill{width:720px;height:104px;font-size:19px}
+.s{font-feature-settings:"lnum" 1;position:absolute;left:0;right:0;bottom:400px;text-align:center;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:36px;color:var(--on-2);z-index:3}
+.foot{left:0;right:0;bottom:330px;text-align:center;font-size:14px}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="mid"><div class="eb rule center" data-f="eb"></div><div class="tt" data-f="t"></div>
+    <div class="chips" data-f="chips"></div>
+    <div class="btns"><span class="pill solid" data-f="b1"></span><span class="pill" data-f="b2"></span></div></div>
+  <div class="s" data-f="s"></div>
+  <div class="foot">link na bio &nbsp;·&nbsp; <b data-f="site"></b></div>
+</div>
+<script>var d=RBG.chamada;fill({eb:d.eb,t:d.t,chips:d.chips.map(function(c){return '<span class="chip">'+c+'</span>'}).join(''),b1:d.b1,b2:d.b2,s:d.s,site:RBG.site});</script>
+</body></html>

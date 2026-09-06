@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1280px;height:720px}
+.ph{left:38%;width:62%}
+.pv{position:absolute;inset:0;background:linear-gradient(90deg,#08132B 0%,#08132B 36%,rgba(8,19,43,.82) 48%,rgba(8,19,43,.12) 72%,rgba(8,19,43,0) 100%)}
+.pv2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,19,43,.35) 0%,rgba(8,19,43,0) 30%,rgba(8,19,43,0) 60%,rgba(8,19,43,.75) 100%)}
+.top{position:absolute;left:64px;top:52px;z-index:3}
+.lock .emb{width:54px;height:54px}.lk1,.lk2{font-size:21px}
+.mid{position:absolute;left:64px;top:176px;width:700px;z-index:3}
+.mid .eb{font-size:15px;margin-bottom:26px}
+.tt{font-size:112px;line-height:.98}
+.who{position:absolute;left:64px;bottom:54px;display:flex;align-items:center;gap:16px;z-index:3}
+.bar{height:44px}.name{font-size:30px}.role{font-size:12px;margin-top:6px}
+</style></head><body><div class="board">
+  <img class="ph" alt=""><div class="pv"></div><div class="pv2"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="mid"><div class="eb rule" data-f="eb"></div><div class="tt" data-f="t"></div></div>
+  <div class="who"><div class="bar"></div><div><div class="name" data-f="quem"></div><div class="role" data-f="tipo"></div></div></div>
+  <div class="ramp"><i></i><i></i><i></i></div>
+</div>
+<script>var d=RBG.yt[+p('v',1)-1],ph=document.querySelector('.ph');ph.src=d.foto;ph.style.objectPosition=d.pos;fill({eb:d.eb,t:d.t,quem:d.quem,tipo:d.tipo+' · Royal Business Growth'});</script>
+</body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1350px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.ghost{right:52px;top:120px;font-size:560px}
+.mid{position:absolute;left:84px;right:84px;top:300px;z-index:3}
+.mid .eb{font-size:16px;margin-bottom:36px}
+.k{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:48px;color:var(--on-2);margin-bottom:6px}
+.tt{font-size:150px}
+.tt.capa{font-size:112px;max-width:13ch}
+.tt.cta{font-size:96px}
+.body{font-size:33px;max-width:22em;margin-top:38px}
+.sub{font-size:42px;margin-top:34px;max-width:22em}
+.rt{position:absolute;left:84px;right:84px;bottom:212px;z-index:2}
+.rt .route{width:100%;height:330px}
+.lbl{position:absolute;left:84px;right:84px;bottom:150px;height:20px;z-index:3}
+.lbl span{position:absolute;transform:translateX(-50%);font-family:"JetBrains Mono",monospace;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--on-3);white-space:nowrap}
+.lbl span.on{color:var(--gold-hi);font-weight:600}
+.dots{left:50%;transform:translateX(-50%);bottom:92px}
+.foot{left:84px;right:84px;bottom:74px;font-size:13px;display:flex;justify-content:space-between}
+.swipe{position:absolute;right:84px;bottom:90px;font-family:"JetBrains Mono",monospace;font-size:14px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-hi);z-index:3}
+.btn{margin-top:56px;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.pill{height:92px;padding:0 44px;font-size:17px}
+.chip{height:56px;padding:0 24px;font-size:20px}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="ghost" data-f="n"></div>
+  <div class="mid"><div class="eb rule" data-f="eb"></div><div class="k" data-f="k"></div><div class="tt" data-f="t"></div><div class="sub" data-f="s"></div><div class="body" data-f="d"></div><div class="btn" data-f="btn"></div></div>
+  <div class="rt" data-f="rt"></div><div class="lbl" data-f="lbl"></div>
+  <div class="dots" data-f="dots"></div>
+  <div class="swipe" data-f="swipe"></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>
+var s=+p('s',1),T=RBG.travessia,E=T.etapas,n=E.length,m={city:RBG.city,handle:RBG.handle,k:'',s:'',d:'',btn:'',swipe:'',n:'',lbl:'',rt:''};
+var dots='';for(var i=0;i<n+2;i++)dots+='<i class="'+(i===s?'on':'')+'"></i>';m.dots=dots;
+var lab='';E.forEach(function(e,i){var x=(ROUTE_PTS[i][0]-24)/52*100;lab+='<span class="'+(i===s-1?'on':'')+'" style="left:'+x+'%">'+e.k+'</span>'});
+if(s===0){m.eb='A travessia · carrossel';m.t=T.capa.t;m.s=T.capa.s;m.swipe='arraste &nbsp;→';m.rt=route(-1,912,330);m.lbl=lab;document.querySelector('.tt').classList.add('capa')}
+else if(s>n){m.eb='A travessia · e agora?';m.t=T.cta.t;m.btn='<span class="pill solid">'+T.cta.b1+'</span><span class="chip">'+T.cta.s+'</span>';m.rt=route(4,912,330);m.lbl=lab;document.querySelector('.tt').classList.add('cta');document.querySelector('.rt').style.opacity=.45}
+else{var e=E[s-1];m.eb='A travessia · etapa '+String(s).padStart(2,'0')+' / '+String(n).padStart(2,'0');m.k=e.k;m.t=e.t;m.d=e.d;m.n=String(s).padStart(2,'0');m.rt=route(s-1,912,330);m.lbl=lab}
+fill(m);
+</script>
+</body></html>

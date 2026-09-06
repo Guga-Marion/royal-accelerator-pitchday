@@ -489,6 +489,24 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .dp-wall .dp-wmk--tnf img{transform:scale(1.6)}
 .dp-wall .dp-wmk--petro img{transform:scale(1.15)}
 
+/* ═════════ responsivo · mobile (não altera a versão desktop) ═════════ */
+@media (max-width:820px){
+  /* nada cabe "encolhendo" texto num telão vertical: cada slide passa a rolar
+     verticalmente (o swipe horizontal continua trocando de slide) */
+  .slide{overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain}
+  .pane{height:auto;min-height:100%;padding-bottom:calc(var(--pad) + env(safe-area-inset-bottom,0px))}
+  .slide.k-split .split2{height:auto;min-height:100%;grid-template-columns:1fr;grid-template-rows:auto auto}
+  .split2 .im{height:52vw;min-height:170px;max-height:320px}
+  .split2 .co{height:auto;min-height:0;padding-bottom:calc(var(--pad) + env(safe-area-inset-bottom,0px))}
+  .bd,.co>.bd{overflow-x:auto}
+  .dg{width:640px;max-width:640px}
+  .ov{padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+}
+
+@media (max-width:560px){
+  .xl{font-size:clamp(30px,15vw,52px);overflow-wrap:break-word;word-break:break-word}
+}
+
 </style>
 
 <div class="deck" id="deck">
@@ -1171,11 +1189,16 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
     return bad;
   }
 
-  /* ajusta a escala do slide para ocupar a tela: encolhe se estourar, cresce se sobrar */
+  /* ajusta a escala do slide para ocupar a tela: encolhe se estourar, cresce se sobrar.
+     No celular a tela é estreita e alta demais para esse jogo de encolher texto —
+     em vez disso o slide rola verticalmente (ver CSS), então mantemos o texto no
+     tamanho natural e legível. */
+  var mobileMQ = matchMedia('(max-width:820px)');
   function fit(sl){
+    sl.style.setProperty('--uf', '1');
+    if (mobileMQ.matches) return;
     var f = 1;
     sl.classList.add('measuring');
-    sl.style.setProperty('--uf', '1');
     if (overflows(sl)){
       for (var g = 0; g < 16 && f > 0.52; g++){
         f -= 0.045;

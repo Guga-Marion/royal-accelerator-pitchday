@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1080px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.mid{position:absolute;left:84px;right:84px;top:250px;z-index:3}
+.mid .eb{font-size:16px;margin-bottom:10px}
+.num{display:flex;align-items:baseline;gap:22px}
+.big{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-feature-settings:"lnum" 1;font-variant-numeric:lining-nums;font-size:330px;line-height:.95;letter-spacing:-.02em}
+.unit{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:96px;color:var(--on-2)}
+.tt{font-size:76px;margin-top:14px;font-weight:600}
+.body{font-size:30px;max-width:24em;margin-top:30px}
+.foot{left:84px;right:84px;bottom:74px;font-size:13px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="mid"><div class="eb rule" data-f="eb"></div>
+    <div class="num"><div class="big grad" data-f="n"></div><div class="unit" data-f="u"></div></div>
+    <div class="tt" data-f="t"></div><div class="body" data-f="d"></div></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>var d=RBG.numeros[+p('n',1)-1];fill({eb:d.eb,n:d.n,u:d.u,t:d.t,d:d.d,city:RBG.city,handle:RBG.handle});if(d.n.length>3)document.querySelector('.big').style.fontSize='250px';</script>
+</body></html>

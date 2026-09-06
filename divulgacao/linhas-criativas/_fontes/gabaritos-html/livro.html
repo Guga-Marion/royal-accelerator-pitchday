@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1350px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.mid{position:absolute;left:84px;right:84px;top:280px;z-index:3}
+.mid .eb{font-size:16px;margin-bottom:34px}
+.tt{font-size:110px;max-width:12ch}
+.tt.capa{font-size:112px;max-width:13ch}.tt.cta{font-size:100px}
+.sub{font-size:40px;margin-top:34px;max-width:22em}
+/* o livro: lombada tipográfica, sem capa real */
+.book{position:absolute;left:84px;top:290px;width:300px;height:430px;background:#0C1B3D;border:1.5px solid rgba(212,164,55,.6);box-shadow:16px 16px 0 -6px rgba(212,164,55,.18),0 40px 60px rgba(4,8,20,.6);overflow:hidden;z-index:3}
+.book img{width:100%;height:100%;object-fit:cover;display:block}
+.book[hidden]{display:none}
+.book::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:1px;background:rgba(240,196,77,.5)}
+.book .bt{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:46px;line-height:1;color:var(--on);text-wrap:balance}
+.book .ba{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.22em;font-size:12px;color:var(--gold-hi)}
+.book .emb{width:40px;height:40px;opacity:.8}
+.les{position:absolute;left:440px;right:84px;top:290px;z-index:3}
+.les .tt{font-size:50px;font-weight:600;margin-top:26px}
+
+.les .ba{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--gold-hi)}
+.les .k{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.3em;font-size:14px;color:var(--on-2);margin-bottom:22px}
+.les .tt{font-size:60px;font-weight:600;max-width:11ch}
+.low{position:absolute;left:84px;right:84px;bottom:230px;z-index:3}
+.low .tt{font-size:54px;font-weight:600;max-width:17ch}
+.dots{left:50%;transform:translateX(-50%);bottom:130px}
+.foot{left:84px;right:84px;bottom:74px;font-size:13px;display:flex;justify-content:space-between}
+.swipe{position:absolute;right:84px;bottom:130px;font-family:"JetBrains Mono",monospace;font-size:14px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-hi);z-index:3}
+.btn{margin-top:56px;display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.pill{height:92px;padding:0 44px;font-size:17px}.chip{height:56px;padding:0 24px;font-size:20px}
+.list{position:absolute;left:84px;right:84px;bottom:230px;display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;z-index:3}
+.list div{font-family:Inter,sans-serif;font-size:24px;color:var(--on-2);display:flex;gap:16px;align-items:baseline}.list b{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--gold-hi);letter-spacing:.2em}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="mid" data-f="mid"></div>
+  <div class="book" data-f="book" hidden></div><div class="les" data-f="les"></div>
+  <div class="low" data-f="low"></div><div class="list" data-f="list"></div>
+  <div class="dots" data-f="dots"></div><div class="swipe" data-f="swipe"></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>
+var n=+p('n',1),L=RBG.livros,I=L.itens,N=I.length,m={city:RBG.city,handle:RBG.handle,mid:'',book:'',les:'',low:'',list:'',swipe:''};
+var dots='';for(var i=0;i<N+2;i++)dots+='<i class="'+(i===n?'on':'')+'"></i>';m.dots=dots;
+if(n===0){m.mid='<div class="eb rule">O que o livro diz · carrossel</div><div class="tt capa">'+L.capa.t+'</div><div class="sub">'+L.capa.s+'</div>';m.list=I.map(function(it,i){return '<div><b>0'+(i+1)+'</b>'+it.titulo+'</div>'}).join('');m.swipe='arraste &nbsp;→'}
+else if(n>N){m.mid='<div class="eb rule">O que o livro diz · e agora?</div><div class="tt cta">'+L.cta.t+'</div><div class="btn"><span class="pill solid">'+L.cta.b1+'</span><span class="chip">'+L.cta.s+'</span></div>'}
+else{var it=I[n-1];document.querySelector('.book').hidden=false;m.mid='<div class="eb rule">O que o livro diz · 0'+n+' / 0'+N+'</div>';m.book='<img src="capas/'+it.capa+'" alt="">';m.les='<div class="k">'+it.frente+'</div><div class="ba" style="margin-top:10px">'+it.titulo+' · '+it.autor+'</div><div class="tt">'+it.licao+'</div>';document.querySelector('.mid').style.top='210px'}
+fill(m);
+</script></body></html>

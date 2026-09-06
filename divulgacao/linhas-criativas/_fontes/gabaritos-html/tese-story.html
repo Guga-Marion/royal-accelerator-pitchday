@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1920px}
+.frame{inset:40px}
+.top{position:absolute;left:0;right:0;top:220px;display:flex;justify-content:center;z-index:3}
+.lock{flex-direction:column;gap:20px;text-align:center}.lock .emb{width:96px;height:96px}.lk1,.lk2{font-size:30px}
+.ghost{left:50%;transform:translateX(-50%);top:300px;font-size:460px;-webkit-text-stroke-color:rgba(212,164,55,.2)}
+.mid{position:absolute;left:96px;right:96px;top:50%;transform:translateY(-38%);text-align:center;z-index:3}
+.mid .eb{font-size:17px;margin-bottom:44px}
+.tt{font-size:138px}
+.foot{left:0;right:0;bottom:330px;text-align:center;font-size:14px}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="ghost" data-f="n"></div>
+  <div class="mid"><div class="eb rule center" data-f="eb"></div><div class="tt" data-f="t"></div></div>
+  <div class="foot"><b data-f="handle"></b></div>
+</div>
+<script>var i=+p('v',2)-1,d=RBG.teses[i];fill({eb:d.eb,t:d.t,n:String(i+1).padStart(2,'0'),handle:RBG.handle});</script>
+</body></html>

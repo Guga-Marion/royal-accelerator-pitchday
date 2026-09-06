@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<link rel="stylesheet" href="../../pitch-day-2/src/fonts.css"><link rel="stylesheet" href="_base.css">
+<script src="_rbg.js"></script><script src="_copy.js"></script>
+<style>.board{width:1080px;height:1350px}
+.top{position:absolute;left:84px;top:84px;z-index:3}
+.lock .emb{width:58px;height:58px}.lk1,.lk2{font-size:22px}
+.mid{position:absolute;left:84px;right:84px;top:210px;z-index:3}
+.mid .eb{font-size:16px;margin-bottom:30px}
+.tt{font-size:88px;max-width:14ch}
+.cols{position:absolute;left:84px;right:84px;top:560px;display:grid;grid-template-columns:1fr 1fr;gap:26px;z-index:3}
+.col{border:1.5px solid var(--rule);padding:34px 34px 30px;display:flex;flex-direction:column;gap:26px}
+.col.b{border-color:rgba(212,164,55,.7);background:rgba(194,146,42,.06)}
+.col h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:700;font-size:50px;line-height:1;color:var(--on-3)}
+.col.b h3{color:var(--on)}
+.col .s{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px;color:var(--on-3);margin-top:8px}
+.col.b .s{color:var(--gold-hi)}
+.row .l{font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:.24em;font-size:12.5px;color:var(--on-3);margin-bottom:8px}
+.col.b .row .l{color:var(--gold-lt)}
+.row .x{font-family:Inter,sans-serif;font-size:23px;line-height:1.35;color:var(--on-3)}
+.col.b .row .x{color:var(--on)}
+.fin{font-feature-settings:"lnum" 1;position:absolute;left:84px;right:84px;bottom:120px;z-index:3;font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:44px;line-height:1.15;color:var(--on-2)}
+.fin em{color:var(--gold-hi);font-weight:600}
+.foot{left:84px;right:84px;bottom:66px;font-size:13px;display:flex;justify-content:space-between}
+</style></head><body><div class="board">
+  <div class="frame"></div>
+  <div class="top"><div class="lock"></div></div>
+  <div class="mid"><div class="eb rule">O custo de esperar</div><div class="tt" data-f="t"></div></div>
+  <div class="cols"><div class="col a" data-f="a"></div><div class="col b" data-f="b"></div></div>
+  <div class="fin" data-f="f"></div>
+  <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
+</div>
+<script>var C=RBG.custo;function col(c){return '<div><h3>'+c.k+'</h3><div class="s">'+c.s+'</div></div>'+c.r.map(function(r){return '<div class="row"><div class="l">'+r[0]+'</div><div class="x">'+r[1]+'</div></div>'}).join('')}
+fill({t:C.t,a:col(C.a),b:col(C.b),f:C.f,city:RBG.city,handle:RBG.handle});</script>
+</body></html>
