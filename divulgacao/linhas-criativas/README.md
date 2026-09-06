@@ -19,7 +19,7 @@ Plano completo, calendário e prévias em **rbg-hub.com/plano**. Histórico das 
     LEGENDAS.md
   livros/carrossel/            um livro por lâmina, capa real
 02-meio/                       CTA: comente PITCH · quero estar no Pitch Day de 6 de dezembro
-  infografico-frente/feed/     Finanças · Comercial · Liderança (vídeo 4:5)
+  infografico-frente/{01-financas … 07-growth}/carrossel-video/   um conceito por frente (EBITDA, ZOPA/BATNA, automação, Liderança Situacional, OKR, Golden Circle, LTV/CAC), com fonte · feed/ nas três com vídeo · LEGENDAS.md
   corte-com-contexto/reels-stories/   cartela de abertura; o corte vem da edição
 03-fundo/                      CTA: conheça os programas de aceleração · link na bio
   banca/                       reels-stories/ (A banca, Em relevo Guga) · feed/ (Em relevo Lúcio, Kamila, Carlos) · feed-estatico/
