@@ -1,41 +1,31 @@
-# Giva · Marketing · marca, conteúdo e aquisição
+# Giva · Marketing
 
-> Preencha com o que vier em `_fontes/` (bio, fotos, links). Cada fato público leva fonte. O que só ele sabe, marcar *[validar com o Giva]*.
+> 7/9/2026: **sem sobrenome em nenhum arquivo do repositório nem no site**, então não dá para pesquisar. Preencher com o que o Giva mandar em `_fontes/`.
 
 ## Ficha
-- **Cadeira na RBG:** Marketing · marca, conteúdo e aquisição
-- **Hoje:** cargo · empresa · cidade
-- **Origem:** cidade · formação
-- **Trajetória (em ordem):** empresa · cargo · anos — uma linha por passo
-- **Links:** LinkedIn · site · imprensa · vídeos
+- **Cadeira na RBG:** Marketing · marca, conteúdo e aquisição. Gestão de marketing da RBG (dono dos takes e da produção de vídeo do Pitch Day).
+- **Nome completo:** *[ ]* · **Hoje:** *[ ]* · **Origem:** *[ ]* · **Trajetória:** *[ ]* · **Links:** *[ ]*
 
 ## A história em três atos
-1. **De onde veio** — o começo que explica o resto.
-2. **A virada** — o convite, a travessia, a decisão que mudou de escala.
-3. **O que faz hoje** — e por que isso importa para uma empresa brasileira nos EUA.
+1. **De onde veio** ·  2. **A virada** ·  3. **O que faz hoje** (e por que importa para a empresa brasileira nos EUA)
 
-## O número
-Um dado só, verificável, que resume a escala do que a pessoa fez. Fonte:
+## O número · A frase-régua
+Proposta de régua: **"Audiência não se compra, se constrói."** (tema da Vitrine dele: construir audiência nos EUA sem queimar caixa em tráfego)
 
-## A frase-régua
-O que o Giva olha primeiro numa empresa (liga com o estático "A banca fala"):
-
-## Perguntas para o Giva (áudio de 5 min resolve)
-- Qual foi o dia em que a sua carreira mudou de tamanho?
-- Qual é o número de que você mais se orgulha?
-- Qual erro você vê toda semana em empresa brasileira nos EUA?
-- Tem uma foto sua no lugar que conta essa história? (alta resolução, vertical e horizontal)
+## Perguntas para o Giva
+1. Nome completo, cargo, empresas anteriores, cidade de origem.
+2. O primeiro conteúdo que deu certo de verdade: o que era e por quê.
+3. Quanto tempo leva para uma empresa brasileira ter audiência nos EUA?
+4. Foto sua dirigindo um take no hub (alta, vertical e horizontal).
 
 ## Roteiro do carrossel (8 lâminas)
-| # | Lâmina | Texto (rascunho) | Imagem |
+| # | Lâmina | Texto | Imagem |
 |---|---|---|---|
-| 1 | gancho | | foto-lugar |
-| 2 | origem | | |
-| 3 | primeiro passo | | |
-| 4 | a virada | | |
-| 5 | a travessia | | |
-| 6 | o número | | fonte na lâmina |
-| 7 | a régua | | |
+| 1 | gancho | *[ ]* | Giva atrás da câmera no Pitch Day |
+| 2 | quem | **Giva.** Cadeira Marketing da banca. | retrato |
+| 3–6 | origem · virada · travessia · número | *[ ]* | |
+| 7 | a régua | **"Audiência não se compra, se constrói."** | |
 | 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
 
-## Legenda
+## Legenda (rascunho)
+*[depois das respostas]*

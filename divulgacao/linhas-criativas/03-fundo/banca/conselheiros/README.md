@@ -30,12 +30,12 @@ Tudo que for dado público leva fonte na lâmina, como nas linhas de topo. Nada 
 ## Status
 | # | Conselheiro | Cadeira | Dossiê | Fontes recebidas | Carrossel |
 |---|---|---|---|---|---|
-| 1 | Fernando Alves | Comercial | gabarito | — | — |
-| 2 | Gustavo Marion | Growth & GTM | gabarito | — | — |
-| 3 | Lúcio Santana | Founder & chairman | gabarito | — | — |
-| 4 | Carlos Osorio | Finanças | **pesquisado · validar com ele** | — | roteiro pronto |
-| 5 | Alex Zocche | Processos | gabarito | — | — |
-| 6 | Kamila Adamatti | Liderança | gabarito | — | — |
-| 7 | Giva | Marketing | gabarito | — | — |
+| 1 | Fernando Alves | Comercial | **pesquisado** · faltam empresas anteriores | — | roteiro rascunhado |
+| 2 | Gustavo Marion | Growth & GTM | **pesquisado** · Guga completa | — | roteiro rascunhado |
+| 3 | Lúcio Santana | Founder & chairman | **pesquisado** · validar com ele | — | roteiro pronto |
+| 4 | Carlos Osorio | Finanças | **pesquisado** · validar com ele | — | roteiro pronto |
+| 5 | Alex Zocche | Processos | só LinkedIn · **precisa dele** | — | esqueleto |
+| 6 | Kamila Adamatti | Liderança | **pesquisado** · faltam empresas | — | roteiro rascunhado |
+| 7 | Giva | Marketing | **sem sobrenome público** · precisa dele | — | esqueleto |
 
 Depois dos sete: `carrossel-pitch-day/` (a banca inteira, uma lâmina por cadeira, reaproveitando a lâmina 1 de cada história).
