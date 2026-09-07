@@ -27,7 +27,7 @@ Plano completo, calendário e prévias em **rbg-hub.com/plano**. Histórico das 
   banca/                       reels-stories/ (A banca, Em relevo Guga) · feed/ (Em relevo Lúcio, Kamila, Carlos) · feed-estatico/
   pitch-day/                   reels-stories/ (Como funciona o dia, Convite) · carrossel-video/pitch-day-em-numeros/ · evento-antes-durante-depois/
   aceleracao/                  reels-stories/ (Chamada, Fragmentos, O globo) · feed/ (Fragmentos 4:5) · feed-estatico/ (Chamada)
-outros/                        reserva e YouTube: tese · manifesto-travessia · sete-frentes · diagnostico · custo-de-esperar · bastidores · youtube
+outros/                        perfil-instagram (3 fixados em tríptico + 7 capas de destaque + LEGENDAS.md) · reserva e YouTube: tese · manifesto-travessia · sete-frentes · diagnostico · custo-de-esperar · bastidores · youtube
 _fontes/                       gabaritos-html/ (estáticos, texto em _copy.js) · fotos/ (CREDITOS.md) · render-linhas.sh
 ```
 
