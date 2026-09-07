@@ -25,6 +25,7 @@ Plano completo, calendário e prévias em **rbg-hub.com/plano**. Histórico das 
   corte-com-contexto/reels-stories/   cartela de abertura; o corte vem da edição
 03-fundo/                      CTA: conheça os programas de aceleração · link na bio
   banca/                       reels-stories/ (A banca, Em relevo Guga) · feed/ (Em relevo Lúcio, Kamila, Carlos) · feed-estatico/
+    conselheiros/N-slug/       a história de cada cadeira: _fontes/ (o que ele manda) · HISTORIA.md (dossiê + roteiro) · carrossel/
   pitch-day/                   reels-stories/ (Como funciona o dia, Convite) · carrossel-video/pitch-day-em-numeros/ · evento-antes-durante-depois/
   aceleracao/                  reels-stories/ (Chamada, Fragmentos, O globo) · feed/ (Fragmentos 4:5) · feed-estatico/ (Chamada)
 outros/                        perfil-instagram (3 fixados em tríptico + 7 capas de destaque + LEGENDAS.md) · reserva e YouTube: tese · manifesto-travessia · sete-frentes · diagnostico · custo-de-esperar · bastidores · youtube
