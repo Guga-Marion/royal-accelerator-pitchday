@@ -19,7 +19,9 @@ Plano completo, calendário e prévias em **rbg-hub.com/plano**. Histórico das 
     LEGENDAS.md
   livros/carrossel/            um livro por lâmina, capa real
 02-meio/                       CTA: comente PITCH · quero estar no Pitch Day de 6 de dezembro
-  infografico-frente/{01-financas … 07-growth}/carrossel-video/   um conceito por frente (EBITDA, ZOPA/BATNA, automação, Liderança Situacional, OKR, Golden Circle, LTV/CAC), com fonte · feed/ nas três com vídeo · LEGENDAS.md
+  infografico-frente/{01-financas … 07-growth}/   SÓ infográfico (sem foto), assinatura "Lousa" (ASSINATURA.md): um framework/métrica por frente
+    carrossel-video/           8 lâminas × 6 s (gancho · dor · framework · exemplo · contraste · regra · lição · CTA), fonte na lâmina, "fio" para a próxima
+    feed/                      o carrossel inteiro em um vídeo 4:5 de 44 s · LEGENDAS.md
   corte-com-contexto/reels-stories/   cartela de abertura; o corte vem da edição
 03-fundo/                      CTA: conheça os programas de aceleração · link na bio
   banca/                       reels-stories/ (A banca, Em relevo Guga) · feed/ (Em relevo Lúcio, Kamila, Carlos) · feed-estatico/
@@ -35,5 +37,5 @@ _fontes/                       gabaritos-html/ (estáticos, texto em _copy.js) �
 - Data do Pitch Day (6/12/2026) a confirmar: está parametrizada no projeto de motion (`~/dev/rbg-motion`, ver README de lá).
 
 ## Produzir
-- Motion (carrosséis e vídeos): `~/dev/rbg-motion` — `./render-carrosseis.sh` (topo), `./render-pecas-funil.sh` (meio, fundo, Pitch Day), `./render.sh <id>` (uma peça).
+- Motion (carrosséis e vídeos): `~/dev/rbg-motion` — `./render-carrosseis.sh` (topo), `./render-frentes.sh [frente]` (infográfico da frente), `./render-pecas-funil.sh` (meio, fundo, Pitch Day), `./render.sh <id>` (uma peça), `./chk.sh <lâmina…>` (stills de verificação).
 - Estáticos: `_fontes/render-linhas.sh` (texto em `_fontes/gabaritos-html/_copy.js`).

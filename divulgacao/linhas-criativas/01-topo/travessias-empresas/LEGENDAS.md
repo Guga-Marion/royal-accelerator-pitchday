@@ -1,7 +1,7 @@
 # Travessias · carrossel em vídeo · legendas dos posts
 
 Cada carrossel tem 8 lâminas em vídeo (6 s cada, 1080×1350). A legenda repete o gancho, abre um loop e pede o comentário.
-Regra: nenhuma promessa de investimento; a fonte fica na lâmina. O CTA é sempre o mesmo: **comente "RBG"** → resposta com o link da próxima edição do Pitch Day; ou link na bio.
+Regra: nenhuma promessa de investimento; a fonte fica na lâmina. O CTA de topo é sempre o mesmo: **salve, compartilhe e comente o nome da próxima empresa** — sem link e sem venda (o pedido de PITCH fica no meio de funil; o link na bio, no fundo).
 
 ---
 
@@ -17,7 +17,7 @@ O que eles fizeram com esse problema está na lâmina 5. E o que separa quem lev
 
 👉 Arraste até o fim.
 
-Se você também atravessou e quer a sua empresa na frente de quem investe: comente **RBG** que a gente te manda o link da próxima edição do Pitch Day. Ou entre pelo link na bio.
+Qual empresa brasileira você quer ver aqui? Salve para ler de novo, compartilhe com quem também atravessou e comente o nome da próxima.
 
 Fontes: Y Combinator · CNBC. Foto: kit de imprensa da Brex.
 
@@ -39,7 +39,7 @@ O que escalou não foi a carne. Está na lâmina 5 — e é o motivo de uma chur
 
 👉 Arraste até o fim.
 
-Serviço, varejo, construção, saúde: empresa tradicional também é investível quando roda sem o dono na cozinha. Comente **RBG** e receba o link da próxima edição do Pitch Day. Ou link na bio.
+Qual empresa brasileira você quer ver aqui? Salve para ler de novo, compartilhe com quem também atravessou e comente o nome da próxima.
 
 Fontes: Bain Capital · Dallas News · NRN. Fotos: Wikimedia Commons (CC).
 
@@ -61,7 +61,7 @@ A lição que vale para a sua empresa está na lâmina 7 — e não é sobre cor
 
 👉 Arraste até o fim.
 
-Quer a sua empresa na frente de quem investe? Comente **RBG** que a gente te manda o link da próxima edição do Pitch Day. Ou entre pelo link na bio.
+Qual empresa brasileira você quer ver aqui? Salve para ler de novo, compartilhe com quem também atravessou e comente o nome da próxima.
 
 Fontes: Bloomberg Línea · Brazil Journal. Fotos: Web Summit Rio (CC BY).
 
@@ -69,9 +69,9 @@ Fontes: Bloomberg Línea · Brazil Journal. Fotos: Web Summit Rio (CC BY).
 
 ---
 
-## Resposta padrão ao comentário "RBG"
+## Resposta padrão a quem comenta um nome
 
-> Obrigado, [nome]! O link da próxima edição do Pitch Day está aqui: rbg-hub.com — diagnóstico sem custo e inscrição. Se preferir, chama no direct. 👑
+> Anotado, [nome]! [Empresa] entra na fila das próximas travessias. E se você também atravessou e quer a sua empresa na frente de quem investe: o Pitch Day é 6 de dezembro, em Orlando — rbg-hub.com. 👑
 
 ## Próximas histórias (na fila)
 
@@ -91,7 +91,7 @@ O açaí é o mesmo. O que eles vendem está na lâmina 7.
 
 👉 Arraste até o fim.
 
-Comente **RBG** e receba o link da próxima edição do Pitch Day. Ou link na bio.
+Qual empresa brasileira você quer ver aqui? Salve para ler de novo, compartilhe com quem também atravessou e comente o nome da próxima.
 
 Fontes: PR Newswire · Restaurant Business · Franchise Times · The Greek Herald. Fotos: Wikimedia Commons (CC).
 
@@ -109,7 +109,7 @@ O que mudou o preço não foi o produto. Está na lâmina 7.
 
 👉 Arraste até o fim.
 
-Comente **RBG** e receba o link da próxima edição do Pitch Day. Ou link na bio.
+Qual empresa brasileira você quer ver aqui? Salve para ler de novo, compartilhe com quem também atravessou e comente o nome da próxima.
 
 Fontes: Alpargatas (resultados 2024) · Exame · Yahoo/WWD. Fotos: Wikimedia Commons (CC).
 
