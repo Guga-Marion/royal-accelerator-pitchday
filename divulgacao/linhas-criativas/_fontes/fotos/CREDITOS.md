@@ -119,5 +119,11 @@ derivat |
 | `orlando-pride-2018.jpg` | [File:Orlando Pride May 23 2018.jpg](https://commons.wikimedia.org/wiki/File:Orlando_Pride_May_23_2018.jpg) | CC BY 2.0 | Jamie Smed |
 | `brex-founders-kit-*.jpg`, `brex-henrique-kit.jpg`, `brex-pedro-kit.jpg` | [Kit de imprensa oficial da Brex](https://www.brex.com/press) | uso editorial (press kit) | Brex |
 | `capa-*.jpg` | Open Library (covers.openlibrary.org) | capa do livro, uso em resenha/citação | editoras |
+| `flavio-cpbr.jpg` | [File:Flávio Augusto (16397325015).jpg](https://commons.wikimedia.org/wiki/File:Fl%C3%A1vio_Augusto_(16397325015).jpg) | CC BY-SA 2.0 | Campus Party Brasil (2013) |
+| `flavio-mb.jpg` | [File:Flávio Augusto - Embaixador de Comunicação Estratégica da MB.jpg](https://commons.wikimedia.org/wiki/File:Fl%C3%A1vio_Augusto_-_Embaixador_de_Comunica%C3%A7%C3%A3o_Estrat%C3%A9gica_da_MB.jpg) | CC BY-SA 2.0 | Marinha do Brasil (2024) |
 
 Regra: foto de terceiros só em peça editorial (contar a história), com crédito no rodapé (`Foto: autor · licença`). Nunca em peça de venda (fundo de funil).
+
+**Exceção autorizada pelo Guga em 7/9/2026:** a linha "A banca · a história do conselheiro" é fundo de funil mas é
+**editorial** (conta a história da pessoa), então pode usar foto de terceiro com crédito na lâmina — no carrossel do
+Osório, as duas fotos do Flávio Augusto (Commons, CC BY-SA 2.0). A lâmina de CTA continua sem foto de pessoa: só cidade.

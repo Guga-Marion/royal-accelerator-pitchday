@@ -68,14 +68,14 @@ autoridade emprestada e entrega o Osório como a resposta. Alternativa mais dire
 
 | # | Lâmina | Texto na tela | Imagem / motion |
 |---|---|---|---|
-| 1 | gancho | **Flávio Augusto vendeu o Orlando City por US$ 400 milhões.** <br>O CFO ficou. | Osório no Inter&Co Stadium, estádio lotado ao fundo (foto dele). Selo pequeno "A banca da RBG". Sem nome ainda. |
+| 1 | gancho | **Flávio Augusto vendeu o Orlando City por US$ 400 milhões.** O CFO *ficou.* | **Díptico:** Flávio (2013) escuro · Osório no estádio, iluminado. Rótulos "o dono · 2013–2021" e "o CFO · desde 2017". |
 | 2 | quem | **Carlos Osorio.** CFO do Orlando City e do Orlando Pride desde 2017. | Retrato (c-carlos.jpg) em relevo. Escudos só se o clube liberar; senão, tipografia. |
 | 3 | origem | 20 anos de número e operação no Brasil: **Warner, Embratel, Claro, TAM.** Na TAM, diretor de operações. | Linha do tempo horizontal, logotipos como texto. |
-| 4 | a virada | 2013: Flávio compra o clube por **US$ 80 mi** e promete um estádio. 2017: o estádio abre em março. **Em maio, Osório assume o caixa.** | Fachada do estádio (foto dele ou crédito). Contador "US$ 80 mi". |
-| 5 | o convite | *"Foi o Flávio quem me chamou."* *[frase a validar/gravar com ele]* | Foto dos dois se existir; senão, a frase grande sobre fundo escuro. |
-| 6 | o número | **US$ 80 mi → US$ 400–450 mi.** 2013 → 2021. Quem conduziu a venda pelo clube: o CFO. | Contador subindo; fonte na lâmina: Sportico · Forbes. |
-| 7 | a prova | Novos donos. **Mesmo CFO.** Depois: naming rights de US$ 55 mi por 10 anos com um banco brasileiro. | Inter&Co Stadium à noite. Fonte: WDBO. |
-| 8 | régua + CTA | **"Margem é número, não sensação."** É para esta banca que você apresenta em 6 de dezembro. | Osório + selo RBG · *conheça os programas de aceleração · link na bio*. |
+| 4 | a virada | 2013: Flávio compra o clube por **US$ 80 mi** e promete um estádio. Ele abre em março de 2017. | Flávio em 2013 (Campus Party Brasil · CC BY-SA 2.0). |
+| 5 | o convite | **Dois meses depois, o Flávio chamou o Osório.** | Osório no estádio, outro enquadramento (zoom). |
+| 6 | o número | **US$ 80 milhões viraram US$ 400 milhões.** Quem conduziu a venda pelo clube foi o CFO. | Flávio hoje (Marinha do Brasil · CC BY-SA 2.0); fonte na lâmina: Sportico · Forbes. |
+| 7 | a prova | O dono mudou. **O CFO ficou.** Margem é *número*, não sensação. | A banca no hub. |
+| 8 | CTA | É para esta banca que você apresenta em **6 de dezembro**. | Orlando (JER3L1337 · CC BY 4.0) · *conheça os programas de aceleração · link na bio*. |
 
 Cortes para Reel (9:16, 15 s): lâminas 1 → 6 → 7 → 8. Story: lâmina 1 + sticker "link".
 
@@ -85,17 +85,28 @@ Cortes para Reel (9:16, 15 s): lâminas 1 → 6 → 7 → 8. Story: lâmina 1 + 
 - Foto do Flávio: só com foto do próprio Osório com ele, ou imagem de imprensa com crédito. Sem foto, a frase resolve.
 - Não usar: "Flávio saiu, Osório ficou" como se fosse troca de lado. O tom é continuidade: **o Flávio escolheu bem.**
 
-## Legenda (rascunho)
+## Publicação (definido pelo Guga em 7/9/2026)
+- **Slot:** 19/09 · 18:00 · post #13 do plano (era o "Em relevo · Carlos"; o Em relevo segue em 14/11 e 26/12). É o primeiro post da banca sobre ele.
+- **Collab no Instagram com o Osório** (convidar o @ dele como colaborador, como em todo post de conselheiro).
+- **Marcar o Flávio** no post e na legenda: @flavioaugustogv (pessoal) e @geracaodevalor (página). **Sem pedir collab** a ele.
+- Peça pronta: `carrossel/lamina-01…08-1080x1350.mp4` (+ PNG de reserva), renderizada no rbg-motion (`./render-banca.sh osorio`, dados em `src/banca-carrossel.ts`).
+- **Fotos:** Osório no Inter&Co Stadium (`_fontes/carlos-osorio-orlando-city.jpeg`, enviada pelo Guga — **confirmar o crédito com ele**, provavelmente Orlando City SC) nas lâminas 1 e 5; retrato oficial dele na 2. Flávio Augusto em três momentos: lâmina 1 (díptico "o dono × o CFO") e 4 com a foto de 2013 (Campus Party Brasil · CC BY-SA 2.0) e 6 com a de 2024 (Marinha do Brasil · CC BY-SA 2.0), ambas do Wikimedia Commons, com crédito na lâmina.
+- **A capa é um díptico:** à esquerda o Flávio, escuro, rotulado "o dono · 2013–2021"; à direita o Osório, iluminado, "o CFO · desde 2017"; a palavra *ficou.* passa por trás dele.
+
+## Legenda (final)
 Em 2013, Flávio Augusto comprou o Orlando City por US$ 80 milhões e prometeu um estádio. Em 2017, o estádio abriu
 — e ele chamou um brasileiro com 20 anos de Warner, Embratel e TAM para cuidar do caixa. Em 2021, o clube foi
 vendido por mais de US$ 400 milhões. Quem conduziu a venda pelo lado do clube foi o CFO. E quando o dono mudou,
 o CFO ficou.
 
-Carlos Osorio é a cadeira de Finanças da banca da RBG. É ele que vai olhar a sua margem no Pitch Day de 6 de dezembro.
+@carlososorio é a cadeira de Finanças da banca da RBG. É ele que vai olhar a sua margem no Pitch Day de 6 de dezembro.
 "Margem é número, não sensação."
 
 Conheça os programas de aceleração · link na bio.
-#RoyalBusinessGrowth #PitchDay #OrlandoCity #EmpreendedorBrasileiro #CFO
+@flavioaugustogv @geracaodevalor
+#RoyalBusinessGrowth #PitchDay #OrlandoCity #EmpreendedorBrasileiro #CFO #Financas
+
+*(trocar `@carlososorio` pelo @ real do Osório antes de publicar)*
 
 ## Fontes
 - Cargo, datas, trajetória e formação: [The Org](https://theorg.com/org/orlando-city-sc/org-chart/carlos-a-osorio), [LinkedIn](https://www.linkedin.com/in/carlososorio-cfo/), [Winmo](https://open.winmo.com/decision_makers/carlos-osorio/)

@@ -34,7 +34,7 @@ _fontes/                       gabaritos-html/ (estáticos, texto em _copy.js) �
 
 ## Regras rápidas
 - Um formato por pasta: `carrossel-video` (8 MP4 de 6 s + PNG de reserva), `carrossel` (PNG), `feed` (vídeo 4:5 ou 1:1), `feed-estatico` (PNG), `reels-stories` (9:16).
-- Fotos de terceiros só nas linhas de topo, com crédito na lâmina (`_fontes/fotos/CREDITOS.md`).
+- Fotos de terceiros só nas linhas de topo **e nas histórias dos conselheiros** (fundo, mas editorial — exceção de 7/9/2026), sempre com crédito na lâmina (`_fontes/fotos/CREDITOS.md`).
 - Data do Pitch Day (6/12/2026) a confirmar: está parametrizada no projeto de motion (`~/dev/rbg-motion`, ver README de lá).
 
 ## Produzir

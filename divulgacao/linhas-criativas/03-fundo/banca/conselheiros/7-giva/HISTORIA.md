@@ -1,10 +1,10 @@
-# Giva · Marketing
+# Giva Matias · Marketing
 
-> 7/9/2026: **sem sobrenome em nenhum arquivo do repositório nem no site**, então não dá para pesquisar. Preencher com o que o Giva mandar em `_fontes/`.
+> 7/9/2026: o sobrenome apareceu no site (commit c1a8461 do app, "Giva Matias com foto"). Público: Instagram **@givamatias1** ("Growth Marketing · Funil de Vendas", ~24 mil seguidores) e **CEO da Promove Digital** (mentoria e aceleração de vendas). *[validar com o Giva; o resto vem do que ele mandar em `_fontes/`]*
 
 ## Ficha
 - **Cadeira na RBG:** Marketing · marca, conteúdo e aquisição. Gestão de marketing da RBG (dono dos takes e da produção de vídeo do Pitch Day).
-- **Nome completo:** *[ ]* · **Hoje:** *[ ]* · **Origem:** *[ ]* · **Trajetória:** *[ ]* · **Links:** *[ ]*
+- **Nome completo:** Giva Matias · **Hoje:** gestão de marketing da RBG; CEO da Promove Digital *[confirmar]* · **Origem:** *[ ]* · **Trajetória:** *[ ]* · **Links:** [Instagram @givamatias1](https://www.instagram.com/givamatias1/)
 
 ## A história em três atos
 1. **De onde veio** ·  2. **A virada** ·  3. **O que faz hoje** (e por que importa para a empresa brasileira nos EUA)

@@ -33,9 +33,15 @@ Tudo que for dado público leva fonte na lâmina, como nas linhas de topo. Nada 
 | 1 | Fernando Alves | Comercial | **pesquisado** · faltam empresas anteriores | — | roteiro rascunhado |
 | 2 | Gustavo Marion | Growth & GTM | **pesquisado** · Guga completa | — | roteiro rascunhado |
 | 3 | Lúcio Santana | Founder & chairman | **pesquisado** · validar com ele | — | roteiro pronto |
-| 4 | Carlos Osorio | Finanças | **pesquisado** · validar com ele | — | roteiro pronto |
+| 4 | Carlos Osorio | Finanças | **pesquisado** · validar com ele | foto no estádio | **renderizado** · 8 lâminas · post #13 (19/09) |
 | 5 | Alex Zocche | Processos | só LinkedIn · **precisa dele** | — | esqueleto |
 | 6 | Kamila Adamatti | Liderança | **pesquisado** · faltam empresas | — | roteiro rascunhado |
-| 7 | Giva | Marketing | **sem sobrenome público** · precisa dele | — | esqueleto |
+| 7 | Giva Matias | Marketing | @givamatias1 · Promove Digital · **precisa dele** | — | esqueleto |
+
+## Produzir
+Dados em `~/dev/rbg-motion/src/banca-carrossel.ts` (um objeto por conselheiro: `id`, `pasta`, `nome`, `cargo`, `hookCut`, 8 `slides`), componente `src/comps/BancaLamina.tsx`
+(gramática do carrossel das Travessias + o "look" da lâmina 1: foto inteira no alto, pessoa recortada com `./matte` saindo do quadro, palavra-gancho passando por trás).
+`./render-banca.sh <id>` renderiza as 8 lâminas e copia MP4 + PNG para `N-slug/carrossel/`. Stills de conferência: `npx remotion still src/index.ts Banca-<id>-01 out/chk/x.png --frame=179`.
+Foto do conselheiro: upscale com `ffmpeg -vf "scale=2048:-1:flags=lanczos,unsharp=5:5:0.6:5:5:0"` se vier pequena, depois `./matte foto.jpg foto-cut.png`.
 
 Depois dos sete: `carrossel-pitch-day/` (a banca inteira, uma lâmina por cadeira, reaproveitando a lâmina 1 de cada história).
