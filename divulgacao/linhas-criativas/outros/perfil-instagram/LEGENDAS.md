@@ -44,7 +44,7 @@ Conheça os programas de aceleração pelo link na bio — ou comente **PITCH** 
 
 ## Pendências
 
-- Foto da Giva (Marketing) e de quem responde por Tecnologia & IA (Deploy US): hoje as duas bolinhas levam o emblema. Assim que houver recorte em `~/dev/rbg-motion/public/*-cut.png`, é só apontar em `src/comps/Fixados.tsx` (lista `FRENTES`) e rodar `./render-fixados.sh`.
+- Foto de quem responde por Tecnologia & IA (Deploy US): a bolinha leva o emblema. A do Giva Matias já está (giva-cut.png). Assim que houver recorte em `~/dev/rbg-motion/public/*-cut.png`, é só apontar em `src/comps/Fixados.tsx` (lista `FRENTES`) e rodar `./render-fixados.sh`.
 - Texto do post 03 diz "dois vencedores por edição": confirmar com o regulamento do Pitch Day 3.
 
 ---

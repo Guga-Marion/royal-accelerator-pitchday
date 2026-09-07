@@ -22,5 +22,5 @@
     <div class="who"><div class="bar"></div><div><div class="name" data-f="nome"></div><div class="role" data-f="cargo"></div></div></div></div>
   <div class="foot"><span data-f="city"></span><b data-f="handle"></b></div>
 </div>
-<script>var c=+p('c',3),d=RBG.banca[c-1];document.querySelector('.ph').src='../../pitch-day-2/src/'+d.foto;fill({eb:'A banca fala<br>'+d.cargo.split('·').pop().trim(),q:d.q,nome:d.nome,cargo:d.cargo,city:RBG.city,handle:RBG.handle});</script>
+<script>var c=+p('c',3),d=RBG.banca[c-1];document.querySelector('.ph').src=(d.foto.indexOf('/')>=0?'':'../../pitch-day-2/src/')+d.foto;if(d.pos)document.querySelector('.ph').style.objectPosition=d.pos;fill({eb:'A banca fala<br>'+d.cargo.split('·').pop().trim(),q:d.q,nome:d.nome,cargo:d.cargo,city:RBG.city,handle:RBG.handle});</script>
 </body></html>

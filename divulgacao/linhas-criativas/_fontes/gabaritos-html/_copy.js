@@ -48,7 +48,8 @@ window.RBG={
     {n:3,nome:'Lúcio Santana',   cargo:'Founder & Chairman',           foto:'crop-3.jpg', q:'A RBG entra como sócia de quem chega com <em>número</em> na mão.'},
     {n:4,nome:'Carlos Osorio',   cargo:'Conselheiro · Finanças',       foto:'crop-4.jpg', q:'Se a margem é sensação, você não sabe se <em>ganha</em> dinheiro.'},
     {n:5,nome:'Alex Zocche',     cargo:'Conselheiro · Processos',      foto:'crop-5.jpg', q:'Uma rotina que roda <em>sem o dono</em> é o que alguém compra.'},
-    {n:6,nome:'Kamila Adamatti', cargo:'Conselheira · Liderança',      foto:'crop-6.jpg', q:'Primeiro escalão não é cargo. É quem <em>decide</em> quando você não está.'}
+    {n:6,nome:'Kamila Adamatti', cargo:'Conselheira · Liderança',      foto:'crop-6.jpg', q:'Primeiro escalão não é cargo. É quem <em>decide</em> quando você não está.'},
+    {n:7,nome:'Giva Matias',     cargo:'Conselheiro · Marketing',      foto:'../../03-fundo/banca/conselheiros/7-giva/_fontes/giva-matias-rbg-conselheiro.jpg', pos:'50% 18%', q:'Marca é o que o cliente lembra de você quando você <em>não está</em> na sala.'}
   ],
 
   /* L05 · O número — um dado, uma peça */
