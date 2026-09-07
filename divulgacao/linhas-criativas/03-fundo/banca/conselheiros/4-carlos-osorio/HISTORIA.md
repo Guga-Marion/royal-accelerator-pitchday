@@ -90,8 +90,9 @@ Cortes para Reel (9:16, 15 s): lâminas 1 → 6 → 7 → 8. Story: lâmina 1 + 
 - **Collab no Instagram com o Osório** (convidar o @ dele como colaborador, como em todo post de conselheiro).
 - **Marcar o Flávio** no post e na legenda: @flavioaugustogv (pessoal) e @geracaodevalor (página). **Sem pedir collab** a ele.
 - Peça pronta: `carrossel/lamina-01…08-1080x1350.mp4` (+ PNG de reserva), renderizada no rbg-motion (`./render-banca.sh osorio`, dados em `src/banca-carrossel.ts`).
-- **Fotos:** Osório no Inter&Co Stadium (`_fontes/carlos-osorio-orlando-city.jpeg`, enviada pelo Guga — **confirmar o crédito com ele**, provavelmente Orlando City SC) nas lâminas 1 e 5; retrato oficial dele na 2. Flávio Augusto em três momentos: lâmina 1 (díptico "o dono × o CFO") e 4 com a foto de 2013 (Campus Party Brasil · CC BY-SA 2.0) e 6 com a de 2024 (Marinha do Brasil · CC BY-SA 2.0), ambas do Wikimedia Commons, com crédito na lâmina.
-- **A capa é um díptico:** à esquerda o Flávio, escuro, rotulado "o dono · 2013–2021"; à direita o Osório, iluminado, "o CFO · desde 2017"; a palavra *ficou.* passa por trás dele.
+- **Fotos:** Osório no Inter&Co Stadium (`_fontes/carlos-osorio-orlando-city.jpeg`, enviada pelo Guga — **confirmar o crédito com ele**, provavelmente Orlando City SC) nas lâminas 1 e 5; retrato oficial dele na 2. Flávio Augusto nas lâminas 1, 4 e 6, sempre **recortado** (`./matte`) sobre um fundo desfocado — as duas fotos são do Wikimedia Commons: 2013 (Campus Party Brasil · CC BY-SA 2.0) nas lâminas 1 e 4, 2024 (Marinha do Brasil · CC BY-SA 2.0) na 6.
+- **A capa é um díptico no mesmo estádio:** à esquerda o Flávio recortado sobre o estádio escurecido, rotulado "o dono · 2013–2021"; à direita o Osório, iluminado, "o CFO · desde 2017"; a palavra *ficou.* passa por trás dele. Mesmo lugar, um saiu, o outro ficou.
+- **Enquadramento:** ninguém pode ficar sob a linha do topo (a assinatura "A banca da RBG · nome · NN/08" cruzava o rosto do Osório na lâmina 5). Os campos `z`, `dx`, `dy` deslocam o fundo; `cutScale`, `cutDx`, `cutDy`, o recorte.
 
 ## Legenda (final)
 Em 2013, Flávio Augusto comprou o Orlando City por US$ 80 milhões e prometeu um estádio. Em 2017, o estádio abriu
