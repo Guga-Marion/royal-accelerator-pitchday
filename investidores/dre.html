@@ -410,7 +410,7 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
         </div>
         <div class="kpis">
           <div class="kpi"><span class="k">Entradas · 6 meses</span><span class="v num gold" data-k="ent">—</span><span class="d">taxa da rodada + comissão Deploy</span></div>
-          <div class="kpi"><span class="k">Saídas · 6 meses</span><span class="v num" data-k="sai">—</span><span class="d">folha, estrutura, conteúdo e eventos</span></div>
+          <div class="kpi"><span class="k">Saídas · 6 meses</span><span class="v num" data-k="sai">—</span><span class="d">conteúdo, estrutura, tráfego e eventos</span></div>
           <div class="kpi"><span class="k">Resultado do período</span><span class="v num" style="color:var(--ok)" data-k="res">—</span><span class="d"><b data-k="pctres">—</b> das entradas viram colchão</span></div>
           <div class="kpi"><span class="k">Custo fixo mensal</span><span class="v num" data-k="fixo">—</span><span class="d">o que a empresa queima parada</span></div>
           <div class="kpi dark"><span class="k">Pior caixa acumulado</span><span class="v num" style="color:#FF8B7A" data-k="pior">—</span><span class="d">antes de o SAFE ser assinado</span></div>
@@ -439,8 +439,8 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
       </section>
 
       <section class="sec">
-        <div class="sec-h"><div class="l"><span class="kx">04 · Para onde vai o dinheiro</span><h2>As saídas em cinco blocos</h2>
-        <p>Proporção de cada bloco no total de saídas do período.</p></div></div>
+        <div class="sec-h"><div class="l"><span class="kx">04 · Para onde vai o dinheiro</span><h2>As saídas em quatro blocos</h2>
+        <p>Proporção de cada bloco no total de saídas do período. Só fornecedores: ninguém do time recebe pró-labore neste período.</p></div></div>
         <div class="gsplit" id="splitBox"></div>
       </section>
 
@@ -462,10 +462,9 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
 
 <script>
 (function(){
-  var KEY='rbg-dre-v5', M=['Set','Out','Nov','Dez','Jan','Fev'];
+  var KEY='rbg-dre-v6', M=['Set','Out','Nov','Dez','Jan','Fev'];
   var GRUPOS=[
     {k:'ent',n:'Entradas',sign:1},
-    {k:'pes',n:'Pessoas · folha do time',sign:-1},
     {k:'con',n:'Conteúdo · social media e audiovisual',sign:-1},
     {k:'est',n:'Estrutura · o que mantém a empresa de pé',sign:-1},
     {k:'aqu',n:'Aquisição',sign:-1},
@@ -474,12 +473,9 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
   var BASE=[
     {id:'taxa',g:'ent',nm:'Taxa de administração',v:[0,0,50000,0,0,0]},
     {id:'comi',g:'ent',nm:'Comissão da Deploy',v:[0,2750,2750,2750,2750,2750]},
-    {id:'guga',g:'pes',nm:'Gustavo Marion',v:[0,0,0,0,0,0]},
-    {id:'luci',g:'pes',nm:'Lucilene',v:[0,0,0,0,0,0]},
     {id:'socm',g:'con',nm:'Social media',v:[0,600,600,600,600,600]},
-    {id:'edit',g:'con',nm:'Editor de vídeo',v:[1000,1000,1000,1000,1000,1000]},
+    {id:'edit',g:'con',nm:'Editor de vídeo · só o 1º mês',v:[1000,0,0,0,0,0]},
     {id:'audi',g:'con',nm:'Produção audiovisual · diária',v:[0,0,0,600,0,0]},
-    {id:'cont',g:'est',nm:'Contábil e fiscal',v:[200,200,200,200,200,200]},
     {id:'prog',g:'est',nm:'Suporte programador',v:[500,500,500,500,500,500]},
     {id:'code',g:'est',nm:'Claude Code',v:[100,100,100,100,100,100]},
     {id:'lova',g:'est',nm:'Lovable',v:[20,20,20,20,20,20]},
@@ -580,7 +576,7 @@ table.dremes .dlx:hover{border-color:var(--warn-line);color:var(--warn);backgrou
     /* blocos */
     var sp=document.getElementById('splitBox');
     if(sp){
-      var names={pes:'Pessoas',con:'Conteúdo',est:'Estrutura',aqu:'Tráfego',evt:'Eventos'};
+      var names={con:'Conteúdo',est:'Estrutura',aqu:'Tráfego',evt:'Eventos'};
       sp.innerHTML=Object.keys(names).map(function(k){
         var t=sum(c.byg[k]||[0]), p=sais?t/sais*100:0;
         return '<div class="gs"><span class="k2">'+names[k]+'</span><span class="v2">'+t.toLocaleString('pt-BR')+'</span>'
