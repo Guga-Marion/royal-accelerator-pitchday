@@ -66,7 +66,7 @@ Link na bio, ou comente **PITCH** que a gente te manda.
 
 #pitchday #brasileirosnoseua #empreendedorismo #orlando #royalbusinessgrowth
 
-## B·02 · Não é troféu. É sócio.
+## B·02 · Aceleração, banca e a chance de investimento
 
 Ninguém sai daqui com uma placa na mão.
 
@@ -80,7 +80,7 @@ Pitch Day 3 · 6 de dezembro · Orlando e online. Inscrições no link na bio �
 
 #pitchday #aceleracao #investimento #conselho #royalbusinessgrowth
 
-## B·03 · Dez empresas sobem no palco. A sua é uma delas?
+## B·03 · Inscreva a sua empresa no Pitch Day 3
 
 São só dez vagas. Quem não se inscreve, assiste.
 
