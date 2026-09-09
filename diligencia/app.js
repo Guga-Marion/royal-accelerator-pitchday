@@ -664,6 +664,22 @@ function planoB(proto, motivo){
   faiscas();
 }
 
+// A diligência é o cadastro da empresa acelerada: ao finalizar, a plataforma cria a empresa,
+// os 9 encontros, os indicadores e a conta de acesso — e o acesso aparece aqui.
+function mostraAcesso(a){
+  var box = $("#acesso"); if(!box) return;
+  if(!a || !a.email){ box.hidden = true; return }
+  var url = a.url || "https://rbg-hub.com/entrar";
+  box.innerHTML =
+    '<span class="ak">Seu painel da aceleração já está pronto</span>'
+    + '<div class="al"><span>Endereço</span><a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(url.replace(/^https?:\/\//,"")) + '</a></div>'
+    + '<div class="al"><span>E-mail</span><b>' + esc(a.email) + '</b></div>'
+    + (a.senha
+        ? '<div class="al"><span>Senha inicial</span><b>' + esc(a.senha) + '</b></div><p>Anote a senha agora: ela não é enviada por e-mail. Você pode trocá-la dentro do painel.</p>'
+        : '<p>Você já tinha uma conta com este e-mail: entre com a senha que já usa. Se esqueceu, fale com o time RBG.</p>');
+  box.hidden = false;
+}
+
 function baixar(nome, conteudo, tipo){
   var b = new Blob([conteudo], {type:tipo});
   var a = document.createElement("a");
@@ -720,7 +736,7 @@ function envia(){
   load.classList.add("on");
 
   var ks = Object.keys(arquivos);
-  var total = 2 + ks.length, feito = 0;
+  var total = 2 + ks.length, feito = 0, acesso = null;
   var proto = protocolo;   // fixado acima; um retry reaproveita, não duplica a linha
 
   function passo(){ feito++; pb.style.width = (feito/total*100)+"%" }
@@ -755,7 +771,7 @@ function envia(){
     txt.textContent = "Enviando a confirmação…";
     // o e-mail sai por último para já carregar os links dos documentos;
     // se falhar, o envio continua válido — os dados já estão gravados
-    return post({ acao:"finalizar", protocolo:proto }).then(passo).catch(passo);
+    return post({ acao:"finalizar", protocolo:proto }).then(function(j){ acesso = (j && j.acesso) || null; passo() }).catch(passo);
   })
   .then(function(){
     txt.textContent = "Concluído.";
@@ -763,6 +779,7 @@ function envia(){
     setTimeout(function(){
       load.classList.remove("on");
       $("#proto-n").textContent = proto;
+      mostraAcesso(acesso);
       $("#fim").classList.add("on");
       faiscas();
     }, 500);
