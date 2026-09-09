@@ -2,3 +2,7 @@
 # imagens intermediárias do patch do manual
 assets/logo/src/_manual-img/
 .DS_Store
+
+# contratos de fornecedor: PDF com dado bancario e endereco residencial
+# o repositorio e publico (GitHub Pages) — nada disso pode subir
+contratos-fornecedores/
