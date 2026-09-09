@@ -25,7 +25,7 @@ Proposta de régua: **"Audiência não se compra, se constrói."** (tema da Vitr
 | 2 | quem | **Giva.** Cadeira Marketing da banca. | retrato |
 | 3–6 | origem · virada · travessia · número | *[ ]* | |
 | 7 | a régua | **"Audiência não se compra, se constrói."** | |
-| 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
+| 8 | CTA | É para esta banca que você apresenta em 5 de dezembro · link na bio | |
 
 ## Legenda (rascunho)
 *[depois das respostas]*

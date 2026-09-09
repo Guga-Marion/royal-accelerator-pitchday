@@ -23,7 +23,7 @@ window.RBG={
       {k:'Método',   t:'Você <em>decide</em>.',    d:'60 ou 120 dias com as sete frentes da RBG: margem em número, comercial com processo, <b>um time que decide sem você.</b>'},
       {k:'Demo Day', t:'Você <em>apresenta</em>.', d:'Sua empresa na frente da banca da RBG. Capital ou smart money. <b>Uma empresa que paga o dono — e que alguém quer comprar.</b>'}
     ],
-    cta:{t:'Quem atravessa não tem medo de trabalho. O que trava o próximo degrau é <em>estrutura</em>.', b1:'Comente PITCH · quero estar no Pitch Day', s:'6 de dezembro · Orlando'}
+    cta:{t:'Quem atravessa não tem medo de trabalho. O que trava o próximo degrau é <em>estrutura</em>.', b1:'Comente PITCH · quero estar no Pitch Day', s:'5 de dezembro · Orlando'}
   },
 
   /* L03 · Sete frentes — carrossel educativo, uma frente por slide */
@@ -81,7 +81,7 @@ window.RBG={
     eb:'Programas de aceleração · próxima turma',
     t:'Atravessar foi coragem. Crescer é <em>método</em>.',
     chips:['<b>Diagnóstico</b> sem custo','Resposta em <b>1 dia útil</b>','Kick-off em <b>48 h</b>'],
-    b1:'Conheça os programas de aceleração', b2:'Pitch Day · 6 de dezembro',
+    b1:'Conheça os programas de aceleração', b2:'Pitch Day · 5 de dezembro',
     s:'Para brasileiros que empreendem nos EUA'
   },
 
@@ -117,5 +117,5 @@ RBG.diagnostico={
     {n:'04',frente:'Processos',q:'A rotina roda se você tirar <em>duas semanas</em>?',dica:'O que alguém compra é uma empresa que funciona sem você.'},
     {n:'05',frente:'Growth & GTM',q:'Cliente novo é <em>rotina</em> ou evento?',dica:'Máquina de aquisição é previsão, não sorte.'}
   ],
-  cta:{t:'Três ou mais "não"? Sua empresa vale <em>menos</em> do que deveria.', b1:'Comente PITCH · quero estar no Pitch Day', s:'6 de dezembro · Orlando · inscrição gratuita'}
+  cta:{t:'Três ou mais "não"? Sua empresa vale <em>menos</em> do que deveria.', b1:'Comente PITCH · quero estar no Pitch Day', s:'5 de dezembro · Orlando · inscrição gratuita'}
 };

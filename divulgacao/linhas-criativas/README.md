@@ -18,7 +18,7 @@ Plano completo, calendário e prévias em **rbg-hub.com/plano**. Histórico das 
     carrossel-video/{fonseca, marta, santoro}/
     LEGENDAS.md
   livros/carrossel/            um livro por lâmina, capa real
-02-meio/                       CTA: comente PITCH · quero estar no Pitch Day de 6 de dezembro
+02-meio/                       CTA: comente PITCH · quero estar no Pitch Day de 5 de dezembro
   infografico-frente/{01-financas … 07-growth}/   SÓ infográfico (sem foto), assinatura "Lousa" (ASSINATURA.md): um framework/métrica por frente
     carrossel-video/           8 lâminas × 6 s (gancho · dor · framework · exemplo · contraste · regra · lição · CTA), fonte na lâmina, "fio" para a próxima
     feed/                      o carrossel inteiro em um vídeo 4:5 de 44 s · LEGENDAS.md

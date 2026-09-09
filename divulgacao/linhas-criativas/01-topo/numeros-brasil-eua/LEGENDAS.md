@@ -64,5 +64,5 @@ Fontes: U.S. Census Bureau (BFS) · Itamaraty · levantamento Tudo para Brasilei
 #florida #orlando #brasileirosnoseua #empreendedorismo #royalbusinessgrowth
 
 ## 06 · O Pitch Day em números (fundo · sábado)
-Cinco minutos. Sem slides. Cem pontos. 🎤 Dez fundadores, tração e mercado valendo 40 pontos, US$ 0 para participar, dois vencedores, 6 de dezembro em Orlando. Inscreva-se pelo link na bio.
+Cinco minutos. Sem slides. Cem pontos. 🎤 Dez fundadores, tração e mercado valendo 40 pontos, US$ 0 para participar, dois vencedores, 5 de dezembro em Orlando. Inscreva-se pelo link na bio.
 #pitchday #royalbusinessgrowth #orlando

@@ -36,7 +36,7 @@ Quer saber em qual frente a sua empresa trava? Comente **PITCH** que a gente te 
 
 A banca avalia. O comitê investe. Dois vencedores por edição levam capital e aceleração.
 
-Pitch Day 3 · 6 de dezembro · Orlando. Cinco minutos, sem slides, cem pontos.
+Pitch Day 3 · 5 de dezembro · Orlando. Cinco minutos, sem slides, cem pontos.
 
 Conheça os programas de aceleração pelo link na bio — ou comente **PITCH** para receber o link da inscrição.
 
@@ -60,7 +60,7 @@ Sem apresentação bonita. Sem plateia fácil. Só a sua empresa e o número que
 
 É assim que funciona o Pitch Day da RBG: cinco minutos no palco, a banca decide ali. A RBG é a aceleradora, o conselho e o investidor de brasileiros que empreendem nos Estados Unidos — sede em Orlando, empresas na Flórida inteira.
 
-Duas edições feitas, dezenas de empresas no palco. A terceira é **6 de dezembro** — e as inscrições estão abertas.
+Duas edições feitas, dezenas de empresas no palco. A terceira é **5 de dezembro** — e as inscrições estão abertas.
 
 Link na bio, ou comente **PITCH** que a gente te manda.
 
@@ -76,7 +76,7 @@ E quem avalia é quem já construiu a própria empresa: Lúcio Santana (chairman
 
 Cinco minutos, sem slides, scorecard de cem pontos.
 
-Pitch Day 3 · 6 de dezembro · Orlando e online. Inscrições no link na bio — ou comente **PITCH**.
+Pitch Day 3 · 5 de dezembro · Orlando e online. Inscrições no link na bio — ou comente **PITCH**.
 
 #pitchday #aceleracao #investimento #conselho #royalbusinessgrowth
 
@@ -84,7 +84,7 @@ Pitch Day 3 · 6 de dezembro · Orlando e online. Inscrições no link na bio �
 
 São só dez vagas. Quem não se inscreve, assiste.
 
-6 de dezembro, em Orlando e online. Para brasileiros com empresa aberta nos EUA e faturamento em dólar. Cinco minutos na frente da banca que acelera e do comitê que investe.
+5 de dezembro, em Orlando e online. Para brasileiros com empresa aberta nos EUA e faturamento em dólar. Cinco minutos na frente da banca que acelera e do comitê que investe.
 
 Inscreva-se pelo link na bio — ou comente **PITCH** que a gente te manda o link.
 

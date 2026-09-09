@@ -39,7 +39,7 @@ Dele, público: *"Não fomos chamados para uma vida normal, mas para uma vida in
 | 5 | a virada | Alguém o chamou para o financiamento imobiliário. **Em 6 meses, sócio.** | |
 | 6 | o número | **+2.000 famílias · 7 estados.** Fonte: Royal Mortgage USA | contador |
 | 7 | a régua | **"Estrutura vem antes de escala."** | |
-| 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
+| 8 | CTA | É para esta banca que você apresenta em 5 de dezembro · link na bio | |
 
 ## Legenda (rascunho)
 Aos 19, Lúcio Santana desembarcou nos EUA com US$ 1.600 e pouco inglês. Entregou pizza, trabalhou em obra, vendeu celular. Alguém o chamou para o financiamento imobiliário e em seis meses ele era sócio. Vinte anos depois: mais de 2.000 famílias com casa em sete estados, investidor-anjo, vice-presidente do LIDE Orlando. Fundou a RBG para ser, para a empresa brasileira, o alguém que chama. É ele quem preside o comitê que decide em quem a RBG investe. "Estrutura vem antes de escala." Conheça os programas de aceleração · link na bio.

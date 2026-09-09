@@ -33,7 +33,7 @@ Proposta: **"Processo é o que sobra quando você sai da sala."**
 | 3–5 | origem · virada · travessia | *[a preencher]* | |
 | 6 | o número | *[a confirmar]* | |
 | 7 | a régua | **"Processo é o que sobra quando você sai da sala."** | |
-| 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
+| 8 | CTA | É para esta banca que você apresenta em 5 de dezembro · link na bio | |
 
 ## Legenda (rascunho)
 *[depois das respostas]*

@@ -21,7 +21,7 @@ Numeração = a mesma dos estáticos `banca-N-*.png` (1 Fernando · 2 Gustavo ·
 3. **Lâminas 4–5 · a virada.** O convite, a travessia, o momento em que a história muda de escala.
 4. **Lâmina 6 · o número.** Um dado só, grande, com fonte na lâmina.
 5. **Lâmina 7 · o que essa pessoa olha numa empresa.** A frase-régua da cadeira (liga com "A banca fala").
-6. **Lâmina 8 · CTA.** *É para esta banca que você apresenta em 6 de dezembro.* + link na bio.
+6. **Lâmina 8 · CTA.** *É para esta banca que você apresenta em 5 de dezembro.* + link na bio.
 
 Regras: foto do conselheiro é dele (pedir alta, horizontal e vertical). Foto de terceiros (estádio, ex-chefe,
 marca) só com crédito na lâmina ou fornecida pelo próprio conselheiro; ver `_fontes/fotos/CREDITOS.md` na raiz.

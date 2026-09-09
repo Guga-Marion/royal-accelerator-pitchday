@@ -36,7 +36,7 @@ A confirmar: um dado de e-commerce (GMV/tráfego) ou de alunos do curso. Alterna
 | 5 | a travessia | MyDose em Dubai (GITEX). Stanford. Orlando. | |
 | 6 | o número | *[a confirmar]* | |
 | 7 | a régua | **De onde vem o próximo cliente, e quanto ele custa?** | |
-| 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
+| 8 | CTA | É para esta banca que você apresenta em 5 de dezembro · link na bio | |
 
 ## Legenda (rascunho)
 Publicitário, e-commerce grande (Shoptime, Americanas), um dos que ensinaram growth no Brasil. Fundou o MyDose e o levou ao GITEX, em Dubai. Hoje é managing partner da RBG em Orlando e a cadeira de Growth & GTM da banca: de onde vem o próximo cliente e quanto ele custa. "Escala é crescer mais gastando menos." Conheça os programas de aceleração · link na bio.

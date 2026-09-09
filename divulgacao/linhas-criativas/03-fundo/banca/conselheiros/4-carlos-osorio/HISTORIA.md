@@ -75,7 +75,7 @@ autoridade emprestada e entrega o Osório como a resposta. Alternativa mais dire
 | 5 | o convite | **Dois meses depois, o Flávio chamou o Osório.** | Osório no estádio, outro enquadramento (zoom). |
 | 6 | o número | **US$ 80 milhões viraram US$ 400 milhões.** Quem conduziu a venda pelo clube foi o CFO. | Flávio hoje (Marinha do Brasil · CC BY-SA 2.0); fonte na lâmina: Sportico · Forbes. |
 | 7 | a prova | O dono mudou. **O CFO ficou.** Margem é *número*, não sensação. | A banca no hub. |
-| 8 | CTA | É para esta banca que você apresenta em **6 de dezembro**. | Orlando (JER3L1337 · CC BY 4.0) · *conheça os programas de aceleração · link na bio*. |
+| 8 | CTA | É para esta banca que você apresenta em **5 de dezembro**. | Orlando (JER3L1337 · CC BY 4.0) · *conheça os programas de aceleração · link na bio*. |
 
 Cortes para Reel (9:16, 15 s): lâminas 1 → 6 → 7 → 8. Story: lâmina 1 + sticker "link".
 
@@ -100,7 +100,7 @@ Em 2013, Flávio Augusto comprou o Orlando City por US$ 80 milhões e prometeu u
 vendido por mais de US$ 400 milhões. Quem conduziu a venda pelo lado do clube foi o CFO. E quando o dono mudou,
 o CFO ficou.
 
-@carlososorio é a cadeira de Finanças da banca da RBG. É ele que vai olhar a sua margem no Pitch Day de 6 de dezembro.
+@carlososorio é a cadeira de Finanças da banca da RBG. É ele que vai olhar a sua margem no Pitch Day de 5 de dezembro.
 "Margem é número, não sensação."
 
 Conheça os programas de aceleração · link na bio.

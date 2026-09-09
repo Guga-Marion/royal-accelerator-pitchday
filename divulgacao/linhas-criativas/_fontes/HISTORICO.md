@@ -118,7 +118,7 @@ Travessias novas: Oakberry e Havaianas em `12-travessias-carrossel/`. Calendári
 
 ## v6 final (2026-09-06, noite) · CTAs por etapa, Brasileiros no mundo, Ambev, linha Pitch Day
 
-- **CTAs por etapa** (parametrizados em `~/dev/rbg-motion/src/travessias.ts`): topo = "salve, compartilhe e comente o nome da próxima"; meio = "comente PITCH · quero estar no Pitch Day de 6 de dezembro"; fundo = "conheça os programas de aceleração · link na bio"; Pitch Day = "inscreva-se · 6 de dezembro".
+- **CTAs por etapa** (parametrizados em `~/dev/rbg-motion/src/travessias.ts`): topo = "salve, compartilhe e comente o nome da próxima"; meio = "comente PITCH · quero estar no Pitch Day de 5 de dezembro"; fundo = "conheça os programas de aceleração · link na bio"; Pitch Day = "inscreva-se · 5 de dezembro".
 - **Topo com 4 linhas:** Histórias com números, Travessias (empresas: + Ambev → AB InBev), **Brasileiros no mundo** (`14-brasileiros-no-mundo/`: João Fonseca, Marta, Rodrigo Santoro) e Livros.
 - **Linha Pitch Day** (`15-pitch-day/`, `src/comps/PitchDayLinha.tsx`): inscrições (feed e Reel), contagem 30 · 15 · 7 · 1, selecionados (template), obrigado. Data 6/12/2026 a confirmar — trocar em `travessias.ts` (CTA_MEIO/CTA_PITCHDAY), `PitchDayLinha.tsx`, `Convite.tsx`, `PitchDayDia.tsx`, `numeros-carrossel.ts`.
 - Plano v6 final em rbg-hub.com/plano com os carrosséis em **autoplay** (prévias leves em `public/plano/video/`), calendário até 31/12 com os posts do Pitch Day.

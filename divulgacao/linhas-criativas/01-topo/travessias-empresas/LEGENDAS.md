@@ -71,7 +71,7 @@ Fontes: Bloomberg Línea · Brazil Journal. Fotos: Web Summit Rio (CC BY).
 
 ## Resposta padrão a quem comenta um nome
 
-> Anotado, [nome]! [Empresa] entra na fila das próximas travessias. E se você também atravessou e quer a sua empresa na frente de quem investe: o Pitch Day é 6 de dezembro, em Orlando — rbg-hub.com. 👑
+> Anotado, [nome]! [Empresa] entra na fila das próximas travessias. E se você também atravessou e quer a sua empresa na frente de quem investe: o Pitch Day é 5 de dezembro, em Orlando — rbg-hub.com. 👑
 
 ## Próximas histórias (na fila)
 

@@ -4,7 +4,7 @@
 > (o gerador procura um `LEGENDA.md` na pasta da arte ou na pasta-mãe). Editar aqui, não no HTML do plano.
 
 Em 2013, Flávio Augusto comprou o Orlando City por US$ 80 milhões e prometeu um estádio. Em 2017, o estádio abriu — e ele chamou um brasileiro com 20 anos de Warner, Embratel e TAM para cuidar do caixa. Em 2021, o clube foi vendido por mais de US$ 400 milhões. Quem conduziu a venda pelo lado do clube foi o CFO. E quando o dono mudou, o CFO ficou.
-@carlososorio é a cadeira de Finanças da banca da RBG. É ele que vai olhar a sua margem no Pitch Day de 6 de dezembro. "Margem é número, não sensação."
+@carlososorio é a cadeira de Finanças da banca da RBG. É ele que vai olhar a sua margem no Pitch Day de 5 de dezembro. "Margem é número, não sensação."
 Conheça os programas de aceleração · link na bio.
 @flavioaugustogv @geracaodevalor
 #RoyalBusinessGrowth #PitchDay #OrlandoCity #EmpreendedorBrasileiro #CFO #Financas

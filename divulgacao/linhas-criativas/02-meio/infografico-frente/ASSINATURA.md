@@ -27,7 +27,7 @@ o diagrama começa a nascer em 1,5 s (frame 46), depois do título; o quadro fin
 5. **O contraste** — o mesmo diagrama com o erro clássico (Empresa B, S4 em vez de S2, retenção de 3 meses).
 6. **A regra** — o número ou a ordem que resolve (0,7; 3 : 1; três R; 90 dias; 30 minutos).
 7. **A lição** — "Esta semana": três checks desenhados, o dever de casa.
-8. **CTA** — Pitch Day de 6 de dezembro, comente PITCH.
+8. **CTA** — Pitch Day de 5 de dezembro, comente PITCH.
 
 Cada título puxa o anterior (Empresa A → "e do EBITDA até o bolso?" → Empresa B → "então, para que serve cada número?") e cada `fio` abre o próximo.
 

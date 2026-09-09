@@ -37,7 +37,7 @@ Já em uso no "Em relevo · Kamila": **"Primeiro escalão não é cargo."**
 | 5 | a travessia | 2023: sai da corporação, funda a Tone Up no Tennessee. Método SPEECH™. | |
 | 6 | o número | **20 líderes, 20 lições.** O podcast Shift Happens. | capa do podcast |
 | 7 | a régua | **"Primeiro escalão não é cargo."** | |
-| 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
+| 8 | CTA | É para esta banca que você apresenta em 5 de dezembro · link na bio | |
 
 ## Legenda (rascunho)
 Setenta por cento das transformações falham. Kamila Adamatti passou 23 anos dentro de multinacionais, em dois continentes, do lado dos 30% que dão certo. Engenheira química pela UFRGS, MBA pela ESPM, em 2023 fundou a própria consultoria e um podcast com 20 líderes sobre mudança. É a cadeira de Liderança da banca da RBG: quem decide quando o fundador não está? "Primeiro escalão não é cargo." Conheça os programas de aceleração · link na bio.

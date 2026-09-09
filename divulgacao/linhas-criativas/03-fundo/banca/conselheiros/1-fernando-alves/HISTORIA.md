@@ -37,7 +37,7 @@ Proposta: **"Venda que não repete não é venda, é sorte."** *[ou a frase dele
 | 5 | a travessia | CRO para US & LATAM. Depois, a América do Norte de uma gigante brasileira. | |
 | 6 | o número | *[a confirmar]* | fonte na lâmina |
 | 7 | a régua | **"Venda que não repete não é venda."** | |
-| 8 | CTA | É para esta banca que você apresenta em 6 de dezembro · link na bio | |
+| 8 | CTA | É para esta banca que você apresenta em 5 de dezembro · link na bio | |
 
 ## Legenda (rascunho)
 Vinte anos vendendo bens de consumo no Brasil, o mercado mais competitivo de gôndola do mundo. MIT Sloan, transformação digital do comercial, e a decisão de vender nos EUA. Hoje Fernando Alves lidera o comercial da América do Norte da Citrosuco, a maior do mundo em suco de laranja. É a cadeira Comercial da banca da RBG: quem compra, quanto paga, por que volta. Conheça os programas de aceleração · link na bio.

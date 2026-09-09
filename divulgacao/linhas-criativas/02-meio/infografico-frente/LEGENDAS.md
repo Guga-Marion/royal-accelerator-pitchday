@@ -1,7 +1,7 @@
 # Infográfico da frente · carrossel animado · legendas
 
 Meio de funil (quinta). Um carrossel por frente, **só infográfico** (sem foto): gancho · a dor · o framework · o exemplo · o contraste · a regra · a lição · CTA.
-Assinatura visual e regras em `ASSINATURA.md`. CTA do meio: **"Quer estar no Pitch Day de 6 de dezembro? Comente PITCH e a gente te manda o link."**
+Assinatura visual e regras em `ASSINATURA.md`. CTA do meio: **"Quer estar no Pitch Day de 5 de dezembro? Comente PITCH e a gente te manda o link."**
 
 ## 01 · Finanças · EBITDA (métrica)
 Duas empresas. Mesmo EBITDA. Uma paga o dono. A outra, o banco. 📊
@@ -10,17 +10,17 @@ Duas empresas. Mesmo EBITDA. Uma paga o dono. A outra, o banco. 📊
 
 ## 02 · Comercial · ZOPA e BATNA (framework)
 Você perde dinheiro em toda negociação. E nem sabe. 🤝
-O cliente diz "está caro", você dá 10 % porque é um número redondo. ZOPA é a zona onde o acordo é possível; BATNA é a sua melhor alternativa se não fechar (Fisher & Ury, "Getting to Yes", Harvard, 1981). Na régua: fecha em 11.000 com ZOPA, em 9.500 sem. US$ 30 mil por ano na mesa. Antes da próxima proposta: qual é a minha BATNA? E a dele? Quer estar no Pitch Day de 6/12? Comente **PITCH**.
+O cliente diz "está caro", você dá 10 % porque é um número redondo. ZOPA é a zona onde o acordo é possível; BATNA é a sua melhor alternativa se não fechar (Fisher & Ury, "Getting to Yes", Harvard, 1981). Na régua: fecha em 11.000 com ZOPA, em 9.500 sem. US$ 30 mil por ano na mesa. Antes da próxima proposta: qual é a minha BATNA? E a dele? Quer estar no Pitch Day de 5/12? Comente **PITCH**.
 #negociacao #vendas #zopa #batna #empreendedorismo #royalbusinessgrowth #pitchday
 
 ## 03 · Tecnologia & IA · ROI de automação (métrica)
 A hora do dono custa US$ 150. Ele gasta dez por semana copiando planilha. ⚙️
-60 % das ocupações têm ao menos 30 % de tarefas automatizáveis (McKinsey Global Institute, 2017). A conta em três linhas: hora do dono × horas repetidas × 4 = US$ 6.000 por mês. Automação a US$ 300: retorno de 16 ×. Qual primeiro: a regra dos três R (repetitivo, regrado, registrado). Comente **PITCH** para estar no Pitch Day de 6/12.
+60 % das ocupações têm ao menos 30 % de tarefas automatizáveis (McKinsey Global Institute, 2017). A conta em três linhas: hora do dono × horas repetidas × 4 = US$ 6.000 por mês. Automação a US$ 300: retorno de 16 ×. Qual primeiro: a regra dos três R (repetitivo, regrado, registrado). Comente **PITCH** para estar no Pitch Day de 5/12.
 #automacao #ia #tecnologia #produtividade #empreendedorismo #royalbusinessgrowth
 
 ## 04 · Liderança · Liderança Situacional (framework)
 Você delega, ele erra, você retoma. E o ciclo recomeça. 🧭
-Hersey e Blanchard (1969): quatro estilos, dirigir, treinar, apoiar, delegar, um por pessoa e por tarefa. O erro clássico é usar S4 com quem precisa de S2 (lâmina 4). O plano de 90 dias do primeiro escalão está na lâmina 5: S2 no primeiro mês, S3 no segundo, S4 no terceiro. Comente **PITCH** para estar no Pitch Day de 6/12.
+Hersey e Blanchard (1969): quatro estilos, dirigir, treinar, apoiar, delegar, um por pessoa e por tarefa. O erro clássico é usar S4 com quem precisa de S2 (lâmina 4). O plano de 90 dias do primeiro escalão está na lâmina 5: S2 no primeiro mês, S3 no segundo, S4 no terceiro. Comente **PITCH** para estar no Pitch Day de 5/12.
 #lideranca #delegacao #primeiroescalao #empreendedorismo #royalbusinessgrowth
 
 ## 05 · Processos · OKR (framework)
@@ -30,7 +30,7 @@ Um objetivo, três resultados-chave com número e prazo (Grove · Doerr, "Measur
 
 ## 06 · Marketing & redes · Golden Circle e Primal Branding (framework)
 Todo restaurante brasileiro em Orlando vende a mesma coisa. Só um vende o porquê. 🟡
-Golden Circle (Simon Sinek, TEDx 2009): por quê, como, o quê, de dentro para fora. Primal Branding (Patrick Hanlon, 2006): as sete peças de uma marca que vira comunidade. Aplicado a uma empresa de limpeza de brasileiros na Flórida, na lâmina 4. Escreva o seu porquê em uma frase começando com "para que…", e comente **PITCH** se quer estar no Pitch Day de 6/12.
+Golden Circle (Simon Sinek, TEDx 2009): por quê, como, o quê, de dentro para fora. Primal Branding (Patrick Hanlon, 2006): as sete peças de uma marca que vira comunidade. Aplicado a uma empresa de limpeza de brasileiros na Flórida, na lâmina 4. Escreva o seu porquê em uma frase começando com "para que…", e comente **PITCH** se quer estar no Pitch Day de 5/12.
 #marketing #branding #goldencircle #primalbranding #empreendedorismo #royalbusinessgrowth
 
 ## 07 · Growth & GTM · LTV, CAC e MRR (métrica)
