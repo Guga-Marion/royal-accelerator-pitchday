@@ -51,32 +51,40 @@ Conheça os programas de aceleração pelo link na bio — ou comente **PITCH** 
 
 # Versão B · o Pitch Day como porta de entrada (aquisição de lead)
 
-Mesmo tríptico e a mesma linha, mas a primeira impressão é o evento: quem chega conhece a RBG pelo Pitch Day, entende o prêmio e se inscreve.
+Mesmo tríptico e a mesma linha, mas a primeira impressão é o evento. Como são **três posts soltos** (e não um carrossel), cada um se explica sozinho e cada um termina chamando para o Pitch Day 3.
 Pasta `fixados-b-pitch-day/`. Destaque extra: `destaques/destaque-inscricao-1080x1920.png` ("Inscreva-se").
 
-## B·01 · Sua empresa na frente de quem investe
+## B·01 · Cinco minutos. Sem slides. Diante de quem investe.
 
-Cinco minutos. Sem slides. Diante da banca da RBG.
+Sem apresentação bonita. Sem plateia fácil. Só a sua empresa e o número que ela faz.
 
-O Pitch Day já teve duas edições em Orlando, com dezenas de empresas de brasileiros no palco. A terceira é em 6 de dezembro — e as inscrições estão abertas. →
+É assim que funciona o Pitch Day da RBG: cinco minutos no palco, a banca decide ali. A RBG é a aceleradora, o conselho e o investidor de brasileiros que empreendem nos Estados Unidos — sede em Orlando, empresas na Flórida inteira.
 
-Arraste: os três posts fixados explicam o que está em jogo e como participar.
+Duas edições feitas, dezenas de empresas no palco. A terceira é **6 de dezembro** — e as inscrições estão abertas.
+
+Link na bio, ou comente **PITCH** que a gente te manda.
 
 #pitchday #brasileirosnoseua #empreendedorismo #orlando #royalbusinessgrowth
 
-## B·02 · Aceleração, banca e a chance de investimento
+## B·02 · Não é troféu. É sócio.
 
-O que os vencedores levam: 120 dias de aceleração com a banca da RBG, um conselheiro por frente, e a entrada no radar do comitê de investimento.
+Ninguém sai daqui com uma placa na mão.
 
-Quem avalia: sete conselheiros que construíram a própria empresa. Scorecard de cem pontos, sem slides, cinco minutos.
+Quem vence o Pitch Day leva 120 dias de aceleração com a banca da RBG — um conselheiro por frente do negócio — e entra no radar do comitê de investimento.
 
-Quer entender se a sua empresa está pronta? Comente **PITCH**.
+E quem avalia é quem já construiu a própria empresa: Lúcio Santana (chairman), Carlos Osorio (Finanças), Fernando Alves (Comercial), Kamila Adamatti (Liderança), Alex Zocche (Processos) e Giva Matias (Marketing).
+
+Cinco minutos, sem slides, scorecard de cem pontos.
+
+Pitch Day 3 · 6 de dezembro · Orlando e online. Inscrições no link na bio — ou comente **PITCH**.
 
 #pitchday #aceleracao #investimento #conselho #royalbusinessgrowth
 
-## B·03 · Inscreva a sua empresa no Pitch Day 3
+## B·03 · Dez empresas sobem no palco. A sua é uma delas?
 
-6 de dezembro · Orlando e online. Para brasileiros com empresa aberta nos EUA e faturamento em dólar. Dez empresas no palco.
+São só dez vagas. Quem não se inscreve, assiste.
+
+6 de dezembro, em Orlando e online. Para brasileiros com empresa aberta nos EUA e faturamento em dólar. Cinco minutos na frente da banca que acelera e do comitê que investe.
 
 Inscreva-se pelo link na bio — ou comente **PITCH** que a gente te manda o link.
 
@@ -86,3 +94,4 @@ Inscreva-se pelo link na bio — ou comente **PITCH** que a gente te manda o lin
 
 - Confirmar o prêmio do Pitch Day 3 (120 dias de aceleração? Sprint de 60?) e o número de empresas no palco (dez, como na edição 2).
 - Confirmar "programa no YouTube": o Pitch Day vai ao ar como episódio do canal?
+- O post B·02 mostra a banca (não as sete frentes): o Lúcio entra no meio do fio, como chairman, e o Gustavo sai — ele já é o rosto da foto do B·01. Falta a foto de quem responde por Tecnologia & IA para a banca ficar completa.
