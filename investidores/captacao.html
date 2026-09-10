@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Royal Business Growth · Rodada 2026</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" type="image/png" sizes="32x32"><link rel="icon" href="../favicon.ico" sizes="any"><link rel="apple-touch-icon" href="../apple-touch-icon.png" sizes="180x180">
 <style>
@@ -319,8 +319,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
 <!-- 01 · CAPA -->
 <section class="slide k-full s-dark on">
-  <div class="bg" style="background-image:var(--img1)"></div>
-  <div class="veil v-left"></div>
+  <div class="bgv">
+    <video src="pd/palco.mp4" poster="pd/palco.jpg" muted loop playsinline preload="metadata"></video>
+    <video src="pd/pitch.mp4" poster="pd/pitch.jpg" muted loop playsinline preload="metadata"></video>
+    <video src="pd/banca.mp4" poster="pd/banca.jpg" muted loop playsinline preload="metadata"></video>
+    <video src="pd/aplauso.mp4" poster="pd/aplauso.jpg" muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="veil v-cover"></div>
   <div class="pane">
     <div class="hd">
       <span class="eb">Confidencial · Rodada anjo 2026</span>
@@ -346,7 +351,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
     <div class="bd">
       <h2 class="h" style="color:var(--ink)">Uma empresa desorganizada <em>é uma empresa mal precificada</em></h2>
       <p class="lead">O empresário brasileiro que atravessou para os EUA construiu faturamento na base da força. Fatura bem, não sabe a própria margem e o negócio depende inteiramente dele. <b>Quem arruma a casa compra pelo preço de antes e é dono do valor de depois</b> — esse spread é a tese inteira.</p>
-      <svg class="dg" viewBox="0 0 1000 246" role="img" aria-label="Uma empresa de US$ 1,5 milhão de receita vale US$ 360 mil antes do programa, com 8% de margem e múltiplo de 3 vezes, e US$ 810 mil depois, com 12% de margem e múltiplo de 4,5 vezes.">
+      <div class="dgw"><svg class="dg" viewBox="0 0 1000 246" role="img" aria-label="Uma empresa de US$ 1,5 milhão de receita vale US$ 360 mil antes do programa, com 8% de margem e múltiplo de 3 vezes, e US$ 810 mil depois, com 12% de margem e múltiplo de 4,5 vezes.">
         <defs><marker id="sp" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C2922A"/></marker></defs>
         <g class="pop" style="--dd:180ms">
           <rect x="8" y="26" width="300" height="190" rx="5" fill="#FFFFFF" stroke="#E2D9C4"/>
@@ -376,7 +381,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
           <text x="892" y="162" text-anchor="middle" font-size="13" fill="#A9B4D0">sem vender um dólar</text>
           <text x="892" y="184" text-anchor="middle" font-size="13" fill="#A9B4D0">a mais</text>
         </g>
-      </svg>
+      </svg></div>
     </div>
     <div class="ft">Eles não são pequenos demais para investir — são <b>desorganizados demais para serem investidos hoje</b>. Empresa modelo com múltiplos praticados em <i>small business</i> de serviços nos EUA; premissa da companhia.</div>
   </div>
@@ -388,7 +393,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
     <div class="hd"><span class="eb">02 · A companhia</span><span class="mk">Iniciativa de Lúcio Santana</span></div>
     <div class="bd">
       <h2 class="h" style="color:var(--ink)">Três negócios <em>dentro de uma estrutura só</em></h2>
-      <svg class="dg" viewBox="0 0 1000 252" role="img" aria-label="O hub alimenta o venture builder, que alimenta o venture capital, e o retorno realimenta o hub.">
+      <div class="dgw"><svg class="dg" viewBox="0 0 1000 252" role="img" aria-label="O hub alimenta o venture builder, que alimenta o venture capital, e o retorno realimenta o hub.">
         <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C2922A"/></marker></defs>
         <path class="ln draw" style="--L:150;--dd:520ms" d="M266 112 L384 112" stroke="#C2922A" stroke-width="1.6" marker-end="url(#ar)"/>
         <path class="ln draw" style="--L:150;--dd:800ms" d="M616 112 L734 112" stroke="#C2922A" stroke-width="1.6" marker-end="url(#ar)"/>
@@ -418,7 +423,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
           <text x="758" y="166" font-size="13.5" fill="#D4A437">preferred shares.</text>
         </g>
         <text x="500" y="248" text-anchor="middle" class="lbl" font-size="10" fill="#9AA4BD">o retorno realimenta o hub</text>
-      </svg>
+      </svg></div>
     </div>
     <div class="ft">A RBG entra nas empresas <b>por dois caminhos ao mesmo tempo</b>: com dinheiro, pegando preferred; e com trabalho de conselho, pegando common. E a Deploy, braço de educação, vende para os 90% que não são selecionados — devolvendo 25% de comissão.</div>
   </div>
@@ -451,6 +456,17 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 </section>
 
 <style>
+.bgv{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;overflow:hidden}
+.bgv.one{display:block}
+.bgv video{width:100%;height:100%;object-fit:cover;display:block}
+.bgv video{filter:grayscale(.45) sepia(.42) saturate(1.45) contrast(1.06) brightness(.72)}
+.v-cover{background:linear-gradient(100deg,rgba(8,19,43,.97) 0%,rgba(8,19,43,.95) 40%,rgba(8,19,43,.72) 58%,rgba(8,19,43,.38) 100%)}
+.v-close{background:linear-gradient(180deg,rgba(8,19,43,.82) 0%,rgba(8,19,43,.9) 45%,rgba(8,19,43,.96) 100%)}
+.hh em{display:block}
+@media(max-width:820px){.v-cover{background:linear-gradient(180deg,rgba(8,19,43,.72) 0%,rgba(8,19,43,.94) 38%,rgba(8,19,43,.97) 100%)}}
+
+.slide.on .bgv video{animation:kb 30s ease-out forwards}
+@media(max-width:820px){.bgv{grid-template-columns:1fr;grid-template-rows:repeat(4,1fr)}}
 .pdm{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:calc(var(--u)*5.2);gap:calc(var(--u)*.5);margin-bottom:calc(var(--u)*1.1)}
 .pdt{position:relative;overflow:hidden;border-radius:calc(var(--u)*.35);border:1px solid var(--on-rule);background:#0C1B3D}
 .pdt.w2{grid-column:span 2}
@@ -459,6 +475,77 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .pdt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(8,19,43,.78));pointer-events:none}
 .pdt span{position:absolute;z-index:2;left:calc(var(--u)*.6);bottom:calc(var(--u)*.45);font-family:var(--mono);font-size:calc(var(--u)*.6);letter-spacing:.15em;text-transform:uppercase;color:#F5F2E8;text-shadow:0 1px 6px rgba(0,0,0,.85)}
 @media(max-width:820px){.pdm{grid-template-columns:repeat(2,1fr)}.pdt.w2{grid-column:span 2}}
+/* ═════════ mobile · o slide rola em vez de encolher ═════════ */
+@media (max-width: 820px){
+  html, body{ height:auto; overflow-x:hidden; overflow-y:auto; -webkit-text-size-adjust:100%; }
+  .deck{ position:static; inset:auto; overflow:visible; }
+  .slide{
+    position:relative; inset:auto; height:auto; min-height:100svh;
+    --uf:1 !important; --ubase:11.5px; overflow:hidden;
+  }
+  .slide .bg, .slide .glow, .slide .veil, .slide .bgv{ position:absolute; }
+  .pane{ height:auto; min-height:100svh; padding:calc(var(--pad)*.95) var(--pad) calc(var(--pad)*2.8); grid-template-rows:auto auto auto; min-width:0; }
+  .hd{ flex-wrap:wrap; row-gap:calc(var(--u)*.4); min-width:0; }
+  .bd{ display:grid; gap:calc(var(--u)*1); align-content:start; min-width:0; }
+
+  /* nada pode alargar a página: min-width:auto do grid é a armadilha */
+  .pane > *, .bd > *, .co > *, .co > .bd > *{ min-width:0; max-width:100%; }
+  .bx, .stat, .fr, .nd, .st, .pp, .chip, .it{ min-width:0; }
+  .lead, .ft, .legal, .bx p, .bx li, .bx h3, .nd .tt, .st .ds, .pp .ds{ overflow-wrap:anywhere; }
+
+  /* tipografia que não explode em 390px */
+  .xl{ font-size:clamp(40px,12.5vw,72px); }
+  .hh{ font-size:clamp(30px,9.2vw,54px); }
+  .h { font-size:clamp(25px,7.2vw,42px); }
+  .act .ti{ font-size:clamp(28px,8.4vw,48px); }
+  .act .no{ font-size:clamp(52px,15vw,90px); }
+  .lead{ font-size:calc(var(--u)*1.22); max-width:none; }
+
+  /* grades empilham — sempre com minmax(0,1fr) */
+  .g2,.g3,.g4{ grid-template-columns:minmax(0,1fr); }
+  .ppl,.cons{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .trk{ grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:calc(var(--u)*1.2); }
+  .nd .rail{ display:none; }
+  .ask{ gap:calc(var(--u)*1.6); }
+  .fr{ grid-template-columns:calc(var(--u)*9) minmax(0,1fr) calc(var(--u)*6); }
+
+  /* split vira empilhado de verdade */
+  .slide.k-split .pane{ display:none; }
+  .split2{ grid-template-columns:minmax(0,1fr); grid-template-rows:auto auto; height:auto; }
+  .split2 .im{ min-height:32svh; }
+  .split2 .co{ height:auto; min-height:0; grid-template-rows:auto auto auto; padding:var(--pad) var(--pad) calc(var(--pad)*2.8); min-width:0; }
+
+  /* tabela: 4 colunas cabem, com o rótulo quebrando linha */
+  .tb{ display:table; table-layout:fixed; width:100%; max-width:100%; white-space:normal; font-size:calc(var(--u)*.86); }
+  .tb th, .tb td{ padding:calc(var(--u)*.46) calc(var(--u)*.26); vertical-align:top; }
+  .tb th:first-child, .tb td:first-child{ width:37%; }
+  .tb .r{ font-size:calc(var(--u)*.84); }
+  .tb th{ font-size:calc(var(--u)*.6); letter-spacing:.08em; }
+
+  /* diagramas largos rolam dentro do próprio quadro */
+  .dgw{ overflow-x:auto; max-width:100%; min-width:0; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+  .dgw .dg{ min-width:660px; width:660px; }
+  .dgw::after{ content:"↔ arraste para ver o diagrama inteiro"; display:block; position:sticky; left:0; font-family:var(--mono); font-size:calc(var(--u)*.6); letter-spacing:.1em; text-transform:uppercase; color:var(--on-3); padding-top:calc(var(--u)*.4); }
+  .s-light .dgw::after, .s-paper .dgw::after{ color:var(--ink-4); }
+
+  /* mosaico do Pitch Day */
+  .pdm{ grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:calc(var(--u)*6.4); }
+  .pdt.h2{ grid-row:span 1; }
+  .pdt.w2{ grid-column:span 2; }
+
+  .cphoto{ min-height:26svh; }
+  .pbar{ height:calc(var(--u)*3); }
+  .pseg{ font-size:calc(var(--u)*.6); letter-spacing:.05em; }
+  .pseg.p4{ font-size:calc(var(--u)*.52); }
+
+  .hint{ display:none; }
+  .hud{ padding:8px 12px; }
+  .ovg{ grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); }
+}
+@media (max-width: 480px){
+  .ppl,.cons{ grid-template-columns:minmax(0,1fr); }
+  .pdm{ grid-auto-rows:calc(var(--u)*7.2); }
+}
 </style>
 <!-- 05 · O FILTRO -->
 <section class="slide s-dark">
@@ -603,15 +690,15 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
       <h2 class="h" style="color:var(--ink)">Como se chega <em>a US$ 5 milhões</em></h2>
       <p class="lead">O cap não é o que a RBG vale parada hoje — é <b>o que ela terá construído nos doze meses em que o seu dinheiro estiver trabalhando</b>. São três coisas, e são sempre as mesmas três: o que a RBG vende, o que ela compra com dinheiro e o que ela ganha com trabalho.</p>
       <div class="g3">
-        <div class="bx"><span class="k">01 · Educação · o que a RBG vende</span><h3>Receita própria</h3><p>Os programas pagos entregues pela Deploy para os <strong>90% do funil que não são selecionados</strong> no palco. A RBG origina e fica com a comissão.</p><ul><li><strong>US$ 300 mil de vendas</strong> geradas em 12 meses</li><li>Receita de margem alta, que <strong>não depende de captar</strong></li><li>Avaliada a <strong>2,5× a receita</strong> — múltiplo conservador</li></ul><span class="big num">US$ 0,75M</span></div>
+        <div class="bx"><span class="k">01 · Educação · o que a RBG vende</span><h3>Receita própria</h3><p>Os programas pagos entregues pela Deploy aos <strong>90% do funil que não são selecionados</strong> no palco. A RBG origina, a Deploy entrega, a RBG fica com a comissão.</p><ul><li><strong>48 empresas</strong> compram programa em 12 meses · 4 por mês</li><li>× ticket médio de <strong>US$ 6.200</strong> <span style="opacity:.7">(Sprint 4.000 · Aceleração 7.500 · US Journey 10.000+)</span></li><li>= <strong>US$ 300 mil</strong> de vendas originadas</li><li>A Deploy entrega e a RBG fica com <strong>25% de comissão fixa</strong></li><li>× <strong>5</strong> — múltiplo mínimo para receita recorrente que <strong>não depende de captar</strong></li></ul><span class="big num">US$ 1,50M</span></div>
         <div class="bx" style="border-color:var(--gold)"><span class="k">02 · Venture capital · o dinheiro</span><h3>Preferred shares</h3><p>Os <strong>US$ 200 mil</strong> da rodada viram participação em <strong>3 empresas</strong> aprovadas no encontro 8, dentro da regra 70/30.</p><ul><li>US$ 140 mil em caixa <span style="opacity:.7">(entrada em US$ 1 a 5 mi)</span></li><li>US$ 60 mil em exit <span style="opacity:.7">(entrada em US$ 5 a 15 mi)</span></li><li>Alvo de <strong>3,5× em 12 meses</strong></li></ul><span class="big num">US$ 0,70M</span></div>
         <div class="bx" style="border-color:#4C74D9"><span class="k" style="color:#3A55A8">03 · Venture builder · o trabalho</span><h3>Common shares</h3><p>A RBG coloca <strong>um conselheiro no board como advisor</strong> e recebe equity por trabalho — <strong>sem desembolsar capital</strong>. Meta de <strong>7 empresas</strong>.</p><ul><li>3 de exit · valuation US$ 5 a 15 mi · 7% cada</li><li>4 de caixa · valuation US$ 1 a 5 mi · 10% cada</li><li>Faixa praticada de <strong>1% a 10%</strong></li></ul><span class="big num" style="color:#3A55A8">US$ 3,55M</span></div>
       </div>
-      <svg class="dg" style="margin-top:calc(var(--u)*1)" viewBox="0 0 1000 96" role="img" aria-label="Soma: educação 0,75 milhão mais venture capital 0,70 milhão mais venture builder 3,55 milhões igual a 5 milhões.">
+      <div class="dgw"><svg class="dg" style="margin-top:calc(var(--u)*1)" viewBox="0 0 1000 96" role="img" aria-label="Soma: educação 0,75 milhão mais venture capital 0,70 milhão mais venture builder 3,55 milhões igual a 5 milhões.">
         <g class="pop" style="--dd:200ms">
           <rect x="8" y="14" width="196" height="68" rx="5" fill="#FFFFFF" stroke="#E2D9C4"/>
           <text x="28" y="38" class="lbl" font-size="10" fill="#9AA4BD">01 · EDUCAÇÃO</text>
-          <text x="28" y="68" class="val" font-size="24" fill="#0E1730">US$ 0,75M</text>
+          <text x="28" y="68" class="val" font-size="24" fill="#0E1730">US$ 1,50M</text>
           <text x="222" y="60" class="val" font-size="26" fill="#9AA4BD">+</text>
         </g>
         <g class="pop" style="--dd:340ms">
@@ -628,12 +715,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
         </g>
         <g class="pop" style="--dd:640ms">
           <rect x="734" y="6" width="258" height="84" rx="5" fill="#08132B" stroke="#C2922A"/>
-          <text x="863" y="34" text-anchor="middle" class="lbl" font-size="9.5" fill="#D4A437">CAP DA RODADA · PÓS-MONEY</text>
-          <text x="863" y="72" text-anchor="middle" class="val" font-size="34" fill="#F0C44D">US$ 5,00M</text>
+          <text x="863" y="30" text-anchor="middle" class="lbl" font-size="9" fill="#D4A437">SOMA DAS PARTES · US$ 5,75M</text>
+          <text x="863" y="64" text-anchor="middle" class="val" font-size="30" fill="#F0C44D">cap US$ 5,00M</text>
+          <text x="863" y="82" text-anchor="middle" font-size="10.5" fill="#A9B4D0">a rodada é precificada 13% abaixo</text>
         </g>
-      </svg>
+      </svg></div>
     </div>
-    <div class="ft">O <b>3,5× do dinheiro</b> não é chute: a empresa vale 2,25× depois de estruturada (slide 02) e a RBG entra abaixo desse valor, negociando sobre o histórico. Metas da companhia para os próximos 12 meses — não são resultado realizado.</div>
+    <div class="ft">As <b>48 vendas</b> batem com o plano de negócios da RBG (12 até fev/27 e 60 em 2027) e a soma das três parcelas dá <b>US$ 5,75M</b> — o cap de US$ 5M está deliberadamente abaixo dela. O <b>3,5× do dinheiro</b> não é chute: a empresa vale 2,25× depois de estruturada (slide 02) e a RBG entra abaixo desse valor, negociando sobre o histórico. Metas da companhia para os próximos 12 meses — não são resultado realizado.</div>
   </div>
 </section>
 
@@ -644,49 +732,46 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
     <div class="hd"><span class="eb">10 · A escada</span><span class="mk">Sempre as mesmas três coisas</span></div>
     <div class="bd">
       <h2 class="h">US$ 5M hoje, US$ 8M em 2027, <em>US$ 20M em 2028</em></h2>
-      <p class="lead">Não vamos abrir 2027 e 2028 linha a linha aqui — seria projeção sobre projeção. O que importa é que <b>o valuation é sempre preenchido pelas mesmas três coisas</b>: a receita da educação, as preferred que a RBG compra com dinheiro e as common que ela ganha com trabalho de conselho. O que muda de um degrau para o outro é só a quantidade.</p>
-      <svg class="dg" viewBox="0 0 1000 248" role="img" aria-label="Três barras empilhadas mostrando a composição de 5, 8 e 20 milhões entre educação, preferred e common.">
-        <text x="8" y="24" class="lbl" font-size="10" fill="#9AA4BD">■ EDUCAÇÃO</text>
-        <text x="150" y="24" class="lbl" font-size="10" fill="#D4A437">■ PREFERRED · DINHEIRO</text>
-        <text x="380" y="24" class="lbl" font-size="10" fill="#87A2F0">■ COMMON · TRABALHO</text>
+      <p class="lead">O valuation é sempre preenchido pelas <b>mesmas três coisas</b> — receita da educação, preferred compradas com dinheiro e common ganhas com trabalho de conselho. O que muda de um degrau para o outro é só a quantidade.</p>
+      <div class="dgw"><svg class="dg" viewBox="0 0 1000 158" role="img" aria-label="Três barras empilhadas mostrando a composição de 5, 8 e 20 milhões entre educação, preferred e common.">
+        <text x="120" y="16" class="lbl" font-size="9.5" fill="#9AA4BD">■ EDUCAÇÃO</text>
+        <text x="260" y="16" class="lbl" font-size="9.5" fill="#D4A437">■ PREFERRED · DINHEIRO</text>
+        <text x="470" y="16" class="lbl" font-size="9.5" fill="#87A2F0">■ COMMON · TRABALHO</text>
         <g class="pop" style="--dd:200ms">
-          <text x="8" y="66" class="val" font-size="21" fill="#F0C44D">US$ 5M</text>
-          <text x="8" y="84" class="lbl" font-size="9.5" fill="#6E7CA2">12 MESES</text>
-          <rect x="120" y="46" width="33" height="44" rx="3" fill="#E4D7B4"/>
-          <rect x="155" y="46" width="31" height="44" rx="3" fill="#C2922A"/>
-          <rect x="188" y="46" width="156" height="44" rx="3" fill="#4C74D9"/>
-          <text x="360" y="66" font-size="13" fill="#A9B4D0">3 empresas com cheque</text>
-          <text x="360" y="84" font-size="13" fill="#87A2F0">7 com equity por trabalho</text>
+          <text x="8" y="52" class="val" font-size="19" fill="#F0C44D">US$ 5M</text>
+          <text x="8" y="66" class="lbl" font-size="8.5" fill="#6E7CA2">12 MESES</text>
+          <rect x="120" y="30" width="57" height="34" rx="3" fill="#E4D7B4"/>
+          <rect x="179" y="30" width="27" height="34" rx="3" fill="#C2922A"/>
+          <rect x="208" y="30" width="136" height="34" rx="3" fill="#4C74D9"/>
         </g>
-        <g class="pop" style="--dd:420ms">
-          <text x="8" y="136" class="val" font-size="21" fill="#F0C44D">US$ 8M</text>
-          <text x="8" y="154" class="lbl" font-size="9.5" fill="#6E7CA2">2027</text>
-          <rect x="120" y="116" width="66" height="44" rx="3" fill="#E4D7B4"/>
-          <rect x="188" y="116" width="114" height="44" rx="3" fill="#C2922A"/>
-          <rect x="304" y="116" width="172" height="44" rx="3" fill="#4C74D9"/>
-          <text x="492" y="136" font-size="13" fill="#A9B4D0">8 empresas com cheque</text>
-          <text x="492" y="154" font-size="13" fill="#87A2F0">20 com equity por trabalho</text>
+        <g class="pop" style="--dd:400ms">
+          <text x="8" y="98" class="val" font-size="19" fill="#F0C44D">US$ 8M</text>
+          <text x="8" y="112" class="lbl" font-size="8.5" fill="#6E7CA2">2027</text>
+          <rect x="120" y="76" width="66" height="34" rx="3" fill="#E4D7B4"/>
+          <rect x="188" y="76" width="114" height="34" rx="3" fill="#C2922A"/>
+          <rect x="304" y="76" width="172" height="34" rx="3" fill="#4C74D9"/>
         </g>
-        <g class="pop" style="--dd:640ms">
-          <text x="8" y="206" class="val" font-size="21" fill="#F0C44D">US$ 20M</text>
-          <text x="8" y="224" class="lbl" font-size="9.5" fill="#6E7CA2">2028</text>
-          <rect x="120" y="186" width="158" height="44" rx="3" fill="#E4D7B4"/>
-          <rect x="280" y="186" width="348" height="44" rx="3" fill="#C2922A"/>
-          <rect x="630" y="186" width="362" height="44" rx="3" fill="#4C74D9"/>
-          <text x="120" y="244" font-size="13" fill="#A9B4D0">23 empresas com cheque · 45 com equity por trabalho</text>
+        <g class="pop" style="--dd:600ms">
+          <text x="8" y="144" class="val" font-size="19" fill="#F0C44D">US$ 20M</text>
+          <text x="8" y="158" class="lbl" font-size="8.5" fill="#6E7CA2">2028</text>
+          <rect x="120" y="122" width="158" height="34" rx="3" fill="#E4D7B4"/>
+          <rect x="280" y="122" width="348" height="34" rx="3" fill="#C2922A"/>
+          <rect x="630" y="122" width="362" height="34" rx="3" fill="#4C74D9"/>
         </g>
-      </svg>
+      </svg></div>
       <table class="tb" style="margin-top:calc(var(--u)*.5)">
         <thead><tr><th>As projeções que preenchem cada degrau</th><th class="r">12 meses</th><th class="r">2027</th><th class="r">2028</th></tr></thead>
         <tbody>
-          <tr><td>Vendas geradas para a RBG · educação</td><td class="r">US$ 300 mil</td><td class="r">US$ 600 mil</td><td class="r">US$ 1,4M</td></tr>
+          <tr><td>Empresas que compram programa · educação</td><td class="r">48</td><td class="r">60</td><td class="r">120</td></tr>
+          <tr><td><strong>Vendas geradas</strong> · empresas × ticket · a 5× no valuation</td><td class="r"><strong>US$ 300 mil</strong></td><td class="r"><strong>US$ 417 mil</strong></td><td class="r"><strong>US$ 903 mil</strong></td></tr>
           <tr><td>Empresas com cheque · preferred, acumulado</td><td class="r">3</td><td class="r">8</td><td class="r">23</td></tr>
           <tr><td>Empresas com equity por trabalho · common, acumulado</td><td class="r">7</td><td class="r">20</td><td class="r">45</td></tr>
-          <tr><td><strong>Sua posição de 5%, já diluída pelas rodadas seguintes</strong></td><td class="r"><strong>5,00% · US$ 250 mil</strong></td><td class="r"><strong>4,50% · US$ 360 mil</strong></td><td class="r"><strong>3,83% · US$ 765 mil</strong></td></tr>
+          <tr><td>Sua posição <strong>sem</strong> exercer o follow-on</td><td class="r">5,00% · US$ 250 mil</td><td class="r">4,50% · US$ 360 mil</td><td class="r">3,83% · US$ 765 mil</td></tr>
+          <tr><td><strong>Sua posição exercendo o follow-on</strong> <span style="opacity:.6">· pro-rata, mesmas condições</span></td><td class="r"><strong>5,00% · US$ 250 mil</strong></td><td class="r"><strong>5,00% · US$ 400 mil</strong> <span style="opacity:.6">(+40 mil)</span></td><td class="r"><strong>5,00% · US$ 1,00M</strong> <span style="opacity:.6">(+150 mil)</span></td></tr>
         </tbody>
       </table>
     </div>
-    <div class="ft">O valuation cresce porque cresce a <b>base</b> — mais empresas no portfólio, mais empresas com common e mais venda de aceleração —, não porque o múltiplo sobe. Cenário ilustrativo; investimento em participações envolve risco de perda total.</div>
+    <div class="ft">A conta da educação é a mesma nos três: <b>empresas × ticket, a 5× a receita gerada</b>. O valuation cresce porque cresce a <b>base</b>, não porque o múltiplo sobe. Cenário ilustrativo; risco de perda total.</div>
   </div>
 </section>
 
@@ -710,7 +795,9 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
       </div>
       <table class="tb" style="margin-top:calc(var(--u)*1)">
         <tbody>
-          <tr><td><strong>Aporte · participação · cap</strong></td><td>US$ 250.000 por 5,00% · cap pós-money de US$ 5.000.000 (250 ÷ 5.000). Sendo pós-money, a fatia <strong>não é diluída por outros SAFEs desta mesma rodada</strong>.</td></tr>
+          <tr><td><strong>Aporte · participação · cap</strong></td><td>US$ 250.000 por 5,00% · cap pós-money de US$ 5.000.000 (250 ÷ 5.000).</td></tr>
+          <tr><td><strong>Não diluição</strong></td><td>Sendo cap <strong>pós-money</strong>, a fatia de 5% <strong>não é diluída pelos SAFEs seguintes</strong> — nem os desta rodada, nem os que a companhia venha a emitir depois. Ela só se ajusta quando entra uma rodada precificada.</td></tr>
+          <tr><td><strong>Follow-on</strong></td><td>Direito de <strong>pro-rata nas rodadas seguintes</strong>: o investidor pode entrar de novo, nas mesmas condições, e <strong>manter os 5%</strong>. Quem exerce não dilui.</td></tr>
           <tr><td><strong>Veículo e registro</strong></td><td>Companhia em Delaware, operação em Orlando. Cap table na Carta.com, com login próprio seu.</td></tr>
           <tr><td><strong>Retorno</strong></td><td>Distribuição pro-rata das apurações semestrais, exits do portfólio e liquidez na própria RBG.</td></tr>
           <tr><td><strong>Governança</strong></td><td>Relatório trimestral, apuração semestral, carta e reunião anual — mais o painel aberto.</td></tr>
@@ -754,7 +841,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
     <div class="hd"><span class="eb">13 · Como o dinheiro volta</span><span class="mk">Três fontes de retorno</span></div>
     <div class="bd">
       <h2 class="h">Da empresa investida <em>até a sua conta</em></h2>
-      <svg class="dg" viewBox="0 0 1000 258" role="img" aria-label="As empresas de caixa geram dividendos e as startups geram exits; tudo entra no caixa da RBG, que distribui 5% ao investidor anjo.">
+      <div class="dgw"><svg class="dg" viewBox="0 0 1000 258" role="img" aria-label="As empresas de caixa geram dividendos e as startups geram exits; tudo entra no caixa da RBG, que distribui 5% ao investidor anjo.">
         <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#C2922A"/></marker></defs>
         <g class="pop" style="--dd:180ms">
           <rect x="8" y="14" width="252" height="86" rx="5" fill="rgba(255,255,255,.05)" stroke="#1D2C50"/>
@@ -787,7 +874,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
           <text x="864" y="182" text-anchor="middle" font-size="12.5" fill="#A9B4D0">com extrato e comprovante</text>
         </g>
         <text x="500" y="250" text-anchor="middle" class="lbl" font-size="9.6" fill="#6E7CA2">terceira fonte · se a própria RBG receber investimento ou for adquirida, a sua posição se valoriza junto</text>
-      </svg>
+      </svg></div>
       <div class="g3" style="margin-top:calc(var(--u)*.8);align-items:center">
         <div class="bx"><span class="k">No painel do investidor</span><ul><li>Sua posição e o cap table</li><li>Pipeline, portfólio e distribuições</li><li>Régua de metas e semáforo do funil</li></ul></div>
         <div class="bx"><span class="k">Cadência de reporte</span><ul><li><strong>Trimestral</strong> · portfólio e funil</li><li><strong>Semestral</strong> · apuração e distribuição</li><li><strong>Anual</strong> · carta e reunião</li></ul></div>
@@ -800,8 +887,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
 <!-- 15 · O CONVITE -->
 <section class="slide k-full s-dark">
-  <div class="bg" style="background-image:var(--img6)"></div>
-  <div class="veil v-full"></div>
+  <div class="bgv one">
+    <video src="pd/fundadores.mp4" poster="pd/fundadores.jpg" muted loop playsinline preload="metadata"></video>
+  </div>
+  <div class="veil v-close"></div>
   <div class="pane">
     <div class="hd"><span class="eb">O convite</span><span class="mk">Royal Business Growth · 2026</span></div>
     <div class="bd">
@@ -1041,9 +1130,10 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
       var on = sl.classList.contains('on');
       sl.querySelectorAll('video').forEach(function(v){
         if (on) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
-        else { v.pause(); }
+        else { try { v.pause(); } catch(e){} }
       });
     });
+    if (window.matchMedia('(max-width:820px)').matches) window.scrollTo(0,0);
   }
   new MutationObserver(sync).observe(deck, {subtree:true, attributes:true, attributeFilter:['class']});
   sync();
