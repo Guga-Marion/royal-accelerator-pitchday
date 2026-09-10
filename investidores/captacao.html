@@ -450,54 +450,70 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   </div>
 </section>
 
+<style>
+.pdm{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:calc(var(--u)*5.2);gap:calc(var(--u)*.5);margin-bottom:calc(var(--u)*1.1)}
+.pdt{position:relative;overflow:hidden;border-radius:calc(var(--u)*.35);border:1px solid var(--on-rule);background:#0C1B3D}
+.pdt.w2{grid-column:span 2}
+.pdt.h2{grid-row:span 2}
+.pdt video{width:100%;height:100%;object-fit:cover;display:block}
+.pdt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(8,19,43,.78));pointer-events:none}
+.pdt span{position:absolute;z-index:2;left:calc(var(--u)*.6);bottom:calc(var(--u)*.45);font-family:var(--mono);font-size:calc(var(--u)*.6);letter-spacing:.15em;text-transform:uppercase;color:#F5F2E8;text-shadow:0 1px 6px rgba(0,0,0,.85)}
+@media(max-width:820px){.pdm{grid-template-columns:repeat(2,1fr)}.pdt.w2{grid-column:span 2}}
+</style>
 <!-- 05 · O FILTRO -->
 <section class="slide s-dark">
   <div class="glow"></div>
   <div class="pane">
-    <div class="hd"><span class="eb">04 · O filtro</span><span class="mk">Três peneiras · nenhum atalho</span></div>
+    <div class="hd"><span class="eb">04 · O filtro</span><span class="mk">Do mercado inteiro até o cheque</span></div>
     <div class="bd">
-      <h2 class="h">De quinhentos leads, <em>um ou dois recebem cheque</em></h2>
-      <div class="fnl">
-        <div class="fr"><span class="nm">Leads<small>Conteúdo, palco e indicação</small></span><span class="tk"><span class="fl grow" style="--dd:300ms;width:100%"></span></span><span class="vl">500</span><span class="cv">100%</span></div>
-        <div class="fr"><span class="nm">Calls de triagem<small>Peneira 0 · resposta em 24 h</small></span><span class="tk"><span class="fl grow" style="--dd:400ms;width:60%"></span></span><span class="vl">100</span><span class="cv">20%</span></div>
-        <div class="fr"><span class="nm">Sobem ao palco<small>Peneira 1 · Pitch Day</small></span><span class="tk"><span class="fl grow" style="--dd:500ms;width:38%"></span></span><span class="vl">18</span><span class="cv">18%</span></div>
-        <div class="fr"><span class="nm">Aceleradas<small>Peneira 2 · 120 dias</small></span><span class="tk"><span class="fl grow" style="--dd:600ms;width:24%"></span></span><span class="vl">10</span><span class="cv">56%</span></div>
-        <div class="fr last"><span class="nm">Investidas<small>Peneira 3 · comitê do encontro 8</small></span><span class="tk"><span class="fl grow" style="--dd:700ms;width:10%"></span></span><span class="vl">1 a 2</span><span class="cv">15%</span></div>
+      <h2 class="h">De noventa mil empresas, <em>uma ou duas recebem cheque</em></h2>
+      <div class="g4" style="margin-bottom:calc(var(--u)*1.1)">
+        <div class="bx"><span class="k">O universo</span><span class="big num">90.000</span><p>empresas de brasileiros nos EUA, todos os portes. Faixa dos dois estudos: <strong>70.000 a 108.600</strong>.</p></div>
+        <div class="bx"><span class="k">O mercado que interessa · TAM</span><span class="big num">6.300</span><p>faturam entre <strong>US$ 500 mil e US$ 5 milhões</strong> por ano. Faixa: 4.004 a 8.688. Receita agregada de US$ 6 a 13 bilhões.</p></div>
+        <div class="bx"><span class="k">Qualificadas · SAM</span><span class="big num">3.000</span><p>com perfil real de crescimento e de investimento. <strong>1.100 na Flórida</strong>, das quais 300 em Orlando.</p></div>
+        <div class="bx" style="border-color:var(--gold)"><span class="k">O beachhead</span><span class="big num">300</span><p>empresas qualificadas em Orlando — <strong>pequeno o suficiente para conhecer o dono de cada uma</strong>.</p></div>
       </div>
-      <div class="g3" style="margin-top:calc(var(--u)*1.4)">
-        <div class="bx"><span class="k">Peneira 1 · o palco</span><h3>Elimina 82%</h3><p>Cinco minutos sem slide na frente da banca. Régua de 100 pontos. <strong>Quem não convence ao vivo não passa.</strong></p></div>
-        <div class="bx"><span class="k">Peneira 2 · o programa</span><h3>Elimina 44%</h3><p>120 dias, oito encontros, sete conselheiros. <strong>Quem não executa o que combinou aparece em quinze dias.</strong></p></div>
-        <div class="bx"><span class="k">Peneira 3 · o comitê</span><h3>Elimina 85%</h3><p>Sete pareceres escritos e voto do chairman. <strong>Nenhum cheque sai antes do encontro 8.</strong></p></div>
+      <div class="fnl">
+        <div class="fr"><span class="nm">Leads no período<small>Conteúdo, palco e indicação</small></span><span class="tk"><span class="fl grow" style="--dd:300ms;width:100%"></span></span><span class="vl">500</span><span class="cv">100%</span></div>
+        <div class="fr"><span class="nm">Calls de triagem<small>Peneira 0 · resposta em 24 h</small></span><span class="tk"><span class="fl grow" style="--dd:400ms;width:60%"></span></span><span class="vl">100</span><span class="cv">20%</span></div>
+        <div class="fr"><span class="nm">Sobem ao palco<small>Peneira 1 · Pitch Day · elimina 82%</small></span><span class="tk"><span class="fl grow" style="--dd:500ms;width:38%"></span></span><span class="vl">18</span><span class="cv">18%</span></div>
+        <div class="fr"><span class="nm">Aceleradas<small>Peneira 2 · 120 dias · elimina 44%</small></span><span class="tk"><span class="fl grow" style="--dd:600ms;width:24%"></span></span><span class="vl">10</span><span class="cv">56%</span></div>
+        <div class="fr last"><span class="nm">Investidas<small>Peneira 3 · comitê do encontro 8 · elimina 85%</small></span><span class="tk"><span class="fl grow" style="--dd:700ms;width:10%"></span></span><span class="vl">1 a 2</span><span class="cv">15%</span></div>
       </div>
     </div>
-    <div class="ft">O que isso custa à RBG: <b>quase nada</b>. O palco se paga em conteúdo, o programa pago é receita, e o custo de originar um negócio é próximo de zero — <b>as três peneiras são a máquina de originação</b>.</div>
+    <div class="ft"><b>Números de mercado modelados</b>, não observados: dois estudos independentes de set/2026 sobre <i>U.S. Census Bureau</i> (Nonemployer Statistics by Demographics, Annual Business Survey 2024, Census Data API 2023) e <i>Migration Policy Institute</i>. A RBG publica sempre a faixa, e está construindo a base própria que vai fechar o número.</div>
   </div>
 </section>
 
 <!-- 06 · PENEIRA 1 · O PALCO -->
-<section class="slide k-split s-dark">
-  <div class="split2">
-    <div class="im"><div class="bgi" style="background-image:var(--img5)"></div></div>
-    <div class="co">
-      <div class="hd"><span class="eb">05 · Peneira 1</span><span class="mk">Pitch Day · formato Shark Tank</span></div>
-      <div class="bd">
-        <h2 class="h">O palco atrai <em>quem não responderia a um e-mail</em></h2>
-        <p class="lead">Até dez empreendedores sobem ao palco em Orlando: <b>cinco minutos, sem slide, olho no olho</b> com a banca, e até dez minutos de arguição. Quem vence ganha o programa de 120 dias sem custo e passa a concorrer ao investimento.</p>
-        <div class="g2">
-          <div class="bx"><span class="k">O que a banca vê ao vivo</span><ul><li>Se o dono conhece os próprios números</li><li>Como reage a pergunta difícil sem preparo</li><li>Se descreve um negócio ou uma pessoa ocupada</li></ul></div>
-          <div class="bx"><span class="k">A régua · 100 pontos</span><ul><li>Mercado e tração comprovada</li><li>Margem, caixa e qualidade da receita</li><li>Time, delegação e capacidade de escalar</li></ul></div>
-        </div>
-        <div class="chips" style="margin-top:calc(var(--u)*1)">
-          <span class="chip">Edição 1 · <b>9 jun 2026</b> · 8 no palco</span>
-          <span class="chip">Edição 2 · <b>29–30 ago 2026</b></span>
-          <span class="chip">Edição 3 · <b>5 dez 2026</b> · inscrições abertas</span>
-          <span class="chip"><b>30+</b> cortes de conteúdo por edição</span>
-        </div>
+<section class="slide s-dark">
+  <div class="glow"></div>
+  <div class="pane">
+    <div class="hd"><span class="eb">05 · Peneira 1</span><span class="mk">Pitch Day · Orlando · 3 edições por ano</span></div>
+    <div class="bd">
+      <h2 class="h">O Pitch Day faz <em>três trabalhos ao mesmo tempo</em></h2>
+      <div class="pdm">
+        <div class="pdt w2 h2"><video src="pd/palco.mp4" poster="pd/palco.jpg" muted loop playsinline preload="metadata"></video><span>o palco</span></div>
+        <div class="pdt"><video src="pd/pitch.mp4" poster="pd/pitch.jpg" muted loop playsinline preload="metadata"></video><span>5 min sem slide</span></div>
+        <div class="pdt"><video src="pd/banca.mp4" poster="pd/banca.jpg" muted loop playsinline preload="metadata"></video><span>a banca</span></div>
+        <div class="pdt"><video src="pd/resposta.mp4" poster="pd/resposta.jpg" muted loop playsinline preload="metadata"></video><span>arguição</span></div>
+        <div class="pdt"><video src="pd/aplauso.mp4" poster="pd/aplauso.jpg" muted loop playsinline preload="metadata"></video><span>o anúncio</span></div>
       </div>
-      <div class="ft">A edição inteira é filmada: cada uma <b>reabastece o topo do funil e escolhe a safra seguinte</b>. O filtro e a máquina de originação são a mesma coisa.</div>
+      <div class="g3">
+        <div class="bx"><span class="k">Trabalho 01 · filtro</span><h3>Separa ao vivo</h3><p>Cinco minutos <strong>sem slide</strong>, olho no olho, e até dez minutos de arguição da banca. Régua de 100 pontos, deliberação fechada às 16h e anúncio às 17h20.</p><ul><li>Quem não convence ao vivo não passa</li><li>A banca vê o dono, não o deck</li></ul></div>
+        <div class="bx" style="border-color:var(--gold)"><span class="k">Trabalho 02 · prêmio</span><h3>O que se ganha</h3><p>O selecionado leva os <strong>120 dias de aceleração sem custo</strong>, com os sete conselheiros — e passa a concorrer ao investimento, decidido no oitavo encontro.</p><ul><li>Vitrine do Conselho · 4 cadeiras × 15 min</li><li>Quem não é selecionado recebe a oferta paga</li></ul></div>
+        <div class="bx"><span class="k">Trabalho 03 · alcance</span><h3>Enche o funil inteiro</h3><p>A edição é <strong>filmada inteira</strong>: palco, bastidor, entrevista e reunião de conselho viram <strong>mais de 30 cortes</strong> — o estoque de conteúdo do trimestre seguinte.</p><ul><li>É como a RBG fala com o empresário brasileiro nos EUA</li><li>O filtro e a máquina de originação são a mesma coisa</li></ul></div>
+      </div>
+      <div class="chips" style="margin-top:calc(var(--u)*.9)">
+        <span class="chip">Edição 1 · <b>9 jun 2026</b> · 8 no palco</span>
+        <span class="chip">Edição 2 · <b>29–30 ago 2026</b> · Orlando</span>
+        <span class="chip">Edição 3 · <b>5 dez 2026</b> · inscrições até 6/11, selecionados em 13/11</span>
+      </div>
     </div>
+    <div class="ft">Imagens da <b>edição 2, Orlando, 29 e 30 de agosto de 2026</b>. Investidores da rodada são convidados a assistir a edição 3, do lado da banca — <a href="https://rbg-hub.com/pitch-day" target="_blank" rel="noopener" style="border-bottom:1px solid var(--gold-lt)">rbg-hub.com/pitch-day ↗</a></div>
   </div>
 </section>
+
 
 <!-- 07 · PENEIRA 2 · OS 120 DIAS -->
 <section class="slide s-dark">
@@ -1010,5 +1026,23 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
   window.__deck = { fit: fit, show: show, n: n };
   setTimeout(hideHint, 7000);
+})();
+</script>
+
+<script>
+(function(){
+  var deck = document.querySelector('.deck');
+  if (!deck) return;
+  function sync(){
+    deck.querySelectorAll('.slide').forEach(function(sl){
+      var on = sl.classList.contains('on');
+      sl.querySelectorAll('video').forEach(function(v){
+        if (on) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        else { v.pause(); }
+      });
+    });
+  }
+  new MutationObserver(sync).observe(deck, {subtree:true, attributes:true, attributeFilter:['class']});
+  sync();
 })();
 </script>
