@@ -100,7 +100,7 @@ RBG.livros={
   itens:[
     {titulo:'Sonho Grande', capa:'capa-sonho-grande.jpg', autor:'Cristiane Correa', frente:'A tese', licao:'Lemann, Telles e Sicupira compraram o Burger King com US$ 1,2 bi em caixa e método. <em>Gente e cultura</em> escalam mais que capital.'},
     {titulo:'Profit First', capa:'capa-profit-first.jpg', autor:'Mike Michalowicz', frente:'01 · Finanças', licao:'Separe o lucro <em>antes</em> de pagar as contas. Margem que fica para o fim do mês não existe.'},
-    {titulo:'The E-Myth Revisited', capa:'capa-e-myth.jpg', autor:'Michael E. Gerber', frente:'05 · Processos', licao:'Trabalhe <em>na</em> empresa, não só <em>dentro</em> dela. Processo é o que faz o negócio rodar sem o dono.'},
+    {titulo:'The E-Myth Revisited', capa:'capa-e-myth.jpg', autor:'Michael E. Gerber', frente:'05 · Processos', licao:'Trabalhe <em>na</em> empresa, não só dentro dela. Processo é o que faz o negócio rodar sem o dono.'},
     {titulo:'Traction', capa:'capa-traction.jpg', autor:'Gino Wickman', frente:'04 · Liderança', licao:'Cada função tem um dono. Uma reunião semanal com <em>números</em> substitui dez conversas de corredor.'},
     {titulo:'Scaling Up', capa:'capa-scaling-up.jpg', autor:'Verne Harnish', frente:'07 · Growth & GTM', licao:'Gente, estratégia, execução e caixa. Escalar é <em>apertar as quatro</em> ao mesmo tempo.'},
     {titulo:'Built to Sell', capa:'capa-built-to-sell.jpg', autor:'John Warrillow', frente:'Demo Day', licao:'Construa a empresa que <em>alguém quer comprar</em> — mesmo que você nunca venda.'}

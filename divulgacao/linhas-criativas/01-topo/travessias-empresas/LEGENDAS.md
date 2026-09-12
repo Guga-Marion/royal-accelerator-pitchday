@@ -13,7 +13,7 @@ Henrique e Pedro se conheceram no Twitter, no ensino médio, brigando por códig
 
 Aí fizeram o que a maioria só planeja: atravessaram. Largaram Stanford em oito meses, entraram no Y Combinator — e descobriram do outro lado o mesmo problema que você conhece: sem histórico de crédito americano, nem a empresa deles conseguia um cartão.
 
-O que eles fizeram com esse problema está na lâmina 5. E o que separa quem levanta capital de quem só tem coragem está na 7.
+O que eles fizeram com esse problema está na lâmina 6. E o que separa quem levanta capital de quem só tem coragem está na 7.
 
 👉 Arraste até o fim.
 

@@ -23,9 +23,9 @@ Fontes: ATP · ESPN · Tennis.com. Fotos: Wikimedia Commons (CC BY-SA).
 
 Saiu de Dois Riachos aos 14. Seis vezes a melhor do mundo. Campeã em Orlando. ⚽
 
-O pai foi embora quando ela tinha um ano. Cresceu jogando bola com os meninos no interior de Alagoas. Aos 14 pegou um ônibus para o Rio; aos 18, a primeira travessia: Suécia. Seis vezes melhor do mundo — recorde absoluto, entre homens e mulheres.
+O pai foi embora quando ela tinha um ano. Cresceu jogando bola com os meninos no interior de Alagoas. Aos 14 pegou um ônibus para o Rio; aos 18, a primeira travessia: Suécia. Seis vezes melhor do mundo — recorde do futebol feminino.
 
-Em 2017, a segunda travessia: Orlando. Em 2024, o primeiro título de uma liga profissional na história da cidade, com ela em campo aos 38.
+Em 2017, a segunda travessia: Orlando. Em 2024, o primeiro título de uma grande liga na história da cidade, com ela em campo aos 38.
 
 Talento leva até a porta. O que atravessa está na lâmina 7.
 
@@ -39,7 +39,7 @@ Fontes: FIFA · NWSL · Olympics.com. Fotos: Wikimedia Commons (CC).
 
 O galã de novela que virou rei persa em Hollywood. 🎬
 
-Petrópolis, 1975. Galã da Globo em 1995, tinha tudo para ficar. "Bicho de Sete Cabeças" abriu a porta; "Love Actually" (2003) foi a estreia — um papel pequeno, em outra língua, começando de baixo. Em 2006, Xerxes em "300" e Paulo em "Lost". Em 2016, "Westworld".
+Petrópolis, 1975. Galã da Globo em 1995, tinha tudo para ficar. "Bicho de Sete Cabeças" abriu a porta; "Love Actually" (2003) foi a estreia — um papel pequeno, em outra língua, começando de baixo. Entre 2006 e 2007, Paulo em "Lost" e Xerxes em "300". Em 2016, "Westworld".
 
 Recomeçar do zero não é voltar ao zero. É levar o método. A lição está na lâmina 7.
 

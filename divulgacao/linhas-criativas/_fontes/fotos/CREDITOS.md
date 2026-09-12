@@ -72,7 +72,7 @@ Camera location37° 49′ 39.52″ N,  |
 | `orlando-i4.jpg` | [File:Orlando, Florida - Downtown from I-4 East.jpg](https://commons.wikimedia.org/wiki/File:Orlando,_Florida_-_Downtown_from_I-4_East.jpg) | CC BY-SA 3.0 | Ziggymarley01 |
 | `orlando-lake-eola-publix.jpg` | [File:Publix Super Market at The Paramount on Lake Eola, Orlando, Florida.jpg](https://commons.wikimedia.org/wiki/File:Publix_Super_Market_at_The_Paramount_on_Lake_Eola,_Orlando,_Florida.jpg) | CC BY 4.0 | Nielsoncaetanosalmeron |
 | `orlando-1976.jpg` | [File:Downtown Orlando looking northeast, 1976.jpg](https://commons.wikimedia.org/wiki/File:Downtown_Orlando_looking_northeast,_1976.jpg) | CC BY-SA 4.0 | Karl E. Holland |
-| `kissimmee.jpg` | [File:Broadway Avenue, Kissimmee, FL.jpg](https://commons.wikimedia.org/wiki/File:Broadway_Avenue,_Kissimmee,_FL.jpg) | Public domain | Unknown authorUnknown author |
+| `kissimmee.jpg` | [File:Broadway Avenue, Kissimmee, FL.jpg](https://commons.wikimedia.org/wiki/File:Broadway_Avenue,_Kissimmee,_FL.jpg) | Public domain | autor desconhecido |
 | `winter-park.jpg` | [File:Lake Osceola in Winter Park, Florida.jpg](https://commons.wikimedia.org/wiki/File:Lake_Osceola_in_Winter_Park,_Florida.jpg) | Public domain | Hugh C. Leighton |
 | `brickell-2012.jpg` | [File:Brickell skyline 2012.jpg](https://commons.wikimedia.org/wiki/File:Brickell_skyline_2012.jpg) | Public domain | Daniel Christensen |
 | `brickell-night.jpg` | [File:Brickell at night (60052p).jpg](https://commons.wikimedia.org/wiki/File:Brickell_at_night_(60052p).jpg) | CC BY-SA 4.0 | Rhododendrites |
@@ -94,8 +94,7 @@ Camera location37° 49′ 39.52″ N,  |
 | `times-square.jpg` | [File:Times Square at night 20170313.jpg](https://commons.wikimedia.org/wiki/File:Times_Square_at_night_20170313.jpg) | CC BY-SA 4.0 | Suicasmo |
 | `venice-beach.jpg` | [File:Venice Beach Boardwalk Los Angeles 2019.jpg](https://commons.wikimedia.org/wiki/File:Venice_Beach_Boardwalk_Los_Angeles_2019.jpg) | CC BY-SA 4.0 | Steven Lek |
 | `stella-leuven.jpg` | [File:Stella Artois brewery Leuven.jpg](https://commons.wikimedia.org/wiki/File:Stella_Artois_brewery_Leuven.jpg) | CC BY-SA 3.0 | Steven Fruitsmaak |
-| `st-louis-arch.jpg` | [File:St Louis night expblend cropped.jpg](https://commons.wikimedia.org/wiki/File:St_Louis_night_expblend_cropped.jpg) | CC BY-SA 3.0 | St_Louis_night_expblend.jpg: Daniel Schwen
-derivat |
+| `st-louis-arch.jpg` | [File:St Louis night expblend cropped.jpg](https://commons.wikimedia.org/wiki/File:St_Louis_night_expblend_cropped.jpg) | CC BY-SA 3.0 | Daniel Schwen (obra derivada) |
 | `stanford.jpg` | [File:Stanford University from Hoover Tower May 2011 002.jpg](https://commons.wikimedia.org/wiki/File:Stanford_University_from_Hoover_Tower_May_2011_002.jpg) | CC BY-SA 3.0 | King of Hearts |
 | `harvard-hbs.jpg` | [File:Aerial of the Harvard Business School campus.jpeg](https://commons.wikimedia.org/wiki/File:Aerial_of_the_Harvard_Business_School_campus.jpeg) | CC BY-SA 3.0 | HBS1908 |
 | `intel-hq.jpg` | [File:Intel Headquarters in 2023.jpg](https://commons.wikimedia.org/wiki/File:Intel_Headquarters_in_2023.jpg) | CC BY-SA 4.0 | Coolcaesar |

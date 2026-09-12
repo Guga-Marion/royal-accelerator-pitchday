@@ -34,7 +34,7 @@ Quer saber em qual frente a sua empresa trava? Comente **PITCH** que a gente te 
 
 ## 03 · Capital para quem chega com número na mão
 
-A banca avalia. O comitê investe. Dois vencedores por edição levam capital e aceleração.
+A banca avalia. O comitê investe. Dois vencedores por edição: 120 dias com a banca e a decisão de investimento no fim.
 
 Pitch Day 3 · 5 de dezembro · Orlando. Cinco minutos, sem slides, cem pontos.
 
